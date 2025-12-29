@@ -166,13 +166,11 @@
           <h3 class="form-title">Send us a Message</h3>
           <p class="form-subtitle">Fill out the form and we'll get back to you within 24 hours.</p>
 
-          <form id="contact-form" action="https://formsubmit.co/info@mydigitalinvoice.com" method="POST">
-            <input type="hidden" name="_cc" value="mydigitalinvoice@gmail.com">
-            <!-- Formsubmit.co configuration -->
-            <input type="hidden" name="_subject" value="New Contact Form Submission - My Digital Invoice">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://mydigitalinvoice.pk/thank-you.html">
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms configuration -->
+            <input type="hidden" name="access_key" value="bd3949c3-8dcc-4429-834c-6796ccbdea91">
+            <input type="hidden" name="subject" value="New Contact Form Submission - My Digital Invoice">
+            <input type="hidden" name="from_name" value="My Digital Invoice Website">
             <div class="form-row">
               <div class="form-group">
                 <label for="firstName">First Name <span style="color: #dc2626;">*</span></label>
