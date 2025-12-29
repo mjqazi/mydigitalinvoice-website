@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - My Digital Invoice | FBR Digital Invoicing Software Pakistan</title>
+  <meta name="description" content="Thank you for contacting My Digital Invoice. We'll get back to you within 24 hours.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .thankyou-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg, var(--primary-50) 0%, white 100%);
+    }
+    .thankyou-content {
+      text-align: center;
+      max-width: 600px;
+      padding: 0 1.5rem;
+    }
+    .thankyou-icon {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 2rem;
+      background: linear-gradient(135deg, #10B981, #059669);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: scaleIn 0.5s ease-out;
+    }
+    .thankyou-icon svg {
+      width: 60px;
+      height: 60px;
+      color: white;
+    }
+    @keyframes scaleIn {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .thankyou-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+      animation: fadeInUp 0.5s ease-out 0.2s both;
+    }
+    .thankyou-message {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+      animation: fadeInUp 0.5s ease-out 0.3s both;
+    }
+    .thankyou-info {
+      background: white;
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.5s ease-out 0.4s both;
+    }
+    .thankyou-info p {
+      color: var(--gray-700);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .thankyou-info svg {
+      width: 20px;
+      height: 20px;
+      color: var(--primary-500);
+    }
+    .thankyou-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.5s ease-out 0.5s both;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 640px) {
+      .thankyou-title { font-size: 2rem; }
+      .thankyou-actions { flex-direction: column; }
+      .thankyou-actions .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html" class="logo" aria-label="My Digital Invoice - Home">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+            <path d="M12 14h16M12 20h12M12 26h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="28" cy="26" r="4" fill="#10B981"/>
+            <path d="M26 26l1.5 1.5L30 25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                <stop offset="0%" stop-color="#0066CC"/>
+                <stop offset="100%" stop-color="#0052A3"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="logo-text">My Digital Invoice</span>
+        </a>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html#features" class="nav-link">Features</a></li>
+          <li><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="https://portal.mydigitalinvoice.pk/login" class="btn btn-ghost">Login</a>
+          <a href="https://portal.mydigitalinvoice.pk/login" class="btn btn-primary">Get Started Free</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="thankyou-section">
+      <div class="thankyou-content">
+        <div class="thankyou-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+
+        <h1 class="thankyou-title">Thank You!</h1>
+
+        <p class="thankyou-message">
+          Your message has been received successfully. Our team will review your inquiry and get back to you within 24 hours.
+        </p>
+
+        <div class="thankyou-info">
+          <p>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            We typically respond within 24 hours during business days
+          </p>
+        </div>
+
+        <div class="thankyou-actions">
+          <a href="index.html" class="btn btn-primary btn-lg">
+            <svg class="btn-icon-left" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px;">
+              <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/>
+            </svg>
+            Back to Home
+          </a>
+          <a href="https://portal.mydigitalinvoice.pk/login" class="btn btn-secondary btn-lg">
+            Start Free Trial
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px;">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)"/>
+              <path d="M12 14h16M12 20h12M12 26h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="28" cy="26" r="4" fill="#10B981"/>
+              <path d="M26 26l1.5 1.5L30 25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                  <stop offset="0%" stop-color="#0066CC"/>
+                  <stop offset="100%" stop-color="#0052A3"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>My Digital Invoice</span>
+          </a>
+          <p class="footer-tagline">FBR-integrated digital invoicing solution for Pakistani businesses.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Product">
+          <h4 class="footer-nav-title">Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Company">
+          <h4 class="footer-nav-title">Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Legal">
+          <h4 class="footer-nav-title">Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2025</span> My Digital Invoice. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
