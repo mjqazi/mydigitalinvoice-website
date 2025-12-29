@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Digital Invoice - FBR Digital Invoicing Software Pakistan | IRIS Integration</title>
+  <meta name="description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR, get instant IRN and QR codes. Pakistan's most affordable FBR digital invoicing solution - comply with SRO 709 before December 31, 2025 deadline. Starting Rs 5,000/month.">
+  <meta name="keywords" content="FBR digital invoicing, IRIS integration, Pakistan e-invoicing, sales tax software, IRN generation, QR code invoice, SRO 709 compliance, FBR compliant software">
+  <meta name="author" content="My Digital Invoice">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mydigitalinvoice.pk/">
+  <meta property="og:title" content="My Digital Invoice - FBR Digital Invoicing Software Pakistan">
+  <meta property="og:description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR. Starting Rs 5,000/month.">
+  <meta property="og:image" content="https://mydigitalinvoice.pk/assets/og-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://mydigitalinvoice.pk/">
+  <meta property="twitter:title" content="My Digital Invoice - FBR Digital Invoicing Software Pakistan">
+  <meta property="twitter:description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR. Starting Rs 5,000/month.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    /* Loading screen styles */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #0a1628;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .loading-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .loading-spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      border-top-color: #0066CC;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen">
+    <div class="loading-content">
+      <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="8" fill="url(#loading-logo-gradient)"/>
+        <path d="M12 14h16M12 20h12M12 26h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="28" cy="26" r="4" fill="#10B981"/>
+        <path d="M26 26l1.5 1.5L30 25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs>
+          <linearGradient id="loading-logo-gradient" x1="0" y1="0" x2="40" y2="40">
+            <stop offset="0%" stop-color="#0066CC"/>
+            <stop offset="100%" stop-color="#0052A3"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+
+  <!-- FBR Compliance Popup Modal -->
+  <div class="fbr-popup-overlay" id="fbr-popup" style="display: none;">
+    <div class="fbr-popup-modal" onclick="event.stopPropagation()">
+      <button class="fbr-popup-close" onclick="closeFBRPopup()" aria-label="Close popup">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div class="fbr-popup-logo">
+        <img src="assets/fbr-logo-1.png" alt="Federal Board of Revenue Pakistan" />
+      </div>
+
+      <h2 class="fbr-popup-title">FBR Compliance Deadline Alert</h2>
+
+      <div class="fbr-popup-content">
+        <p class="fbr-popup-headline">
+          <strong>Official FBR Notice:</strong> All sales tax-registered businesses must integrate with FBR's digital invoicing system by <span class="fbr-date">December 31, 2025</span>.
+        </p>
+
+        <div class="fbr-popup-warning">
+          <span class="warning-icon">⚡</span>
+          <p>Non-compliance will result in <strong>penalties, fines, and potential suspension</strong> of sales tax registration.</p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 2px solid #22c55e; border-radius: 12px; padding: 16px; margin-top: 16px; text-align: center;">
+          <p style="margin: 0; color: #166534; font-weight: 600; font-size: 14px;">
+            ✓ We are an FBR-approved licensed integrator
+          </p>
+          <p style="margin: 4px 0 0; color: #15803d; font-size: 13px;">
+            Starting at just Rs 5,000/month
+          </p>
+        </div>
+      </div>
+
+      <div class="fbr-popup-actions" style="margin-top: 24px;">
+        <a href="https://portal.mydigitalinvoice.pk/login" class="fbr-popup-cta" style="font-size: 18px; padding: 18px 32px; font-weight: 700; animation: pulse 2s infinite; box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);">
+          🚀 Get Compliant Now - Start Free Trial
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <button class="fbr-popup-dismiss" onclick="closeFBRPopup()" style="margin-top: 12px; opacity: 0.6;">
+          I'll do it later
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FBR Urgency Ribbon Banner -->
+  <div class="fbr-urgency-ribbon">
+    <div class="ribbon-marquee-wrapper">
+      <div class="ribbon-marquee">
+        <div class="ribbon-marquee-content">
+          <span class="ribbon-icon">🚨</span>
+          <span class="ribbon-text">
+            <strong>FBR DEADLINE:</strong> All businesses must be digitally integrated by <strong>Dec 31, 2025</strong> — Non-compliance = Penalties &amp; Fines
+          </span>
+          <span class="ribbon-separator">•</span>
+          <span class="ribbon-icon">⚠️</span>
+          <span class="ribbon-text">
+            <strong>OFFICIAL NOTICE:</strong> Sales tax registered entities must comply with FBR e-invoicing requirements
+          </span>
+          <span class="ribbon-separator">•</span>
+          <span class="ribbon-icon">📋</span>
+          <span class="ribbon-text">
+            <strong>ACT NOW:</strong> Avoid penalties — Get your business FBR compliant today
+          </span>
+          <span class="ribbon-separator">•</span>
+        </div>
+        <div class="ribbon-marquee-content" aria-hidden="true">
+          <span class="ribbon-icon">🚨</span>
+          <span class="ribbon-text">
+            <strong>FBR DEADLINE:</strong> All businesses must be digitally integrated by <strong>Dec 31, 2025</strong> — Non-compliance = Penalties &amp; Fines
+          </span>
+          <span class="ribbon-separator">•</span>
+          <span class="ribbon-icon">⚠️</span>
+          <span class="ribbon-text">
+            <strong>OFFICIAL NOTICE:</strong> Sales tax registered entities must comply with FBR e-invoicing requirements
+          </span>
+          <span class="ribbon-separator">•</span>
+          <span class="ribbon-icon">📋</span>
+          <span class="ribbon-text">
+            <strong>ACT NOW:</strong> Avoid penalties — Get your business FBR compliant today
+          </span>
+          <span class="ribbon-separator">•</span>
+        </div>
+      </div>
+    </div>
+    <a href="https://portal.mydigitalinvoice.pk/login" class="ribbon-cta">
+      Get Compliant Now
+      <svg viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Skip Navigation for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/" class="logo" aria-label="My Digital Invoice - Home">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+            <path d="M12 14h16M12 20h12M12 26h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="28" cy="26" r="4" fill="#10B981"/>
+            <path d="M26 26l1.5 1.5L30 25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                <stop offset="0%" stop-color="#0066CC"/>
+                <stop offset="100%" stop-color="#0052A3"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="logo-text">My Digital Invoice</span>
+        </a>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="https://portal.mydigitalinvoice.pk/login" class="btn btn-ghost">Login</a>
+          <a href="https://portal.mydigitalinvoice.pk/login" class="btn btn-primary">
+            Get Started Free
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+        </div>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-pattern"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge animate-fade-in">
+              <span class="badge-dot"></span>
+              FBR Integrated &amp; IRIS Certified
+            </div>
+
+            <h1 id="hero-title" class="hero-title animate-fade-in-up">
+              FBR Digital Invoicing Software Pakistan
+              <span class="gradient-text">Auto-Submit to IRIS & PRAL</span>
+              SRO 709 Compliant
+            </h1>
+
+            <p class="hero-description animate-fade-in-up delay-1">
+              FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR, get instant IRN (Invoice Reference Number) and QR codes. Pakistan's most affordable FBR digital invoicing solution - comply with SRO 709 before December 31, 2025 deadline. Starting Rs 5,000/month.
+            </p>
+
+            <div class="hero-cta animate-fade-in-up delay-2">
+              <a href="https://portal.mydigitalinvoice.pk/login" class="btn btn-primary btn-lg">
+                Start Free Trial
+                <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+              <a href="#demo" class="btn btn-secondary btn-lg">
+                <svg class="btn-icon-left" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+                </svg>
+                Watch Demo
+              </a>
+            </div>
+
+            <div class="hero-stats animate-fade-in-up delay-3">
+              <div class="stat">
+                <span class="stat-value" data-count="100">0</span>
+                <span class="stat-label">% FBR Compliant</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <span class="stat-value">Rs <span data-count="5">0</span>K</span>
+                <span class="stat-label">Starting Monthly</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <span class="stat-value"><span data-count="24">0</span>hr</span>
+                <span class="stat-label">Real-time Submission</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual animate-fade-in-left delay-2">
+            <div class="dashboard-preview">
+              <div class="dashboard-header">
+                <div class="dashboard-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="dashboard-title">FBR Dashboard</span>
+              </div>
+              <div class="dashboard-content">
+                <div class="dashboard-cards">
+                  <div class="dash-card">
+                    <span class="dash-card-label">FBR Submitted</span>
+                    <span class="dash-card-value">156</span>
+                    <span class="dash-card-trend positive">Auto</span>
+                  </div>
+                  <div class="dash-card">
+                    <span class="dash-card-label">Sales Tax Due</span>
+                    <span class="dash-card-value">PKR 2.4L</span>
+                    <span class="dash-card-trend positive">Tracked</span>
+                  </div>
+                  <div class="dash-card highlight">
+                    <span class="dash-card-label">Compliance</span>
+                    <span class="dash-card-value">100%</span>
+                    <span class="dash-card-trend positive">Verified</span>
+                  </div>
+                </div>
+                <div class="dashboard-chart">
+                  <div class="chart-bars">
+                    <div class="bar" style="--height: 45%;"></div>
+                    <div class="bar" style="--height: 65%;"></div>
+                    <div class="bar" style="--height: 55%;"></div>
+                    <div class="bar" style="--height: 80%;"></div>
+                    <div class="bar" style="--height: 70%;"></div>
+                    <div class="bar active" style="--height: 95%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Elements -->
+            <div class="float-card float-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>FBR Submitted!</span>
+            </div>
+
+            <div class="float-card float-2">
+              <div class="float-avatar">IRN</div>
+              <div class="float-info">
+                <span class="float-name">Invoice #4521</span>
+                <span class="float-detail">QR Code Generated</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trusted By -->
+      <div class="trusted-by">
+        <div class="container">
+          <p class="trusted-label">Officially Integrated With</p>
+          <div class="trusted-logos-wrapper">
+            <div class="trusted-logos">
+              <div class="logo-item"><img src="assets/fbr-logo-1.png" alt="FBR Pakistan" /></div>
+              <div class="logo-item"><img src="assets/logo.png" alt="IRIS" /></div>
+              <div class="logo-item"><img src="assets/DI_logo_I_New.png" alt="Digital Invoicing" /></div>
+              <div class="logo-item"><img src="assets/swaps_approved_light_bg (1).png" alt="SWAPS" /></div>
+              <div class="logo-item"><img src="assets/LI_DI_logo_Final.png" alt="License Integrator" /></div>
+              <div class="logo-item"><img src="assets/fbr-logo-1.png" alt="FBR Pakistan" /></div>
+              <div class="logo-item"><img src="assets/logo.png" alt="IRIS" /></div>
+              <div class="logo-item"><img src="assets/DI_logo_I_New.png" alt="Digital Invoicing" /></div>
+              <div class="logo-item"><img src="assets/swaps_approved_light_bg (1).png" alt="SWAPS" /></div>
+              <div class="logo-item"><img src="assets/LI_DI_logo_Final.png" alt="License Integrator" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Features</span>
+          <h2 id="features-title" class="section-title">
+            Complete FBR Compliance
+            <span class="gradient-text">Made Simple</span>
+          </h2>
+          <p class="section-description">
+            Everything you need to stay compliant with FBR's mandatory digital invoicing requirements. Integrated directly with IRIS for seamless tax reporting.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Auto FBR Submission</h3>
+            <p class="feature-description">Invoices are automatically submitted to FBR's IRIS system in real-time. Get unique IRN (Invoice Reference Number) and verifiable QR codes instantly.</p>
+            <a href="#" class="feature-link">
+              Learn more
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+            </a>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">HS Code Management</h3>
+            <p class="feature-description">Built-in HS code lookup and management. Ensure every invoice has correct item descriptions and tax classifications as required by FBR.</p>
+            <a href="#" class="feature-link">
+              Learn more
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+            </a>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Equipment &amp; Inventory</h3>
+            <p class="feature-description">Maintain a comprehensive catalog of your products and equipment. Track every sale and purchase with complete audit trails.</p>
+            <a href="#" class="feature-link">
+              Learn more
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+            </a>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Sales Tax Calculator</h3>
+            <p class="feature-description">Automatic GST/Sales tax calculations based on FBR rates. Handle different tax scenarios including exempt, zero-rated, and standard supplies.</p>
+            <a href="#" class="feature-link">
+              Learn more
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+            </a>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon cyan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Buyer &amp; Seller Registry</h3>
+            <p class="feature-description">Maintain complete records of buyers and sellers with NTN/CNIC verification. Auto-populate invoice details for registered parties.</p>
+            <a href="#" class="feature-link">
+              Learn more
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+            </a>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Compliance Reports</h3>
+            <p class="feature-description">Generate FBR-ready reports for tax filing. Track input tax credits, output tax, and net payable with detailed breakdowns.</p>
+            <a href="#" class="feature-link">
+              Learn more
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">How It Works</span>
+          <h2 id="how-title" class="section-title">
+            FBR Compliance in
+            <span class="gradient-text">Three Simple Steps</span>
+          </h2>
+        </div>
+
+        <div class="steps-container">
+          <div class="step">
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <h3 class="step-title">Create Your Invoice</h3>
+              <p class="step-description">Add your products with HS codes, enter buyer details with NTN/CNIC, and our system automatically calculates GST/Sales tax based on FBR rates.</p>
+            </div>
+            <div class="step-visual">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-connector"></div>
+
+          <div class="step">
+            <div class="step-number">02</div>
+            <div class="step-content">
+              <h3 class="step-title">Auto Submit to FBR</h3>
+              <p class="step-description">With one click, your invoice is submitted to FBR's IRIS system. Receive your unique IRN (Invoice Reference Number) and QR code instantly.</p>
+            </div>
+            <div class="step-visual">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-connector"></div>
+
+          <div class="step">
+            <div class="step-number">03</div>
+            <div class="step-content">
+              <h3 class="step-title">Stay Compliant</h3>
+              <p class="step-description">Track all submissions, generate compliance reports, and never miss a deadline. Our dashboard shows your complete tax liability at a glance.</p>
+            </div>
+            <div class="step-visual">
+              <div class="step-icon green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison" aria-labelledby="comparison-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Why Choose Us</span>
+          <h2 id="comparison-title" class="section-title">
+            See How We
+            <span class="gradient-text">Stack Up</span>
+          </h2>
+          <p class="section-description">
+            Compare My Digital Invoice with other FBR integration solutions.
+          </p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="highlight-col">
+                  <div class="table-logo">My Digital Invoice</div>
+                </th>
+                <th>Other Solutions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>FBR Integration</td>
+                <td class="highlight-col">
+                  <span class="check-badge">Auto-Submit to IRIS</span>
+                </td>
+                <td><span class="x-badge">Manual Upload</span></td>
+              </tr>
+              <tr>
+                <td>Monthly Pricing</td>
+                <td class="highlight-col">
+                  <span class="check-badge">Rs 5,000 - 10,000</span>
+                </td>
+                <td><span class="x-badge">Rs 50K-200K/month</span></td>
+              </tr>
+              <tr>
+                <td>IRN &amp; QR Code</td>
+                <td class="highlight-col">
+                  <span class="check-badge">Instant Generation</span>
+                </td>
+                <td><span class="neutral-badge">Delayed/Manual</span></td>
+              </tr>
+              <tr>
+                <td>HS Code Support</td>
+                <td class="highlight-col">
+                  <span class="check-badge">Built-in Lookup</span>
+                </td>
+                <td><span class="x-badge">Manual Entry</span></td>
+              </tr>
+              <tr>
+                <td>Compliance Reports</td>
+                <td class="highlight-col">
+                  <span class="check-badge">Real-time Dashboard</span>
+                </td>
+                <td><span class="x-badge">Limited/Extra Cost</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Pricing</span>
+          <h2 id="pricing-title" class="section-title">
+            Affordable Monthly
+            <span class="gradient-text">Subscription Plans</span>
+          </h2>
+          <p class="section-description">
+            Get FBR-compliant invoicing at a fraction of the cost of other solutions. Cancel anytime.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-name">Basic Plan</h3>
+              <p class="pricing-description">Perfect for small businesses</p>
+            </div>
+            <div class="pricing-amount">
+              <span class="currency">Rs</span>
+              <span class="price">5,000</span>
+              <span class="period">/month</span>
+            </div>
+            <ul class="pricing-features">
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Up to 5 users
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                500 MB storage
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                FBR Integration &amp; Auto-Submit
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                IRN &amp; QR Code Generation
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Net Metering Module
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Equipment Catalog
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Email Support
+              </li>
+            </ul>
+            <a href="https://portal.mydigitalinvoice.pk/login" class="btn btn-secondary btn-block">Start Free Trial</a>
+          </article>
+
+          <article class="pricing-card featured">
+            <div class="popular-badge">Most Popular</div>
+            <div class="pricing-header">
+              <h3 class="pricing-name">Pro Plan</h3>
+              <p class="pricing-description">For growing businesses</p>
+            </div>
+            <div class="pricing-amount">
+              <span class="currency">Rs</span>
+              <span class="price">10,000</span>
+              <span class="period">/month</span>
+            </div>
+            <ul class="pricing-features">
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Unlimited users
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                5000 MB storage
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Everything in Basic Plan
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Multi-company support
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Advanced compliance reports
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Priority support
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                API access
+              </li>
+            </ul>
+            <a href="https://portal.mydigitalinvoice.pk/login" class="btn btn-primary btn-block">Start Free Trial</a>
+          </article>
+        </div>
+
+        <div class="pricing-guarantee">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <div>
+            <strong>Deadline: December 31, 2025</strong>
+            <p>All sales tax-registered entities must be FBR compliant. Start today and avoid penalties.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Testimonials</span>
+          <h2 id="testimonials-title" class="section-title">
+            Trusted by
+            <span class="gradient-text">FBR-Registered Businesses</span>
+          </h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="testimonial-rating">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <blockquote class="testimonial-quote">
+              "The automatic FBR submission feature is a game-changer. We used to spend hours manually uploading invoices to IRIS. Now it's instant and error-free."
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">AK</div>
+              <div class="author-info">
+                <strong>Ahmad Khan</strong>
+                <span>CEO, Khan Trading Co.</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-rating">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <blockquote class="testimonial-quote">
+              "Rs 5,000/month for full FBR compliance is unbeatable. Other solutions quoted us Rs 50,000+ monthly. My Digital Invoice saved our business."
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">SR</div>
+              <div class="author-info">
+                <strong>Sara Rashid</strong>
+                <span>Finance Manager, Rashid Enterprises</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-rating">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <blockquote class="testimonial-quote">
+              "With the December 2025 deadline approaching, we needed a quick solution. My Digital Invoice got us compliant in just one day. The IRN and QR codes are generated instantly."
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">MI</div>
+              <div class="author-info">
+                <strong>Muhammad Imran</strong>
+                <span>Owner, Imran Electronics</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">FAQ</span>
+          <h2 id="faq-title" class="section-title">
+            Frequently Asked
+            <span class="gradient-text">Questions</span>
+          </h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">
+              What is the FBR digital invoicing requirement?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>FBR requires all sales tax-registered entities (manufacturers, importers, wholesalers, distributors, corporate and non-corporate persons) to generate digital invoices through FBR-approved software integrated with IRIS. Each invoice must include unique IRN (Invoice Reference Number), QR code, HS codes, and be submitted in real-time. The deadline for compliance is December 31, 2025.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              How does auto-submission to FBR work?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>When you create an invoice in My Digital Invoice, our system automatically submits it to FBR's IRIS system via our licensed integrator. You instantly receive the unique IRN and QR code. All invoices are submitted in real-time (within 24 hours as required by FBR), ensuring you never miss a submission.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              What are the subscription prices?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>We offer two affordable plans: Basic Plan at Rs 5,000/month (5 users, 500 MB storage) and Pro Plan at Rs 10,000/month (unlimited users, 5000 MB storage). Both plans include full FBR integration with auto-submission. Compare this to other solutions charging Rs 50,000-200,000/month!</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              Who needs to be FBR compliant?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>All sales tax-registered entities must comply, including: manufacturers, importers, wholesalers, distributors, retailers, service providers, and any business paying sales tax to FBR. If you have an NTN and are registered for sales tax, you need FBR-compliant digital invoicing.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              What happens if I miss the deadline?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Non-compliance with FBR's digital invoicing requirements can result in penalties, fines, and issues with your tax filings. FBR has been strict about enforcement. Don't wait until the last minute - start your free trial today and get compliant before December 31, 2025.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              Can I try the system before subscribing?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes! We offer a free trial so you can explore all features before subscribing. Test the FBR integration, create sample invoices, and see how easy compliance can be. No credit card required to start.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="cta-bg">
+        <div class="cta-gradient"></div>
+        <div class="cta-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="cta-content">
+          <h2 id="cta-title" class="cta-title">Get FBR Compliant Before December 31, 2025</h2>
+          <p class="cta-description">Don't risk penalties. Join businesses already using My Digital Invoice for seamless FBR compliance at just Rs 5,000/month.</p>
+          <div class="cta-actions">
+            <a href="https://portal.mydigitalinvoice.pk/login" class="btn btn-white btn-lg">
+              Start Free Trial
+              <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+            <a href="#pricing" class="btn btn-ghost-white btn-lg">View Pricing</a>
+          </div>
+          <p class="cta-note">No credit card required. Cancel anytime.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">
+            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)"/>
+              <path d="M12 14h16M12 20h12M12 26h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="28" cy="26" r="4" fill="#10B981"/>
+              <path d="M26 26l1.5 1.5L30 25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                  <stop offset="0%" stop-color="#0066CC"/>
+                  <stop offset="100%" stop-color="#0052A3"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>My Digital Invoice</span>
+          </a>
+          <p class="footer-tagline">FBR-integrated digital invoicing solution for Pakistani businesses. Stay compliant, avoid penalties.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Product">
+          <h4 class="footer-nav-title">Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav" aria-label="Company">
+          <h4 class="footer-nav-title">Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav" aria-label="Legal">
+          <h4 class="footer-nav-title">Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2025</span> My Digital Invoice. All rights reserved.</p>
+        <p class="footer-made">Made with precision for professionals.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

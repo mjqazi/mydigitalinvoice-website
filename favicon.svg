@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F7DF3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C5BF1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main rounded square background -->
+  <rect x="2" y="2" width="48" height="48" rx="10" ry="10" fill="url(#bgGradient)"/>
+
+  <!-- Document icon -->
+  <g transform="translate(12, 10)">
+    <!-- Document background -->
+    <path d="M0 4 L0 32 Q0 34 2 34 L22 34 Q24 34 24 32 L24 8 L18 0 L2 0 Q0 0 0 2 Z" fill="white" fill-opacity="0.95"/>
+    <!-- Folded corner -->
+    <path d="M18 0 L18 6 Q18 8 20 8 L24 8 Z" fill="#d1d5db"/>
+    <!-- Lines on document -->
+    <line x1="4" y1="12" x2="18" y2="12" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/>
+    <line x1="4" y1="18" x2="16" y2="18" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/>
+    <line x1="4" y1="24" x2="12" y2="24" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/>
+    <!-- Small green checkmark on document -->
+    <circle cx="20" cy="28" r="5" fill="#22c55e"/>
+    <path d="M17.5 28 L19 29.5 L22.5 26" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- FBR Badge -->
+  <circle cx="50" cy="50" r="13" fill="white"/>
+  <circle cx="50" cy="50" r="11" fill="#22c55e"/>
+  <text x="50" y="48" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">FBR</text>
+  <path d="M45 52 L48 55 L55 48" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

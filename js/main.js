@@ -1,0 +1,248 @@
+/**
+ * My Digital Invoice - Landing Page JavaScript
+ * Pure vanilla JS for Hostinger static hosting
+ */
+
+(function() {
+  'use strict';
+
+  // ==========================================
+  // Loading Screen
+  // ==========================================
+  function hideLoadingScreen() {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+      loadingScreen.classList.add('hidden');
+      // Remove from DOM after animation
+      setTimeout(() => {
+        loadingScreen.remove();
+      }, 300);
+    }
+  }
+
+  // Hide loading screen when page is ready
+  if (document.readyState === 'complete') {
+    hideLoadingScreen();
+  } else {
+    window.addEventListener('load', hideLoadingScreen);
+  }
+
+  // ==========================================
+  // FBR Popup
+  // ==========================================
+  function showFBRPopup() {
+    const popup = document.getElementById('fbr-popup');
+    if (popup) {
+      popup.style.display = 'flex';
+    }
+  }
+
+  window.closeFBRPopup = function() {
+    const popup = document.getElementById('fbr-popup');
+    if (popup) {
+      popup.style.display = 'none';
+    }
+  };
+
+  // Show popup after 2 seconds
+  setTimeout(showFBRPopup, 2000);
+
+  // Close popup when clicking overlay
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('fbr-popup-overlay')) {
+      closeFBRPopup();
+    }
+  });
+
+  // ==========================================
+  // Navigation Toggle (Mobile)
+  // ==========================================
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      navToggle.classList.toggle('active');
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+
+  // ==========================================
+  // Sticky Header on Scroll
+  // ==========================================
+  const header = document.getElementById('header');
+
+  function handleScroll() {
+    if (header) {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Check on initial load
+
+  // ==========================================
+  // Smooth Scroll for Anchor Links
+  // ==========================================
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+
+      if (targetId && targetId !== '#') {
+        e.preventDefault();
+        const target = document.querySelector(targetId);
+
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+
+          // Close mobile menu if open
+          if (navMenu) {
+            navMenu.classList.remove('active');
+          }
+          if (navToggle) {
+            navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      }
+    });
+  });
+
+  // ==========================================
+  // FAQ Accordion (Only one open at a time)
+  // ==========================================
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(function(item) {
+    item.addEventListener('toggle', function() {
+      if (item.open) {
+        faqItems.forEach(function(otherItem) {
+          if (otherItem !== item) {
+            otherItem.open = false;
+          }
+        });
+      }
+    });
+  });
+
+  // ==========================================
+  // Counter Animation for Stats
+  // ==========================================
+  function animateCounter(counter) {
+    const target = parseInt(counter.getAttribute('data-count'), 10);
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+
+    function updateCounter() {
+      current += step;
+      if (current < target) {
+        counter.textContent = Math.floor(current);
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent = target;
+      }
+    }
+
+    updateCounter();
+  }
+
+  // Use Intersection Observer to animate counters when visible
+  const counters = document.querySelectorAll('[data-count]');
+
+  if (counters.length > 0 && 'IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(function(counter) {
+      counterObserver.observe(counter);
+    });
+  } else {
+    // Fallback for browsers without IntersectionObserver
+    counters.forEach(animateCounter);
+  }
+
+  // ==========================================
+  // Update Current Year in Footer
+  // ==========================================
+  const yearSpan = document.getElementById('current-year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
+  // ==========================================
+  // Escape Key to Close Popup
+  // ==========================================
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeFBRPopup();
+    }
+  });
+
+  // ==========================================
+  // 3D Tilt Effect for Pricing Cards
+  // ==========================================
+  function initTiltEffect() {
+    const cards = document.querySelectorAll('.pricing-card');
+
+    cards.forEach(function(card) {
+      // Add glare element
+      const glare = document.createElement('div');
+      glare.className = 'card-glare';
+      card.appendChild(glare);
+
+      card.addEventListener('mousemove', function(e) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        // Calculate rotation (max 4 degrees for subtle effect)
+        const rotateX = ((y - centerY) / centerY) * -4;
+        const rotateY = ((x - centerX) / centerX) * 4;
+
+        // Apply transform (subtle tilt with minimal scale)
+        card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale3d(1.005, 1.005, 1.005)';
+
+        // Update glare position
+        const glareX = (x / rect.width) * 100;
+        const glareY = (y / rect.height) * 100;
+        card.style.setProperty('--mouse-x', glareX + '%');
+        card.style.setProperty('--mouse-y', glareY + '%');
+      });
+
+      card.addEventListener('mouseleave', function() {
+        // Smoothly reset transform
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      });
+
+      card.addEventListener('mouseenter', function() {
+        card.style.transition = 'transform 0.15s ease-out, box-shadow 0.3s ease';
+      });
+    });
+  }
+
+  // Initialize tilt effect when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTiltEffect);
+  } else {
+    initTiltEffect();
+  }
+
+})();
