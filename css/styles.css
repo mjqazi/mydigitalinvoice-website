@@ -413,6 +413,47 @@ ul, ol {
     border-color: var(--gray-300);
 }
 
+.btn-outline {
+    background: transparent;
+    color: var(--primary-500);
+    border: 2px solid var(--primary-500);
+}
+
+.btn-outline:hover {
+    background: var(--primary-50);
+    border-color: var(--primary-600);
+    color: var(--primary-600);
+}
+
+.btn-outline-white {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-white:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+.btn-outline-light {
+    background: transparent;
+    color: var(--primary-600);
+    border: 2px solid var(--primary-400);
+}
+
+.btn-outline-light:hover {
+    background: var(--primary-50);
+    border-color: var(--primary-500);
+    color: var(--primary-700);
+}
+
+.pricing-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
 .btn-ghost {
     color: var(--gray-600);
 }
