@@ -74,6 +74,29 @@
       .mobile-controls { display: flex !important; z-index: 99999 !important; }
       .nav-toggle { z-index: 99999 !important; }
     }
+
+    /* Page-specific mobile fixes */
+    @media (max-width: 768px) {
+      .page-hero { padding: 100px 0 40px; }
+      .about-content { padding: 40px 0; }
+      .about-section { margin-bottom: 40px; }
+      .about-section h2 { font-size: 1.5rem; }
+      .about-section p { font-size: 0.9rem; }
+      .values-grid { grid-template-columns: 1fr !important; gap: 1rem; }
+      .value-card { padding: 1.25rem; }
+      .value-card h3 { font-size: 1.1rem; }
+      .value-card p { font-size: 0.85rem; }
+      .stats-section { padding: 40px 0; }
+      .stats-row { grid-template-columns: 1fr 1fr !important; gap: 1rem; }
+      .stat-item { padding: 1.25rem; }
+      .stat-item .stat-number { font-size: 1.75rem; }
+      .stat-item .stat-label { font-size: 0.8rem; }
+    }
+
+    @media (max-width: 480px) {
+      .page-hero { padding: 90px 0 30px; }
+      .stats-row { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 <body>
