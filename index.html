@@ -97,19 +97,54 @@
       50% { transform: scale(1.02); }
     }
 
-    /* Mobile Navigation Fix - Override styles */
+    /* Mobile Navigation Fix - Stacked Centered Layout */
     @media (max-width: 1023px) {
       .nav {
-        padding: 0 12px !important;
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 12px 16px 16px !important;
+        gap: 8px !important;
+        position: relative !important;
       }
       .logo {
-        flex-shrink: 1 !important;
-        min-width: 0 !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 6px !important;
+        order: 1 !important;
+      }
+      .logo-icon {
+        width: 48px !important;
+        height: 48px !important;
       }
       .logo-text {
-        font-size: 0.95rem !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        text-align: center !important;
+      }
+      .mobile-controls {
+        display: flex !important;
+        position: absolute !important;
+        top: 12px !important;
+        right: 16px !important;
+        z-index: 99999 !important;
+      }
+      .mobile-controls .mobile-login-btn {
+        display: none !important;
+      }
+      .mobile-header-login {
+        display: inline-flex !important;
+        order: 2 !important;
+        margin-top: 8px !important;
+      }
+      .nav-toggle {
+        z-index: 99999 !important;
+        display: flex !important;
+        width: 44px !important;
+        height: 44px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #f3f4f6 !important;
+        border-radius: 8px !important;
       }
       .nav-menu {
         display: flex !important;
@@ -149,55 +184,26 @@
         padding-top: 20px !important;
         border-top: 1px solid #e5e7eb !important;
       }
-      .mobile-controls {
-        display: flex !important;
-        z-index: 99999 !important;
-        flex-shrink: 0 !important;
-        gap: 8px !important;
-      }
-      .nav-toggle {
-        z-index: 99999 !important;
-        display: flex !important;
-        width: 44px !important;
-        height: 44px !important;
-        align-items: center !important;
-        justify-content: center !important;
-        background: #f3f4f6 !important;
-        border-radius: 8px !important;
-        flex-shrink: 0 !important;
-      }
-      .mobile-login-btn {
-        padding: 8px 12px !important;
-        font-size: 0.75rem !important;
-        flex-shrink: 0 !important;
-      }
     }
 
     @media (max-width: 480px) {
       .nav {
-        padding: 0 8px !important;
-      }
-      .logo-text {
-        font-size: 0.85rem !important;
-        max-width: 120px !important;
+        padding: 10px 12px 14px !important;
       }
       .logo-icon {
-        width: 28px !important;
-        height: 28px !important;
+        width: 44px !important;
+        height: 44px !important;
       }
-      .mobile-login-btn {
-        padding: 6px 10px !important;
-        font-size: 0.7rem !important;
+      .logo-text {
+        font-size: 1rem !important;
       }
       .nav-toggle {
         width: 40px !important;
         height: 40px !important;
       }
-    }
-
-    @media (max-width: 360px) {
-      .logo-text {
-        display: none !important;
+      .mobile-header-login {
+        padding: 8px 16px !important;
+        font-size: 0.85rem !important;
       }
     }
   </style>
@@ -342,6 +348,9 @@
           </svg>
           <span class="logo-text">My Digital Invoice</span>
         </a>
+
+        <!-- Mobile Login Button (shown below logo on mobile) -->
+        <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary mobile-header-login">Login / Sign Up</a>
 
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#features" class="nav-link">Features</a></li>
