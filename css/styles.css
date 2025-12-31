@@ -1123,7 +1123,24 @@ ul, ol {
     }
 
     .dashboard-cards {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .dash-card {
+        padding: 0.5rem;
+    }
+
+    .dash-card-value {
+        font-size: 1.1rem;
+    }
+
+    .dash-card-label {
+        font-size: 0.65rem;
+    }
+
+    .dash-card-trend {
+        font-size: 0.6rem;
     }
 }
 
@@ -1140,6 +1157,28 @@ ul, ol {
     .btn-lg {
         padding: 12px 20px;
         font-size: 0.9rem;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.3rem;
+    }
+
+    .dash-card {
+        padding: 0.35rem;
+    }
+
+    .dash-card-value {
+        font-size: 0.85rem;
+    }
+
+    .dash-card-label {
+        font-size: 0.5rem;
+    }
+
+    .dash-card-trend {
+        font-size: 0.45rem;
+        margin-top: 1px;
     }
 }
 
@@ -3666,20 +3705,25 @@ a {
     }
 
     .dashboard-cards {
-        grid-template-columns: 1fr !important;
-        gap: 0.75rem;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.4rem;
     }
 
     .dash-card {
-        padding: 0.75rem;
+        padding: 0.4rem;
     }
 
     .dash-card-value {
-        font-size: 1.25rem;
+        font-size: 0.95rem;
     }
 
     .dash-card-label {
-        font-size: 0.7rem;
+        font-size: 0.55rem;
+    }
+
+    .dash-card-trend {
+        font-size: 0.5rem;
+        margin-top: 2px;
     }
 
     .dashboard-chart {
