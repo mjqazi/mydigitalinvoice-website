@@ -1,14 +1,11 @@
 # robots.txt for mydigitalinvoice.com
 # https://www.robotstxt.org/robotstxt.html
 
-# Allow all crawlers
+# Allow all standard search engine crawlers
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://mydigitalinvoice.com/sitemap.xml
-
-# Block AI training crawlers (using standard syntax)
+# Block AI training bots and scrapers
 User-agent: GPTBot
 Disallow: /
 
@@ -32,3 +29,6 @@ Disallow: /
 
 User-agent: cohere-ai
 Disallow: /
+
+# Sitemap location
+Sitemap: https://mydigitalinvoice.com/sitemap.xml
