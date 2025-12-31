@@ -328,17 +328,28 @@ ul, ol {
     }
 
     .nav {
-        height: 60px;
+        height: 56px;
         gap: var(--space-2);
+        padding: 0 12px;
+    }
+
+    .logo {
+        flex-shrink: 1;
+        min-width: 0;
+        gap: 8px;
     }
 
     .logo-text {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .logo-icon {
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
     }
 
     .nav-menu {
@@ -415,16 +426,24 @@ ul, ol {
     .mobile-controls {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
         margin-left: auto;
         position: relative;
         z-index: 10002;
+        flex-shrink: 0;
     }
 
     .nav-toggle {
         display: flex;
         z-index: 10002;
         position: relative;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        background: var(--gray-100);
+        border-radius: 8px;
+        flex-shrink: 0;
     }
 
     .nav-toggle.active .hamburger {
@@ -444,9 +463,56 @@ ul, ol {
     /* Mobile header login button */
     .mobile-login-btn {
         display: inline-flex;
-        padding: 8px 14px;
-        font-size: 0.8rem;
+        padding: 8px 12px;
+        font-size: 0.75rem;
         flex-shrink: 0;
+        white-space: nowrap;
+    }
+}
+
+/* Extra small screen header fixes */
+@media (max-width: 480px) {
+    .nav {
+        padding: 0 8px;
+    }
+
+    .logo-text {
+        font-size: 0.85rem;
+        max-width: 120px;
+    }
+
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .logo {
+        gap: 6px;
+    }
+
+    .mobile-controls {
+        gap: 6px;
+    }
+
+    .mobile-login-btn {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+
+    .nav-toggle {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Very small screens - hide logo text */
+@media (max-width: 360px) {
+    .logo-text {
+        display: none;
+    }
+
+    .logo {
+        gap: 0;
     }
 }
 

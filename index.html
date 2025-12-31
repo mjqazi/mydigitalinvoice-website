@@ -99,6 +99,18 @@
 
     /* Mobile Navigation Fix - Override styles */
     @media (max-width: 1023px) {
+      .nav {
+        padding: 0 12px !important;
+      }
+      .logo {
+        flex-shrink: 1 !important;
+        min-width: 0 !important;
+      }
+      .logo-text {
+        font-size: 0.95rem !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
       .nav-menu {
         display: flex !important;
         position: fixed !important;
@@ -140,9 +152,52 @@
       .mobile-controls {
         display: flex !important;
         z-index: 99999 !important;
+        flex-shrink: 0 !important;
+        gap: 8px !important;
       }
       .nav-toggle {
         z-index: 99999 !important;
+        display: flex !important;
+        width: 44px !important;
+        height: 44px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #f3f4f6 !important;
+        border-radius: 8px !important;
+        flex-shrink: 0 !important;
+      }
+      .mobile-login-btn {
+        padding: 8px 12px !important;
+        font-size: 0.75rem !important;
+        flex-shrink: 0 !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav {
+        padding: 0 8px !important;
+      }
+      .logo-text {
+        font-size: 0.85rem !important;
+        max-width: 120px !important;
+      }
+      .logo-icon {
+        width: 28px !important;
+        height: 28px !important;
+      }
+      .mobile-login-btn {
+        padding: 6px 10px !important;
+        font-size: 0.7rem !important;
+      }
+      .nav-toggle {
+        width: 40px !important;
+        height: 40px !important;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .logo-text {
+        display: none !important;
       }
     }
   </style>
