@@ -35,12 +35,17 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/styles.css">
-
-  <!-- Preconnect to external domains -->
+  <!-- Preconnect to external domains (placed before CSS for optimal loading) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://connect.facebook.net">
+  <link rel="preconnect" href="https://www.facebook.com">
+  <link rel="dns-prefetch" href="https://snap.licdn.com">
+
+  <!-- Stylesheet with preload -->
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/styles.css">
 
   <style>
     /* Global mobile viewport fix */
@@ -177,7 +182,7 @@
       </button>
 
       <div class="fbr-popup-logo">
-        <img src="assets/fbr-logo-1.png" alt="Federal Board of Revenue Pakistan" />
+        <img src="assets/fbr-logo-1.png" alt="Federal Board of Revenue Pakistan" width="72" height="72" loading="lazy" />
       </div>
 
       <h2 class="fbr-popup-title">FBR Digital Invoicing Is Now Mandatory</h2>
@@ -441,16 +446,16 @@
           <p class="trusted-label">Officially Integrated With</p>
           <div class="trusted-logos-wrapper">
             <div class="trusted-logos">
-              <div class="logo-item"><img src="assets/fbr-logo-1.png" alt="FBR Pakistan" /></div>
-              <div class="logo-item"><img src="assets/logo.png" alt="IRIS" /></div>
-              <div class="logo-item"><img src="assets/DI_logo_I_New.png" alt="Digital Invoicing" /></div>
-              <div class="logo-item"><img src="assets/swaps_approved_light_bg (1).png" alt="SWAPS" /></div>
-              <div class="logo-item"><img src="assets/LI_DI_logo_Final.png" alt="License Integrator" /></div>
-              <div class="logo-item"><img src="assets/fbr-logo-1.png" alt="FBR Pakistan" /></div>
-              <div class="logo-item"><img src="assets/logo.png" alt="IRIS" /></div>
-              <div class="logo-item"><img src="assets/DI_logo_I_New.png" alt="Digital Invoicing" /></div>
-              <div class="logo-item"><img src="assets/swaps_approved_light_bg (1).png" alt="SWAPS" /></div>
-              <div class="logo-item"><img src="assets/LI_DI_logo_Final.png" alt="License Integrator" /></div>
+              <div class="logo-item"><img src="assets/fbr-logo-1.png" alt="FBR Pakistan" width="72" height="72" loading="lazy" /></div>
+              <div class="logo-item"><img src="assets/logo.png" alt="IRIS" width="72" height="40" loading="lazy" /></div>
+              <div class="logo-item"><img src="assets/DI_logo_I_New.png" alt="Digital Invoicing" width="144" height="40" loading="lazy" /></div>
+              <div class="logo-item"><img src="assets/swaps_approved_light_bg (1).png" alt="SWAPS" width="72" height="40" loading="lazy" /></div>
+              <div class="logo-item"><img src="assets/LI_DI_logo_Final.png" alt="License Integrator" width="129" height="40" loading="lazy" /></div>
+              <div class="logo-item"><img src="assets/fbr-logo-1.png" alt="FBR Pakistan" width="72" height="72" loading="lazy" /></div>
+              <div class="logo-item"><img src="assets/logo.png" alt="IRIS" width="72" height="40" loading="lazy" /></div>
+              <div class="logo-item"><img src="assets/DI_logo_I_New.png" alt="Digital Invoicing" width="144" height="40" loading="lazy" /></div>
+              <div class="logo-item"><img src="assets/swaps_approved_light_bg (1).png" alt="SWAPS" width="72" height="40" loading="lazy" /></div>
+              <div class="logo-item"><img src="assets/LI_DI_logo_Final.png" alt="License Integrator" width="129" height="40" loading="lazy" /></div>
             </div>
           </div>
         </div>
@@ -1041,6 +1046,6 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
