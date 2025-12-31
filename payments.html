@@ -351,15 +351,15 @@
       .payment-hero { padding: 90px 0 30px; }
     }
 
-    /* Mobile Navigation Fix - Stacked Centered Layout */
+    /* Mobile Navigation Fix - Horizontal Layout */
     @media (max-width: 1023px) {
-      .nav { flex-direction: column !important; height: auto !important; padding: 12px 16px 16px !important; gap: 8px !important; position: relative !important; }
-      .logo { flex-direction: column !important; align-items: center !important; gap: 6px !important; order: 1 !important; }
-      .logo-icon { width: 48px !important; height: 48px !important; }
-      .logo-text { font-size: 1.4rem !important; font-weight: 700 !important; text-align: center !important; }
-      .mobile-controls { display: flex !important; position: absolute !important; top: 12px !important; right: 16px !important; z-index: 99999 !important; }
-      .mobile-controls .mobile-login-btn { display: none !important; }
-      .mobile-header-login { display: inline-flex !important; order: 2 !important; margin-top: 8px !important; }
+      .nav { flex-direction: row !important; justify-content: space-between !important; align-items: center !important; height: auto !important; padding: 12px 16px !important; gap: 12px !important; }
+      .logo { flex-direction: row !important; align-items: center !important; gap: 10px !important; flex-shrink: 1 !important; min-width: 0 !important; }
+      .logo-icon { width: 36px !important; height: 36px !important; flex-shrink: 0 !important; }
+      .logo-text { font-size: 1.1rem !important; font-weight: 700 !important; white-space: nowrap !important; }
+      .mobile-header-login { display: none !important; }
+      .mobile-controls { display: flex !important; align-items: center !important; gap: 10px !important; z-index: 99999 !important; flex-shrink: 0 !important; }
+      .mobile-controls .mobile-login-btn { display: inline-flex !important; padding: 8px 14px !important; font-size: 0.85rem !important; white-space: nowrap !important; }
       .nav-toggle { display: flex !important; width: 44px !important; height: 44px !important; align-items: center !important; justify-content: center !important; background: #f3f4f6 !important; border-radius: 8px !important; z-index: 99999 !important; }
       .nav-menu { display: flex !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 100vw !important; height: 100vh !important; flex-direction: column !important; padding: 80px 20px 20px 20px !important; background: #ffffff !important; transform: translateX(100%); transition: transform 0.3s ease-in-out; z-index: 99998 !important; overflow-y: auto !important; }
       .nav-menu.active { transform: translateX(0) !important; }
@@ -368,11 +368,12 @@
       .nav-menu .mobile-nav-actions { display: block !important; margin-top: 20px !important; padding-top: 20px !important; border-top: 1px solid #e5e7eb !important; }
     }
     @media (max-width: 480px) {
-      .nav { padding: 10px 12px 14px !important; }
-      .logo-icon { width: 44px !important; height: 44px !important; }
-      .logo-text { font-size: 1.25rem !important; }
-      .nav-toggle { width: 40px !important; height: 40px !important; }
-      .mobile-header-login { padding: 8px 16px !important; font-size: 0.85rem !important; }
+      .nav { padding: 10px 12px !important; gap: 8px !important; }
+      .logo-icon { width: 32px !important; height: 32px !important; }
+      .logo-text { font-size: 0.95rem !important; }
+      .mobile-controls { gap: 6px !important; }
+      .mobile-controls .mobile-login-btn { padding: 6px 10px !important; font-size: 0.75rem !important; }
+      .nav-toggle { width: 38px !important; height: 38px !important; }
     }
   </style>
 </head>

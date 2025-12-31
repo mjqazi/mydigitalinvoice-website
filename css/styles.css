@@ -325,59 +325,63 @@ ul, ol {
     display: none;
 }
 
-/* Mobile Navigation - Stacked Centered Layout */
+/* Mobile Navigation - Horizontal Layout */
 @media (max-width: 1023px) {
     .header {
         z-index: 1001;
     }
 
-    /* Stacked centered navigation layout */
+    /* Horizontal navigation layout */
     .nav {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         height: auto;
-        padding: 12px 16px 16px;
-        gap: 8px;
-        position: relative;
+        padding: 12px 16px;
+        gap: 12px;
     }
 
-    /* Logo stacked vertically centered */
+    /* Logo horizontal on left */
     .logo {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        gap: 6px;
-        order: 1;
+        gap: 10px;
+        flex-shrink: 1;
+        min-width: 0;
     }
 
     .logo-icon {
-        width: 48px;
-        height: 48px;
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
     }
 
     .logo-text {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         font-weight: 700;
-        text-align: center;
+        white-space: nowrap;
     }
 
-    /* Mobile controls positioned top-right */
+    /* Hide the separate mobile-header-login button (we'll use the one in mobile-controls) */
+    .mobile-header-login {
+        display: none !important;
+    }
+
+    /* Mobile controls on right - Login button + Hamburger */
     .mobile-controls {
         display: flex;
-        position: absolute;
-        top: 12px;
-        right: 16px;
+        align-items: center;
+        gap: 10px;
         z-index: 10002;
+        flex-shrink: 0;
     }
 
-    /* Hide the login button from mobile-controls - it will be shown below logo */
+    /* Show login button in mobile-controls */
     .mobile-controls .mobile-login-btn {
-        display: none;
-    }
-
-    /* Login button below the logo/name */
-    .mobile-header-login {
         display: inline-flex;
-        order: 2;
-        margin-top: 8px;
+        padding: 8px 14px;
+        font-size: 0.85rem;
+        white-space: nowrap;
     }
 
     .nav-toggle {
@@ -480,26 +484,31 @@ ul, ol {
 /* Smaller mobile screens */
 @media (max-width: 480px) {
     .nav {
-        padding: 10px 12px 14px;
+        padding: 10px 12px;
+        gap: 8px;
     }
 
     .logo-icon {
-        width: 44px;
-        height: 44px;
+        width: 32px;
+        height: 32px;
     }
 
     .logo-text {
-        font-size: 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    .mobile-controls {
+        gap: 6px;
+    }
+
+    .mobile-controls .mobile-login-btn {
+        padding: 6px 10px;
+        font-size: 0.75rem;
     }
 
     .nav-toggle {
-        width: 40px;
-        height: 40px;
-    }
-
-    .mobile-header-login {
-        padding: 8px 16px;
-        font-size: 0.85rem;
+        width: 38px;
+        height: 38px;
     }
 }
 
