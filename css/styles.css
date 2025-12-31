@@ -1646,6 +1646,7 @@ ul, ol {
     border-width: 2px;
     box-shadow: var(--shadow-glow);
     z-index: 1;
+    margin-top: 18px;
 }
 
 .pricing-card.featured:hover {
@@ -1654,7 +1655,7 @@ ul, ol {
 
 .popular-badge {
     position: absolute;
-    top: -12px;
+    top: -18px;
     left: 50%;
     transform: translateX(-50%);
     padding: var(--space-2) var(--space-4);
@@ -3979,12 +3980,13 @@ a {
 
     .pricing-card.featured {
         order: -1;
+        margin-top: 20px;
     }
 
     .popular-badge {
         font-size: 0.65rem;
         padding: 0.25rem 0.75rem;
-        top: -10px;
+        top: -16px;
     }
 
     .pricing-name {
