@@ -39,6 +39,17 @@
     .legal-section ul { color: var(--gray-600); line-height: 1.8; margin-bottom: 1rem; padding-left: 1.5rem; }
     .legal-section li { margin-bottom: 0.5rem; }
     .last-updated { color: var(--gray-500); font-size: 0.9rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gray-200); }
+
+    /* Mobile Navigation Fix */
+    @media (max-width: 1023px) {
+      .nav-menu { display: flex !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 100vw !important; height: 100vh !important; flex-direction: column !important; padding: 80px 20px 20px 20px !important; background: #ffffff !important; transform: translateX(100%); transition: transform 0.3s ease-in-out; z-index: 99998 !important; overflow-y: auto !important; }
+      .nav-menu.active { transform: translateX(0) !important; }
+      .nav-menu li { display: block !important; width: 100% !important; margin-bottom: 5px !important; }
+      .nav-menu .nav-link { display: block !important; padding: 15px 20px !important; font-size: 18px !important; color: #1f2937 !important; background: #f9fafb !important; border-radius: 8px !important; }
+      .nav-menu .mobile-nav-actions { display: block !important; margin-top: 20px !important; padding-top: 20px !important; border-top: 1px solid #e5e7eb !important; }
+      .mobile-controls { display: flex !important; z-index: 99999 !important; }
+      .nav-toggle { z-index: 99999 !important; }
+    }
   </style>
 </head>
 <body>
@@ -71,14 +82,20 @@
           <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
           <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="mobile-nav-actions">
+            <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-block">Login / Sign Up</a>
+          </li>
         </ul>
         <div class="nav-actions">
           <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-ghost">Login</a>
-          <a href="payments.html" class="btn btn-primary">Get Started Free</a>
+          <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary">Get Started Free</a>
         </div>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span class="hamburger"></span>
-        </button>
+        <div class="mobile-controls">
+          <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary mobile-login-btn">Login</a>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="hamburger"></span>
+          </button>
+        </div>
       </nav>
     </div>
   </header>

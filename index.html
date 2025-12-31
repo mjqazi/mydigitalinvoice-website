@@ -14,7 +14,7 @@
   <!-- End Google Tag Manager -->
 
   <title>My Digital Invoice - FBR Digital Invoicing Software Pakistan | IRIS Integration</title>
-  <meta name="description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR, get instant IRN and QR codes. Pakistan's most affordable FBR digital invoicing solution - comply with SRO 709 before December 31, 2025 deadline. Starting Rs 5,000/month.">
+  <meta name="description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR, get instant IRN and QR codes. Pakistan's most affordable FBR digital invoicing solution - as of December 31, 2025, FBR mandates digital invoicing for all businesses. Starting Rs 5,000/month.">
   <meta name="keywords" content="FBR digital invoicing, IRIS integration, Pakistan e-invoicing, sales tax software, IRN generation, QR code invoice, SRO 709 compliance, FBR compliant software">
   <meta name="author" content="My Digital Invoice">
 
@@ -48,18 +48,27 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
+    /* Global mobile viewport fix */
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+    }
+
     /* Loading screen styles */
     .loading-screen {
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
       background-color: #0a1628;
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 9999;
+      z-index: 99999;
       transition: opacity 0.3s ease, visibility 0.3s ease;
     }
     .loading-screen.hidden {
@@ -86,6 +95,55 @@
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.02); }
+    }
+
+    /* Mobile Navigation Fix - Override styles */
+    @media (max-width: 1023px) {
+      .nav-menu {
+        display: flex !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        flex-direction: column !important;
+        padding: 80px 20px 20px 20px !important;
+        background: #ffffff !important;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 99998 !important;
+        overflow-y: auto !important;
+      }
+      .nav-menu.active {
+        transform: translateX(0) !important;
+      }
+      .nav-menu li {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 5px !important;
+      }
+      .nav-menu .nav-link {
+        display: block !important;
+        padding: 15px 20px !important;
+        font-size: 18px !important;
+        color: #1f2937 !important;
+        background: #f9fafb !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
+      }
+      .nav-menu .mobile-nav-actions {
+        display: block !important;
+        margin-top: 20px !important;
+        padding-top: 20px !important;
+        border-top: 1px solid #e5e7eb !important;
+      }
+      .mobile-controls {
+        display: flex !important;
+        z-index: 99999 !important;
+      }
+      .nav-toggle {
+        z-index: 99999 !important;
+      }
     }
   </style>
 </head>
@@ -127,11 +185,11 @@
         <img src="assets/fbr-logo-1.png" alt="Federal Board of Revenue Pakistan" width="72" height="72" loading="lazy" />
       </div>
 
-      <h2 class="fbr-popup-title">FBR Compliance Deadline Alert</h2>
+      <h2 class="fbr-popup-title">FBR Digital Invoicing Is Now Mandatory</h2>
 
       <div class="fbr-popup-content">
         <p class="fbr-popup-headline">
-          <strong>Official FBR Notice:</strong> All sales tax-registered businesses must integrate with FBR's digital invoicing system by <span class="fbr-date">December 31, 2025</span>.
+          <strong>Official FBR Notice:</strong> As of <span class="fbr-date">December 31, 2025</span>, all sales tax-registered businesses must use FBR's digital invoicing system.
         </p>
 
         <div class="fbr-popup-warning">
@@ -139,24 +197,20 @@
           <p>Non-compliance will result in <strong>penalties, fines, and potential suspension</strong> of sales tax registration.</p>
         </div>
 
-        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 2px solid #22c55e; border-radius: 12px; padding: 16px; margin-top: 16px; text-align: center;">
-          <p style="margin: 0; color: #166534; font-weight: 600; font-size: 14px;">
-            ✓ We are an FBR-approved licensed integrator
-          </p>
-          <p style="margin: 4px 0 0; color: #15803d; font-size: 13px;">
-            Starting at just Rs 5,000/month
-          </p>
+        <div class="fbr-popup-info">
+          <p class="fbr-popup-info-title">✓ We are an FBR-approved licensed integrator</p>
+          <p class="fbr-popup-info-subtitle">Starting at just Rs 5,000/month</p>
         </div>
       </div>
 
-      <div class="fbr-popup-actions" style="margin-top: 24px;">
-        <a href="https://fbr.mydigitalinvoice.com/login" class="fbr-popup-cta" style="font-size: 18px; padding: 18px 32px; font-weight: 700; animation: pulse 2s infinite; box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);">
-          🚀 Get Compliant Now - Start Free Trial
+      <div class="fbr-popup-actions">
+        <a href="https://fbr.mydigitalinvoice.com/login" class="fbr-popup-cta">
+          Get Compliant Now
           <svg viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
           </svg>
         </a>
-        <button class="fbr-popup-dismiss" onclick="closeFBRPopup()" style="margin-top: 12px; opacity: 0.6;">
+        <button class="fbr-popup-dismiss" onclick="closeFBRPopup()">
           I'll do it later
         </button>
       </div>
@@ -170,7 +224,7 @@
         <div class="ribbon-marquee-content">
           <span class="ribbon-icon">🚨</span>
           <span class="ribbon-text">
-            <strong>FBR DEADLINE:</strong> All businesses must be digitally integrated by <strong>Dec 31, 2025</strong> — Non-compliance = Penalties &amp; Fines
+            <strong>FBR MANDATE:</strong> As of <strong>Dec 31, 2025</strong>, all businesses must use FBR digital invoicing — Non-compliance = Penalties &amp; Fines
           </span>
           <span class="ribbon-separator">•</span>
           <span class="ribbon-icon">⚠️</span>
@@ -187,7 +241,7 @@
         <div class="ribbon-marquee-content" aria-hidden="true">
           <span class="ribbon-icon">🚨</span>
           <span class="ribbon-text">
-            <strong>FBR DEADLINE:</strong> All businesses must be digitally integrated by <strong>Dec 31, 2025</strong> — Non-compliance = Penalties &amp; Fines
+            <strong>FBR MANDATE:</strong> As of <strong>Dec 31, 2025</strong>, all businesses must use FBR digital invoicing — Non-compliance = Penalties &amp; Fines
           </span>
           <span class="ribbon-separator">•</span>
           <span class="ribbon-icon">⚠️</span>
@@ -241,11 +295,15 @@
           <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <!-- Mobile nav actions -->
+          <li class="mobile-nav-actions">
+            <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-block">Login / Sign Up</a>
+          </li>
         </ul>
 
         <div class="nav-actions">
           <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-ghost">Login</a>
-          <a href="payments.html" class="btn btn-primary">
+          <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary">
             Get Started Free
             <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -253,9 +311,13 @@
           </a>
         </div>
 
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span class="hamburger"></span>
-        </button>
+        <!-- Mobile controls wrapper -->
+        <div class="mobile-controls">
+          <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary mobile-login-btn">Login</a>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="hamburger"></span>
+          </button>
+        </div>
       </nav>
     </div>
   </header>
@@ -284,7 +346,7 @@
             </h1>
 
             <p class="hero-description animate-fade-in-up delay-1">
-              FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR, get instant IRN (Invoice Reference Number) and QR codes. Pakistan's most affordable FBR digital invoicing solution - comply with SRO 709 before December 31, 2025 deadline. Starting Rs 5,000/month.
+              FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR, get instant IRN (Invoice Reference Number) and QR codes. Pakistan's most affordable FBR digital invoicing solution - as of December 31, 2025, FBR mandates digital invoicing for all businesses. Starting Rs 5,000/month.
             </p>
 
             <div class="hero-cta animate-fade-in-up delay-2">
@@ -556,8 +618,17 @@
           </p>
         </div>
 
-        <div class="comparison-table-wrapper">
-          <table class="comparison-table">
+        <!-- Mobile scroll hint -->
+        <div class="scroll-hint">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+          </svg>
+          <span>Swipe to see full comparison</span>
+        </div>
+
+        <div class="comparison-table-container">
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table">
             <thead>
               <tr>
                 <th>Feature</th>
@@ -605,6 +676,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </section>
@@ -665,8 +737,7 @@
               </li>
             </ul>
             <div class="pricing-buttons">
-              <a href="payments.html" class="btn btn-primary btn-block">Get Started</a>
-              <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-outline btn-block">Start Free Trial</a>
+              <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-block">Get Started</a>
             </div>
           </article>
 
@@ -712,8 +783,7 @@
               </li>
             </ul>
             <div class="pricing-buttons">
-              <a href="payments.html" class="btn btn-primary btn-block">Get Started</a>
-              <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-outline btn-block">Start Free Trial</a>
+              <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-block">Get Started</a>
             </div>
           </article>
         </div>
@@ -723,8 +793,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
           <div>
-            <strong>Deadline: December 31, 2025</strong>
-            <p>All sales tax-registered entities must be FBR compliant. Start today and avoid penalties.</p>
+            <strong>FBR Mandate: December 31, 2025</strong>
+            <p>As of December 31, 2025, FBR mandates digital invoicing for all sales tax-registered entities. Get compliant now and avoid penalties.</p>
           </div>
         </div>
       </div>
@@ -791,7 +861,7 @@
               <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
             </div>
             <blockquote class="testimonial-quote">
-              "With the December 2025 deadline approaching, we needed a quick solution. My Digital Invoice got us compliant in just one day. The IRN and QR codes are generated instantly."
+              "With the December 2025 FBR mandate, we needed a quick solution. My Digital Invoice got us compliant in just one day. The IRN and QR codes are generated instantly."
             </blockquote>
             <div class="testimonial-author">
               <div class="author-avatar">MI</div>
@@ -825,7 +895,7 @@
               </svg>
             </summary>
             <div class="faq-answer">
-              <p>FBR requires all sales tax-registered entities (manufacturers, importers, wholesalers, distributors, corporate and non-corporate persons) to generate digital invoices through FBR-approved software integrated with IRIS. Each invoice must include unique IRN (Invoice Reference Number), QR code, HS codes, and be submitted in real-time. The deadline for compliance is December 31, 2025.</p>
+              <p>FBR requires all sales tax-registered entities (manufacturers, importers, wholesalers, distributors, corporate and non-corporate persons) to generate digital invoices through FBR-approved software integrated with IRIS. Each invoice must include unique IRN (Invoice Reference Number), QR code, HS codes, and be submitted in real-time. As of December 31, 2025, FBR mandates digital invoicing for all businesses.</p>
             </div>
           </details>
 
@@ -873,7 +943,7 @@
               </svg>
             </summary>
             <div class="faq-answer">
-              <p>Non-compliance with FBR's digital invoicing requirements can result in penalties, fines, and issues with your tax filings. FBR has been strict about enforcement. Don't wait until the last minute - start your free trial today and get compliant before December 31, 2025.</p>
+              <p>Non-compliance with FBR's digital invoicing requirements can result in penalties, fines, and issues with your tax filings. FBR has been strict about enforcement. As of December 31, 2025, digital invoicing is mandatory - start your free trial today and get compliant now.</p>
             </div>
           </details>
 
@@ -900,7 +970,7 @@
       </div>
       <div class="container">
         <div class="cta-content">
-          <h2 id="cta-title" class="cta-title">Get FBR Compliant Before December 31, 2025</h2>
+          <h2 id="cta-title" class="cta-title">FBR Digital Invoicing Is Now Mandatory</h2>
           <p class="cta-description">Don't risk penalties. Join businesses already using My Digital Invoice for seamless FBR compliance at just Rs 5,000/month.</p>
           <div class="cta-actions">
             <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-white btn-lg">

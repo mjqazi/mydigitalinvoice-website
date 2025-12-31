@@ -245,4 +245,42 @@
     initTiltEffect();
   }
 
+  // ==========================================
+  // Comparison Table Scroll Indicator
+  // ==========================================
+  function initComparisonTableScroll() {
+    const tableContainer = document.querySelector('.comparison-table-container');
+    const tableWrapper = document.querySelector('.comparison-table-wrapper');
+    const scrollHint = document.querySelector('.scroll-hint');
+
+    if (tableWrapper && tableContainer) {
+      function checkScrollPosition() {
+        const scrollLeft = tableWrapper.scrollLeft;
+        const scrollWidth = tableWrapper.scrollWidth;
+        const clientWidth = tableWrapper.clientWidth;
+        const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 10;
+
+        if (isAtEnd) {
+          tableContainer.classList.add('scrolled-end');
+          if (scrollHint) {
+            scrollHint.style.display = 'none';
+          }
+        } else {
+          tableContainer.classList.remove('scrolled-end');
+        }
+      }
+
+      tableWrapper.addEventListener('scroll', checkScrollPosition);
+      window.addEventListener('resize', checkScrollPosition);
+      checkScrollPosition(); // Initial check
+    }
+  }
+
+  // Initialize comparison table scroll when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initComparisonTableScroll);
+  } else {
+    initComparisonTableScroll();
+  }
+
 })();
