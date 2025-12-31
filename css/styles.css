@@ -1646,7 +1646,7 @@ ul, ol {
     border-width: 2px;
     box-shadow: var(--shadow-glow);
     z-index: 1;
-    margin-top: 32px;
+    text-align: center;
 }
 
 .pricing-card.featured:hover {
@@ -1654,11 +1654,11 @@ ul, ol {
 }
 
 .popular-badge {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 14px 24px 14px 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    margin-bottom: 16px;
     background: var(--gradient-primary);
     color: white;
     font-size: 0.75rem;
@@ -1666,12 +1666,7 @@ ul, ol {
     border-radius: var(--radius-full);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     line-height: 1;
-    vertical-align: middle;
-    box-sizing: border-box;
 }
 
 .pricing-header {
@@ -3986,13 +3981,12 @@ a {
 
     .pricing-card.featured {
         order: -1;
-        margin-top: 30px;
     }
 
     .popular-badge {
         font-size: 0.65rem;
-        padding: 12px 18px 12px 18px;
-        top: -28px;
+        padding: 8px 18px;
+        margin-bottom: 12px;
     }
 
     .pricing-name {
