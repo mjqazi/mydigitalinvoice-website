@@ -44,8 +44,8 @@
     }
   };
 
-  // Show popup after 2 seconds
-  setTimeout(showFBRPopup, 2000);
+  // Show popup after 5 seconds (delayed to avoid affecting LCP metrics)
+  setTimeout(showFBRPopup, 5000);
 
   // Close popup when clicking overlay
   document.addEventListener('click', function(e) {

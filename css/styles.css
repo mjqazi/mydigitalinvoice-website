@@ -733,7 +733,7 @@ ul, ol {
 }
 
 .dash-card-trend.positive {
-    color: var(--success-600);
+    color: var(--success-700);
 }
 
 .dashboard-chart {
@@ -1285,7 +1285,7 @@ ul, ol {
 
 .x-badge {
     background: #fef2f2;
-    color: var(--red-500);
+    color: #b91c1c;
 }
 
 .neutral-badge {
@@ -1761,7 +1761,7 @@ ul, ol {
 }
 
 .footer-made {
-    color: var(--gray-500);
+    color: var(--gray-400);
     margin-top: var(--space-2);
 }
 
@@ -2787,7 +2787,7 @@ a {
 }
 
 .fbr-date {
-    color: #dc2626;
+    color: #991b1b;
     font-weight: 700;
     background: #fef2f2;
     padding: 0.125rem 0.5rem;
@@ -2887,7 +2887,7 @@ a {
     padding: 0.75rem;
     background: transparent;
     border: none;
-    color: #9ca3af;
+    color: #4b5563;
     font-size: 0.875rem;
     cursor: pointer;
     transition: color 0.2s ease;
