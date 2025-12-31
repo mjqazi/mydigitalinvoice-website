@@ -214,6 +214,49 @@
         height: 38px !important;
       }
     }
+
+    /* Dashboard Cards - Force horizontal layout on all screens */
+    .dashboard-cards {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 0.5rem !important;
+    }
+    @media (max-width: 640px) {
+      .dashboard-cards {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.4rem !important;
+      }
+      .dash-card {
+        padding: 0.4rem !important;
+      }
+      .dash-card-value {
+        font-size: 1rem !important;
+      }
+      .dash-card-label {
+        font-size: 0.6rem !important;
+      }
+      .dash-card-trend {
+        font-size: 0.55rem !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .dashboard-cards {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.35rem !important;
+      }
+      .dash-card {
+        padding: 0.35rem !important;
+      }
+      .dash-card-value {
+        font-size: 0.9rem !important;
+      }
+      .dash-card-label {
+        font-size: 0.55rem !important;
+      }
+      .dash-card-trend {
+        font-size: 0.5rem !important;
+      }
+    }
   </style>
 </head>
 <body>
