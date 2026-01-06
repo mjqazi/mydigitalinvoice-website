@@ -23,8 +23,8 @@
     }
   };
 
-  // Show popup after 5 seconds (delayed to avoid affecting LCP metrics)
-  setTimeout(showFBRPopup, 5000);
+  // Show popup immediately when page loads
+  showFBRPopup();
 
   // Close popup when clicking overlay
   document.addEventListener('click', function(e) {
