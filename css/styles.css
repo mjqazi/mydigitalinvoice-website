@@ -322,7 +322,7 @@ ul, ol {
 }
 
 .mobile-header-login {
-    display: none;
+    display: none !important;
 }
 
 /* Mobile Navigation - Horizontal Layout */
