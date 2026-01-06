@@ -7,27 +7,6 @@
   'use strict';
 
   // ==========================================
-  // Loading Screen
-  // ==========================================
-  function hideLoadingScreen() {
-    const loadingScreen = document.getElementById('loading-screen');
-    if (loadingScreen) {
-      loadingScreen.classList.add('hidden');
-      // Remove from DOM after animation
-      setTimeout(() => {
-        loadingScreen.remove();
-      }, 300);
-    }
-  }
-
-  // Hide loading screen when page is ready
-  if (document.readyState === 'complete') {
-    hideLoadingScreen();
-  } else {
-    window.addEventListener('load', hideLoadingScreen);
-  }
-
-  // ==========================================
   // FBR Popup
   // ==========================================
   function showFBRPopup() {
