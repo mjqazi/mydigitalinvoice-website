@@ -1225,6 +1225,8 @@ ul, ol {
 .features {
     padding: var(--space-24) 0;
     background: var(--gray-50);
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
 }
 
 .features-grid {
@@ -1239,6 +1241,7 @@ ul, ol {
     border-radius: var(--radius-xl);
     border: 1px solid var(--gray-100);
     transition: all var(--transition-base);
+    contain: layout style;
 }
 
 .feature-card:hover {
@@ -1355,6 +1358,8 @@ ul, ol {
 .how-it-works {
     padding: var(--space-24) 0;
     background: white;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
 }
 
 .steps-container {
@@ -1456,6 +1461,8 @@ ul, ol {
 .comparison {
     padding: var(--space-24) 0;
     background: var(--gray-50);
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
 }
 
 .comparison-table-wrapper {
@@ -1615,6 +1622,8 @@ ul, ol {
 .pricing {
     padding: var(--space-24) 0;
     background: white;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 700px;
 }
 
 .pricing-grid {
@@ -1634,6 +1643,7 @@ ul, ol {
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-2xl);
     transition: all var(--transition-base);
+    contain: layout style;
 }
 
 .pricing-card:hover {
@@ -1785,6 +1795,8 @@ ul, ol {
 .testimonials {
     padding: var(--space-24) 0;
     background: var(--gray-50);
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
 }
 
 .testimonials-grid {
@@ -1799,6 +1811,7 @@ ul, ol {
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-md);
     transition: all var(--transition-base);
+    contain: layout style;
 }
 
 .testimonial-card:hover {
@@ -1870,6 +1883,8 @@ ul, ol {
 .faq {
     padding: var(--space-24) 0;
     background: white;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
 }
 
 .faq-list {
@@ -1929,6 +1944,8 @@ ul, ol {
     position: relative;
     padding: var(--space-24) 0;
     overflow: hidden;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 400px;
 }
 
 .cta-bg {
@@ -1990,6 +2007,8 @@ ul, ol {
     background: var(--gray-900);
     color: var(--gray-300);
     padding: var(--space-20) 0 var(--space-8);
+    content-visibility: auto;
+    contain-intrinsic-size: auto 300px;
 }
 
 .footer-grid {

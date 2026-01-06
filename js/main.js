@@ -63,7 +63,7 @@
     }
   }
 
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // Check on initial load
 
   // ==========================================
@@ -249,8 +249,8 @@
         }
       }
 
-      tableWrapper.addEventListener('scroll', checkScrollPosition);
-      window.addEventListener('resize', checkScrollPosition);
+      tableWrapper.addEventListener('scroll', checkScrollPosition, { passive: true });
+      window.addEventListener('resize', checkScrollPosition, { passive: true });
       checkScrollPosition(); // Initial check
     }
   }
