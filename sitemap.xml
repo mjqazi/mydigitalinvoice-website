@@ -7,37 +7,37 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mydigitalinvoice.com/about.html</loc>
+    <loc>https://mydigitalinvoice.com/about</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mydigitalinvoice.com/contact.html</loc>
+    <loc>https://mydigitalinvoice.com/contact</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mydigitalinvoice.com/payments.html</loc>
+    <loc>https://mydigitalinvoice.com/payments</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mydigitalinvoice.com/privacy.html</loc>
+    <loc>https://mydigitalinvoice.com/privacy</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://mydigitalinvoice.com/terms.html</loc>
+    <loc>https://mydigitalinvoice.com/terms</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://mydigitalinvoice.com/cookies.html</loc>
+    <loc>https://mydigitalinvoice.com/cookies</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
