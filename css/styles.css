@@ -1804,73 +1804,52 @@ ul, ol {
 
 /* Folded Ribbon Style */
 .promo-ribbon {
-    position: absolute;
-    top: -6px;
-    right: 20px;
-    width: 70px;
-    background: linear-gradient(180deg, #dc2626 0%, #b91c1c 100%);
-    color: white;
-    padding: 14px 10px 18px;
-    text-align: center;
-    z-index: 10;
-    box-shadow: 0 5px 15px rgba(185, 28, 28, 0.4);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    background: linear-gradient(180deg, #dc2626 0%, #b91c1c 100%) !important;
+    color: white !important;
+    padding: 12px 16px 14px !important;
+    text-align: center !important;
+    z-index: 10 !important;
+    box-shadow: 0 5px 15px rgba(185, 28, 28, 0.4) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2px !important;
+    border-radius: 4px !important;
 }
 
-/* Ribbon fold effect - left side */
-.promo-ribbon::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -8px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 8px 8px 0;
-    border-color: transparent #7f1d1d transparent transparent;
-}
-
-/* Ribbon fold effect - right side */
+/* Ribbon bottom point */
 .promo-ribbon::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: -8px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 8px 8px 0 0;
-    border-color: #7f1d1d transparent transparent transparent;
-}
-
-/* Bottom arrow shape */
-.promo-ribbon .ribbon-off::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 35px 0 35px;
-    border-color: #b91c1c transparent transparent transparent;
+    content: '' !important;
+    position: absolute !important;
+    bottom: -10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-style: solid !important;
+    border-width: 10px 25px 0 25px !important;
+    border-color: #b91c1c transparent transparent transparent !important;
 }
 
 .ribbon-percent {
-    font-size: 1.5rem;
-    font-weight: 900;
-    line-height: 1;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    display: block !important;
 }
 
 .ribbon-off {
-    font-size: 0.875rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    position: relative;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+    color: white !important;
+    display: block !important;
 }
 
 .promo-badge {
@@ -1913,30 +1892,40 @@ ul, ol {
 }
 
 .promo-bonus {
-    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    border: 2px dashed #f59e0b;
-    border-radius: var(--radius-xl);
-    padding: var(--space-4);
-    margin-bottom: var(--space-6);
-    text-align: center;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important;
+    border: 2px dashed #f59e0b !important;
+    border-radius: var(--radius-xl) !important;
+    padding: var(--space-4) !important;
+    margin-bottom: var(--space-6) !important;
+    text-align: center !important;
 }
 
 .bonus-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-    color: white;
-    padding: 8px 20px;
-    border-radius: var(--radius-full);
-    font-weight: 800;
-    font-size: 1rem;
-    margin-bottom: var(--space-2);
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+    color: white !important;
+    padding: 8px 20px !important;
+    border-radius: 9999px !important;
+    font-weight: 800 !important;
+    font-size: 1rem !important;
+    margin-bottom: 8px !important;
 }
 
 .bonus-badge svg {
-    width: 20px;
-    height: 20px;
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    flex-shrink: 0 !important;
+}
+
+.promo-bonus svg {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
 }
 
 .bonus-text {
@@ -1976,23 +1965,22 @@ ul, ol {
     }
 
     .promo-ribbon {
-        top: -6px;
-        right: 15px;
-        width: 60px;
-        padding: 12px 8px 16px;
+        top: 10px !important;
+        right: 10px !important;
+        padding: 10px 14px 12px !important;
     }
 
     .ribbon-percent {
-        font-size: 1.25rem;
+        font-size: 1.25rem !important;
     }
 
     .ribbon-off {
-        font-size: 0.75rem;
+        font-size: 0.65rem !important;
     }
 
-    .promo-ribbon .ribbon-off::after {
-        border-width: 8px 30px 0 30px;
-        bottom: -8px;
+    .promo-ribbon::after {
+        border-width: 8px 20px 0 20px !important;
+        bottom: -8px !important;
     }
 
     .price-now .price {
