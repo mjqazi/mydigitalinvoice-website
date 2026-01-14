@@ -262,4 +262,34 @@
     initComparisonTableScroll();
   }
 
+  // ==========================================
+  // Floating Call Button - Periodic Expansion
+  // ==========================================
+  function initFloatingCallButton() {
+    const floatingCall = document.getElementById('floatingCall');
+    if (!floatingCall) return;
+
+    // Expand every 5 seconds, stay expanded for 3 seconds
+    function expandButton() {
+      floatingCall.classList.add('expanded');
+
+      setTimeout(function() {
+        floatingCall.classList.remove('expanded');
+      }, 3000); // Collapse after 3 seconds
+    }
+
+    // Initial expansion after 2 seconds
+    setTimeout(expandButton, 2000);
+
+    // Then expand every 8 seconds (5 sec collapsed + 3 sec expanded)
+    setInterval(expandButton, 8000);
+  }
+
+  // Initialize floating call button when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFloatingCallButton);
+  } else {
+    initFloatingCallButton();
+  }
+
 })();
