@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="4tIn63CfQZHIkKv0N44dmfcwzmzig4y1qplAvHfcew8" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P8GTPRJZ');</script>
+  <!-- End Google Tag Manager -->
+
+  <title>FAQ - My Digital Invoice | FBR Digital Invoicing Questions Answered</title>
+  <meta name="description" content="Frequently asked questions about FBR digital invoicing, IRIS integration, compliance requirements, pricing, and how My Digital Invoice helps Pakistani businesses stay compliant.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://connect.facebook.net">
+  <link rel="preconnect" href="https://www.facebook.com">
+  <link rel="dns-prefetch" href="https://snap.licdn.com">
+
+  <!-- Stylesheet -->
+  <link rel="preload" href="css/styles.css?v=3" as="style">
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <style>
+    .page-hero {
+      padding: 120px 0 60px;
+      background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+    }
+    .page-hero .section-header { margin-bottom: 0; }
+    .faq-page-content { padding: 60px 0 80px; }
+    .faq-page-content .faq { padding: 0; background: transparent; }
+    .faq-page-content .faq .section-header { display: none; }
+
+    /* FAQ Categories */
+    .faq-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      justify-content: center;
+    }
+    .faq-category-btn {
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--gray-200);
+      border-radius: 50px;
+      background: var(--white);
+      color: var(--gray-600);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .faq-category-btn:hover,
+    .faq-category-btn.active {
+      background: var(--primary-500);
+      color: white;
+      border-color: var(--primary-500);
+    }
+
+    /* Extended FAQ List */
+    .faq-section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin: 3rem 0 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--gray-200);
+    }
+    .faq-section-title:first-of-type {
+      margin-top: 0;
+    }
+
+    /* Still have questions section */
+    .still-questions {
+      background: var(--gray-50);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .still-questions h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+    }
+    .still-questions p {
+      color: var(--gray-600);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-options {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .contact-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 2rem;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      min-width: 200px;
+      transition: all 0.3s ease;
+    }
+    .contact-option:hover {
+      border-color: var(--primary-200);
+      box-shadow: 0 10px 40px rgba(0, 102, 204, 0.1);
+    }
+    .contact-option-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--primary-50);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-option-icon svg {
+      width: 28px;
+      height: 28px;
+      color: var(--primary-500);
+    }
+    .contact-option h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin: 0;
+    }
+    .contact-option a {
+      color: var(--primary-500);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .contact-option a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 100px 0 40px; }
+      .faq-page-content { padding: 40px 0 60px; }
+      .faq-categories { gap: 0.5rem; }
+      .faq-category-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+      .still-questions { padding: 40px 0; }
+      .still-questions h2 { font-size: 1.5rem; }
+      .contact-options { gap: 1rem; }
+      .contact-option { min-width: 150px; padding: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .page-hero { padding: 90px 0 30px; }
+      .contact-options { flex-direction: column; align-items: center; }
+      .contact-option { width: 100%; max-width: 280px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8GTPRJZ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/" class="logo" aria-label="My Digital Invoice - Home">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+            <path d="M12 14h16M12 20h12M12 26h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="28" cy="26" r="4" fill="#10B981"/>
+            <path d="M26 26l1.5 1.5L30 25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                <stop offset="0%" stop-color="#0066CC"/>
+                <stop offset="100%" stop-color="#0052A3"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="logo-text">My Digital Invoice</span>
+        </a>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="/features" class="nav-link">Features</a></li>
+          <li><a href="/how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="/pricing" class="nav-link">Pricing</a></li>
+          <li><a href="/faq" class="nav-link active">FAQ</a></li>
+          <li><a href="/contact" class="nav-link">Contact</a></li>
+          <li class="mobile-nav-actions">
+            <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-block">Login / Sign Up</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <a href="tel:+923336820820" class="nav-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            <span>+92 333 6820 820</span>
+          </a>
+          <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary">Login / Sign Up</a>
+        </div>
+        <div class="mobile-controls">
+          <a href="tel:+923336820820" class="mobile-phone-btn" aria-label="Call us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+          </a>
+          <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary mobile-login-btn">Login</a>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="hamburger"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">FAQ</span>
+          <h1 class="section-title">
+            Frequently Asked
+            <span class="gradient-text">Questions</span>
+          </h1>
+          <p class="section-description">
+            Everything you need to know about FBR digital invoicing and how My Digital Invoice helps you stay compliant.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <div class="faq-page-content">
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="faq-title" class="section-title">FAQ</h2>
+          </div>
+
+          <h3 class="faq-section-title">FBR Compliance</h3>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-question">
+                What is the FBR digital invoicing requirement?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>FBR requires all sales tax-registered entities (manufacturers, importers, wholesalers, distributors, corporate and non-corporate persons) to generate digital invoices through FBR-approved software integrated with IRIS. Each invoice must include unique IRN (Invoice Reference Number), QR code, HS codes, and be submitted in real-time. As of December 31, 2025, FBR mandates digital invoicing for all businesses.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Who needs to be FBR compliant?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>All sales tax-registered entities must comply, including: manufacturers, importers, wholesalers, distributors, retailers, service providers, and any business paying sales tax to FBR. If you have an NTN and are registered for sales tax, you need FBR-compliant digital invoicing.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                What happens if I miss the deadline?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Non-compliance with FBR's digital invoicing requirements can result in penalties, fines, and issues with your tax filings. FBR has been strict about enforcement. As of December 31, 2025, digital invoicing is mandatory - start your free trial today and get compliant now.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                What is an IRN (Invoice Reference Number)?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>An IRN (Invoice Reference Number) is a unique identifier assigned by FBR's IRIS system to every invoice submitted. It serves as proof that your invoice has been registered with FBR and is essential for claiming input tax credits. Every compliant invoice must have an IRN.</p>
+              </div>
+            </details>
+          </div>
+
+          <h3 class="faq-section-title">How It Works</h3>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-question">
+                How does auto-submission to FBR work?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>When you create an invoice in My Digital Invoice, our system automatically submits it to FBR's IRIS system via our licensed integrator. You instantly receive the unique IRN and QR code. All invoices are submitted in real-time (within 24 hours as required by FBR), ensuring you never miss a submission.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                What is the QR code on invoices for?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>The QR code on each invoice contains a link to FBR's verification system. Anyone can scan this QR code to verify the authenticity of the invoice directly with FBR. This is a mandatory requirement for all FBR-compliant invoices and helps prevent tax fraud.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Do I need technical knowledge to use the system?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>No technical knowledge is required. Our system is designed to be user-friendly with an intuitive interface. If you can use basic computer applications, you can use My Digital Invoice. We also provide onboarding support to help you get started.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Can I import my existing customer and product data?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes, you can import your existing customer data, product catalog, and HS codes via Excel/CSV files. Our support team can help you with the initial data migration to get you up and running quickly.</p>
+              </div>
+            </details>
+          </div>
+
+          <h3 class="faq-section-title">Pricing & Plans</h3>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-question">
+                What are the subscription prices?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p><strong>January Special:</strong> Our Business Plan is now just Rs 3,000/month (normally Rs 5,000) - that's 40% OFF! Plus, register now and get 2 months FREE. The plan includes 5 users, 500 MB storage, and full FBR integration with auto-submission. Compare this to other solutions charging Rs 50,000-200,000/month!</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Can I try the system before subscribing?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes! We offer a free trial so you can explore all features before subscribing. Test the FBR integration, create sample invoices, and see how easy compliance can be. No credit card required to start.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Are there any setup or hidden fees?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>No hidden fees. The monthly subscription covers everything - FBR integration, unlimited invoices, cloud storage, and email support. There are no setup fees, per-invoice charges, or surprise costs.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                What payment methods do you accept?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>We accept bank transfers, JazzCash, EasyPaisa, and credit/debit cards. You can choose monthly or annual billing (with additional discount for annual plans).</p>
+              </div>
+            </details>
+          </div>
+
+          <h3 class="faq-section-title">Technical & Support</h3>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-question">
+                Is my data secure?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes, we take data security seriously. All data is encrypted in transit and at rest. We use secure cloud infrastructure with regular backups. Your business data is never shared with third parties except for the mandatory submission to FBR.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                What kind of support do you provide?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>We provide email support for all customers. Our team typically responds within 24 hours on business days. We also offer onboarding assistance to help you set up your account and import your data.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Can multiple users access the same account?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes, our Business Plan includes up to 5 user accounts. Each user can have their own login with role-based permissions. All activity is logged for audit purposes.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Does it work on mobile devices?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes, My Digital Invoice is a web-based application that works on any device with a modern web browser - desktop, laptop, tablet, or smartphone. No app installation required.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Still Have Questions -->
+    <section class="still-questions">
+      <div class="container">
+        <h2>Still Have Questions?</h2>
+        <p>Can't find the answer you're looking for? Our team is here to help.</p>
+        <div class="contact-options">
+          <div class="contact-option">
+            <div class="contact-option-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+            </div>
+            <h4>Call Us</h4>
+            <a href="tel:+923336820820">+92 333 6820 820</a>
+          </div>
+          <div class="contact-option">
+            <div class="contact-option-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h4>Email Us</h4>
+            <a href="mailto:info@mydigitalinvoice.com">info@mydigitalinvoice.com</a>
+          </div>
+          <div class="contact-option">
+            <div class="contact-option-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+            </div>
+            <h4>Contact Form</h4>
+            <a href="/contact">Send a Message</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="cta-bg">
+        <div class="cta-gradient"></div>
+      </div>
+      <div class="container">
+        <div class="cta-content">
+          <h2 id="cta-title" class="cta-title">Ready to Get Compliant?</h2>
+          <p class="cta-description">Join thousands of Pakistani businesses using My Digital Invoice for FBR compliance.</p>
+          <div class="cta-actions">
+            <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-white btn-lg">
+              Start Free Trial
+              <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+            <a href="/pricing" class="btn btn-outline-white btn-lg">View Pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">
+            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)"/>
+              <path d="M12 14h16M12 20h12M12 26h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="28" cy="26" r="4" fill="#10B981"/>
+              <path d="M26 26l1.5 1.5L30 25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                  <stop offset="0%" stop-color="#0066CC"/>
+                  <stop offset="100%" stop-color="#0052A3"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>My Digital Invoice</span>
+          </a>
+          <p class="footer-tagline">FBR-integrated digital invoicing solution for Pakistani businesses. Stay compliant, avoid penalties.</p>
+          <div class="footer-contact">
+            <p><a href="tel:+923336820820">+92 333 6820 820</a></p>
+            <p><a href="mailto:info@mydigitalinvoice.com">info@mydigitalinvoice.com</a></p>
+          </div>
+        </div>
+        <nav class="footer-nav" aria-label="Product">
+          <p class="footer-nav-title">Product</p>
+          <ul>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/faq">FAQ</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Company">
+          <p class="footer-nav-title">Company</p>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Legal">
+          <p class="footer-nav-title">Legal</p>
+          <ul>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2025</span> My Digital Invoice. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Call Button -->
+  <a href="tel:+923336820820" class="floating-call" id="floatingCall">
+    <span class="floating-call-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+      </svg>
+    </span>
+    <span class="floating-call-text">+92 333 6820 820</span>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
