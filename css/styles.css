@@ -4100,7 +4100,39 @@ a {
     margin: 4px 0 0;
     color: #047857;
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.fbr-popup-info-subtitle strong {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* Popup Bonus Section */
+.fbr-popup-bonus {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 2px dashed #f59e0b;
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.fbr-popup-bonus-title {
+    margin: 0;
+    color: #92400e;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.fbr-popup-bonus-text {
+    margin: 6px 0 0;
+    color: #78350f;
+    font-weight: 600;
+    font-size: 0.85rem;
 }
 
 /* Mobile popup fixes */
