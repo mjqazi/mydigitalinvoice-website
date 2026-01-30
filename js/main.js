@@ -7,33 +7,6 @@
   'use strict';
 
   // ==========================================
-  // FBR Popup
-  // ==========================================
-  function showFBRPopup() {
-    const popup = document.getElementById('fbr-popup');
-    if (popup) {
-      popup.style.display = 'flex';
-    }
-  }
-
-  window.closeFBRPopup = function() {
-    const popup = document.getElementById('fbr-popup');
-    if (popup) {
-      popup.style.display = 'none';
-    }
-  };
-
-  // Show popup immediately when page loads
-  showFBRPopup();
-
-  // Close popup when clicking overlay
-  document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('fbr-popup-overlay')) {
-      closeFBRPopup();
-    }
-  });
-
-  // ==========================================
   // Navigation Toggle (Mobile)
   // ==========================================
   const navToggle = document.getElementById('nav-toggle');
@@ -163,15 +136,6 @@
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
-
-  // ==========================================
-  // Escape Key to Close Popup
-  // ==========================================
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closeFBRPopup();
-    }
-  });
 
   // ==========================================
   // 3D Tilt Effect for Pricing Cards
