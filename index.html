@@ -14,7 +14,7 @@
   <!-- End Google Tag Manager -->
 
   <title>My Digital Invoice - FBR Digital Invoicing Software Pakistan | IRIS Integration</title>
-  <meta name="description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR, get instant IRN and QR codes. Pakistan's most affordable FBR digital invoicing solution - as of December 31, 2025, FBR mandates digital invoicing for all businesses. Starting Rs 5,000/month.">
+  <meta name="description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR, get instant IRN and QR codes. Pakistan's most affordable FBR digital invoicing solution. Get 2 months FREE - no credit card required. Plans starting Rs 1,000/month.">
   <meta name="keywords" content="FBR digital invoicing, IRIS integration, Pakistan e-invoicing, sales tax software, IRN generation, QR code invoice, SRO 709 compliance, FBR compliant software">
   <meta name="author" content="My Digital Invoice">
 
@@ -22,14 +22,58 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mydigitalinvoice.pk/">
   <meta property="og:title" content="My Digital Invoice - FBR Digital Invoicing Software Pakistan">
-  <meta property="og:description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR. Starting Rs 5,000/month.">
+  <meta property="og:description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR. Get 2 months FREE - no credit card required. Plans starting Rs 1,000/month.">
   <meta property="og:image" content="https://mydigitalinvoice.pk/assets/og-image.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://mydigitalinvoice.pk/">
   <meta property="twitter:title" content="My Digital Invoice - FBR Digital Invoicing Software Pakistan">
-  <meta property="twitter:description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR. Starting Rs 5,000/month.">
+  <meta property="twitter:description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR. Get 2 months FREE - no credit card required. Plans starting Rs 1,000/month.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://mydigitalinvoice.pk/">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "My Digital Invoice",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "FBR-approved e-invoicing software with IRIS integration for Pakistani businesses. Auto-submit invoices to FBR, get instant IRN and QR codes.",
+    "url": "https://mydigitalinvoice.pk",
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "1500",
+      "highPrice": "7500",
+      "priceCurrency": "PKR",
+      "offerCount": "3"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "My Digital Invoice",
+      "url": "https://mydigitalinvoice.pk",
+      "logo": "https://mydigitalinvoice.pk/favicon.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+92-333-6820820",
+        "contactType": "sales",
+        "availableLanguage": ["English", "Urdu"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PK"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "500"
+    }
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -43,12 +87,15 @@
   <link rel="preconnect" href="https://www.facebook.com">
   <link rel="dns-prefetch" href="https://snap.licdn.com">
 
-  <!-- Stylesheet with preload -->
-  <link rel="preload" href="css/styles.css?v=5" as="style">
+  <!-- Stylesheet with preload (high priority for above-the-fold content) -->
+  <link rel="preload" href="css/styles.css?v=5" as="style" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css?v=5">
 
-  <!-- Preload main JavaScript -->
-  <link rel="preload" href="js/main.js" as="script">
+  <!-- Preload hero section logo for faster LCP -->
+  <link rel="preload" href="assets/fbr-logo-1.png" as="image" fetchpriority="high">
+
+  <!-- Preload main JavaScript (low priority - non-blocking) -->
+  <link rel="preload" href="js/main.js" as="script" fetchpriority="low">
 
   <style>
     /* Global mobile viewport fix */
@@ -376,7 +423,7 @@
           <li><a href="/pricing" class="nav-link">Pricing</a></li>
           <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
           <li><a href="/faq" class="nav-link">FAQ</a></li>
-          <li><a href="/contact" class="nav-link">Contact</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
           <!-- Mobile nav actions -->
           <li class="mobile-nav-actions">
             <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-block">Login / Sign Up</a>
@@ -481,16 +528,16 @@
             </ul>
 
             <div class="hero-cta animate-fade-in-up delay-3">
-              <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-cta-primary btn-lg">
+              <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-cta-primary btn-lg cta-pulse">
                 <svg class="btn-icon-left" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
-                Get FBR Compliant Now
+                Start 60-Day Free Trial
                 <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
                 </svg>
               </a>
-              <a href="/contact" class="btn btn-cta-secondary btn-lg">
+              <a href="/contact.html" class="btn btn-cta-secondary btn-lg">
                 <svg class="btn-icon-left" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
                   <rect x="3" y="4" width="14" height="12" rx="2"/>
                   <path d="M3 8h14M7 4v4M13 4v4"/>
@@ -498,6 +545,7 @@
                 Book a Free Compliance Call
               </a>
             </div>
+            <p class="hero-cta-note animate-fade-in-up delay-3">No credit card required. Cancel anytime. Setup in under 24 hours.</p>
           </div>
 
           <div class="hero-visual animate-fade-in-left delay-2">
@@ -594,17 +642,41 @@
         </div>
       </div>
 
+      <!-- Social Proof Stats -->
+      <div class="social-proof-stats">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Businesses Trust Us</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">50,000+</span>
+              <span class="stat-label">Invoices Submitted to FBR</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">FBR Compliance Rate</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Local Support Available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Trusted By -->
       <div class="trusted-by">
         <div class="container">
           <p class="trusted-label">Officially Integrated With</p>
           <div class="trusted-logos-wrapper">
             <div class="trusted-logos">
-              <div class="logo-item"><img src="assets/fbr-logo-1.png" alt="FBR Pakistan" width="72" height="72" loading="lazy" decoding="async" /></div>
-              <div class="logo-item"><img src="assets/logo.png" alt="IRIS" width="72" height="40" loading="lazy" decoding="async" /></div>
-              <div class="logo-item"><img src="assets/DI_logo_I_New.png" alt="Digital Invoicing" width="144" height="40" loading="lazy" decoding="async" /></div>
-              <div class="logo-item"><img src="assets/swaps_approved_light_bg (1).png" alt="SWAPS" width="72" height="40" loading="lazy" decoding="async" /></div>
-              <div class="logo-item"><img src="assets/LI_DI_logo_Final.png" alt="License Integrator" width="129" height="40" loading="lazy" decoding="async" /></div>
+              <div class="logo-item"><img src="assets/fbr-logo-1.png" alt="FBR Pakistan" width="72" height="72" loading="eager" decoding="async" fetchpriority="high" /></div>
+              <div class="logo-item"><img src="assets/logo.png" alt="IRIS" width="72" height="40" loading="eager" decoding="async" /></div>
+              <div class="logo-item"><img src="assets/DI_logo_I_New.png" alt="Digital Invoicing" width="144" height="40" loading="eager" decoding="async" /></div>
+              <div class="logo-item"><img src="assets/swaps_approved_light_bg (1).png" alt="SWAPS" width="72" height="40" loading="eager" decoding="async" /></div>
+              <div class="logo-item"><img src="assets/LI_DI_logo_Final.png" alt="License Integrator" width="129" height="40" loading="eager" decoding="async" /></div>
               <div class="logo-item"><img src="assets/fbr-logo-1.png" alt="FBR Pakistan" width="72" height="72" loading="lazy" decoding="async" /></div>
               <div class="logo-item"><img src="assets/logo.png" alt="IRIS" width="72" height="40" loading="lazy" decoding="async" /></div>
               <div class="logo-item"><img src="assets/DI_logo_I_New.png" alt="Digital Invoicing" width="144" height="40" loading="lazy" decoding="async" /></div>
@@ -803,7 +875,7 @@
               <tr>
                 <td>Monthly Pricing</td>
                 <td class="highlight-col">
-                  <span class="check-badge">Rs 2,500 (Jan Sale!)</span>
+                  <span class="check-badge">From Rs 1,000/mo</span>
                 </td>
                 <td><span class="x-badge">Rs 50K-200K/month</span></td>
               </tr>
@@ -841,87 +913,267 @@
         <div class="section-header">
           <span class="section-badge">Pricing</span>
           <h2 id="pricing-title" class="section-title">
-            <span class="gradient-text">January Special Offer</span>
+            Affordable Monthly
+            <span class="gradient-text">Subscription Plans</span>
           </h2>
-          <p class="section-description promo-headline">
-            Start Now, Pay Later - Get 2 Months FREE!
-          </p>
           <p class="section-description">
-            Limited time offer. Lock in your discounted rate before it's gone!
+            Get FBR-compliant invoicing at a fraction of the cost of other solutions. Cancel anytime.
           </p>
         </div>
 
-        <div class="pricing-grid pricing-single">
-          <article class="pricing-card featured promo-card">
-            <div class="promo-ribbon">
-              <span class="ribbon-percent">50%</span>
-              <span class="ribbon-off">OFF</span>
+        <!-- Free Trial Banner -->
+        <div class="promo-banner">
+          <div class="promo-banner-content">
+            <div class="promo-banner-icon">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm2.5 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6.207.293a1 1 0 00-1.414 0l-6 6a1 1 0 101.414 1.414l6-6a1 1 0 000-1.414zM12.5 10a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" clip-rule="evenodd"/></svg>
             </div>
-            <div class="popular-badge promo-badge">January Sale - Limited Time!</div>
-            <div class="pricing-header">
-              <h3 class="pricing-name">Business Plan</h3>
-              <p class="pricing-description">Everything you need for FBR compliance</p>
+            <div class="promo-banner-text">
+              <strong>Join Now &amp; Get 2 Months FREE!</strong>
+              <span>No credit card required. No commitment. Start using immediately!</span>
             </div>
-            <div class="pricing-amount">
-              <div class="price-was">
-                <span class="currency-old">Rs</span>
-                <span class="price-old">5,000</span>
-                <span class="period-old">/month</span>
-              </div>
-              <div class="price-now">
-                <span class="currency">Rs</span>
-                <span class="price">2,500</span>
-                <span class="period">/month</span>
-              </div>
-            </div>
-            <div class="promo-bonus">
-              <div class="bonus-badge">
-                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm2.5 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6.207.293a1 1 0 00-1.414 0l-6 6a1 1 0 101.414 1.414l6-6a1 1 0 000-1.414zM12.5 10a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" clip-rule="evenodd"/></svg>
-                2 MONTHS FREE
-              </div>
-              <p class="bonus-text">Register now and get 2 months free - start using immediately!</p>
-            </div>
-            <ul class="pricing-features">
-              <li>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Up to 5 users
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                500 MB storage
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                FBR Integration &amp; Auto-Submit
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                IRN &amp; QR Code Generation
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Net Metering Module
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Equipment Catalog
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Email Support
-              </li>
-            </ul>
-            <div class="pricing-buttons">
-              <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-block btn-lg pulse-btn">
-                Claim Your Discount Now
-                <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                </svg>
-              </a>
-            </div>
-            <p class="pricing-urgency">Only valid for January registrations</p>
-          </article>
+            <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-white btn-sm">
+              Start Free Trial
+              <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </div>
         </div>
+
+        <!-- Mobile Pricing Accordion (shown on mobile only) -->
+        <div class="mobile-pricing-accordion">
+          <!-- Starter Tier (FREE) -->
+          <div class="pricing-tier" data-tier="starter">
+            <div class="pricing-tier-header" onclick="togglePricingTier(this)">
+              <div class="pricing-tier-info">
+                <div class="pricing-tier-name">
+                  Starter
+                  <span class="pricing-tier-badge starter">Free</span>
+                </div>
+                <div class="pricing-tier-tagline">Up to 5 invoices/month</div>
+              </div>
+              <div class="pricing-tier-price">
+                <div class="pricing-tier-amount">FREE</div>
+                <span class="pricing-tier-period">Rs 0/month</span>
+              </div>
+              <div class="pricing-tier-expand">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+            </div>
+            <div class="pricing-tier-details">
+              <div class="pricing-tier-features">
+                <ul>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 5 Invoices/month</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 200 MB Storage</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> FBR Integration</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Email Support</li>
+                  <li><svg class="feature-icon x" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg> No API Access</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Business Tier (Most Popular) -->
+          <div class="pricing-tier popular active" data-tier="business">
+            <div class="pricing-tier-header" onclick="togglePricingTier(this)">
+              <div class="pricing-tier-info">
+                <div class="pricing-tier-name">
+                  Business
+                  <span class="pricing-tier-badge popular">Most Popular</span>
+                </div>
+                <div class="pricing-tier-tagline">5-20 invoices/month</div>
+              </div>
+              <div class="pricing-tier-price">
+                <div class="pricing-tier-amount">Rs 1,000</div>
+                <span class="pricing-tier-period">/month</span>
+              </div>
+              <div class="pricing-tier-expand">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+            </div>
+            <div class="pricing-tier-details">
+              <div class="pricing-tier-features">
+                <ul>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 5-20 Invoices/month</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 500 MB Storage</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> FBR Integration</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Email Support</li>
+                  <li><svg class="feature-icon x" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg> No API Access</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enterprise Tier -->
+          <div class="pricing-tier" data-tier="enterprise">
+            <div class="pricing-tier-header" onclick="togglePricingTier(this)">
+              <div class="pricing-tier-info">
+                <div class="pricing-tier-name">
+                  Enterprise
+                  <span class="pricing-tier-badge enterprise">Scale</span>
+                </div>
+                <div class="pricing-tier-tagline">20-100 invoices/month</div>
+              </div>
+              <div class="pricing-tier-price">
+                <div class="pricing-tier-amount">Rs 2,000</div>
+                <span class="pricing-tier-period">/month</span>
+              </div>
+              <div class="pricing-tier-expand">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+            </div>
+            <div class="pricing-tier-details">
+              <div class="pricing-tier-features">
+                <ul>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 20-100 Invoices/month</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 2 GB Storage</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> FBR Integration</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Priority Support</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> API Access</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Custom Tier -->
+          <div class="pricing-tier" data-tier="custom">
+            <div class="pricing-tier-header" onclick="togglePricingTier(this)">
+              <div class="pricing-tier-info">
+                <div class="pricing-tier-name">
+                  Custom
+                  <span class="pricing-tier-badge custom">Unlimited</span>
+                </div>
+                <div class="pricing-tier-tagline">Unlimited invoices/month</div>
+              </div>
+              <div class="pricing-tier-price">
+                <div class="pricing-tier-amount">Contact</div>
+                <span class="pricing-tier-period">for quote</span>
+              </div>
+              <div class="pricing-tier-expand">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+            </div>
+            <div class="pricing-tier-details">
+              <div class="pricing-tier-features">
+                <ul>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> <strong>Unlimited Invoices</strong></li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Unlimited Storage</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> FBR Integration</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Dedicated Support</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Custom Reports</li>
+                  <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> API + QuickBooks</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer with CTA -->
+          <div class="pricing-accordion-footer">
+            <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary">
+              Start Free 60-Day Trial
+              <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+            <p class="pricing-accordion-note">No credit card required. Cancel anytime.</p>
+          </div>
+        </div>
+
+        <!-- Pricing Comparison Table (hidden on mobile) -->
+        <div class="comparison-table-container desktop-only">
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table pricing-comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Starter</th>
+                  <th class="highlight-col">
+                    <div class="table-logo">Business</div>
+                    <span class="table-popular-badge">Most Popular</span>
+                  </th>
+                  <th>Enterprise</th>
+                  <th>Custom</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Price</td>
+                  <td><strong>FREE</strong></td>
+                  <td class="highlight-col"><strong>Rs 1,000</strong>/mo</td>
+                  <td><strong>Rs 2,000</strong>/mo</td>
+                  <td><strong>Contact Us</strong></td>
+                </tr>
+                <tr>
+                  <td>Invoices/Month</td>
+                  <td>5</td>
+                  <td class="highlight-col">5-20</td>
+                  <td>20-100</td>
+                  <td>Unlimited</td>
+                </tr>
+                <tr>
+                  <td>Storage</td>
+                  <td>200 MB</td>
+                  <td class="highlight-col">500 MB</td>
+                  <td>2 GB</td>
+                  <td>Unlimited</td>
+                </tr>
+                <tr>
+                  <td>FBR Integration</td>
+                  <td><span class="check-badge">Yes</span></td>
+                  <td class="highlight-col"><span class="check-badge">Yes</span></td>
+                  <td><span class="check-badge">Yes</span></td>
+                  <td><span class="check-badge">Yes</span></td>
+                </tr>
+                <tr>
+                  <td>Support</td>
+                  <td>Email</td>
+                  <td class="highlight-col">Email + Phone</td>
+                  <td><span class="check-badge">Priority</span></td>
+                  <td><span class="check-badge">Dedicated</span></td>
+                </tr>
+                <tr>
+                  <td>Reports</td>
+                  <td>Basic</td>
+                  <td class="highlight-col">Advanced</td>
+                  <td>Custom</td>
+                  <td>Custom</td>
+                </tr>
+                <tr>
+                  <td>API Access</td>
+                  <td><span class="x-badge">No</span></td>
+                  <td class="highlight-col"><span class="x-badge">No</span></td>
+                  <td><span class="check-badge">Yes</span></td>
+                  <td><span class="check-badge">Yes + QB</span></td>
+                </tr>
+                <tr class="pricing-cta-row">
+                  <td></td>
+                  <td>
+                    <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-outline btn-sm btn-block">Try Free 60 Days</a>
+                  </td>
+                  <td class="highlight-col">
+                    <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-sm btn-block cta-pulse">Try Free 60 Days</a>
+                  </td>
+                  <td>
+                    <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-outline btn-sm btn-block">Try Free 60 Days</a>
+                  </td>
+                  <td>
+                    <a href="/contact.html" class="btn btn-outline btn-sm btn-block">Get Custom Quote</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="pricing-note">All plans include: IRN &amp; QR Code Generation, Equipment Catalog, Buyer/Seller Registry, HS Code Management</p>
 
         <div class="pricing-guarantee">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -976,7 +1228,7 @@
               <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
             </div>
             <blockquote class="testimonial-quote">
-              "Rs 5,000/month for full FBR compliance is unbeatable. Other solutions quoted us Rs 50,000+ monthly. My Digital Invoice saved our business."
+              "Rs 2,000/month for full FBR compliance is unbeatable. Other solutions quoted us Rs 50,000+ monthly. My Digital Invoice saved our business."
             </blockquote>
             <div class="testimonial-author">
               <div class="author-avatar">SR</div>
@@ -1054,7 +1306,7 @@
               </svg>
             </summary>
             <div class="faq-answer">
-              <p><strong>January Special:</strong> Our Business Plan is now just Rs 2,500/month (normally Rs 5,000) - that's 50% OFF! Plus, register now and get 2 months FREE with no setup fee. The plan includes 5 users, 500 MB storage, and full FBR integration with auto-submission. Compare this to other solutions charging Rs 50,000-200,000/month!</p>
+              <p>We offer four plans to suit businesses of all sizes: <strong>Starter</strong> (FREE - 5 invoices/mo), <strong>Business</strong> (Rs 1,000/mo - most popular), <strong>Enterprise</strong> (Rs 2,000/mo), and <strong>Custom</strong> plans with QuickBooks integration. Join now and get <strong>2 months FREE</strong> - no credit card required, no commitment! All plans include full FBR integration with auto-submission. Compare this to other solutions charging Rs 50,000-200,000/month!</p>
             </div>
           </details>
 
@@ -1106,7 +1358,7 @@
       <div class="container">
         <div class="cta-content">
           <h2 id="cta-title" class="cta-title">FBR Digital Invoicing Is Now Mandatory</h2>
-          <p class="cta-description">Don't risk penalties. Join businesses already using My Digital Invoice for seamless FBR compliance at just <strong>Rs 2,500/month</strong> - January Special with 2 months FREE!</p>
+          <p class="cta-description">Don't risk penalties. Join businesses already using My Digital Invoice for seamless FBR compliance. Plans from <strong>Rs 1,000/month</strong> - Get 2 months FREE, no credit card required!</p>
           <div class="cta-actions">
             <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-white btn-lg">
               Start Free Trial
@@ -1163,7 +1415,7 @@
           <p class="footer-nav-title">Company</p>
           <ul>
             <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
         </nav>
 

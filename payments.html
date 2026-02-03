@@ -354,6 +354,9 @@
   </style>
 </head>
 <body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8GTPRJZ"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -384,7 +387,7 @@
           <li><a href="/pricing" class="nav-link">Pricing</a></li>
           <li><a href="/#testimonials" class="nav-link">Testimonials</a></li>
           <li><a href="/faq" class="nav-link">FAQ</a></li>
-          <li><a href="/contact" class="nav-link">Contact</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
           <li class="mobile-nav-actions">
             <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-block">Login / Sign Up</a>
           </li>
@@ -458,12 +461,20 @@
           <div class="pricing-reminder">
             <h3>Subscription Plans</h3>
             <div class="pricing-reminder-item">
-              <span>Basic Plan</span>
-              <span>Rs 5,000/month</span>
+              <span>Starter Plan</span>
+              <span>FREE (5 invoices/mo)</span>
             </div>
             <div class="pricing-reminder-item">
-              <span>Pro Plan</span>
-              <span>Rs 10,000/month</span>
+              <span>Business Plan</span>
+              <span>Rs 1,000/month</span>
+            </div>
+            <div class="pricing-reminder-item">
+              <span>Enterprise Plan</span>
+              <span>Rs 2,000/month</span>
+            </div>
+            <div class="pricing-reminder-item">
+              <span>Custom Plan</span>
+              <span>Contact Sales</span>
             </div>
           </div>
 
@@ -523,8 +534,10 @@
               <label for="plan">Select Plan <span style="color: #dc2626;">*</span></label>
               <select id="plan" name="plan" required>
                 <option value="">Choose your plan</option>
-                <option value="Basic Plan - Rs 5,000/month">Basic Plan - Rs 5,000/month</option>
-                <option value="Pro Plan - Rs 10,000/month">Pro Plan - Rs 10,000/month</option>
+                <option value="Starter Plan - FREE">Starter Plan - FREE (5 invoices/mo)</option>
+                <option value="Business Plan - Rs 1,000/month">Business Plan - Rs 1,000/month (Most Popular)</option>
+                <option value="Enterprise Plan - Rs 2,000/month">Enterprise Plan - Rs 2,000/month</option>
+                <option value="Custom Plan - Contact Sales">Custom Plan - Contact Sales</option>
               </select>
             </div>
 
@@ -601,7 +614,7 @@
           <p class="footer-nav-title">Company</p>
           <ul>
             <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
         </nav>
         <nav class="footer-nav" aria-label="Legal">

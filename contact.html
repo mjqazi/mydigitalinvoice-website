@@ -15,6 +15,24 @@
 
   <title>Contact Us - My Digital Invoice | FBR Digital Invoicing Software Pakistan</title>
   <meta name="description" content="Contact My Digital Invoice for FBR digital invoicing support, demos, and pricing inquiries. Get help becoming FBR compliant before the December 2025 deadline.">
+  <meta name="keywords" content="contact FBR invoicing support, digital invoice demo Pakistan, FBR compliance help, IRIS integration support">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://mydigitalinvoice.pk/contact">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mydigitalinvoice.pk/contact">
+  <meta property="og:title" content="Contact Us - My Digital Invoice | FBR Compliance Help">
+  <meta property="og:description" content="Get FBR digital invoicing support, demos, and pricing inquiries. Become FBR compliant before the deadline.">
+  <meta property="og:image" content="https://mydigitalinvoice.pk/assets/og-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://mydigitalinvoice.pk/contact">
+  <meta property="twitter:title" content="Contact Us - My Digital Invoice">
+  <meta property="twitter:description" content="Get FBR digital invoicing support and demos. Become compliant before the deadline.">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <!-- Preconnect to external domains -->
@@ -61,6 +79,8 @@
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
     .btn-submit { width: 100%; padding: 1rem; font-size: 1rem; font-weight: 600; color: white; background: linear-gradient(135deg, var(--primary-500), var(--primary-600)); border: none; border-radius: 12px; cursor: pointer; transition: all 0.3s ease; }
     .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4); }
+    .form-trust-note { margin-top: 1rem; font-size: 0.8125rem; color: var(--gray-500); text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+    .form-trust-note::before { content: ''; display: inline-block; width: 16px; height: 16px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2310b981'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'/%3E%3C/svg%3E") no-repeat center; flex-shrink: 0; }
     @media (max-width: 1023px) { .contact-grid { grid-template-columns: 1fr; gap: 2rem; } }
     @media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
 
@@ -91,6 +111,9 @@
   </style>
 </head>
 <body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8GTPRJZ"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -121,7 +144,7 @@
           <li><a href="/pricing" class="nav-link">Pricing</a></li>
           <li><a href="/#testimonials" class="nav-link">Testimonials</a></li>
           <li><a href="/faq" class="nav-link">FAQ</a></li>
-          <li><a href="/contact" class="nav-link active">Contact</a></li>
+          <li><a href="/contact.html" class="nav-link active">Contact</a></li>
           <li class="mobile-nav-actions">
             <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-block">Login / Sign Up</a>
           </li>
@@ -229,8 +252,8 @@
         </div>
 
         <div class="contact-form-card">
-          <h3 class="form-title">Send us a Message</h3>
-          <p class="form-subtitle">Fill out the form and we'll get back to you within 24 hours.</p>
+          <h3 class="form-title">Get a Free FBR Compliance Consultation</h3>
+          <p class="form-subtitle">Fill out the form and our team will contact you within 24 hours to discuss your FBR compliance needs.</p>
 
           <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
             <!-- Web3Forms configuration -->
@@ -276,7 +299,8 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" placeholder="How can we help you?"></textarea>
             </div>
-            <button type="submit" class="btn-submit">Send Message</button>
+            <button type="submit" class="btn-submit">Get Free Consultation</button>
+            <p class="form-trust-note">We respond to all inquiries within 24 hours. Your information is secure and never shared.</p>
           </form>
         </div>
       </div>
@@ -354,7 +378,7 @@
           <p class="footer-nav-title">Company</p>
           <ul>
             <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
         </nav>
         <nav class="footer-nav" aria-label="Legal">

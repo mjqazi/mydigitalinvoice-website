@@ -257,3 +257,28 @@
   }
 
 })();
+
+// ==========================================
+// Mobile Pricing Tier Toggle (Global function)
+// ==========================================
+function togglePricingTier(header) {
+  const tier = header.closest('.pricing-tier');
+  if (!tier) return;
+
+  const isActive = tier.classList.contains('active');
+
+  // If clicking on already active tier, just close it
+  if (isActive) {
+    tier.classList.remove('active');
+    return;
+  }
+
+  // Close all other tiers (accordion behavior)
+  const allTiers = document.querySelectorAll('.pricing-tier');
+  allTiers.forEach(function(t) {
+    t.classList.remove('active');
+  });
+
+  // Open clicked tier
+  tier.classList.add('active');
+}
