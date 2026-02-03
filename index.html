@@ -88,8 +88,8 @@
   <link rel="dns-prefetch" href="https://snap.licdn.com">
 
   <!-- Stylesheet with preload (high priority for above-the-fold content) -->
-  <link rel="preload" href="css/styles.css?v=5" as="style" fetchpriority="high">
-  <link rel="stylesheet" href="css/styles.css?v=5">
+  <link rel="preload" href="css/styles.css?v=6" as="style" fetchpriority="high">
+  <link rel="stylesheet" href="css/styles.css?v=6">
 
   <!-- Preload hero section logo for faster LCP -->
   <link rel="preload" href="assets/fbr-logo-1.png" as="image" fetchpriority="high">
@@ -385,6 +385,353 @@
         border-width: 8px 20px 0 20px !important;
         bottom: -8px !important;
       }
+    }
+
+    /* ============================================
+       MOBILE PRICING ACCORDION - INLINE FALLBACK
+       Ensures pricing displays correctly even if
+       external CSS is truncated during deployment
+       ============================================ */
+
+    /* Hide mobile pricing on desktop, show table */
+    .mobile-pricing-accordion {
+        display: none;
+    }
+
+    .desktop-only {
+        display: block;
+    }
+
+    /* Mobile: Hide table, show accordion */
+    @media (max-width: 768px) {
+        .desktop-only {
+            display: none !important;
+        }
+
+        .mobile-pricing-accordion {
+            display: block;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 0 8px;
+        }
+
+        /* Tier Item */
+        .pricing-tier {
+            border-bottom: 1px solid #f3f4f6;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-tier:last-of-type {
+            border-bottom: none;
+        }
+
+        /* Tier Header (clickable) */
+        .pricing-tier-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-left: 4px solid transparent;
+            background: white;
+        }
+
+        .pricing-tier-header:hover {
+            background: #f9fafb;
+        }
+
+        /* Selected/Active state */
+        .pricing-tier.active .pricing-tier-header {
+            border-left-color: #0066cc;
+            background: #e6f0ff;
+        }
+
+        .pricing-tier.popular .pricing-tier-header {
+            border-left-color: #10b981;
+        }
+
+        .pricing-tier.popular.active .pricing-tier-header {
+            background: linear-gradient(90deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+        }
+
+        /* Tier Info (left side) */
+        .pricing-tier-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .pricing-tier-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #111827;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pricing-tier-tagline {
+            font-size: 0.8125rem;
+            color: #059669;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        /* Tier Badge */
+        .pricing-tier-badge {
+            font-size: 0.625rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .pricing-tier-badge.starter {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .pricing-tier-badge.business {
+            background: #b3d4ff;
+            color: #003d7a;
+        }
+
+        .pricing-tier-badge.popular {
+            background: #d1fae5;
+            color: #047857;
+        }
+
+        .pricing-tier-badge.enterprise {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .pricing-tier-badge.custom {
+            background: #1f2937;
+            color: white;
+        }
+
+        /* Tier Price (right side) */
+        .pricing-tier-price {
+            text-align: right;
+        }
+
+        .pricing-tier-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .pricing-tier-period {
+            font-size: 0.75rem;
+            color: #6b7280;
+            display: block;
+        }
+
+        /* Expand Icon */
+        .pricing-tier-expand {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            transition: transform 0.2s ease;
+            margin-left: 12px;
+        }
+
+        .pricing-tier.active .pricing-tier-expand {
+            transform: rotate(180deg);
+            color: #0066cc;
+        }
+
+        /* Tier Details (collapsible) */
+        .pricing-tier-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #f9fafb;
+        }
+
+        .pricing-tier.active .pricing-tier-details {
+            max-height: 500px;
+        }
+
+        .pricing-tier-features {
+            padding: 16px;
+            padding-top: 0;
+        }
+
+        .pricing-tier-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .pricing-tier-features li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8125rem;
+            font-weight: 400;
+            color: #374151;
+            padding: 8px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .pricing-tier-features li strong {
+            font-weight: 500;
+        }
+
+        .pricing-tier-features .feature-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .pricing-tier-features .feature-icon.check {
+            color: #10b981;
+        }
+
+        .pricing-tier-features .feature-icon.x {
+            color: #d1d5db;
+        }
+
+        /* Accordion Footer */
+        .pricing-accordion-footer {
+            padding: 16px;
+            background: #f9fafb;
+            border-top: 1px solid #f3f4f6;
+        }
+
+        .pricing-accordion-footer .btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .pricing-accordion-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 12px;
+        }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 380px) {
+        .mobile-pricing-accordion {
+            margin: 0;
+            border-radius: 12px;
+        }
+
+        .pricing-tier-header {
+            padding: 12px;
+        }
+
+        .pricing-tier-amount {
+            font-size: 1.25rem;
+        }
+
+        .pricing-tier-features ul {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Promo Banner Fallback Styles */
+    .promo-banner {
+        margin-bottom: 32px;
+    }
+
+    .promo-banner-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+        padding: 16px 24px;
+        border-radius: 16px;
+        flex-wrap: wrap;
+    }
+
+    .promo-banner-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .promo-banner-icon svg {
+        width: 24px;
+        height: 24px;
+        color: white;
+    }
+
+    .promo-banner-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        text-align: center;
+    }
+
+    .promo-banner-text strong {
+        font-size: 1.125rem;
+        font-weight: 700;
+    }
+
+    .promo-banner-text span {
+        font-size: 0.875rem;
+        opacity: 0.9;
+    }
+
+    .promo-banner .btn-white {
+        background: white;
+        color: #059669;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 12px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+    }
+
+    .promo-banner .btn-white:hover {
+        background: #f3f4f6;
+        transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+        .promo-banner-content {
+            flex-direction: column;
+            text-align: center;
+            padding: 16px;
+        }
+
+        .promo-banner-text {
+            text-align: center;
+        }
+
+        .promo-banner-text strong {
+            font-size: 1rem;
+        }
     }
   </style>
 </head>
