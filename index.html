@@ -20,57 +20,123 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mydigitalinvoice.pk/">
+  <meta property="og:url" content="https://mydigitalinvoice.com/">
   <meta property="og:title" content="My Digital Invoice - FBR Digital Invoicing Software Pakistan">
-  <meta property="og:description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR. Get 2 months FREE - no credit card required. Plans starting Rs 1,000/month.">
-  <meta property="og:image" content="https://mydigitalinvoice.pk/assets/og-image.png">
+  <meta property="og:description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR. Get 60 days FREE - no credit card required. Plans from Rs 1,000/month.">
+  <meta property="og:image" content="https://mydigitalinvoice.com/assets/og-image.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://mydigitalinvoice.pk/">
+  <meta property="twitter:url" content="https://mydigitalinvoice.com/">
   <meta property="twitter:title" content="My Digital Invoice - FBR Digital Invoicing Software Pakistan">
-  <meta property="twitter:description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR. Get 2 months FREE - no credit card required. Plans starting Rs 1,000/month.">
+  <meta property="twitter:description" content="FBR-approved e-invoicing software with IRIS integration. Auto-submit invoices to FBR. Get 60 days FREE - no credit card required. Plans from Rs 1,000/month.">
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://mydigitalinvoice.pk/">
+  <link rel="canonical" href="https://mydigitalinvoice.com/">
 
-  <!-- Schema.org Structured Data -->
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MyDigitalInvoice",
+    "alternateName": "MDI",
+    "url": "https://mydigitalinvoice.com",
+    "logo": "https://mydigitalinvoice.com/images/logo.png",
+    "description": "Pakistan's trusted FBR-compliant digital invoicing software with IRIS integration",
+    "foundingDate": "2024",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "PK",
+      "addressRegion": "Pakistan"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+92-333-6820820",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Urdu"],
+      "areaServed": "PK"
+    },
+    "sameAs": [
+      "https://wa.me/923336820820"
+    ]
+  }
+  </script>
+
+  <!-- Software Application Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "My Digital Invoice",
+    "name": "MyDigitalInvoice",
+    "description": "FBR-compliant digital invoicing software for Pakistani businesses. Automatic IRIS integration, IRN generation, QR codes, and sales tax compliance.",
     "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "description": "FBR-approved e-invoicing software with IRIS integration for Pakistani businesses. Auto-submit invoices to FBR, get instant IRN and QR codes.",
-    "url": "https://mydigitalinvoice.pk",
+    "applicationSubCategory": "Invoice Software",
+    "operatingSystem": "Web Browser",
+    "url": "https://mydigitalinvoice.com",
+    "screenshot": "https://mydigitalinvoice.com/images/screenshots/dashboard-overview.png",
+    "softwareVersion": "2.0",
+    "releaseNotes": "Full FBR IRIS integration with automatic submission",
     "offers": {
       "@type": "AggregateOffer",
-      "lowPrice": "1500",
-      "highPrice": "7500",
+      "lowPrice": "0",
+      "highPrice": "2500",
       "priceCurrency": "PKR",
-      "offerCount": "3"
-    },
-    "provider": {
-      "@type": "Organization",
-      "name": "My Digital Invoice",
-      "url": "https://mydigitalinvoice.pk",
-      "logo": "https://mydigitalinvoice.pk/favicon.svg",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+92-333-6820820",
-        "contactType": "sales",
-        "availableLanguage": ["English", "Urdu"]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "PK"
-      }
+      "offerCount": "4",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Starter Plan",
+          "price": "0",
+          "priceCurrency": "PKR",
+          "description": "Up to 5 invoices/month - FREE forever"
+        },
+        {
+          "@type": "Offer",
+          "name": "Business Plan",
+          "price": "1000",
+          "priceCurrency": "PKR",
+          "description": "5-20 invoices/month - Most Popular"
+        },
+        {
+          "@type": "Offer",
+          "name": "Enterprise Plan",
+          "price": "2000",
+          "priceCurrency": "PKR",
+          "description": "20-200 invoices/month"
+        },
+        {
+          "@type": "Offer",
+          "name": "Unlimited Plan",
+          "price": "2500",
+          "priceCurrency": "PKR",
+          "description": "Unlimited invoices/month"
+        }
+      ]
     },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
-      "ratingCount": "500"
+      "ratingCount": "500",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "featureList": [
+      "FBR IRIS Integration",
+      "Automatic IRN Generation",
+      "QR Code Generation",
+      "Sales Tax Compliance (SRO 709)",
+      "Equipment Catalog Management",
+      "Buyer/Seller Registry",
+      "HS Code Management",
+      "Reports & Analytics",
+      "Multi-user Support",
+      "Cloud-based Access"
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "MyDigitalInvoice",
+      "url": "https://mydigitalinvoice.com"
     }
   }
   </script>
@@ -1970,6 +2036,153 @@
     </section>
   </main>
 
+  <!-- Email Capture / Lead Magnet Section -->
+  <section class="email-capture-section">
+    <div class="container">
+      <div class="email-capture-card">
+        <div class="email-capture-content">
+          <span class="section-badge" style="background:rgba(255,255,255,0.2);color:white;">FREE RESOURCE</span>
+          <h3>Download: FBR Compliance Checklist 2026</h3>
+          <p>Get our comprehensive checklist to ensure your business is fully compliant with FBR's digital invoicing requirements.</p>
+          <ul class="checklist-preview">
+            <li>✓ Pre-registration requirements</li>
+            <li>✓ IRIS portal setup guide</li>
+            <li>✓ Invoice requirements checklist</li>
+            <li>✓ Compliance verification steps</li>
+          </ul>
+        </div>
+        <div class="email-capture-form">
+          <form id="lead-magnet-form" onsubmit="return handleLeadMagnetSubmit(event)">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" name="phone" placeholder="WhatsApp Number (Optional)">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">
+              Download FREE Checklist
+            </button>
+            <p class="form-note">No spam. Unsubscribe anytime.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Email Capture Section */
+    .email-capture-section {
+      background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+      padding: 60px 0;
+    }
+    .email-capture-card {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .email-capture-content {
+      flex: 1;
+      color: white;
+    }
+    .email-capture-content h3 {
+      font-size: 28px;
+      margin: 16px 0;
+      color: white;
+    }
+    .email-capture-content p {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+    .checklist-preview {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .checklist-preview li {
+      padding: 8px 0;
+      font-size: 15px;
+      opacity: 0.9;
+    }
+    .email-capture-form {
+      flex: 0 0 380px;
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
+    .email-capture-form .form-group {
+      margin-bottom: 16px;
+    }
+    .email-capture-form input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+    .email-capture-form input:focus {
+      outline: none;
+      border-color: #0066cc;
+    }
+    .email-capture-form .form-note {
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 12px;
+    }
+    @media (max-width: 768px) {
+      .email-capture-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+      }
+      .email-capture-form {
+        flex: none;
+        width: 100%;
+        max-width: 400px;
+      }
+      .checklist-preview {
+        text-align: left;
+        display: inline-block;
+      }
+      .email-capture-content h3 {
+        font-size: 24px;
+      }
+    }
+  </style>
+
+  <script>
+    function handleLeadMagnetSubmit(e) {
+      e.preventDefault();
+      var form = e.target;
+      var name = form.querySelector('input[name="name"]').value;
+      var email = form.querySelector('input[name="email"]').value;
+      var phone = form.querySelector('input[name="phone"]').value;
+
+      // Track event
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'lead_capture', {
+          'event_category': 'lead_magnet',
+          'event_label': 'FBR Compliance Checklist'
+        });
+      }
+
+      // Show success message
+      form.innerHTML = '<div style="text-align:center;padding:20px 0;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><h4 style="margin:16px 0 8px;color:#111827;">Thank You, ' + name.split(' ')[0] + '!</h4><p style="color:#64748b;margin-bottom:16px;">Check your email for the checklist.</p><a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary">Start Free Trial</a></div>';
+
+      return false;
+    }
+  </script>
+
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="container">
@@ -2039,6 +2252,202 @@
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </a>
+
+  <!-- Exit Intent Popup -->
+  <div id="exit-popup" class="exit-popup">
+    <div class="exit-popup-overlay"></div>
+    <div class="exit-popup-content">
+      <button class="exit-popup-close" aria-label="Close">&times;</button>
+
+      <div class="exit-popup-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0066cc" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+      </div>
+      <h3>Wait! Don't Leave Without This</h3>
+      <p>Get our FREE FBR Compliance Checklist and avoid Rs 500,000 in penalties.</p>
+
+      <form id="exit-popup-form" onsubmit="return handleExitPopupSubmit(event)">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-primary">Download FREE Checklist</button>
+      </form>
+
+      <p class="popup-note">No spam. Unsubscribe anytime.</p>
+
+      <a href="#" class="popup-skip" onclick="closeExitPopup(); return false;">No thanks, I'll risk the penalties</a>
+    </div>
+  </div>
+
+  <style>
+    /* Exit Intent Popup Styles */
+    .exit-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10000;
+    }
+    .exit-popup.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease;
+    }
+    .exit-popup-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .exit-popup-content {
+      position: relative;
+      background: white;
+      padding: 48px 40px;
+      border-radius: 16px;
+      max-width: 450px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.3s ease;
+    }
+    .exit-popup-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: #f1f5f9;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+    .exit-popup-close:hover {
+      background: #e2e8f0;
+    }
+    .exit-popup-icon {
+      margin-bottom: 16px;
+    }
+    .exit-popup-content h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+    .exit-popup-content > p {
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+    #exit-popup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    #exit-popup-form input {
+      padding: 14px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    #exit-popup-form input:focus {
+      outline: none;
+      border-color: #0066cc;
+    }
+    .popup-note {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 12px;
+    }
+    .popup-skip {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #94a3b8;
+      text-decoration: underline;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 480px) {
+      .exit-popup-content { padding: 32px 24px; }
+      .exit-popup-content h3 { font-size: 20px; }
+    }
+  </style>
+
+  <script>
+    // Exit Intent Popup
+    (function() {
+      var popup = document.getElementById('exit-popup');
+      if (!popup) return;
+
+      var hasShown = false;
+
+      // Check if already shown this session
+      if (sessionStorage.getItem('exit-popup-shown')) return;
+
+      function showPopup() {
+        if (hasShown) return;
+        hasShown = true;
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        sessionStorage.setItem('exit-popup-shown', 'true');
+      }
+
+      window.closeExitPopup = function() {
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+
+      // Detect exit intent
+      document.addEventListener('mouseout', function(e) {
+        if (e.clientY < 10 && !hasShown) {
+          setTimeout(showPopup, 100);
+        }
+      });
+
+      // Close handlers
+      popup.querySelector('.exit-popup-close').addEventListener('click', closeExitPopup);
+      popup.querySelector('.exit-popup-overlay').addEventListener('click', closeExitPopup);
+
+      // ESC key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeExitPopup();
+      });
+
+      // Mobile: Show after 30 seconds
+      if ('ontouchstart' in window) {
+        setTimeout(function() {
+          if (!hasShown) showPopup();
+        }, 30000);
+      }
+    })();
+
+    function handleExitPopupSubmit(e) {
+      e.preventDefault();
+      var email = e.target.querySelector('input[name="email"]').value;
+      // Track event
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'lead_capture', { 'event_category': 'exit_popup', 'event_label': email });
+      }
+      // Show thank you message
+      document.querySelector('.exit-popup-content').innerHTML = '<div class="exit-popup-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div><h3>Thank You!</h3><p>Check your email for the FBR Compliance Checklist.</p><a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary" style="margin-top:20px;">Start Free Trial</a>';
+      return false;
+    }
+  </script>
 
   <!-- JavaScript -->
   <script src="js/main.js?v=2" defer></script>
