@@ -2145,7 +2145,7 @@
         </a>
       </div>
 
-      <p class="popup-note">No setup fee. Cancel anytime. Plans from Rs 1,000/month.</p>
+      <p class="popup-note">No setup fee. No credit card required. Cancel anytime.</p>
 
       <a href="#" class="popup-skip" onclick="closeExitPopup(); return false;">Maybe later</a>
     </div>
@@ -2281,10 +2281,11 @@
         document.body.style.overflow = '';
       };
 
-      // Detect exit intent
-      document.addEventListener('mouseout', function(e) {
+      // Detect exit intent - only when mouse leaves viewport at top (trying to close/navigate away)
+      document.addEventListener('mouseleave', function(e) {
+        // Only trigger when mouse leaves at the top of the page (closing tab, back button area)
         if (e.clientY < 10 && !hasShown) {
-          setTimeout(showPopup, 100);
+          showPopup();
         }
       });
 
@@ -2296,13 +2297,6 @@
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeExitPopup();
       });
-
-      // Mobile: Show after 45 seconds
-      if ('ontouchstart' in window) {
-        setTimeout(function() {
-          if (!hasShown) showPopup();
-        }, 45000);
-      }
     })();
   </script>
 
