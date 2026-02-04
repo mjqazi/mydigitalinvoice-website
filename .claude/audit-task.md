@@ -1,2707 +1,1948 @@
-# MyDigitalInvoice Website Enhancement Implementation Guide
-## For Claude with Ralph Loop & 5 Personas
+# MyDigitalInvoice.com - Complete Website Audit & Testing Protocol
+## Professional E2E Testing, SEO Optimization & Quality Assurance
 
-**Document Version:** 1.0  
+**Audit Version:** 2.0  
 **Created:** February 4, 2026  
-**Purpose:** Comprehensive implementation instructions for website improvements  
-**Execution Method:** Claude with Ralph Loop (5 Personas)
+**Audit Type:** Comprehensive Full-Site Audit  
+**Execution Method:** Claude with Ralph Loop (5 Personas)  
+**Goal:** Production-ready website optimized to rank #1 for FBR digital invoicing keywords
 
 ---
 
-## ⚠️ CRITICAL INSTRUCTIONS - READ BEFORE IMPLEMENTING
+# ⚠️ CRITICAL PRE-AUDIT CHECKLIST
 
-### DO NOT MODIFY OR REMOVE:
-1. **Google Analytics / GTM tags** - Preserve all existing tracking scripts
-2. **Existing pricing structure** - Already updated to 4-tier system
-3. **WhatsApp integration** - Already implemented (floating button)
-4. **Product screenshots section** - Already added
+Before starting ANY audit tasks, confirm these critical items:
 
-### IMPORTANT CONTEXT:
-1. **NO NET METERING** - MyDigitalInvoice no longer offers net metering features. Remove any references to net metering throughout the site.
-2. **Current Pricing (DO NOT CHANGE):**
-   - Starter: FREE (Up to 5 invoices/month)
-   - Business: Rs 1,000/month (5-20 invoices/month) - MOST POPULAR
-   - Enterprise: Rs 2,000/month (20-200 invoices/month)
-   - Unlimited: Rs 2,500/month (Unlimited invoices)
-3. **FBR Compliance is NOW MANDATORY** - The December 31, 2025 deadline has passed. Update all messaging accordingly.
-4. **Phone Number:** +92 333 6820 820
-5. **App URL:** https://fbr.mydigitalinvoice.com/login
-6. **Website URL:** https://mydigitalinvoice.com
+## DO NOT MODIFY:
+- [ ] Google Analytics tags
+- [ ] Google Tag Manager scripts
+- [ ] Any existing tracking pixels (Facebook, LinkedIn, etc.)
+- [ ] Core pricing structure (already correct)
 
----
-
-## TABLE OF CONTENTS
-
-1. [Persona Assignments](#persona-assignments)
-2. [Gap #5: Technical SEO Elements](#gap-5-technical-seo-elements)
-3. [Gap #7: Lead Magnet & Email Capture](#gap-7-lead-magnet--email-capture)
-4. [Gap #8: Urdu Content](#gap-8-urdu-content)
-5. [Gap #9: Fix Broken Navigation/404s](#gap-9-fix-broken-navigation404s)
-6. [Gap #10: Meta Tags Optimization](#gap-10-meta-tags-optimization)
-7. [Gap #11: Competitor Comparison Page](#gap-11-competitor-comparison-page)
-8. [Gap #12: Trust Signals Enhancement](#gap-12-trust-signals-enhancement)
-9. [Gap #13: Onboarding Content](#gap-13-onboarding-content)
-10. [Gap #14: Contact Form Optimization](#gap-14-contact-form-optimization)
-11. [Gap #15: Exit Intent Popup](#gap-15-exit-intent-popup)
-12. [Gap #16: Industry-Specific Pages](#gap-16-industry-specific-pages)
-13. [Gap #17: Interactive Tools](#gap-17-interactive-tools)
-14. [Gap #18: Enhanced About Page](#gap-18-enhanced-about-page)
-15. [Copy & Messaging Updates](#copy--messaging-updates)
-16. [CRO Improvements](#cro-improvements)
-17. [Blog Setup & Content Strategy](#blog-setup--content-strategy)
-18. [Testing Checklist](#testing-checklist)
+## CONFIRMED BUSINESS INFORMATION:
+| Item | Correct Value |
+|------|---------------|
+| Company Name | MyDigitalInvoice |
+| Website | https://mydigitalinvoice.com |
+| App URL | https://fbr.mydigitalinvoice.com/login |
+| Phone/WhatsApp | +92 333 6820 820 |
+| Pricing - Starter | FREE (Up to 5 invoices/month) |
+| Pricing - Business | Rs 1,000/month (5-20 invoices) - MOST POPULAR |
+| Pricing - Enterprise | Rs 2,000/month (20-200 invoices) |
+| Pricing - Unlimited | Rs 2,500/month (Unlimited invoices) |
+| Trial Period | 60 Days FREE |
+| Setup Fee | None / Absolutely Free |
+| Credit Card Required | No |
+| FBR Compliance Status | NOW MANDATORY (deadline passed) |
+| Net Metering | ❌ REMOVED - Do not mention |
+| Urdu Content | ❌ DITCHED - Do not implement |
 
 ---
 
-## PERSONA ASSIGNMENTS
+# TABLE OF CONTENTS
 
-### Persona 1: Technical SEO Specialist
-**Responsibilities:**
-- Gap #5: Technical SEO Elements
-- Gap #10: Meta Tags Optimization
-- Schema markup implementation
-- robots.txt and sitemap.xml creation
-
-### Persona 2: Frontend Developer
-**Responsibilities:**
-- Gap #9: Fix Broken Navigation/404s
-- Gap #14: Contact Form Optimization
-- Gap #15: Exit Intent Popup
-- Responsive design fixes
-- JavaScript functionality
-
-### Persona 3: Content Strategist
-**Responsibilities:**
-- Gap #8: Urdu Content
-- Gap #11: Competitor Comparison Page
-- Gap #13: Onboarding Content
-- Gap #18: Enhanced About Page
-- Copy & Messaging Updates
-- Blog Setup
-
-### Persona 4: UX/Conversion Specialist
-**Responsibilities:**
-- Gap #7: Lead Magnet & Email Capture
-- Gap #12: Trust Signals Enhancement
-- CRO Improvements
-- Landing page optimization
-
-### Persona 5: Product Specialist
-**Responsibilities:**
-- Gap #16: Industry-Specific Pages
-- Gap #17: Interactive Tools (Penalty Calculator)
-- Feature documentation
-- Use case content
+1. [Persona Assignments](#1-persona-assignments)
+2. [Phase 1: Site Structure Audit](#2-phase-1-site-structure-audit)
+3. [Phase 2: Navigation & Menu Audit](#3-phase-2-navigation--menu-audit)
+4. [Phase 3: Footer Consistency Audit](#4-phase-3-footer-consistency-audit)
+5. [Phase 4: Content & Message Consistency Audit](#5-phase-4-content--message-consistency-audit)
+6. [Phase 5: Blog & Content Audit](#6-phase-5-blog--content-audit)
+7. [Phase 6: Interactive Elements Testing](#7-phase-6-interactive-elements-testing)
+8. [Phase 7: Responsive Design Testing](#8-phase-7-responsive-design-testing)
+9. [Phase 8: E2E Functional Testing](#9-phase-8-e2e-functional-testing)
+10. [Phase 9: Performance & Loading Speed Audit](#10-phase-9-performance--loading-speed-audit)
+11. [Phase 10: Technical SEO Audit](#11-phase-10-technical-seo-audit)
+12. [Phase 11: On-Page SEO Audit](#12-phase-11-on-page-seo-audit)
+13. [Phase 12: Accessibility Audit](#13-phase-12-accessibility-audit)
+14. [Phase 13: Security Audit](#14-phase-13-security-audit)
+15. [Phase 14: Cross-Browser Testing](#15-phase-14-cross-browser-testing)
+16. [Phase 15: Final QA & Sign-off](#16-phase-15-final-qa--sign-off)
+17. [Automated E2E Test Suite](#17-automated-e2e-test-suite)
+18. [Issue Tracking Template](#18-issue-tracking-template)
+19. [Fix Implementation Guidelines](#19-fix-implementation-guidelines)
 
 ---
 
-## GAP #5: TECHNICAL SEO ELEMENTS
+# 1. PERSONA ASSIGNMENTS
 
-### 5.1 Create robots.txt
+## Persona 1: QA Engineer / Test Architect
+**Primary Responsibilities:**
+- E2E functional testing
+- Cross-browser testing
+- Interactive elements testing
+- Responsive design testing
+- Creating and running automated tests
+- Bug documentation and tracking
 
-**File:** `/robots.txt` (root directory)
+## Persona 2: SEO Specialist
+**Primary Responsibilities:**
+- Technical SEO audit
+- On-page SEO optimization
+- Meta tags verification
+- Schema markup validation
+- Sitemap and robots.txt verification
+- Keyword optimization
+- Search ranking analysis
 
-```txt
-# robots.txt for MyDigitalInvoice
-# https://mydigitalinvoice.com/robots.txt
-# Last updated: February 2026
+## Persona 3: Frontend Developer
+**Primary Responsibilities:**
+- Navigation/menu fixes
+- Footer consistency fixes
+- JavaScript functionality fixes
+- CSS/responsive issues
+- Performance optimization
+- Code quality review
 
-User-agent: *
-Allow: /
+## Persona 4: Content Auditor
+**Primary Responsibilities:**
+- Message consistency audit
+- Blog content verification
+- Dummy data identification
+- Copy accuracy verification
+- CTA consistency
+- Tone and voice alignment
 
-# Disallow administrative and API paths
-Disallow: /admin/
-Disallow: /api/
-Disallow: /private/
-Disallow: /*.json$
-Disallow: /wp-admin/
-Disallow: /cgi-bin/
-
-# Allow important resources
-Allow: /css/
-Allow: /js/
-Allow: /images/
-
-# Sitemap location
-Sitemap: https://mydigitalinvoice.com/sitemap.xml
-
-# Crawl-delay for polite crawling (optional)
-# Crawl-delay: 10
-
-# Specific bot rules
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# Block bad bots (optional)
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-```
-
-### 5.2 Create sitemap.xml
-
-**File:** `/sitemap.xml` (root directory)
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- Homepage - Highest Priority -->
-  <url>
-    <loc>https://mydigitalinvoice.com/</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Pricing - High Priority (Sales Page) -->
-  <url>
-    <loc>https://mydigitalinvoice.com/pricing</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Features - High Priority -->
-  <url>
-    <loc>https://mydigitalinvoice.com/features</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Demo - High Priority -->
-  <url>
-    <loc>https://mydigitalinvoice.com/demo</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- How It Works -->
-  <url>
-    <loc>https://mydigitalinvoice.com/how-it-works</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- FAQ -->
-  <url>
-    <loc>https://mydigitalinvoice.com/faq</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Contact -->
-  <url>
-    <loc>https://mydigitalinvoice.com/contact</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- About -->
-  <url>
-    <loc>https://mydigitalinvoice.com/about</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Comparison Page (New) -->
-  <url>
-    <loc>https://mydigitalinvoice.com/compare</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Industry Pages (New) -->
-  <url>
-    <loc>https://mydigitalinvoice.com/industries/manufacturing</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mydigitalinvoice.com/industries/retail</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mydigitalinvoice.com/industries/wholesale</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mydigitalinvoice.com/industries/services</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Tools (New) -->
-  <url>
-    <loc>https://mydigitalinvoice.com/tools/penalty-calculator</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Blog (New - When Created) -->
-  <url>
-    <loc>https://mydigitalinvoice.com/blog</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Legal Pages - Lower Priority -->
-  <url>
-    <loc>https://mydigitalinvoice.com/privacy</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://mydigitalinvoice.com/terms</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://mydigitalinvoice.com/cookies</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-</urlset>
-```
-
-### 5.3 Schema Markup Implementation
-
-**IMPORTANT:** Add these scripts AFTER any existing Google Analytics/GTM tags in the `<head>` section.
-
-#### 5.3.1 Organization Schema (All Pages)
-
-Add to ALL pages in `<head>`:
-
-```html
-<!-- Organization Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "MyDigitalInvoice",
-  "alternateName": "MDI",
-  "url": "https://mydigitalinvoice.com",
-  "logo": "https://mydigitalinvoice.com/images/logo.png",
-  "description": "Pakistan's trusted FBR-compliant digital invoicing software with IRIS integration",
-  "foundingDate": "2024",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "PK",
-    "addressRegion": "Pakistan"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+92-333-6820820",
-    "contactType": "customer service",
-    "availableLanguage": ["English", "Urdu"],
-    "areaServed": "PK"
-  },
-  "sameAs": [
-    "https://wa.me/923336820820"
-  ]
-}
-</script>
-```
-
-#### 5.3.2 Software Application Schema (index.html)
-
-Add to `index.html` `<head>`:
-
-```html
-<!-- Software Application Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "MyDigitalInvoice",
-  "description": "FBR-compliant digital invoicing software for Pakistani businesses. Automatic IRIS integration, IRN generation, QR codes, and sales tax compliance.",
-  "applicationCategory": "BusinessApplication",
-  "applicationSubCategory": "Invoice Software",
-  "operatingSystem": "Web Browser",
-  "url": "https://mydigitalinvoice.com",
-  "screenshot": "https://mydigitalinvoice.com/images/screenshots/dashboard-overview.png",
-  "softwareVersion": "2.0",
-  "releaseNotes": "Full FBR IRIS integration with automatic submission",
-  "offers": {
-    "@type": "AggregateOffer",
-    "lowPrice": "0",
-    "highPrice": "2500",
-    "priceCurrency": "PKR",
-    "offerCount": "4",
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Starter Plan",
-        "price": "0",
-        "priceCurrency": "PKR",
-        "description": "Up to 5 invoices/month - FREE forever"
-      },
-      {
-        "@type": "Offer",
-        "name": "Business Plan",
-        "price": "1000",
-        "priceCurrency": "PKR",
-        "description": "5-20 invoices/month"
-      },
-      {
-        "@type": "Offer",
-        "name": "Enterprise Plan",
-        "price": "2000",
-        "priceCurrency": "PKR",
-        "description": "20-200 invoices/month"
-      },
-      {
-        "@type": "Offer",
-        "name": "Unlimited Plan",
-        "price": "2500",
-        "priceCurrency": "PKR",
-        "description": "Unlimited invoices/month"
-      }
-    ]
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "150",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "featureList": [
-    "FBR IRIS Integration",
-    "Automatic IRN Generation",
-    "QR Code Generation",
-    "Sales Tax Compliance (SRO 709)",
-    "Equipment Catalog Management",
-    "Buyer/Seller Registry",
-    "HS Code Management",
-    "Reports & Analytics",
-    "Multi-user Support",
-    "Cloud-based Access"
-  ],
-  "provider": {
-    "@type": "Organization",
-    "name": "MyDigitalInvoice",
-    "url": "https://mydigitalinvoice.com"
-  }
-}
-</script>
-```
-
-#### 5.3.3 FAQ Schema (faq.html)
-
-Add to `faq.html` `<head>`:
-
-```html
-<!-- FAQ Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is FBR digital invoicing?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "FBR digital invoicing is Pakistan's mandatory electronic invoicing system that requires sales tax-registered businesses to submit invoices to the Federal Board of Revenue through the IRIS (Inland Revenue Information System) portal. Each invoice receives a unique IRN (Invoice Reference Number) and QR code for verification."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is FBR e-invoicing mandatory?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, FBR e-invoicing is now mandatory for all sales tax-registered businesses in Pakistan. Non-compliance can result in penalties up to Rs 500,000 and complications with tax filings."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long is the free trial?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "MyDigitalInvoice offers a 60-day FREE trial with no setup fee and no credit card required. You can also use our Starter plan (up to 5 invoices/month) completely free forever."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is an IRN number?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "IRN (Invoice Reference Number) is a unique identifier assigned by FBR to each digital invoice submitted through the IRIS system. It serves as proof that your invoice has been registered with FBR and is compliant with tax regulations."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does MyDigitalInvoice cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "MyDigitalInvoice offers 4 pricing tiers: Starter (FREE - up to 5 invoices/month), Business (Rs 1,000/month - 5-20 invoices), Enterprise (Rs 2,000/month - 20-200 invoices), and Unlimited (Rs 2,500/month - unlimited invoices). All plans include FBR integration with no setup fee."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the penalties for FBR non-compliance?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Penalties for FBR digital invoicing non-compliance can include a fixed penalty of up to Rs 500,000, 0.1% of annual turnover, and complications with tax return filings. It's essential to comply to avoid these penalties."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How quickly can I get FBR compliant?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "With MyDigitalInvoice, you can become FBR compliant within 24 hours. Our system integrates directly with FBR's IRIS portal, automatically generates IRN numbers and QR codes, and handles all submission requirements."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need technical knowledge to use MyDigitalInvoice?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No technical knowledge is required. MyDigitalInvoice is designed to be user-friendly with a simple interface. We also provide phone support, setup assistance, and a comprehensive setup guide video to help you get started."
-      }
-    }
-  ]
-}
-</script>
-```
-
-#### 5.3.4 Pricing Page Schema (pricing.html)
-
-Add to `pricing.html` `<head>`:
-
-```html
-<!-- Product Schema for Pricing -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "MyDigitalInvoice - FBR Compliant Invoicing Software",
-  "description": "Pakistan's most affordable FBR-compliant digital invoicing software with IRIS integration",
-  "brand": {
-    "@type": "Brand",
-    "name": "MyDigitalInvoice"
-  },
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Starter Plan",
-      "price": "0",
-      "priceCurrency": "PKR",
-      "priceValidUntil": "2026-12-31",
-      "availability": "https://schema.org/InStock",
-      "description": "Up to 5 invoices/month - FREE forever",
-      "url": "https://mydigitalinvoice.com/pricing"
-    },
-    {
-      "@type": "Offer",
-      "name": "Business Plan",
-      "price": "1000",
-      "priceCurrency": "PKR",
-      "priceValidUntil": "2026-12-31",
-      "availability": "https://schema.org/InStock",
-      "description": "5-20 invoices/month - Most Popular",
-      "url": "https://mydigitalinvoice.com/pricing"
-    },
-    {
-      "@type": "Offer",
-      "name": "Enterprise Plan",
-      "price": "2000",
-      "priceCurrency": "PKR",
-      "priceValidUntil": "2026-12-31",
-      "availability": "https://schema.org/InStock",
-      "description": "20-200 invoices/month",
-      "url": "https://mydigitalinvoice.com/pricing"
-    },
-    {
-      "@type": "Offer",
-      "name": "Unlimited Plan",
-      "price": "2500",
-      "priceCurrency": "PKR",
-      "priceValidUntil": "2026-12-31",
-      "availability": "https://schema.org/InStock",
-      "description": "Unlimited invoices/month - Premium",
-      "url": "https://mydigitalinvoice.com/pricing"
-    }
-  ],
-  "review": {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Verified Customer"
-    },
-    "reviewBody": "MyDigitalInvoice helped us become FBR compliant within 24 hours. The system is easy to use and affordable."
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "150"
-  }
-}
-</script>
-```
-
-#### 5.3.5 Breadcrumb Schema (All Inner Pages)
-
-Add to all pages except index.html:
-
-```html
-<!-- Breadcrumb Schema - Customize for each page -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://mydigitalinvoice.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "[PAGE_NAME]",
-      "item": "https://mydigitalinvoice.com/[PAGE_SLUG]"
-    }
-  ]
-}
-</script>
-```
-
-Replace `[PAGE_NAME]` and `[PAGE_SLUG]` accordingly:
-- Features → features
-- Pricing → pricing
-- FAQ → faq
-- Contact → contact
-- About → about
-- etc.
-
-#### 5.3.6 Local Business Schema (contact.html)
-
-Add to `contact.html` `<head>`:
-
-```html
-<!-- Local Business Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "MyDigitalInvoice",
-  "description": "FBR-compliant digital invoicing software provider in Pakistan",
-  "url": "https://mydigitalinvoice.com",
-  "telephone": "+92-333-6820820",
-  "email": "support@mydigitalinvoice.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "PK"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "33.6844",
-    "longitude": "73.0479"
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    "opens": "09:00",
-    "closes": "18:00"
-  },
-  "priceRange": "Rs 0 - Rs 2,500/month"
-}
-</script>
-```
+## Persona 5: UX Reviewer
+**Primary Responsibilities:**
+- User flow testing
+- Accessibility audit
+- Mobile UX verification
+- Form usability
+- CTA effectiveness
+- Overall user experience
 
 ---
 
-## GAP #7: LEAD MAGNET & EMAIL CAPTURE
+# 2. PHASE 1: SITE STRUCTURE AUDIT
 
-### 7.1 Lead Magnet Creation
+## 2.1 Expected Page Inventory
 
-#### Lead Magnet #1: FBR Compliance Checklist 2026 (PDF)
+Verify all these pages exist and are accessible:
 
-**Content Outline:**
+### Core Pages (MUST EXIST)
+| Page | Expected URL | Priority |
+|------|--------------|----------|
+| Homepage | / or /index.html | Critical |
+| Features | /features or /features.html | Critical |
+| Pricing | /pricing or /pricing.html | Critical |
+| How It Works | /how-it-works or /how-it-works.html | High |
+| FAQ | /faq or /faq.html | High |
+| Contact | /contact or /contact.html | High |
+| About | /about or /about.html | Medium |
+| Demo | /demo or /demo.html | High |
+| Privacy Policy | /privacy or /privacy.html | Required |
+| Terms of Service | /terms or /terms.html | Required |
+| Cookie Policy | /cookies or /cookies.html | Medium |
 
-```
-FBR DIGITAL INVOICING COMPLIANCE CHECKLIST 2026
-================================================
+### New/Additional Pages (VERIFY EXISTENCE)
+| Page | Expected URL | Status to Verify |
+|------|--------------|------------------|
+| Comparison | /compare or /compare.html | Check if exists |
+| Blog Index | /blog or /blog/index.html | Check if exists |
+| Blog Posts | /blog/posts/*.html | Check if exists |
+| Industry - Manufacturing | /industries/manufacturing.html | Check if exists |
+| Industry - Retail | /industries/retail.html | Check if exists |
+| Industry - Wholesale | /industries/wholesale.html | Check if exists |
+| Industry - Services | /industries/services.html | Check if exists |
+| Penalty Calculator | /tools/penalty-calculator.html | Check if exists |
+| 404 Page | /404.html | Check if exists |
 
-Section 1: Pre-Registration Requirements
-☐ Valid NTN (National Tax Number)
-☐ Sales Tax Registration Certificate
-☐ Business bank account
-☐ Valid CNIC of business owner/authorized person
-☐ Business email address
+## 2.2 Site Structure Audit Checklist
 
-Section 2: FBR IRIS Portal Setup
-☐ IRIS portal registration
-☐ Digital signature/certificate
-☐ API credentials (if using integrator)
-☐ Test environment access
+### For Each Page, Verify:
+- [ ] Page loads without errors (HTTP 200)
+- [ ] No console JavaScript errors
+- [ ] Page has proper `<title>` tag
+- [ ] Page has meta description
+- [ ] Page has canonical URL
+- [ ] Page is included in sitemap.xml
+- [ ] Page is crawlable (not blocked by robots.txt)
 
-Section 3: Invoice Requirements
-☐ Invoice Reference Number (IRN) capability
-☐ QR code generation
-☐ HS codes for all products/services
-☐ Buyer NTN/CNIC capture
-☐ Sales tax calculation (17% standard)
-
-Section 4: System Requirements
-☐ FBR-compliant invoicing software
-☐ Real-time submission capability (within 24 hours)
-☐ Invoice archiving (minimum 6 years)
-☐ Backup and recovery procedures
-
-Section 5: Compliance Verification
-☐ Test invoice submission
-☐ IRN verification on FBR portal
-☐ QR code scanning test
-☐ Report generation test
-
-BONUS: Quick Start with MyDigitalInvoice
-- 60-Day FREE Trial
-- No setup fee
-- Get compliant in 24 hours
-- Visit: mydigitalinvoice.com
-
-Contact: +92 333 6820 820
-WhatsApp: wa.me/923336820820
-```
-
-#### Lead Magnet #2: Penalty Calculator Spreadsheet
-
-Create downloadable Excel file with:
-- Input: Annual turnover
-- Output: Potential penalty calculation
-- Comparison: Cost of software vs. penalty
-
-### 7.2 Email Capture Implementation
-
-#### 7.2.1 Homepage Footer Email Capture
-
-Add before footer:
-
-```html
-<!-- Email Capture Section -->
-<section class="email-capture-section">
-  <div class="container">
-    <div class="email-capture-card">
-      <div class="email-capture-content">
-        <span class="section-badge">FREE RESOURCE</span>
-        <h3>Download: FBR Compliance Checklist 2026</h3>
-        <p>Get our comprehensive checklist to ensure your business is fully compliant with FBR's digital invoicing requirements.</p>
-        <ul class="checklist-preview">
-          <li>✓ Pre-registration requirements</li>
-          <li>✓ IRIS portal setup guide</li>
-          <li>✓ Invoice requirements</li>
-          <li>✓ Compliance verification steps</li>
-        </ul>
-      </div>
-      <div class="email-capture-form">
-        <form id="lead-magnet-form" action="YOUR_FORM_ENDPOINT" method="POST">
-          <div class="form-group">
-            <input type="text" name="name" placeholder="Your Name" required>
-          </div>
-          <div class="form-group">
-            <input type="email" name="email" placeholder="Your Email" required>
-          </div>
-          <div class="form-group">
-            <input type="tel" name="phone" placeholder="WhatsApp Number (Optional)">
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg">
-            Download FREE Checklist
-          </button>
-          <p class="form-note">No spam. Unsubscribe anytime.</p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-```
-
-#### 7.2.2 Email Capture CSS
-
-```css
-/* Email Capture Section */
-.email-capture-section {
-  background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
-  padding: 60px 0;
-  margin-top: 60px;
-}
-
-.email-capture-card {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.email-capture-content {
-  flex: 1;
-  color: white;
-}
-
-.email-capture-content .section-badge {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-.email-capture-content h3 {
-  font-size: 28px;
-  margin: 16px 0;
-  color: white;
-}
-
-.email-capture-content p {
-  font-size: 16px;
-  opacity: 0.9;
-  margin-bottom: 20px;
-}
-
-.checklist-preview {
-  list-style: none;
-  padding: 0;
-}
-
-.checklist-preview li {
-  padding: 8px 0;
-  font-size: 15px;
-  opacity: 0.9;
-}
-
-.email-capture-form {
-  flex: 0 0 380px;
-  background: white;
-  padding: 32px;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-}
-
-.email-capture-form .form-group {
-  margin-bottom: 16px;
-}
-
-.email-capture-form input {
-  width: 100%;
-  padding: 14px 16px;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
-}
-
-.email-capture-form input:focus {
-  outline: none;
-  border-color: #0066cc;
-}
-
-.email-capture-form button {
-  width: 100%;
-  padding: 16px;
-  font-size: 16px;
-}
-
-.form-note {
-  text-align: center;
-  font-size: 13px;
-  color: #64748b;
-  margin-top: 12px;
-}
-
-@media (max-width: 768px) {
-  .email-capture-card {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .email-capture-form {
-    flex: none;
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .checklist-preview {
-    text-align: left;
-    display: inline-block;
-  }
-}
-```
-
-### 7.3 Blog Sidebar Email Capture
-
-```html
-<!-- Blog Sidebar Widget -->
-<div class="sidebar-widget email-widget">
-  <h4>Stay FBR Compliant</h4>
-  <p>Get weekly tips on FBR compliance and digital invoicing.</p>
-  <form id="blog-subscribe-form" action="YOUR_FORM_ENDPOINT" method="POST">
-    <input type="email" name="email" placeholder="Your email" required>
-    <button type="submit" class="btn btn-primary">Subscribe</button>
-  </form>
-</div>
-```
-
----
-
-## GAP #8: URDU CONTENT
-
-### 8.1 Language Toggle Implementation
-
-Add to navigation on all pages:
-
-```html
-<!-- Language Toggle -->
-<div class="language-toggle">
-  <button class="lang-btn active" data-lang="en">English</button>
-  <button class="lang-btn" data-lang="ur">اردو</button>
-</div>
-```
-
-### 8.2 Urdu Translations - Key Content
-
-#### Homepage Hero (Urdu)
-
-```html
-<div class="hero-content" data-lang="ur" style="display: none;">
-  <h1>FBR ڈیجیٹل انوائسنگ - 24 گھنٹوں میں تعمیل حاصل کریں</h1>
-  <p>پاکستان کا سب سے سستا FBR کمپلائنٹ انوائسنگ سافٹ ویئر۔ IRIS انٹیگریشن، IRN اور QR کوڈ آٹومیٹک۔</p>
-  <div class="hero-badges">
-    <span class="badge">✅ 60 دن مفت ٹرائل</span>
-    <span class="badge">✅ کوئی سیٹ اپ فیس نہیں</span>
-    <span class="badge">✅ کریڈٹ کارڈ کی ضرورت نہیں</span>
-  </div>
-  <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-lg">مفت ٹرائل شروع کریں</a>
-</div>
-```
-
-#### Key Urdu Phrases Reference
-
-| English | Urdu |
-|---------|------|
-| Start Free Trial | مفت ٹرائل شروع کریں |
-| Get FBR Compliant | FBR تعمیل حاصل کریں |
-| No Credit Card Required | کریڈٹ کارڈ کی ضرورت نہیں |
-| Contact Us | ہم سے رابطہ کریں |
-| Features | خصوصیات |
-| Pricing | قیمتیں |
-| Free | مفت |
-| Per Month | فی ماہ |
-| Phone Support | فون سپورٹ |
-| Invoices | انوائسز |
-| FBR Integration | FBR انٹیگریشن |
-| Digital Invoicing | ڈیجیٹل انوائسنگ |
-| Compliance | تعمیل |
-| Penalty | جرمانہ |
-
-### 8.3 Language Toggle JavaScript
-
+### Audit Commands (Run in Browser Console):
 ```javascript
-// Language Toggle Functionality
-function initLanguageToggle() {
-  const langButtons = document.querySelectorAll('.lang-btn');
-  
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
-      const selectedLang = this.dataset.lang;
-      
-      // Update active button
-      langButtons.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-      
-      // Toggle content visibility
-      document.querySelectorAll('[data-lang="en"]').forEach(el => {
-        el.style.display = selectedLang === 'en' ? '' : 'none';
-      });
-      
-      document.querySelectorAll('[data-lang="ur"]').forEach(el => {
-        el.style.display = selectedLang === 'ur' ? '' : 'none';
-      });
-      
-      // Update HTML lang attribute
-      document.documentElement.lang = selectedLang;
-      
-      // Update text direction for Urdu
-      if (selectedLang === 'ur') {
-        document.body.classList.add('rtl');
-      } else {
-        document.body.classList.remove('rtl');
-      }
-      
-      // Save preference
-      localStorage.setItem('preferred-language', selectedLang);
-    });
-  });
-  
-  // Load saved preference
-  const savedLang = localStorage.getItem('preferred-language');
-  if (savedLang) {
-    document.querySelector(`.lang-btn[data-lang="${savedLang}"]`)?.click();
+// Check for console errors
+// Open DevTools > Console > Look for red errors
+
+// Check page title
+console.log('Title:', document.title);
+
+// Check meta description
+console.log('Meta Description:', document.querySelector('meta[name="description"]')?.content);
+
+// Check canonical
+console.log('Canonical:', document.querySelector('link[rel="canonical"]')?.href);
+
+// Check for broken images
+document.querySelectorAll('img').forEach(img => {
+  if (!img.complete || img.naturalHeight === 0) {
+    console.error('Broken image:', img.src);
   }
-}
-
-document.addEventListener('DOMContentLoaded', initLanguageToggle);
+});
 ```
 
-### 8.4 RTL CSS Support
+## 2.3 URL Structure Verification
 
-```css
-/* RTL Support for Urdu */
-body.rtl {
-  direction: rtl;
-  text-align: right;
-}
+### URL Best Practices Check:
+- [ ] All URLs are lowercase
+- [ ] No spaces in URLs (use hyphens)
+- [ ] No special characters
+- [ ] URLs are descriptive and keyword-rich
+- [ ] Consistent use of trailing slashes (or no trailing slashes)
+- [ ] No duplicate content (www vs non-www, http vs https)
 
-body.rtl .nav-menu {
-  flex-direction: row-reverse;
-}
+### Redirect Verification:
+- [ ] http:// redirects to https://
+- [ ] www. redirects to non-www (or vice versa - be consistent)
+- [ ] Old/broken URLs have 301 redirects
 
-body.rtl .hero-content {
-  text-align: right;
-}
+---
 
-body.rtl .feature-detail {
-  flex-direction: row-reverse;
-}
+# 3. PHASE 2: NAVIGATION & MENU AUDIT
 
-body.rtl .feature-detail.reverse {
-  flex-direction: row;
-}
+## 3.1 Desktop Navigation Audit
 
-body.rtl .btn {
-  flex-direction: row-reverse;
-}
+### Expected Navigation Items:
+```
+Logo | Home | Features | Demo | Pricing | How It Works | FAQ | Contact | [CTA Button: Start Free Trial]
+```
 
-body.rtl .checklist-preview li,
-body.rtl .tier-features li {
-  text-align: right;
-}
+### Desktop Navigation Checklist:
+- [ ] Logo links to homepage
+- [ ] Logo image loads correctly
+- [ ] All navigation links are visible
+- [ ] All navigation links are clickable
+- [ ] All navigation links go to correct pages
+- [ ] Active page is highlighted/indicated
+- [ ] Hover states work on all links
+- [ ] CTA button is prominent and visible
+- [ ] CTA button links to correct URL (https://fbr.mydigitalinvoice.com/login)
+- [ ] Navigation is sticky/fixed on scroll (if designed)
+- [ ] Navigation doesn't overlap content
 
-/* Language Toggle Styles */
-.language-toggle {
-  display: flex;
-  gap: 4px;
-  margin-left: 16px;
-}
+### Navigation Link Test Matrix:
+| Link Text | Expected URL | Works? | Correct Page? |
+|-----------|--------------|--------|---------------|
+| Logo | / | [ ] | [ ] |
+| Home | / | [ ] | [ ] |
+| Features | /features | [ ] | [ ] |
+| Demo | /demo | [ ] | [ ] |
+| Pricing | /pricing | [ ] | [ ] |
+| How It Works | /how-it-works | [ ] | [ ] |
+| FAQ | /faq | [ ] | [ ] |
+| Contact | /contact | [ ] | [ ] |
+| Start Free Trial | https://fbr.mydigitalinvoice.com/login | [ ] | [ ] |
 
-.lang-btn {
-  padding: 6px 12px;
-  border: 1px solid #e2e8f0;
-  background: transparent;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.2s ease;
-}
+## 3.2 Mobile Navigation Audit
 
-.lang-btn.active {
-  background: #0066cc;
-  color: white;
-  border-color: #0066cc;
-}
+### Mobile Menu Checklist:
+- [ ] Hamburger icon visible on mobile (<768px)
+- [ ] Hamburger icon is tappable (min 44x44px tap target)
+- [ ] Clicking hamburger opens menu
+- [ ] Menu opens with smooth animation
+- [ ] All navigation links visible in mobile menu
+- [ ] All links are tappable and work
+- [ ] Close button/X icon visible
+- [ ] Clicking outside menu closes it
+- [ ] Clicking a link closes menu and navigates
+- [ ] Menu doesn't extend beyond viewport
+- [ ] Overlay behind menu is visible (if designed)
+- [ ] Body scroll is locked when menu is open
 
-.lang-btn:hover:not(.active) {
-  border-color: #0066cc;
-  color: #0066cc;
-}
+### Mobile Menu Test at Each Breakpoint:
+| Breakpoint | Hamburger Visible? | Menu Opens? | Links Work? |
+|------------|-------------------|-------------|-------------|
+| 320px | [ ] | [ ] | [ ] |
+| 375px | [ ] | [ ] | [ ] |
+| 414px | [ ] | [ ] | [ ] |
+| 480px | [ ] | [ ] | [ ] |
+| 768px | [ ] | [ ] | [ ] |
+
+## 3.3 Tablet Navigation Audit
+
+### Tablet Considerations (768px - 1024px):
+- [ ] Determine if hamburger or full nav shows
+- [ ] If full nav: all items fit without wrapping
+- [ ] If full nav: text is readable
+- [ ] If hamburger: functions correctly
+- [ ] No awkward intermediate states
+
+## 3.4 Navigation SEO Best Practices
+
+### Dropdown Menu Recommendations:
+Based on SEO best practices, consider adding dropdowns for better organization:
+
+**Recommended Structure:**
+```
+Home | Solutions ▼ | Pricing | Resources ▼ | Contact | [Start Free Trial]
+
+Solutions Dropdown:
+├── Features
+├── How It Works
+├── Demo
+└── Industries
+    ├── Manufacturing
+    ├── Retail
+    ├── Wholesale
+    └── Services
+
+Resources Dropdown:
+├── Blog
+├── FAQ
+├── Penalty Calculator
+├── FBR Compliance Guide
+└── About Us
+```
+
+### Implementation Decision Checklist:
+- [ ] Decide: Add dropdowns? (Recommended for SEO)
+- [ ] If dropdowns: Implement accessible dropdown menu
+- [ ] If dropdowns: Ensure keyboard navigable
+- [ ] If dropdowns: Mobile-friendly (accordion style)
+
+## 3.5 Navigation Consistency Audit
+
+### Check Navigation is IDENTICAL on ALL Pages:
+| Page | Nav Present? | Nav Identical to Homepage? | Issues |
+|------|--------------|---------------------------|--------|
+| index.html | [ ] | N/A | |
+| features.html | [ ] | [ ] | |
+| pricing.html | [ ] | [ ] | |
+| demo.html | [ ] | [ ] | |
+| how-it-works.html | [ ] | [ ] | |
+| faq.html | [ ] | [ ] | |
+| contact.html | [ ] | [ ] | |
+| about.html | [ ] | [ ] | |
+| privacy.html | [ ] | [ ] | |
+| terms.html | [ ] | [ ] | |
+| cookies.html | [ ] | [ ] | |
+| compare.html | [ ] | [ ] | |
+| blog/index.html | [ ] | [ ] | |
+| industries/*.html | [ ] | [ ] | |
+| tools/*.html | [ ] | [ ] | |
+| 404.html | [ ] | [ ] | |
+
+---
+
+# 4. PHASE 3: FOOTER CONSISTENCY AUDIT
+
+## 4.1 Expected Footer Structure
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                          │
+│  [LOGO]                    Quick Links       Resources      Contact      │
+│  Brief description         Home              Blog           Phone        │
+│  of MyDigitalInvoice       Features          FAQ            WhatsApp     │
+│                            Pricing           Help Center    Email        │
+│  Social Links              How It Works      Support                     │
+│  [WhatsApp] [etc]          Contact           Privacy Policy              │
+│                                              Terms of Service            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────┤
+│  © 2026 MyDigitalInvoice. All rights reserved.  |  Privacy | Terms      │
+└──────────────────────────────────────────────────────────────────────────┘
+```
+
+## 4.2 Footer Consistency Checklist
+
+### Verify Footer Content is IDENTICAL on ALL Pages:
+
+#### Footer Elements to Check:
+- [ ] Company logo present
+- [ ] Company description/tagline
+- [ ] Quick Links column with correct links
+- [ ] Resources column with correct links
+- [ ] Contact information:
+  - [ ] Phone: +92 333 6820 820
+  - [ ] WhatsApp link
+  - [ ] Email (if present)
+- [ ] Social media links (if any)
+- [ ] Copyright notice: "© 2026 MyDigitalInvoice"
+- [ ] Privacy Policy link
+- [ ] Terms of Service link
+- [ ] Cookie Policy link (if applicable)
+
+### Footer Link Verification:
+| Link | Expected URL | Works? |
+|------|--------------|--------|
+| Logo | / | [ ] |
+| Home | / | [ ] |
+| Features | /features | [ ] |
+| Pricing | /pricing | [ ] |
+| Contact | /contact | [ ] |
+| Blog | /blog | [ ] |
+| FAQ | /faq | [ ] |
+| Privacy Policy | /privacy | [ ] |
+| Terms of Service | /terms | [ ] |
+| WhatsApp | https://wa.me/923336820820 | [ ] |
+| Phone | tel:+923336820820 | [ ] |
+
+### Footer Consistency Matrix (Check Each Page):
+| Page | Footer Present? | Identical Content? | All Links Work? |
+|------|-----------------|-------------------|-----------------|
+| index.html | [ ] | [ ] | [ ] |
+| features.html | [ ] | [ ] | [ ] |
+| pricing.html | [ ] | [ ] | [ ] |
+| demo.html | [ ] | [ ] | [ ] |
+| how-it-works.html | [ ] | [ ] | [ ] |
+| faq.html | [ ] | [ ] | [ ] |
+| contact.html | [ ] | [ ] | [ ] |
+| about.html | [ ] | [ ] | [ ] |
+| privacy.html | [ ] | [ ] | [ ] |
+| terms.html | [ ] | [ ] | [ ] |
+| cookies.html | [ ] | [ ] | [ ] |
+| compare.html | [ ] | [ ] | [ ] |
+| blog/index.html | [ ] | [ ] | [ ] |
+| blog/posts/*.html | [ ] | [ ] | [ ] |
+| industries/*.html | [ ] | [ ] | [ ] |
+| tools/*.html | [ ] | [ ] | [ ] |
+| 404.html | [ ] | [ ] | [ ] |
+
+## 4.3 Footer Responsive Check
+
+| Breakpoint | Layout Correct? | All Content Visible? | Links Tappable? |
+|------------|-----------------|---------------------|-----------------|
+| 320px | [ ] | [ ] | [ ] |
+| 375px | [ ] | [ ] | [ ] |
+| 768px | [ ] | [ ] | [ ] |
+| 1024px | [ ] | [ ] | [ ] |
+| 1440px | [ ] | [ ] | [ ] |
+
+---
+
+# 5. PHASE 4: CONTENT & MESSAGE CONSISTENCY AUDIT
+
+## 5.1 Key Messages to Verify
+
+### Primary Value Propositions (MUST appear consistently):
+| Message | Correct Wording | Found On |
+|---------|-----------------|----------|
+| Trial Period | "60-Day FREE Trial" or "60 Days FREE" | Homepage, Pricing, CTAs |
+| Setup Fee | "No Setup Fee" or "Zero Setup Fee" or "Absolutely Free" | Pricing, CTAs |
+| Credit Card | "No Credit Card Required" | CTAs, Pricing |
+| Compliance Status | "FBR compliance is NOW MANDATORY" | NOT "deadline December 31, 2025" |
+| Getting Compliant | "Get compliant in 24 hours" | Hero, CTAs |
+
+### Message Consistency Audit per Page:
+| Page | 60-Day Trial ✓ | No Setup Fee ✓ | No CC Required ✓ | Compliance Mandatory ✓ |
+|------|----------------|----------------|------------------|------------------------|
+| index.html | [ ] | [ ] | [ ] | [ ] |
+| features.html | [ ] | [ ] | [ ] | [ ] |
+| pricing.html | [ ] | [ ] | [ ] | [ ] |
+| demo.html | [ ] | [ ] | [ ] | [ ] |
+| how-it-works.html | [ ] | [ ] | [ ] | [ ] |
+| contact.html | [ ] | [ ] | [ ] | [ ] |
+
+## 5.2 Pricing Consistency Audit
+
+### Correct Pricing (Verify on ALL Pages):
+| Plan | Price | Invoice Limit | Badge |
+|------|-------|---------------|-------|
+| Starter | FREE | Up to 5/month | FREE |
+| Business | Rs 1,000/month | 5-20/month | MOST POPULAR |
+| Enterprise | Rs 2,000/month | 20-200/month | SCALE |
+| Unlimited | Rs 2,500/month | Unlimited | PREMIUM |
+
+### Pages to Check Pricing:
+- [ ] Homepage pricing section
+- [ ] Pricing page
+- [ ] Comparison page (if exists)
+- [ ] Any promotional banners
+
+### Pricing Consistency Issues to Look For:
+- [ ] Old pricing (Rs 2,500 for Business)
+- [ ] Missing tiers
+- [ ] Wrong invoice limits
+- [ ] Incorrect badges
+- [ ] Net metering references (SHOULD NOT EXIST)
+
+## 5.3 Contact Information Consistency
+
+### Verify Same Contact Info Everywhere:
+| Location | Phone | WhatsApp | Email |
+|----------|-------|----------|-------|
+| Header | [ ] +92 333 6820 820 | [ ] | [ ] |
+| Footer | [ ] +92 333 6820 820 | [ ] | [ ] |
+| Contact page | [ ] +92 333 6820 820 | [ ] | [ ] |
+| WhatsApp float | [ ] | [ ] 923336820820 | N/A |
+| Schema markup | [ ] +92-333-6820820 | [ ] | [ ] |
+
+## 5.4 CTA Consistency Audit
+
+### Expected CTA Patterns:
+| CTA Type | Text | URL |
+|----------|------|-----|
+| Primary Trial | "Start Free Trial" or "Start 60-Day FREE Trial" | https://fbr.mydigitalinvoice.com/login |
+| Secondary Demo | "Watch Demo" or "Watch Full Demo" | YouTube link |
+| Contact | "Contact Us" or "Talk to Sales" | /contact or WhatsApp |
+| WhatsApp | "Chat on WhatsApp" | https://wa.me/923336820820 |
+
+### CTA Audit Per Page:
+| Page | Primary CTA Correct? | Links to Right URL? | Secondary CTA? |
+|------|---------------------|--------------------|-----------------| 
+| index.html | [ ] | [ ] | [ ] |
+| features.html | [ ] | [ ] | [ ] |
+| pricing.html | [ ] | [ ] | [ ] |
+| demo.html | [ ] | [ ] | [ ] |
+| how-it-works.html | [ ] | [ ] | [ ] |
+| faq.html | [ ] | [ ] | [ ] |
+| contact.html | [ ] | [ ] | [ ] |
+| about.html | [ ] | [ ] | [ ] |
+| compare.html | [ ] | [ ] | [ ] |
+| blog pages | [ ] | [ ] | [ ] |
+| industry pages | [ ] | [ ] | [ ] |
+
+## 5.5 Outdated/Incorrect Content Check
+
+### Search for and REMOVE these items:
+| Content to Find | Action | Found On |
+|-----------------|--------|----------|
+| "December 31, 2025" | Replace with "NOW MANDATORY" | |
+| "deadline" + 2025 | Remove deadline references | |
+| "net metering" | DELETE completely | |
+| "solar" (feature) | DELETE if referring to net metering | |
+| "Net Metering" in tables | DELETE row | |
+| Old pricing (Rs 2,500 Business) | Update to Rs 1,000 | |
+| "Coming soon" | Either implement or remove | |
+| Lorem ipsum | Replace with real content | |
+| Placeholder images | Replace with real images | |
+| test@email.com | Remove test data | |
+| "Your Company Name" | Replace | |
+
+### Search Commands:
+```bash
+# Search for outdated content in all HTML files
+grep -r "December 31, 2025" *.html
+grep -r "deadline" *.html
+grep -r "net metering" *.html
+grep -ri "Net Metering" *.html
+grep -r "solar" *.html
+grep -r "Lorem ipsum" *.html
+grep -r "coming soon" *.html
+grep -r "placeholder" *.html
+grep -r "test@" *.html
 ```
 
 ---
 
-## GAP #9: FIX BROKEN NAVIGATION/404s
+# 6. PHASE 5: BLOG & CONTENT AUDIT
 
-### 9.1 Link Audit Checklist
+## 6.1 Blog Existence Check
 
-Check and fix all links on the site:
+### Blog Infrastructure:
+- [ ] /blog or /blog/index.html exists
+- [ ] Blog page loads without errors
+- [ ] Blog is linked from main navigation
+- [ ] Blog is linked from footer
+- [ ] Blog is in sitemap.xml
 
-| Link | Expected Destination | Action |
-|------|---------------------|--------|
-| /testimonials | 404 | Redirect to /#testimonials OR create page |
-| /blog | 404 | Create blog section OR remove link |
-| /demo | Page or 404 | Create demo page if not exists |
-| /compare | 404 | Create comparison page |
-| All nav links | Various | Verify each works |
+## 6.2 Blog Post Verification
 
-### 9.2 Create .htaccess Redirects (if using Apache)
+### For EACH Blog Post, Verify:
+| Check | Post 1 | Post 2 | Post 3 | Post 4 |
+|-------|--------|--------|--------|--------|
+| URL works | [ ] | [ ] | [ ] | [ ] |
+| Real content (not placeholder) | [ ] | [ ] | [ ] | [ ] |
+| Title is descriptive | [ ] | [ ] | [ ] | [ ] |
+| Has meta description | [ ] | [ ] | [ ] | [ ] |
+| Has featured image | [ ] | [ ] | [ ] | [ ] |
+| Image loads correctly | [ ] | [ ] | [ ] | [ ] |
+| Content is 500+ words | [ ] | [ ] | [ ] | [ ] |
+| Has internal links | [ ] | [ ] | [ ] | [ ] |
+| Has CTA | [ ] | [ ] | [ ] | [ ] |
+| Published date visible | [ ] | [ ] | [ ] | [ ] |
+| Author visible (optional) | [ ] | [ ] | [ ] | [ ] |
 
-```apache
-# 301 Redirects for broken links
-RedirectMatch 301 ^/testimonials$ /#testimonials
-RedirectMatch 301 ^/reviews$ /#testimonials
+### Blog Post Inventory:
+| # | Title | URL | Real Content? | Links Work? |
+|---|-------|-----|---------------|-------------|
+| 1 | | | [ ] | [ ] |
+| 2 | | | [ ] | [ ] |
+| 3 | | | [ ] | [ ] |
+| 4 | | | [ ] | [ ] |
+| 5 | | | [ ] | [ ] |
 
-# Redirect old pricing URLs if any
-RedirectMatch 301 ^/pricing-plans$ /pricing
+## 6.3 Dummy Data Detection
 
-# Redirect any net-metering references (removed feature)
-RedirectMatch 301 ^/net-metering$ /features
-RedirectMatch 301 ^/solar$ /features
+### Check for Placeholder/Dummy Content:
+- [ ] "Lorem ipsum" text anywhere
+- [ ] "Sample text" or "placeholder"
+- [ ] Generic images (stock photo watermarks)
+- [ ] "Coming soon" sections
+- [ ] Empty sections
+- [ ] Broken image placeholders
+- [ ] "[Insert X here]" text
+- [ ] "TBD" or "TODO" text
+- [ ] Fake testimonials (check if names seem generic)
+- [ ] Default/template text
 
-# Error pages
-ErrorDocument 404 /404.html
-```
+### JavaScript Console Check for Missing Resources:
+```javascript
+// Run in browser console
+document.querySelectorAll('img').forEach(img => {
+  if (!img.complete || img.naturalHeight === 0) {
+    console.error('Missing/broken image:', img.src);
+  }
+});
 
-### 9.3 Create 404.html Page
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Not Found | MyDigitalInvoice</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <style>
-    .error-page {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .error-content {
-      max-width: 500px;
-    }
-    .error-code {
-      font-size: 120px;
-      font-weight: 700;
-      color: #0066cc;
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-    .error-title {
-      font-size: 28px;
-      margin-bottom: 16px;
-    }
-    .error-message {
-      color: #64748b;
-      margin-bottom: 32px;
-    }
-    .error-links {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-  </style>
-</head>
-<body>
-  <!-- Include your standard header/nav here -->
-  
-  <main class="error-page">
-    <div class="error-content">
-      <div class="error-code">404</div>
-      <h1 class="error-title">Page Not Found</h1>
-      <p class="error-message">
-        The page you're looking for doesn't exist or has been moved. 
-        Let's get you back on track to FBR compliance.
-      </p>
-      <div class="error-links">
-        <a href="/" class="btn btn-primary">Go to Homepage</a>
-        <a href="/pricing" class="btn btn-outline">View Pricing</a>
-        <a href="/contact" class="btn btn-outline">Contact Us</a>
-      </div>
-    </div>
-  </main>
-  
-  <!-- Include your standard footer here -->
-</body>
-</html>
+// Check for empty elements
+document.querySelectorAll('p, h1, h2, h3, h4, span, a').forEach(el => {
+  if (el.innerText.trim() === '' && !el.querySelector('*')) {
+    console.warn('Empty element:', el);
+  }
+});
 ```
 
 ---
 
-## GAP #10: META TAGS OPTIMIZATION
+# 7. PHASE 6: INTERACTIVE ELEMENTS TESTING
 
-### 10.1 Meta Tags for Each Page
+## 7.1 Known Issues to Fix
 
-#### index.html
+### Issue 1: Mobile Pricing Accordion Not Working
+**Status:** CONFIRMED BROKEN  
+**Location:** Homepage & Pricing page (mobile view)  
+**Expected:** Clicking tier header expands/collapses content  
+**Actual:** Nothing happens on click
 
-```html
-<head>
-  <!-- Existing Google tags - DO NOT MODIFY -->
-  
-  <!-- Primary Meta Tags -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FBR Digital Invoicing Software Pakistan | IRIS Integrated | MyDigitalInvoice</title>
-  <meta name="title" content="FBR Digital Invoicing Software Pakistan | IRIS Integrated | MyDigitalInvoice">
-  <meta name="description" content="Pakistan's most affordable FBR-compliant digital invoicing software. Auto-submit to IRIS, get IRN & QR codes instantly. Plans from FREE to Rs 2,500/month. 60-day free trial.">
-  <meta name="keywords" content="FBR digital invoicing, FBR IRIS integration, e-invoicing Pakistan, FBR compliant software, IRN generation, QR code invoice, sales tax Pakistan, FBR invoice software">
-  <meta name="author" content="MyDigitalInvoice">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mydigitalinvoice.com/">
-  <meta property="og:title" content="FBR Digital Invoicing Software Pakistan | MyDigitalInvoice">
-  <meta property="og:description" content="Get FBR compliant in 24 hours. Auto IRIS submission, IRN & QR codes. 60-day FREE trial, no setup fee.">
-  <meta property="og:image" content="https://mydigitalinvoice.com/images/og-image.png">
-  <meta property="og:locale" content="en_PK">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://mydigitalinvoice.com/">
-  <meta property="twitter:title" content="FBR Digital Invoicing Software Pakistan | MyDigitalInvoice">
-  <meta property="twitter:description" content="Get FBR compliant in 24 hours. Auto IRIS submission, IRN & QR codes. 60-day FREE trial, no setup fee.">
-  <meta property="twitter:image" content="https://mydigitalinvoice.com/images/og-image.png">
-  
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://mydigitalinvoice.com/">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/images/favicon.png">
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-  
-  <!-- Rest of head content -->
-</head>
+**Fix Verification:**
+- [ ] Accordion headers are clickable
+- [ ] Click expands tier content
+- [ ] Click again collapses content
+- [ ] Chevron rotates on expand
+- [ ] Only one tier open at a time (or multiple - design decision)
+- [ ] Works on touch devices
+
+### Issue 2: Product Preview Tabs Not Working
+**Status:** CONFIRMED BROKEN  
+**Location:** Homepage "See MyDigitalInvoice In Action" section  
+**Expected:** Clicking tab switches displayed screenshot  
+**Actual:** Nothing happens on click
+
+**Fix Verification:**
+- [ ] Tab buttons are clickable
+- [ ] Click switches active tab styling
+- [ ] Click shows corresponding screenshot
+- [ ] Screenshot transition is smooth
+- [ ] Works on mobile
+- [ ] Default tab is selected on load
+
+## 7.2 All Interactive Elements Checklist
+
+### Buttons:
+| Element | Page | Clickable? | Correct Action? |
+|---------|------|------------|-----------------|
+| Primary CTA buttons | All | [ ] | [ ] |
+| Secondary CTA buttons | All | [ ] | [ ] |
+| Navigation links | All | [ ] | [ ] |
+| Footer links | All | [ ] | [ ] |
+| Mobile hamburger | All | [ ] | [ ] |
+| Accordion headers | Pricing | [ ] | [ ] |
+| Tab buttons | Homepage | [ ] | [ ] |
+| FAQ accordion items | FAQ | [ ] | [ ] |
+| Form submit buttons | Contact | [ ] | [ ] |
+| Video play buttons | Demo/Homepage | [ ] | [ ] |
+| WhatsApp float button | All | [ ] | [ ] |
+| Exit intent popup close | Homepage | [ ] | [ ] |
+
+### Forms:
+| Form | Page | All Fields Work? | Validation Works? | Submits? |
+|------|------|------------------|-------------------|----------|
+| Contact form | Contact | [ ] | [ ] | [ ] |
+| Email capture | Homepage footer | [ ] | [ ] | [ ] |
+| Exit intent popup form | Homepage | [ ] | [ ] | [ ] |
+| Lead magnet form | Various | [ ] | [ ] | [ ] |
+
+### Form Field Testing:
 ```
+For each form field:
+- [ ] Field accepts input
+- [ ] Placeholder text visible
+- [ ] Label associated correctly
+- [ ] Required fields marked
+- [ ] Validation error messages show
+- [ ] Focus state visible
+- [ ] Tab navigation works
+```
+
+## 7.3 JavaScript Functionality Audit
+
+### Console Error Check (Every Page):
+```javascript
+// Check for JS errors
+// Open DevTools > Console
+// Should see NO red errors
+
+// Check if main.js loaded
+console.log('main.js loaded:', typeof initPreviewTabs !== 'undefined');
+```
+
+### Event Listener Verification:
+```javascript
+// Check if click events are attached to accordion
+document.querySelectorAll('.pricing-tier-accordion .tier-header').forEach(el => {
+  console.log('Header has click listener:', getEventListeners(el));
+});
+
+// Check if tab clicks are attached
+document.querySelectorAll('.preview-tab').forEach(el => {
+  console.log('Tab has click listener:', getEventListeners(el));
+});
+```
+
+---
+
+# 8. PHASE 7: RESPONSIVE DESIGN TESTING
+
+## 8.1 Breakpoint Testing Matrix
+
+### Test at These Exact Widths:
+| Breakpoint | Device Type | Width |
+|------------|-------------|-------|
+| XS | Small mobile | 320px |
+| SM | Standard mobile | 375px |
+| MD | Large mobile | 414px |
+| LG | Small tablet | 768px |
+| XL | Large tablet | 1024px |
+| 2XL | Small desktop | 1280px |
+| 3XL | Large desktop | 1440px |
+| 4XL | Extra large | 1920px |
+
+## 8.2 Page-by-Page Responsive Audit
+
+### For EACH Page, Test at EACH Breakpoint:
+
+#### index.html (Homepage)
+| Element | 320px | 375px | 768px | 1024px | 1440px |
+|---------|-------|-------|-------|--------|--------|
+| Navigation | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Hero section | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Hero text readable | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Hero CTAs visible | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Product preview | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Preview tabs | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Screenshots | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Features section | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Pricing section | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Pricing cards | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Testimonials | [ ] | [ ] | [ ] | [ ] | [ ] |
+| FAQ accordion | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Email capture | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Footer | [ ] | [ ] | [ ] | [ ] | [ ] |
+| WhatsApp button | [ ] | [ ] | [ ] | [ ] | [ ] |
+| No horizontal scroll | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 #### pricing.html
-
-```html
-<title>FBR Invoice Software Pricing | From FREE to Rs 2,500/month | MyDigitalInvoice</title>
-<meta name="description" content="Affordable FBR digital invoicing plans: Starter (FREE), Business (Rs 1,000/mo), Enterprise (Rs 2,000/mo), Unlimited (Rs 2,500/mo). No setup fee, 60-day trial.">
-<meta name="keywords" content="FBR invoicing software price, digital invoice Pakistan cost, affordable FBR compliance, invoice software pricing Pakistan">
-<link rel="canonical" href="https://mydigitalinvoice.com/pricing">
-```
+| Element | 320px | 375px | 768px | 1024px | 1440px |
+|---------|-------|-------|-------|--------|--------|
+| Navigation | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Page title | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Pricing cards | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Card content | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Accordion (mobile) | [ ] | [ ] | N/A | N/A | N/A |
+| Comparison table | [ ] | [ ] | [ ] | [ ] | [ ] |
+| CTA buttons | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Footer | [ ] | [ ] | [ ] | [ ] | [ ] |
+| No horizontal scroll | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 #### features.html
+| Element | 320px | 375px | 768px | 1024px | 1440px |
+|---------|-------|-------|-------|--------|--------|
+| Navigation | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Hero section | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Feature cards | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Screenshots | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Text readable | [ ] | [ ] | [ ] | [ ] | [ ] |
+| CTA buttons | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Footer | [ ] | [ ] | [ ] | [ ] | [ ] |
+| No horizontal scroll | [ ] | [ ] | [ ] | [ ] | [ ] |
 
-```html
-<title>FBR Compliance Features | IRIS Integration & IRN Generation | MyDigitalInvoice</title>
-<meta name="description" content="Auto FBR submission, HS code lookup, IRN & QR generation, reports & analytics. All features for complete FBR compliance. Start free trial today.">
-<meta name="keywords" content="FBR invoice features, IRIS integration, IRN generation, QR code invoice, HS code Pakistan, FBR compliance features">
-<link rel="canonical" href="https://mydigitalinvoice.com/features">
+*Repeat similar tables for all pages*
+
+## 8.3 Common Responsive Issues to Check
+
+### Layout Issues:
+- [ ] Elements overflowing viewport (causing horizontal scroll)
+- [ ] Text too small to read on mobile (<14px)
+- [ ] Buttons too small to tap (<44px)
+- [ ] Images not scaling
+- [ ] Fixed-width elements breaking layout
+- [ ] Padding/margins too large on mobile
+- [ ] Grid layouts not stacking on mobile
+
+### Typography Issues:
+- [ ] Headings too large on mobile
+- [ ] Line length too long (>75 characters)
+- [ ] Line height too tight
+- [ ] Font weights not legible
+
+### Image Issues:
+- [ ] Images not responsive (check `max-width: 100%`)
+- [ ] Images too large (slow loading)
+- [ ] Art direction issues (image cropped poorly)
+- [ ] Missing mobile-specific images
+
+## 8.4 Responsive Testing Tools
+
+### Manual Testing:
+```
+1. Chrome DevTools > Toggle Device Toolbar (Ctrl+Shift+M)
+2. Select specific device or set custom dimensions
+3. Test each breakpoint systematically
 ```
 
-#### faq.html
-
-```html
-<title>FBR Digital Invoicing FAQ | Common Questions Answered | MyDigitalInvoice</title>
-<meta name="description" content="Get answers to common FBR digital invoicing questions. Learn about IRN, IRIS integration, compliance requirements, penalties, and how MyDigitalInvoice can help.">
-<meta name="keywords" content="FBR FAQ, digital invoicing questions, IRN explained, FBR compliance help, e-invoicing Pakistan questions">
-<link rel="canonical" href="https://mydigitalinvoice.com/faq">
-```
-
-#### contact.html
-
-```html
-<title>Contact MyDigitalInvoice | FBR Compliance Support Pakistan</title>
-<meta name="description" content="Contact MyDigitalInvoice for FBR compliance support. WhatsApp: +92 333 6820 820. Get help with digital invoicing setup and IRIS integration.">
-<meta name="keywords" content="contact MyDigitalInvoice, FBR software support, digital invoicing help Pakistan">
-<link rel="canonical" href="https://mydigitalinvoice.com/contact">
-```
-
-#### about.html
-
-```html
-<title>About MyDigitalInvoice | Pakistan's Trusted FBR Invoicing Solution</title>
-<meta name="description" content="Learn about MyDigitalInvoice - helping Pakistani businesses comply with FBR digital invoicing requirements. Our mission, team, and commitment to your compliance.">
-<meta name="keywords" content="about MyDigitalInvoice, FBR software company Pakistan, digital invoicing company">
-<link rel="canonical" href="https://mydigitalinvoice.com/about">
-```
-
-#### how-it-works.html
-
-```html
-<title>How FBR Digital Invoicing Works | Step-by-Step Guide | MyDigitalInvoice</title>
-<meta name="description" content="Learn how to get FBR compliant in 4 simple steps. Sign up, connect to IRIS, create invoices, and auto-submit to FBR. Start in under 24 hours.">
-<meta name="keywords" content="how FBR invoicing works, digital invoice steps, IRIS integration guide, FBR compliance process">
-<link rel="canonical" href="https://mydigitalinvoice.com/how-it-works">
-```
-
----
-
-## GAP #11: COMPETITOR COMPARISON PAGE
-
-### 11.1 Create compare.html
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compare FBR Invoicing Software | MyDigitalInvoice vs Others</title>
-  <meta name="description" content="Compare MyDigitalInvoice with other FBR invoicing solutions. See why we offer the best value with transparent pricing and complete features.">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <!-- Header -->
-  
-  <main>
-    <!-- Hero -->
-    <section class="compare-hero">
-      <div class="container">
-        <span class="section-badge">COMPARISON</span>
-        <h1>Why Choose <span class="gradient-text">MyDigitalInvoice?</span></h1>
-        <p class="subtitle">See how we stack up against other FBR invoicing solutions</p>
-      </div>
-    </section>
-    
-    <!-- Price Comparison -->
-    <section class="price-comparison section">
-      <div class="container">
-        <h2>Price Comparison</h2>
-        <p class="section-subtitle">Transparent pricing vs. hidden costs</p>
-        
-        <div class="comparison-cards">
-          <div class="comparison-card highlight">
-            <div class="card-header">
-              <h3>MyDigitalInvoice</h3>
-              <span class="badge">BEST VALUE</span>
-            </div>
-            <div class="card-price">
-              <span class="price-label">Starting at</span>
-              <span class="price-value">FREE</span>
-              <span class="price-note">Up to Rs 2,500/month</span>
-            </div>
-            <ul class="card-features">
-              <li>✓ Transparent pricing</li>
-              <li>✓ No hidden fees</li>
-              <li>✓ No setup cost</li>
-              <li>✓ 60-day free trial</li>
-              <li>✓ Cancel anytime</li>
-            </ul>
-          </div>
-          
-          <div class="comparison-card">
-            <div class="card-header">
-              <h3>Other Solutions</h3>
-            </div>
-            <div class="card-price">
-              <span class="price-label">Typically</span>
-              <span class="price-value">Rs 50,000+</span>
-              <span class="price-note">Per year or hidden pricing</span>
-            </div>
-            <ul class="card-features">
-              <li>✗ Hidden pricing</li>
-              <li>✗ Setup fees</li>
-              <li>✗ Annual contracts</li>
-              <li>✗ Limited trials</li>
-              <li>✗ Cancellation penalties</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Feature Comparison Table -->
-    <section class="feature-comparison section">
-      <div class="container">
-        <h2>Feature Comparison</h2>
-        
-        <div class="comparison-table-wrapper">
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th>Feature</th>
-                <th class="highlight">MyDigitalInvoice</th>
-                <th>Typical Competitors</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>FBR IRIS Integration</td>
-                <td class="highlight">✓ Full Integration</td>
-                <td>✓ Varies</td>
-              </tr>
-              <tr>
-                <td>IRN Generation</td>
-                <td class="highlight">✓ Automatic</td>
-                <td>✓ Some Manual</td>
-              </tr>
-              <tr>
-                <td>QR Code Generation</td>
-                <td class="highlight">✓ Included</td>
-                <td>✓ Included</td>
-              </tr>
-              <tr>
-                <td>HS Code Lookup</td>
-                <td class="highlight">✓ Built-in</td>
-                <td>△ Manual</td>
-              </tr>
-              <tr>
-                <td>Pricing Transparency</td>
-                <td class="highlight">✓ 100% Clear</td>
-                <td>✗ Often Hidden</td>
-              </tr>
-              <tr>
-                <td>Free Plan Available</td>
-                <td class="highlight">✓ Yes (5 invoices/mo)</td>
-                <td>✗ Rarely</td>
-              </tr>
-              <tr>
-                <td>Setup Fee</td>
-                <td class="highlight">✓ None</td>
-                <td>✗ Rs 10,000-50,000</td>
-              </tr>
-              <tr>
-                <td>Free Trial</td>
-                <td class="highlight">✓ 60 Days</td>
-                <td>△ 7-14 Days</td>
-              </tr>
-              <tr>
-                <td>Phone Support</td>
-                <td class="highlight">✓ All Plans</td>
-                <td>△ Premium Only</td>
-              </tr>
-              <tr>
-                <td>WhatsApp Support</td>
-                <td class="highlight">✓ Yes</td>
-                <td>✗ Rarely</td>
-              </tr>
-              <tr>
-                <td>Setup Time</td>
-                <td class="highlight">✓ Under 24 Hours</td>
-                <td>△ Days to Weeks</td>
-              </tr>
-              <tr>
-                <td>Contract Lock-in</td>
-                <td class="highlight">✓ None (Monthly)</td>
-                <td>✗ Annual Often</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        
-        <p class="table-note">✓ = Included | △ = Partial/Limited | ✗ = Not Available</p>
-      </div>
-    </section>
-    
-    <!-- Why We're Different -->
-    <section class="why-different section">
-      <div class="container">
-        <h2>Why Businesses Choose Us</h2>
-        
-        <div class="reasons-grid">
-          <div class="reason-card">
-            <div class="reason-icon">💰</div>
-            <h3>90% Lower Cost</h3>
-            <p>Most FBR solutions charge Rs 50,000-200,000/year. We start at FREE and max out at Rs 2,500/month.</p>
-          </div>
-          
-          <div class="reason-card">
-            <div class="reason-icon">⚡</div>
-            <h3>24-Hour Setup</h3>
-            <p>Get compliant in under 24 hours. No lengthy onboarding, no complex configuration.</p>
-          </div>
-          
-          <div class="reason-card">
-            <div class="reason-icon">🔒</div>
-            <h3>No Lock-in</h3>
-            <p>Monthly billing, cancel anytime. No annual contracts or cancellation fees.</p>
-          </div>
-          
-          <div class="reason-card">
-            <div class="reason-icon">📞</div>
-            <h3>Real Support</h3>
-            <p>WhatsApp and phone support on ALL plans. Talk to real humans, not chatbots.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- CTA -->
-    <section class="compare-cta section">
-      <div class="container">
-        <div class="cta-card">
-          <h2>Ready to Save Money and Stay Compliant?</h2>
-          <p>Join businesses saving thousands while staying 100% FBR compliant.</p>
-          <div class="cta-buttons">
-            <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-lg">Start 60-Day FREE Trial</a>
-            <a href="https://wa.me/923336820820" target="_blank" class="btn btn-outline btn-lg">
-              Chat on WhatsApp
-            </a>
-          </div>
-          <p class="cta-note">✓ No credit card required · ✓ No setup fee · ✓ Cancel anytime</p>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <!-- Footer -->
-</body>
-</html>
-```
-
----
-
-## GAP #12: TRUST SIGNALS ENHANCEMENT
-
-### 12.1 Add Trust Badges Section
-
-Add to `index.html` after hero or testimonials:
-
-```html
-<!-- Trust Signals Section -->
-<section class="trust-signals">
-  <div class="container">
-    <div class="trust-badges">
-      <div class="trust-badge">
-        <img src="images/badges/fbr-integrated.png" alt="FBR Integrated">
-        <span>FBR IRIS Integrated</span>
-      </div>
-      <div class="trust-badge">
-        <img src="images/badges/secure.png" alt="Secure">
-        <span>256-bit Encryption</span>
-      </div>
-      <div class="trust-badge">
-        <img src="images/badges/cloud.png" alt="Cloud Based">
-        <span>Cloud-Based</span>
-      </div>
-      <div class="trust-badge">
-        <img src="images/badges/support.png" alt="Support">
-        <span>24/7 Support</span>
-      </div>
-    </div>
-  </div>
-</section>
-```
-
-### 12.2 Add Customer Logos Section
-
-```html
-<!-- Trusted By Section -->
-<section class="trusted-by">
-  <div class="container">
-    <p class="trusted-label">Trusted by businesses across Pakistan</p>
-    <div class="customer-logos">
-      <!-- Add actual customer logos when available -->
-      <div class="logo-placeholder">Manufacturing</div>
-      <div class="logo-placeholder">Retail</div>
-      <div class="logo-placeholder">Wholesale</div>
-      <div class="logo-placeholder">Services</div>
-      <div class="logo-placeholder">Import/Export</div>
-    </div>
-    <p class="customer-count">Helping 500+ Pakistani businesses stay FBR compliant</p>
-  </div>
-</section>
-```
-
-### 12.3 Enhance Testimonials with Metrics
-
-Update testimonial cards to include specific metrics:
-
-```html
-<div class="testimonial-card">
-  <div class="testimonial-rating">★★★★★</div>
-  <p class="testimonial-quote">"MyDigitalInvoice helped us become FBR compliant within 24 hours. We've processed over 500 invoices without a single issue."</p>
-  <div class="testimonial-metric">
-    <span class="metric-value">500+</span>
-    <span class="metric-label">Invoices Processed</span>
-  </div>
-  <div class="testimonial-author">
-    <img src="images/testimonials/avatar-1.jpg" alt="Ahmed Khan">
-    <div>
-      <strong>Ahmed Khan</strong>
-      <span>CEO, Khan Electronics</span>
-    </div>
-  </div>
-</div>
-
-<div class="testimonial-card">
-  <div class="testimonial-rating">★★★★★</div>
-  <p class="testimonial-quote">"Saved us from a potential Rs 500,000 penalty. The setup was incredibly easy and support is always responsive."</p>
-  <div class="testimonial-metric">
-    <span class="metric-value">Rs 500K</span>
-    <span class="metric-label">Penalty Avoided</span>
-  </div>
-  <div class="testimonial-author">
-    <img src="images/testimonials/avatar-2.jpg" alt="Fatima Ali">
-    <div>
-      <strong>Fatima Ali</strong>
-      <span>Director, Ali Trading Co.</span>
-    </div>
-  </div>
-</div>
-
-<div class="testimonial-card">
-  <div class="testimonial-rating">★★★★★</div>
-  <p class="testimonial-quote">"We used to spend 10+ hours monthly on FBR reporting. Now it's automatic and takes minutes."</p>
-  <div class="testimonial-metric">
-    <span class="metric-value">10+ hrs</span>
-    <span class="metric-label">Saved Monthly</span>
-  </div>
-  <div class="testimonial-author">
-    <img src="images/testimonials/avatar-3.jpg" alt="Bilal Mahmood">
-    <div>
-      <strong>Bilal Mahmood</strong>
-      <span>Owner, Mahmood Industries</span>
-    </div>
-  </div>
-</div>
-```
-
----
-
-## GAP #13: ONBOARDING CONTENT (HOW IT WORKS)
-
-### 13.1 Update/Create how-it-works.html
-
-```html
-<!-- How It Works Section -->
-<section class="how-it-works section">
-  <div class="container">
-    <span class="section-badge">SIMPLE PROCESS</span>
-    <h2>Get FBR Compliant in <span class="gradient-text">4 Easy Steps</span></h2>
-    <p class="section-subtitle">From signup to first compliant invoice in under 24 hours</p>
-    
-    <div class="steps-timeline">
-      <!-- Step 1 -->
-      <div class="step-item">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <div class="step-icon">📝</div>
-          <h3>Sign Up Free</h3>
-          <p>Create your account in 2 minutes. No credit card required, no setup fee.</p>
-          <ul class="step-details">
-            <li>Enter basic business details</li>
-            <li>Verify your email</li>
-            <li>Access your dashboard instantly</li>
-          </ul>
-          <span class="step-time">⏱ 2 minutes</span>
-        </div>
-      </div>
-      
-      <!-- Step 2 -->
-      <div class="step-item">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <div class="step-icon">🔗</div>
-          <h3>Connect to FBR</h3>
-          <p>Link your NTN and connect to FBR's IRIS system. We guide you through every step.</p>
-          <ul class="step-details">
-            <li>Enter your NTN number</li>
-            <li>Authorize IRIS connection</li>
-            <li>Automatic API configuration</li>
-          </ul>
-          <span class="step-time">⏱ 10 minutes</span>
-        </div>
-      </div>
-      
-      <!-- Step 3 -->
-      <div class="step-item">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <div class="step-icon">📄</div>
-          <h3>Create Invoice</h3>
-          <p>Use our simple interface to create your first FBR-compliant invoice.</p>
-          <ul class="step-details">
-            <li>Add buyer details</li>
-            <li>Select products with HS codes</li>
-            <li>Tax auto-calculates</li>
-          </ul>
-          <span class="step-time">⏱ 3 minutes</span>
-        </div>
-      </div>
-      
-      <!-- Step 4 -->
-      <div class="step-item">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <div class="step-icon">✅</div>
-          <h3>Auto-Submit to FBR</h3>
-          <p>Your invoice is automatically submitted to FBR. IRN and QR code generated instantly.</p>
-          <ul class="step-details">
-            <li>One-click submission</li>
-            <li>Instant IRN generation</li>
-            <li>QR code for verification</li>
-          </ul>
-          <span class="step-time">⏱ Instant</span>
-        </div>
-      </div>
-    </div>
-    
-    <div class="total-time">
-      <span class="time-badge">Total Time: Under 20 Minutes</span>
-      <p>From signup to your first FBR-compliant invoice</p>
-    </div>
-    
-    <!-- Video Tutorial -->
-    <div class="video-tutorial">
-      <h3>Watch the Setup Guide</h3>
-      <div class="video-container">
-        <a href="https://www.youtube.com/watch?v=hqTbLX9U2i0" target="_blank" class="video-thumbnail">
-          <img src="images/screenshots/dashboard-overview.png" alt="Setup Tutorial">
-          <div class="play-button">▶</div>
-        </a>
-      </div>
-    </div>
-    
-    <!-- CTA -->
-    <div class="how-cta">
-      <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-lg">Start Your FREE Trial Now</a>
-      <p class="cta-note">60 days free · No credit card · Cancel anytime</p>
-    </div>
-  </div>
-</section>
-```
-
----
-
-## GAP #14: CONTACT FORM OPTIMIZATION
-
-### 14.1 Simplified Contact Form (4 Fields)
-
-Replace current contact form with:
-
-```html
-<form id="contact-form" class="contact-form" action="YOUR_FORM_ENDPOINT" method="POST">
-  <h3>Send us a message</h3>
-  <p>We typically respond within 1 hour during business hours.</p>
-  
-  <div class="form-group">
-    <label for="name">Your Name *</label>
-    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-  </div>
-  
-  <div class="form-group">
-    <label for="phone">Phone / WhatsApp *</label>
-    <input type="tel" id="phone" name="phone" placeholder="03XX-XXXXXXX" required>
-    <span class="form-hint">We'll contact you on WhatsApp for faster response</span>
-  </div>
-  
-  <div class="form-group">
-    <label for="email">Email Address *</label>
-    <input type="email" id="email" name="email" placeholder="your@email.com" required>
-  </div>
-  
-  <div class="form-group">
-    <label for="message">Message (Optional)</label>
-    <textarea id="message" name="message" rows="4" placeholder="Tell us about your business or ask a question..."></textarea>
-  </div>
-  
-  <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-  
-  <p class="form-privacy">🔒 Your information is secure and will never be shared.</p>
-</form>
-```
-
-### 14.2 Contact Form CSS
-
-```css
-.contact-form {
-  max-width: 500px;
-  background: white;
-  padding: 32px;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form h3 {
-  margin-bottom: 8px;
-}
-
-.contact-form > p {
-  color: #64748b;
-  margin-bottom: 24px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 8px;
-  color: #334155;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #0066cc;
-}
-
-.form-hint {
-  display: block;
-  font-size: 13px;
-  color: #64748b;
-  margin-top: 6px;
-}
-
-.contact-form button {
-  width: 100%;
-  margin-top: 8px;
-}
-
-.form-privacy {
-  text-align: center;
-  font-size: 13px;
-  color: #64748b;
-  margin-top: 16px;
-}
-```
-
----
-
-## GAP #15: EXIT INTENT POPUP
-
-### 15.1 Exit Intent HTML
-
-Add before closing `</body>` tag on all pages:
-
-```html
-<!-- Exit Intent Popup -->
-<div id="exit-popup" class="exit-popup">
-  <div class="exit-popup-overlay"></div>
-  <div class="exit-popup-content">
-    <button class="exit-popup-close" aria-label="Close">&times;</button>
-    
-    <div class="exit-popup-icon">📋</div>
-    <h3>Wait! Don't Leave Without This</h3>
-    <p>Download our FREE FBR Compliance Checklist and make sure your business is fully compliant.</p>
-    
-    <form id="exit-popup-form" action="YOUR_FORM_ENDPOINT" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required>
-      <button type="submit" class="btn btn-primary">Download FREE Checklist</button>
-    </form>
-    
-    <p class="popup-note">No spam. Unsubscribe anytime.</p>
-    
-    <a href="#" class="popup-skip">No thanks, I'll risk the penalties</a>
-  </div>
-</div>
-```
-
-### 15.2 Exit Intent CSS
-
-```css
-/* Exit Intent Popup */
-.exit-popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10000;
-}
-
-.exit-popup.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: fadeIn 0.3s ease;
-}
-
-.exit-popup-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.exit-popup-content {
-  position: relative;
-  background: white;
-  padding: 48px 40px;
-  border-radius: 16px;
-  max-width: 450px;
-  width: 90%;
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  animation: slideUp 0.3s ease;
-}
-
-.exit-popup-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 32px;
-  height: 32px;
-  border: none;
-  background: #f1f5f9;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s ease;
-}
-
-.exit-popup-close:hover {
-  background: #e2e8f0;
-}
-
-.exit-popup-icon {
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-
-.exit-popup-content h3 {
-  font-size: 24px;
-  margin-bottom: 12px;
-}
-
-.exit-popup-content > p {
-  color: #64748b;
-  margin-bottom: 24px;
-}
-
-#exit-popup-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-#exit-popup-form input {
-  padding: 14px 16px;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-#exit-popup-form input:focus {
-  outline: none;
-  border-color: #0066cc;
-}
-
-.popup-note {
-  font-size: 13px;
-  color: #64748b;
-  margin-top: 12px;
-}
-
-.popup-skip {
-  display: inline-block;
-  margin-top: 16px;
-  font-size: 13px;
-  color: #94a3b8;
-  text-decoration: underline;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 480px) {
-  .exit-popup-content {
-    padding: 32px 24px;
-  }
-}
-```
-
-### 15.3 Exit Intent JavaScript
-
+### Automated Check:
 ```javascript
-// Exit Intent Popup
-function initExitIntent() {
-  const popup = document.getElementById('exit-popup');
-  if (!popup) return;
-  
-  const closeBtn = popup.querySelector('.exit-popup-close');
-  const overlay = popup.querySelector('.exit-popup-overlay');
-  const skipLink = popup.querySelector('.popup-skip');
-  
-  let hasShown = false;
-  
-  // Check if already shown this session
-  if (sessionStorage.getItem('exit-popup-shown')) {
-    return;
-  }
-  
-  function showPopup() {
-    if (hasShown) return;
-    hasShown = true;
-    popup.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    sessionStorage.setItem('exit-popup-shown', 'true');
-  }
-  
-  function hidePopup() {
-    popup.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  
-  // Detect exit intent (mouse leaves viewport at top)
-  document.addEventListener('mouseout', function(e) {
-    if (e.clientY < 10 && !hasShown) {
-      // Small delay to avoid false triggers
-      setTimeout(showPopup, 100);
-    }
-  });
-  
-  // Close handlers
-  closeBtn?.addEventListener('click', hidePopup);
-  overlay?.addEventListener('click', hidePopup);
-  skipLink?.addEventListener('click', function(e) {
-    e.preventDefault();
-    hidePopup();
-  });
-  
-  // ESC key to close
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && popup.classList.contains('active')) {
-      hidePopup();
-    }
-  });
-  
-  // Form submission
-  const form = document.getElementById('exit-popup-form');
-  form?.addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Handle form submission (AJAX)
-    // Then show success message or redirect
-    alert('Thank you! Check your email for the checklist.');
-    hidePopup();
-  });
-}
-
-document.addEventListener('DOMContentLoaded', initExitIntent);
-```
-
----
-
-## GAP #16: INDUSTRY-SPECIFIC PAGES
-
-### 16.1 Create Industry Landing Page Template
-
-Create folder: `/industries/`
-
-#### manufacturing.html
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FBR Digital Invoicing for Manufacturers | MyDigitalInvoice</title>
-  <meta name="description" content="FBR-compliant digital invoicing designed for Pakistani manufacturers. Auto HS code lookup, batch invoicing, and complete IRIS integration.">
-  <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-  <!-- Header -->
-  
-  <main>
-    <!-- Hero -->
-    <section class="industry-hero">
-      <div class="container">
-        <span class="section-badge">FOR MANUFACTURERS</span>
-        <h1>FBR Digital Invoicing for <span class="gradient-text">Manufacturers</span></h1>
-        <p class="subtitle">Streamline your FBR compliance with invoicing designed for manufacturing businesses</p>
-        <div class="hero-cta">
-          <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-lg">Start 60-Day FREE Trial</a>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Industry Challenges -->
-    <section class="industry-challenges section">
-      <div class="container">
-        <h2>Manufacturing Compliance Challenges We Solve</h2>
-        
-        <div class="challenges-grid">
-          <div class="challenge-card">
-            <div class="challenge-icon">📦</div>
-            <h3>Complex HS Codes</h3>
-            <p>Manufacturers deal with hundreds of products, each requiring accurate HS codes. Our built-in lookup makes it easy.</p>
-          </div>
-          
-          <div class="challenge-card">
-            <div class="challenge-icon">📊</div>
-            <h3>High Volume Invoicing</h3>
-            <p>Process hundreds of invoices monthly. Our batch processing and templates save hours every week.</p>
-          </div>
-          
-          <div class="challenge-card">
-            <div class="challenge-icon">🏭</div>
-            <h3>B2B Transactions</h3>
-            <p>Handle distributor and wholesaler invoicing with proper tax calculations and buyer NTN tracking.</p>
-          </div>
-          
-          <div class="challenge-card">
-            <div class="challenge-icon">📈</div>
-            <h3>Tax Reporting</h3>
-            <p>Generate accurate sales tax reports ready for filing. No more manual calculations.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Features for Industry -->
-    <section class="industry-features section">
-      <div class="container">
-        <h2>Features Made for Manufacturers</h2>
-        
-        <div class="features-list">
-          <div class="feature-item">
-            <div class="feature-icon">✓</div>
-            <div>
-              <h4>HS Code Library</h4>
-              <p>Pre-loaded with manufacturing HS codes. Search, save, and reuse.</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">✓</div>
-            <div>
-              <h4>Product Catalog</h4>
-              <p>Save all your products with prices, HS codes, and tax rates.</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">✓</div>
-            <div>
-              <h4>Buyer Registry</h4>
-              <p>Store distributor and customer details for quick invoicing.</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">✓</div>
-            <div>
-              <h4>Batch Processing</h4>
-              <p>Create multiple invoices at once. Perfect for large orders.</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">✓</div>
-            <div>
-              <h4>Sales Reports</h4>
-              <p>Daily, weekly, monthly reports. Export to Excel anytime.</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">✓</div>
-            <div>
-              <h4>Multi-User Access</h4>
-              <p>Add your accounting team with role-based permissions.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- CTA -->
-    <section class="industry-cta section">
-      <div class="container">
-        <div class="cta-card">
-          <h2>Ready to Simplify Your FBR Compliance?</h2>
-          <p>Join manufacturing businesses across Pakistan using MyDigitalInvoice</p>
-          <div class="cta-buttons">
-            <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-lg">Start FREE Trial</a>
-            <a href="https://wa.me/923336820820?text=Hi,%20I%20have%20a%20manufacturing%20business%20and%20need%20FBR%20compliance%20help." target="_blank" class="btn btn-outline btn-lg">Chat on WhatsApp</a>
-          </div>
-          <p class="cta-note">60 days FREE · No setup fee · No credit card required</p>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <!-- Footer -->
-</body>
-</html>
-```
-
-#### Create Similar Pages For:
-
-1. **retail.html** - Focus on:
-   - POS-like invoicing
-   - Walk-in customer handling
-   - Quick invoice creation
-   - Daily sales summary
-
-2. **wholesale.html** - Focus on:
-   - Bulk invoicing
-   - Credit management
-   - Buyer ledger
-   - B2B compliance
-
-3. **services.html** - Focus on:
-   - Service-based invoicing
-   - Time-based billing
-   - Professional services
-   - Consulting businesses
-
----
-
-## GAP #17: INTERACTIVE TOOLS (PENALTY CALCULATOR)
-
-### 17.1 Create penalty-calculator.html
-
-Create folder: `/tools/`
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FBR Penalty Calculator | Check Your Risk | MyDigitalInvoice</title>
-  <meta name="description" content="Calculate potential FBR penalties for non-compliance with digital invoicing requirements. See how much you could be fined and how to avoid it.">
-  <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-  <!-- Header -->
-  
-  <main>
-    <!-- Hero -->
-    <section class="tool-hero">
-      <div class="container">
-        <span class="section-badge">FREE TOOL</span>
-        <h1>FBR Penalty <span class="gradient-text">Calculator</span></h1>
-        <p class="subtitle">See what non-compliance could cost your business</p>
-      </div>
-    </section>
-    
-    <!-- Calculator -->
-    <section class="calculator-section section">
-      <div class="container">
-        <div class="calculator-wrapper">
-          <div class="calculator-form">
-            <h3>Calculate Your Risk</h3>
-            
-            <div class="form-group">
-              <label for="turnover">Annual Turnover (Rs)</label>
-              <input type="number" id="turnover" placeholder="e.g., 10000000" min="0">
-              <span class="form-hint">Your total annual sales revenue</span>
-            </div>
-            
-            <div class="form-group">
-              <label for="months">Months Non-Compliant</label>
-              <select id="months">
-                <option value="1">1 month</option>
-                <option value="3">3 months</option>
-                <option value="6" selected>6 months</option>
-                <option value="12">12 months</option>
-              </select>
-            </div>
-            
-            <div class="form-group">
-              <label for="business-type">Business Type</label>
-              <select id="business-type">
-                <option value="corporate">Corporate (Company)</option>
-                <option value="non-corporate">Non-Corporate (Individual/Partnership)</option>
-              </select>
-            </div>
-            
-            <button id="calculate-btn" class="btn btn-primary btn-lg">Calculate Potential Penalty</button>
-          </div>
-          
-          <div class="calculator-results" id="results" style="display: none;">
-            <h3>Your Risk Assessment</h3>
-            
-            <div class="result-card danger">
-              <span class="result-label">Maximum Potential Penalty</span>
-              <span class="result-value" id="max-penalty">Rs 0</span>
-            </div>
-            
-            <div class="result-breakdown">
-              <div class="breakdown-item">
-                <span>Fixed Penalty</span>
-                <span id="fixed-penalty">Rs 500,000</span>
-              </div>
-              <div class="breakdown-item">
-                <span>Turnover Penalty (0.1%)</span>
-                <span id="turnover-penalty">Rs 0</span>
-              </div>
-              <div class="breakdown-item">
-                <span>Additional Consequences</span>
-                <span>Tax filing complications</span>
-              </div>
-            </div>
-            
-            <div class="result-comparison">
-              <h4>Compare: Penalty vs. Compliance Cost</h4>
-              <div class="comparison-bar">
-                <div class="bar-item penalty-bar">
-                  <span class="bar-label">Potential Penalty</span>
-                  <div class="bar-fill" id="penalty-bar"></div>
-                  <span class="bar-value" id="penalty-value">Rs 0</span>
-                </div>
-                <div class="bar-item compliance-bar">
-                  <span class="bar-label">Annual Compliance Cost</span>
-                  <div class="bar-fill"></div>
-                  <span class="bar-value">Rs 12,000 - 30,000</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="result-cta">
-              <p><strong>Don't risk it.</strong> Get compliant today for a fraction of the penalty.</p>
-              <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary">Start FREE Trial — Avoid Penalties</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Info Section -->
-    <section class="penalty-info section">
-      <div class="container">
-        <h2>Understanding FBR Penalties</h2>
-        
-        <div class="info-cards">
-          <div class="info-card">
-            <h4>Fixed Penalty</h4>
-            <p>Up to <strong>Rs 500,000</strong> for failing to integrate with FBR's digital invoicing system.</p>
-          </div>
-          
-          <div class="info-card">
-            <h4>Percentage Penalty</h4>
-            <p><strong>0.1% of annual turnover</strong> can be imposed for continued non-compliance.</p>
-          </div>
-          
-          <div class="info-card">
-            <h4>Tax Complications</h4>
-            <p>Non-compliance affects your tax return filing, potential audits, and overall tax standing.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <!-- Footer -->
-  
-  <script>
-    // Penalty Calculator Logic
-    document.getElementById('calculate-btn').addEventListener('click', function() {
-      const turnover = parseFloat(document.getElementById('turnover').value) || 0;
-      const months = parseInt(document.getElementById('months').value);
-      const businessType = document.getElementById('business-type').value;
-      
-      // Calculate penalties
-      const fixedPenalty = 500000; // Rs 500,000 max
-      const turnoverPenalty = turnover * 0.001; // 0.1%
-      const maxPenalty = Math.max(fixedPenalty, turnoverPenalty);
-      
-      // Display results
-      document.getElementById('results').style.display = 'block';
-      document.getElementById('max-penalty').textContent = 'Rs ' + maxPenalty.toLocaleString();
-      document.getElementById('fixed-penalty').textContent = 'Rs ' + fixedPenalty.toLocaleString();
-      document.getElementById('turnover-penalty').textContent = 'Rs ' + turnoverPenalty.toLocaleString();
-      document.getElementById('penalty-value').textContent = 'Rs ' + maxPenalty.toLocaleString();
-      
-      // Update bar width
-      const maxBarValue = Math.max(maxPenalty, 100000);
-      const penaltyPercent = Math.min((maxPenalty / maxBarValue) * 100, 100);
-      document.getElementById('penalty-bar').style.width = penaltyPercent + '%';
-      
-      // Scroll to results
-      document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+// Check for horizontal overflow
+function checkHorizontalScroll() {
+  const docWidth = document.documentElement.offsetWidth;
+  const bodyWidth = document.body.scrollWidth;
+  if (bodyWidth > docWidth) {
+    console.error('Horizontal scroll detected!', bodyWidth - docWidth, 'px overflow');
+    // Find elements causing overflow
+    document.querySelectorAll('*').forEach(el => {
+      if (el.offsetWidth > docWidth) {
+        console.warn('Overflow element:', el);
+      }
     });
-  </script>
-</body>
-</html>
+  } else {
+    console.log('No horizontal scroll issues');
+  }
+}
+checkHorizontalScroll();
 ```
 
 ---
 
-## GAP #18: ENHANCED ABOUT PAGE
+# 9. PHASE 8: E2E FUNCTIONAL TESTING
 
-### 18.1 Update about.html
+## 9.1 User Journey Tests
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About MyDigitalInvoice | Pakistan's Trusted FBR Invoicing Solution</title>
-  <meta name="description" content="Learn about MyDigitalInvoice - our mission to make FBR compliance simple and affordable for every Pakistani business.">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <!-- Header -->
-  
-  <main>
-    <!-- Hero -->
-    <section class="about-hero">
-      <div class="container">
-        <span class="section-badge">ABOUT US</span>
-        <h1>Making FBR Compliance <span class="gradient-text">Simple & Affordable</span></h1>
-        <p class="subtitle">Our mission is to help every Pakistani business stay compliant without breaking the bank.</p>
-      </div>
-    </section>
-    
-    <!-- Our Story -->
-    <section class="our-story section">
-      <div class="container">
-        <div class="story-content">
-          <div class="story-text">
-            <h2>Our Story</h2>
-            <p>When FBR announced mandatory digital invoicing for all sales tax-registered businesses, we saw a problem: existing solutions were either too expensive (Rs 50,000-200,000/year) or too complicated for small and medium businesses.</p>
-            <p>We believed there had to be a better way. So we built MyDigitalInvoice — a solution that's affordable, easy to use, and gets you compliant in hours, not weeks.</p>
-            <p>Today, we're proud to help businesses across Pakistan — from small retailers to manufacturing companies — stay FBR compliant without the headache.</p>
-          </div>
-          <div class="story-image">
-            <img src="images/about/team.jpg" alt="MyDigitalInvoice Team">
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Our Values -->
-    <section class="our-values section">
-      <div class="container">
-        <h2>What We Believe</h2>
-        
-        <div class="values-grid">
-          <div class="value-card">
-            <div class="value-icon">💰</div>
-            <h3>Affordability</h3>
-            <p>FBR compliance shouldn't cost more than you can afford. We keep our prices fair so every business can comply.</p>
-          </div>
-          
-          <div class="value-card">
-            <div class="value-icon">🎯</div>
-            <h3>Simplicity</h3>
-            <p>Complex software helps no one. We focus on making things simple enough that anyone can use it.</p>
-          </div>
-          
-          <div class="value-card">
-            <div class="value-icon">🤝</div>
-            <h3>Support</h3>
-            <p>Real humans answering real questions. We're on WhatsApp and phone because that's how Pakistan does business.</p>
-          </div>
-          
-          <div class="value-card">
-            <div class="value-icon">🔒</div>
-            <h3>Trust</h3>
-            <p>Your data is safe with us. We take security seriously and will never compromise your information.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Stats -->
-    <section class="about-stats section">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <span class="stat-value">500+</span>
-            <span class="stat-label">Businesses Served</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">50,000+</span>
-            <span class="stat-label">Invoices Processed</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">24hr</span>
-            <span class="stat-label">Average Setup Time</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">4.8/5</span>
-            <span class="stat-label">Customer Rating</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Contact -->
-    <section class="about-contact section">
-      <div class="container">
-        <h2>Get in Touch</h2>
-        <p>Have questions? We'd love to hear from you.</p>
-        
-        <div class="contact-methods">
-          <a href="https://wa.me/923336820820" target="_blank" class="contact-method whatsapp">
-            <div class="method-icon">💬</div>
-            <div>
-              <strong>WhatsApp</strong>
-              <span>+92 333 6820 820</span>
-            </div>
-          </a>
-          
-          <a href="tel:+923336820820" class="contact-method phone">
-            <div class="method-icon">📞</div>
-            <div>
-              <strong>Phone</strong>
-              <span>+92 333 6820 820</span>
-            </div>
-          </a>
-          
-          <a href="mailto:support@mydigitalinvoice.com" class="contact-method email">
-            <div class="method-icon">✉️</div>
-            <div>
-              <strong>Email</strong>
-              <span>support@mydigitalinvoice.com</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <!-- Footer -->
-</body>
-</html>
+### Journey 1: New Visitor → Trial Signup
+```
+Steps:
+1. Land on homepage
+2. Read hero section
+3. View product preview screenshots
+4. Check pricing
+5. Click "Start Free Trial"
+6. Verify redirect to app
+
+Test:
+- [ ] Homepage loads
+- [ ] Hero content visible
+- [ ] Screenshots load
+- [ ] Pricing section visible
+- [ ] CTA button clickable
+- [ ] Redirect works (https://fbr.mydigitalinvoice.com/login)
+```
+
+### Journey 2: Research Visitor → Contact
+```
+Steps:
+1. Land on homepage
+2. Navigate to Features
+3. Navigate to How It Works
+4. Navigate to Pricing
+5. Navigate to Contact
+6. Fill and submit form
+
+Test:
+- [ ] Navigation works at each step
+- [ ] All pages load
+- [ ] Content is informative
+- [ ] Contact form works
+- [ ] Form validation works
+- [ ] Submission successful
+```
+
+### Journey 3: Mobile User → WhatsApp Contact
+```
+Steps:
+1. Land on homepage (mobile)
+2. See WhatsApp floating button
+3. Click WhatsApp button
+4. WhatsApp opens with pre-filled message
+
+Test:
+- [ ] Button visible on mobile
+- [ ] Button clickable
+- [ ] Correct WhatsApp link
+- [ ] Pre-filled message works
+```
+
+### Journey 4: Blog Reader → Lead Capture
+```
+Steps:
+1. Navigate to Blog
+2. Click on article
+3. Read article
+4. See email capture or CTA
+5. Subscribe or click CTA
+
+Test:
+- [ ] Blog listing loads
+- [ ] Article links work
+- [ ] Articles have real content
+- [ ] CTA present in articles
+- [ ] Email capture works
+```
+
+### Journey 5: Comparison Shopper
+```
+Steps:
+1. Land on comparison page
+2. View competitor comparison
+3. Understand pricing advantage
+4. Click to start trial
+
+Test:
+- [ ] Comparison page exists
+- [ ] Table/comparison loads
+- [ ] Data is accurate
+- [ ] CTA works
+```
+
+## 9.2 Form Testing
+
+### Contact Form Test Cases:
+| Test Case | Input | Expected Result | Pass? |
+|-----------|-------|-----------------|-------|
+| Valid submission | All fields valid | Success message | [ ] |
+| Empty required field | Leave name empty | Error message | [ ] |
+| Invalid email | "notanemail" | Error message | [ ] |
+| Invalid phone | "abc" | Error message | [ ] |
+| XSS attempt | `<script>alert('xss')</script>` | Sanitized/rejected | [ ] |
+| SQL injection | `' OR '1'='1` | Sanitized/rejected | [ ] |
+| Long input | 10,000 characters | Handled gracefully | [ ] |
+| Special characters | é, ñ, 中文 | Accepted | [ ] |
+
+### Email Capture Form Test Cases:
+| Test Case | Input | Expected Result | Pass? |
+|-----------|-------|-----------------|-------|
+| Valid email | valid@email.com | Success | [ ] |
+| Invalid email | "notanemail" | Error | [ ] |
+| Empty | (nothing) | Required error | [ ] |
+| Already subscribed | (if applicable) | Appropriate message | [ ] |
+
+---
+
+# 10. PHASE 9: PERFORMANCE & LOADING SPEED AUDIT
+
+## 10.1 Performance Metrics Goals
+
+### Core Web Vitals Targets:
+| Metric | Good | Needs Improvement | Poor | Target |
+|--------|------|-------------------|------|--------|
+| LCP (Largest Contentful Paint) | <2.5s | 2.5-4s | >4s | <2.5s |
+| FID (First Input Delay) | <100ms | 100-300ms | >300ms | <100ms |
+| CLS (Cumulative Layout Shift) | <0.1 | 0.1-0.25 | >0.25 | <0.1 |
+| TTFB (Time to First Byte) | <800ms | 800-1800ms | >1800ms | <800ms |
+
+### Page Load Targets:
+| Metric | Target |
+|--------|--------|
+| First Contentful Paint | <1.8s |
+| Speed Index | <3.4s |
+| Time to Interactive | <3.8s |
+| Total Blocking Time | <200ms |
+
+## 10.2 Performance Test Per Page
+
+### Test Using Google PageSpeed Insights:
+URL: https://pagespeed.web.dev/
+
+| Page | Mobile Score | Desktop Score | LCP | FID | CLS |
+|------|-------------|---------------|-----|-----|-----|
+| Homepage | ___ | ___ | ___ | ___ | ___ |
+| Features | ___ | ___ | ___ | ___ | ___ |
+| Pricing | ___ | ___ | ___ | ___ | ___ |
+| Demo | ___ | ___ | ___ | ___ | ___ |
+| How It Works | ___ | ___ | ___ | ___ | ___ |
+| FAQ | ___ | ___ | ___ | ___ | ___ |
+| Contact | ___ | ___ | ___ | ___ | ___ |
+| About | ___ | ___ | ___ | ___ | ___ |
+| Blog | ___ | ___ | ___ | ___ | ___ |
+| Compare | ___ | ___ | ___ | ___ | ___ |
+
+### Target Scores:
+- Mobile: >80
+- Desktop: >90
+
+## 10.3 Performance Optimization Checklist
+
+### Images:
+- [ ] All images compressed (use WebP where possible)
+- [ ] Images properly sized (not larger than displayed)
+- [ ] Lazy loading implemented for below-fold images
+- [ ] Alt tags present (also helps SEO)
+- [ ] No broken images
+
+### CSS:
+- [ ] CSS minified
+- [ ] Unused CSS removed
+- [ ] Critical CSS inlined (above-fold)
+- [ ] CSS loaded in `<head>`
+
+### JavaScript:
+- [ ] JS minified
+- [ ] JS deferred or async where appropriate
+- [ ] No render-blocking scripts
+- [ ] Third-party scripts optimized
+
+### Fonts:
+- [ ] Font files optimized (subset if possible)
+- [ ] Font-display: swap used
+- [ ] Preload critical fonts
+- [ ] Limited number of font weights
+
+### Server:
+- [ ] GZIP/Brotli compression enabled
+- [ ] Browser caching configured
+- [ ] CDN used (if applicable)
+- [ ] HTTP/2 enabled
+
+## 10.4 Image Audit
+
+### List all images and their sizes:
+```javascript
+// Run in browser console
+document.querySelectorAll('img').forEach(img => {
+  const displayed = `${img.width}x${img.height}`;
+  const natural = `${img.naturalWidth}x${img.naturalHeight}`;
+  const oversized = (img.naturalWidth > img.width * 2 || img.naturalHeight > img.height * 2);
+  console.log({
+    src: img.src,
+    displayed,
+    natural,
+    oversized: oversized ? 'YES - OPTIMIZE!' : 'OK'
+  });
+});
 ```
 
 ---
 
-## COPY & MESSAGING UPDATES
+# 11. PHASE 10: TECHNICAL SEO AUDIT
 
-### Updated Headlines (Replace Throughout Site)
+## 11.1 Crawlability Check
 
-| Location | Old Copy | New Copy |
-|----------|----------|----------|
-| Hero Headline | "The only FBR digital invoicing software..." | "Get FBR Compliant in 24 Hours — Avoid Costly Penalties" |
-| Hero Subheadline | (various) | "Pakistan's most affordable FBR invoicing software. Auto IRIS submission, instant IRN & QR codes." |
-| Pricing Section | "January Special Offer" | "Simple, Transparent Pricing — No Hidden Fees" |
-| CTA Buttons | "Get Now" | "Start FREE Trial" |
-| CTA Buttons | "Get FBR Compliant Now" | "Get Compliant in 24 Hours" |
-| Deadline References | "December 31, 2025 deadline" | "FBR compliance is NOW MANDATORY" |
+### robots.txt Verification:
+- [ ] File exists at /robots.txt
+- [ ] File is accessible (HTTP 200)
+- [ ] Allow: / present
+- [ ] Sitemap URL included
+- [ ] No important pages blocked
 
-### Consistent Value Props (Use on ALL Pages)
-
-```html
-<div class="value-props">
-  <span class="value-prop">✅ 60-Day FREE Trial</span>
-  <span class="value-prop">✅ No Setup Fee</span>
-  <span class="value-prop">✅ No Credit Card Required</span>
-</div>
+### Expected robots.txt Content:
+```
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Sitemap: https://mydigitalinvoice.com/sitemap.xml
 ```
 
-### Remove All Net Metering References
+### sitemap.xml Verification:
+- [ ] File exists at /sitemap.xml
+- [ ] File is valid XML
+- [ ] All public pages included
+- [ ] URLs use correct domain
+- [ ] Last modified dates present
+- [ ] Priority values set appropriately
+- [ ] Submitted to Google Search Console
 
-Search for and remove/replace:
-- "net metering"
-- "solar"
-- "Net Metering" (feature in comparison tables)
-- Any solar-related content
+### Sitemap Page Count:
+| Expected Pages | Actual in Sitemap |
+|----------------|-------------------|
+| Core pages (~12) | ___ |
+| Blog posts | ___ |
+| Industry pages | ___ |
+| Tool pages | ___ |
+| **TOTAL** | ___ |
+
+## 11.2 Indexability Check
+
+### For Each Page:
+- [ ] Not blocked by robots.txt
+- [ ] No `noindex` meta tag
+- [ ] Canonical URL points to itself (or correct page)
+- [ ] Page returns 200 status
+- [ ] Page has content (not empty)
+
+### Check for noindex:
+```javascript
+// Run on each page
+const noindex = document.querySelector('meta[name="robots"][content*="noindex"]');
+console.log('noindex present:', !!noindex);
+```
+
+## 11.3 HTTPS & Security
+
+- [ ] Site uses HTTPS
+- [ ] HTTP redirects to HTTPS
+- [ ] SSL certificate valid
+- [ ] No mixed content warnings
+- [ ] HSTS header present (optional but recommended)
+
+## 11.4 Mobile-Friendliness
+
+### Google Mobile-Friendly Test:
+URL: https://search.google.com/test/mobile-friendly
+
+| Page | Mobile Friendly? | Issues |
+|------|------------------|--------|
+| Homepage | [ ] | |
+| Features | [ ] | |
+| Pricing | [ ] | |
+| Contact | [ ] | |
+| Blog | [ ] | |
+
+## 11.5 Schema Markup Validation
+
+### Use Google Rich Results Test:
+URL: https://search.google.com/test/rich-results
+
+### Required Schema Types:
+| Schema Type | Page | Valid? |
+|-------------|------|--------|
+| Organization | All pages | [ ] |
+| SoftwareApplication | Homepage | [ ] |
+| FAQPage | FAQ page | [ ] |
+| BreadcrumbList | Inner pages | [ ] |
+| LocalBusiness | Contact | [ ] |
+| Product (Offers) | Pricing | [ ] |
+
+### Schema Validation Checklist:
+- [ ] No errors in Rich Results Test
+- [ ] No warnings (or acceptable warnings)
+- [ ] All required fields present
+- [ ] Data matches visible content
+- [ ] Prices accurate
+- [ ] Contact info accurate
+
+## 11.6 URL Structure
+
+### URL Best Practices:
+| Check | Status |
+|-------|--------|
+| All URLs lowercase | [ ] |
+| Hyphens for word separation | [ ] |
+| No special characters | [ ] |
+| No session IDs in URLs | [ ] |
+| Consistent trailing slashes | [ ] |
+| URLs under 100 characters | [ ] |
+| Descriptive URLs | [ ] |
+
+### Duplicate Content Check:
+- [ ] No www vs non-www duplicates
+- [ ] No http vs https duplicates
+- [ ] No trailing slash duplicates
+- [ ] No parameter-based duplicates
+- [ ] Canonicals properly set
 
 ---
 
-## BLOG SETUP & CONTENT STRATEGY
+# 12. PHASE 11: ON-PAGE SEO AUDIT
 
-### 18.1 Create Blog Structure
+## 12.1 Title Tags
 
-Create folder structure:
-```
-/blog/
-  index.html (blog listing page)
-  /posts/
-    fbr-digital-invoicing-requirements-2026.html
-    fbr-penalties-non-compliance.html
-    iris-integration-guide.html
-```
+### Title Tag Requirements:
+- Length: 50-60 characters
+- Include primary keyword
+- Include brand name
+- Unique per page
+- Compelling/clickable
 
-### 18.2 Blog Listing Page Template (blog/index.html)
+### Title Tag Audit:
+| Page | Current Title | Length | Has Keyword? | Unique? |
+|------|---------------|--------|--------------|---------|
+| Homepage | | ___ | [ ] | [ ] |
+| Features | | ___ | [ ] | [ ] |
+| Pricing | | ___ | [ ] | [ ] |
+| How It Works | | ___ | [ ] | [ ] |
+| FAQ | | ___ | [ ] | [ ] |
+| Contact | | ___ | [ ] | [ ] |
+| About | | ___ | [ ] | [ ] |
+| Demo | | ___ | [ ] | [ ] |
+| Compare | | ___ | [ ] | [ ] |
+| Blog | | ___ | [ ] | [ ] |
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FBR Compliance Blog | Tips & Guides | MyDigitalInvoice</title>
-  <meta name="description" content="Expert guides on FBR digital invoicing, IRIS integration, HS codes, and compliance tips for Pakistani businesses.">
-  <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-  <!-- Header -->
-  
-  <main>
-    <section class="blog-hero">
-      <div class="container">
-        <span class="section-badge">RESOURCES</span>
-        <h1>FBR Compliance <span class="gradient-text">Blog</span></h1>
-        <p class="subtitle">Expert guides and tips to help you stay compliant</p>
-      </div>
-    </section>
-    
-    <section class="blog-listing section">
-      <div class="container">
-        <div class="blog-grid">
-          
-          <!-- Blog Post Card Template -->
-          <article class="blog-card">
-            <a href="/blog/posts/fbr-digital-invoicing-requirements-2026.html">
-              <div class="blog-image">
-                <img src="/images/blog/fbr-requirements.jpg" alt="FBR Digital Invoicing Requirements">
-              </div>
-              <div class="blog-content">
-                <span class="blog-category">Guide</span>
-                <h3>Complete Guide to FBR Digital Invoicing Requirements 2026</h3>
-                <p>Everything you need to know about mandatory FBR e-invoicing requirements, who must comply, and how to get started.</p>
-                <span class="blog-meta">10 min read</span>
-              </div>
-            </a>
-          </article>
-          
-          <article class="blog-card">
-            <a href="/blog/posts/fbr-penalties-non-compliance.html">
-              <div class="blog-image">
-                <img src="/images/blog/penalties.jpg" alt="FBR Penalties">
-              </div>
-              <div class="blog-content">
-                <span class="blog-category">Compliance</span>
-                <h3>FBR Penalties for Non-Compliance: What You Need to Know</h3>
-                <p>Understanding the financial and legal consequences of failing to comply with FBR's digital invoicing mandate.</p>
-                <span class="blog-meta">8 min read</span>
-              </div>
-            </a>
-          </article>
-          
-          <article class="blog-card">
-            <a href="/blog/posts/iris-integration-guide.html">
-              <div class="blog-image">
-                <img src="/images/blog/iris.jpg" alt="IRIS Integration">
-              </div>
-              <div class="blog-content">
-                <span class="blog-category">Tutorial</span>
-                <h3>How to Integrate with FBR IRIS: Step-by-Step Guide</h3>
-                <p>A complete walkthrough of connecting your business to FBR's IRIS system for digital invoicing.</p>
-                <span class="blog-meta">12 min read</span>
-              </div>
-            </a>
-          </article>
-          
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <!-- Footer -->
-</body>
-</html>
+### Recommended Title Tags:
+| Page | Recommended Title |
+|------|-------------------|
+| Homepage | FBR Digital Invoicing Software Pakistan \| IRIS Integrated \| MyDigitalInvoice |
+| Features | FBR Compliance Features \| Auto IRIS Submission \| MyDigitalInvoice |
+| Pricing | FBR Invoice Software Pricing \| From FREE to Rs 2,500/mo \| MyDigitalInvoice |
+| How It Works | How FBR Digital Invoicing Works \| Get Compliant in 24 Hours |
+| FAQ | FBR Digital Invoicing FAQ \| Common Questions Answered |
+| Contact | Contact MyDigitalInvoice \| FBR Compliance Support Pakistan |
+| About | About MyDigitalInvoice \| Pakistan's Trusted FBR Solution |
+| Demo | Product Demo \| See MyDigitalInvoice in Action |
+| Compare | Compare FBR Invoicing Software \| MyDigitalInvoice vs Others |
+| Blog | FBR Compliance Blog \| Tips & Guides \| MyDigitalInvoice |
+
+## 12.2 Meta Descriptions
+
+### Meta Description Requirements:
+- Length: 150-160 characters
+- Include primary keyword
+- Include call to action
+- Compelling/clickable
+- Unique per page
+
+### Meta Description Audit:
+| Page | Has Meta Desc? | Length | Has CTA? | Compelling? |
+|------|----------------|--------|----------|-------------|
+| Homepage | [ ] | ___ | [ ] | [ ] |
+| Features | [ ] | ___ | [ ] | [ ] |
+| Pricing | [ ] | ___ | [ ] | [ ] |
+| How It Works | [ ] | ___ | [ ] | [ ] |
+| FAQ | [ ] | ___ | [ ] | [ ] |
+| Contact | [ ] | ___ | [ ] | [ ] |
+| About | [ ] | ___ | [ ] | [ ] |
+| Demo | [ ] | ___ | [ ] | [ ] |
+| Compare | [ ] | ___ | [ ] | [ ] |
+| Blog | [ ] | ___ | [ ] | [ ] |
+
+## 12.3 Heading Structure
+
+### Requirements:
+- ONE H1 per page
+- H1 contains primary keyword
+- Logical hierarchy (H1 → H2 → H3)
+- No skipped levels
+
+### Heading Audit Per Page:
+```javascript
+// Run on each page
+const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+const structure = [];
+headings.forEach(h => {
+  structure.push({
+    tag: h.tagName,
+    text: h.innerText.substring(0, 50)
+  });
+});
+console.table(structure);
+
+// Count H1s
+const h1Count = document.querySelectorAll('h1').length;
+console.log('H1 count:', h1Count, h1Count === 1 ? '✓' : '✗ ISSUE');
 ```
 
-### 18.3 Content Briefs for First 3 Articles
+| Page | H1 Count | H1 Has Keyword? | Hierarchy Correct? |
+|------|----------|-----------------|-------------------|
+| Homepage | ___ | [ ] | [ ] |
+| Features | ___ | [ ] | [ ] |
+| Pricing | ___ | [ ] | [ ] |
+| How It Works | ___ | [ ] | [ ] |
+| FAQ | ___ | [ ] | [ ] |
+| Contact | ___ | [ ] | [ ] |
+| About | ___ | [ ] | [ ] |
+| Demo | ___ | [ ] | [ ] |
+| Compare | ___ | [ ] | [ ] |
+| Blog | ___ | [ ] | [ ] |
 
-**(Detailed briefs already provided in the audit document - refer to Appendix)**
+## 12.4 Image SEO
+
+### Image Requirements:
+- All images have alt text
+- Alt text is descriptive
+- Alt text includes keywords where natural
+- File names are descriptive (not IMG_1234.jpg)
+
+### Image Audit:
+```javascript
+// Run on each page
+document.querySelectorAll('img').forEach(img => {
+  const hasAlt = img.hasAttribute('alt');
+  const altText = img.alt;
+  const filename = img.src.split('/').pop();
+  console.log({
+    src: filename,
+    hasAlt,
+    alt: altText || '(empty)',
+    issue: !hasAlt || altText === '' ? 'NEEDS ALT TEXT' : 'OK'
+  });
+});
+```
+
+## 12.5 Internal Linking
+
+### Requirements:
+- Each page has internal links
+- Anchor text is descriptive (not "click here")
+- Key pages are well-linked
+- No broken internal links
+
+### Key Pages Link Count:
+| Page | Should Link To | Actually Links To |
+|------|----------------|-------------------|
+| Homepage | Features, Pricing, How It Works, Demo, Contact | |
+| Features | Pricing, Demo, Contact, Sign up | |
+| Pricing | Features, Contact, Sign up | |
+| Blog posts | Related posts, Features, Pricing | |
+
+## 12.6 Keyword Optimization
+
+### Primary Keywords to Target:
+| Keyword | Target Page | In Title? | In H1? | In Content? |
+|---------|-------------|-----------|--------|-------------|
+| fbr digital invoicing | Homepage | [ ] | [ ] | [ ] |
+| fbr invoice software pakistan | Homepage | [ ] | [ ] | [ ] |
+| fbr compliance software | Features | [ ] | [ ] | [ ] |
+| fbr invoicing pricing | Pricing | [ ] | [ ] | [ ] |
+| iris integration | Features | [ ] | [ ] | [ ] |
+| irn generation | Features | [ ] | [ ] | [ ] |
+| fbr penalties | Blog/FAQ | [ ] | [ ] | [ ] |
 
 ---
 
-## TESTING CHECKLIST
+# 13. PHASE 12: ACCESSIBILITY AUDIT
 
-### Before Deployment
+## 13.1 WCAG 2.1 Compliance Checklist
 
-#### Technical SEO
-- [ ] robots.txt accessible at /robots.txt
-- [ ] sitemap.xml accessible at /sitemap.xml
-- [ ] All schema markup validates (test at https://validator.schema.org/)
+### Perceivable:
+- [ ] All images have alt text
+- [ ] Color is not only indicator (e.g., errors)
+- [ ] Sufficient color contrast (4.5:1 for text)
+- [ ] Text resizable to 200% without loss
+- [ ] Captions for videos (if any)
+
+### Operable:
+- [ ] All functionality available via keyboard
+- [ ] No keyboard traps
+- [ ] Skip navigation link available
+- [ ] Focus visible on all interactive elements
+- [ ] Adequate time for interactions
+- [ ] No flashing content
+
+### Understandable:
+- [ ] Language attribute on `<html>`
+- [ ] Error messages are clear
+- [ ] Labels for all form fields
+- [ ] Consistent navigation
+
+### Robust:
+- [ ] Valid HTML
+- [ ] ARIA attributes used correctly
+- [ ] Works with screen readers
+
+## 13.2 Accessibility Testing Tools
+
+### Automated Testing:
+1. **axe DevTools** (Chrome extension)
+2. **WAVE** (https://wave.webaim.org/)
+3. **Lighthouse Accessibility Audit**
+
+### Per Page Results:
+| Page | axe Errors | WAVE Errors | Lighthouse Score |
+|------|------------|-------------|------------------|
+| Homepage | ___ | ___ | ___ |
+| Features | ___ | ___ | ___ |
+| Pricing | ___ | ___ | ___ |
+| Contact | ___ | ___ | ___ |
+| FAQ | ___ | ___ | ___ |
+
+## 13.3 Keyboard Navigation Test
+
+### Test Keyboard Navigation:
+```
+Tab through entire page:
+- [ ] Can reach all interactive elements
+- [ ] Focus order is logical
+- [ ] Focus visible at all times
+- [ ] Can activate buttons with Enter/Space
+- [ ] Can navigate dropdowns with arrows
+- [ ] Can close modals with Escape
+- [ ] Can submit forms with Enter
+```
+
+## 13.4 Screen Reader Test
+
+### Test with Screen Reader (NVDA/VoiceOver):
+- [ ] Page title announced
+- [ ] Headings structure clear
+- [ ] Links make sense out of context
+- [ ] Form labels read correctly
+- [ ] Images described appropriately
+- [ ] Buttons announced correctly
+
+---
+
+# 14. PHASE 13: SECURITY AUDIT
+
+## 14.1 Basic Security Checks
+
+- [ ] HTTPS enabled
+- [ ] HTTP Strict Transport Security (HSTS)
+- [ ] X-Content-Type-Options header
+- [ ] X-Frame-Options header
+- [ ] Content-Security-Policy (CSP)
+- [ ] No sensitive data in URLs
+
+## 14.2 Form Security
+
+- [ ] Form actions use HTTPS
+- [ ] CSRF protection (if applicable)
+- [ ] Input validation (client-side)
+- [ ] Input sanitization (server-side)
+- [ ] Rate limiting on forms
+- [ ] Honeypot fields for spam
+
+## 14.3 External Links
+
+- [ ] All external links have `rel="noopener noreferrer"`
+- [ ] No links to suspicious domains
+- [ ] Third-party scripts from trusted sources
+
+---
+
+# 15. PHASE 14: CROSS-BROWSER TESTING
+
+## 15.1 Browser Testing Matrix
+
+### Desktop Browsers:
+| Browser | Version | Works? | Issues |
+|---------|---------|--------|--------|
+| Chrome | Latest | [ ] | |
+| Firefox | Latest | [ ] | |
+| Safari | Latest | [ ] | |
+| Edge | Latest | [ ] | |
+
+### Mobile Browsers:
+| Browser | Device | Works? | Issues |
+|---------|--------|--------|--------|
+| Chrome | Android | [ ] | |
+| Safari | iOS | [ ] | |
+| Samsung Internet | Android | [ ] | |
+
+### Things to Test in Each Browser:
+- [ ] Layout renders correctly
+- [ ] Fonts display correctly
+- [ ] Images load
+- [ ] Navigation works
+- [ ] Forms work
+- [ ] JavaScript functions work
+- [ ] Animations smooth
 - [ ] No console errors
-- [ ] Google tags still working (check Google Analytics real-time)
-
-#### Content & Copy
-- [ ] No "December 31, 2025 deadline" references
-- [ ] All copy says "FBR compliance is NOW MANDATORY"
-- [ ] No "net metering" references anywhere
-- [ ] Pricing matches current tiers (FREE, Rs 1,000, Rs 2,000, Rs 2,500)
-- [ ] Phone number consistent: +92 333 6820 820
-- [ ] All "Start Trial" buttons link to correct URL
-
-#### Pages
-- [ ] All new pages accessible (compare, industries/*, tools/*, blog)
-- [ ] No 404 errors
-- [ ] All internal links work
-- [ ] All external links work
-
-#### Forms
-- [ ] Contact form submits correctly
-- [ ] Email capture forms work
-- [ ] Exit intent popup triggers and submits
-
-#### Responsive
-- [ ] All pages work on mobile (320px - 480px)
-- [ ] All pages work on tablet (768px - 1024px)
-- [ ] Navigation works at all breakpoints
-- [ ] RTL (Urdu) layout works if enabled
-
-#### Performance
-- [ ] Page load time < 3 seconds
-- [ ] Images optimized
-- [ ] No large uncompressed files
 
 ---
 
-## IMPLEMENTATION PRIORITY ORDER
+# 16. PHASE 15: FINAL QA & SIGN-OFF
 
-1. **Day 1-2:** Technical SEO (robots.txt, sitemap.xml, schema markup)
-2. **Day 3-4:** Meta tags optimization for all pages
-3. **Day 5-6:** Fix 404s, create 404 page, redirects
-4. **Day 7-8:** Contact form optimization, exit intent popup
-5. **Day 9-10:** Trust signals, testimonials enhancement
-6. **Day 11-12:** How It Works / Onboarding content
-7. **Day 13-14:** Comparison page
-8. **Day 15-17:** Industry pages (manufacturing, retail, wholesale, services)
-9. **Day 18-20:** Penalty calculator tool
-10. **Day 21-23:** Enhanced About page
-11. **Day 24-26:** Lead magnet & email capture implementation
-12. **Day 27-28:** Blog setup
-13. **Day 29-30:** Urdu content (key pages)
+## 16.1 Pre-Launch Checklist
+
+### Content:
+- [ ] All content reviewed and approved
+- [ ] No placeholder/dummy content
+- [ ] No spelling/grammar errors
+- [ ] All links working
+- [ ] Contact information correct
+- [ ] Pricing correct
+- [ ] No outdated references
+
+### Technical:
+- [ ] No console errors on any page
+- [ ] All forms working
+- [ ] All interactive elements working
+- [ ] Performance scores acceptable
+- [ ] Mobile-friendly
+- [ ] Cross-browser compatible
+
+### SEO:
+- [ ] All pages have unique titles
+- [ ] All pages have meta descriptions
+- [ ] All pages have proper headings
+- [ ] robots.txt correct
+- [ ] sitemap.xml complete
+- [ ] Schema markup valid
+- [ ] Google Search Console set up
+
+### Security:
+- [ ] HTTPS working
+- [ ] Security headers in place
+- [ ] Forms secure
+
+## 16.2 Sign-Off Checklist
+
+| Item | Checked By | Date | Approved |
+|------|------------|------|----------|
+| Content accuracy | | | [ ] |
+| Responsive design | | | [ ] |
+| Functionality | | | [ ] |
+| Performance | | | [ ] |
+| SEO | | | [ ] |
+| Accessibility | | | [ ] |
+| Security | | | [ ] |
+| Cross-browser | | | [ ] |
 
 ---
 
-## NOTES FOR RALPH LOOP EXECUTION
+# 17. AUTOMATED E2E TEST SUITE
 
-1. **Preserve existing functionality** - Don't break what's working
-2. **Test each change** - Verify on mobile, tablet, desktop
-3. **Backup before changes** - Especially for JavaScript modifications
-4. **Check Google tags** - After every deployment, verify tracking still works
-5. **Incremental deployment** - Deploy in small batches, not all at once
-6. **Document changes** - Keep a changelog for reference
+## 17.1 Playwright Test Configuration
+
+Create file: `playwright.config.js`
+```javascript
+const { defineConfig, devices } = require('@playwright/test');
+
+module.exports = defineConfig({
+  testDir: './tests',
+  timeout: 30000,
+  expect: {
+    timeout: 5000
+  },
+  fullyParallel: true,
+  reporter: 'html',
+  use: {
+    baseURL: 'https://mydigitalinvoice.com',
+    trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+  },
+  projects: [
+    {
+      name: 'Desktop Chrome',
+      use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'Desktop Firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'Mobile Chrome',
+      use: { ...devices['Pixel 5'] },
+    },
+    {
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 12'] },
+    },
+  ],
+});
+```
+
+## 17.2 E2E Test Files
+
+### tests/navigation.spec.js
+```javascript
+const { test, expect } = require('@playwright/test');
+
+test.describe('Navigation Tests', () => {
+  
+  test('Homepage loads correctly', async ({ page }) => {
+    await page.goto('/');
+    await expect(page).toHaveTitle(/MyDigitalInvoice/);
+    await expect(page.locator('h1')).toBeVisible();
+  });
+
+  test('All navigation links work', async ({ page }) => {
+    await page.goto('/');
+    
+    const navLinks = [
+      { text: 'Features', url: '/features' },
+      { text: 'Pricing', url: '/pricing' },
+      { text: 'FAQ', url: '/faq' },
+      { text: 'Contact', url: '/contact' },
+    ];
+
+    for (const link of navLinks) {
+      await page.goto('/');
+      await page.click(`nav >> text="${link.text}"`);
+      await expect(page).toHaveURL(new RegExp(link.url));
+    }
+  });
+
+  test('Mobile menu opens and closes', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
+    await page.goto('/');
+    
+    // Open menu
+    await page.click('.hamburger');
+    await expect(page.locator('.nav-menu')).toHaveClass(/active/);
+    
+    // Close menu
+    await page.click('.hamburger');
+    await expect(page.locator('.nav-menu')).not.toHaveClass(/active/);
+  });
+
+  test('Logo links to homepage', async ({ page }) => {
+    await page.goto('/features');
+    await page.click('.nav-logo');
+    await expect(page).toHaveURL('/');
+  });
+
+});
+```
+
+### tests/pricing.spec.js
+```javascript
+const { test, expect } = require('@playwright/test');
+
+test.describe('Pricing Page Tests', () => {
+
+  test('Pricing page loads with all tiers', async ({ page }) => {
+    await page.goto('/pricing');
+    
+    // Check all pricing tiers present
+    await expect(page.locator('text=Starter')).toBeVisible();
+    await expect(page.locator('text=Business')).toBeVisible();
+    await expect(page.locator('text=Enterprise')).toBeVisible();
+    await expect(page.locator('text=Unlimited')).toBeVisible();
+  });
+
+  test('Pricing values are correct', async ({ page }) => {
+    await page.goto('/pricing');
+    
+    await expect(page.locator('text=FREE')).toBeVisible();
+    await expect(page.locator('text=Rs 1,000')).toBeVisible();
+    await expect(page.locator('text=Rs 2,000')).toBeVisible();
+    await expect(page.locator('text=Rs 2,500')).toBeVisible();
+  });
+
+  test('CTA buttons link to app', async ({ page }) => {
+    await page.goto('/pricing');
+    
+    const ctaButton = page.locator('a:has-text("Start")').first();
+    await expect(ctaButton).toHaveAttribute('href', /fbr\.mydigitalinvoice\.com/);
+  });
+
+  test('Mobile accordion works', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
+    await page.goto('/pricing');
+    
+    // Click on Business tier
+    const businessTier = page.locator('.pricing-tier-accordion:has-text("Business")');
+    await businessTier.click();
+    
+    // Check content is visible
+    await expect(businessTier.locator('.tier-content')).toBeVisible();
+  });
+
+});
+```
+
+### tests/forms.spec.js
+```javascript
+const { test, expect } = require('@playwright/test');
+
+test.describe('Form Tests', () => {
+
+  test('Contact form validation works', async ({ page }) => {
+    await page.goto('/contact');
+    
+    // Try to submit empty form
+    await page.click('button[type="submit"]');
+    
+    // Check validation
+    const nameInput = page.locator('input[name="name"]');
+    await expect(nameInput).toHaveAttribute('required', '');
+  });
+
+  test('Contact form accepts valid input', async ({ page }) => {
+    await page.goto('/contact');
+    
+    await page.fill('input[name="name"]', 'Test User');
+    await page.fill('input[name="email"]', 'test@example.com');
+    await page.fill('input[name="phone"]', '+923001234567');
+    await page.fill('textarea[name="message"]', 'Test message');
+    
+    // Check fields have values
+    await expect(page.locator('input[name="name"]')).toHaveValue('Test User');
+  });
+
+});
+```
+
+### tests/responsive.spec.js
+```javascript
+const { test, expect } = require('@playwright/test');
+
+const viewports = [
+  { name: 'Mobile', width: 320, height: 568 },
+  { name: 'Mobile Large', width: 414, height: 896 },
+  { name: 'Tablet', width: 768, height: 1024 },
+  { name: 'Desktop', width: 1440, height: 900 },
+];
+
+test.describe('Responsive Design Tests', () => {
+
+  for (const viewport of viewports) {
+    test(`Homepage renders at ${viewport.name} (${viewport.width}px)`, async ({ page }) => {
+      await page.setViewportSize({ width: viewport.width, height: viewport.height });
+      await page.goto('/');
+      
+      // Check no horizontal scroll
+      const bodyWidth = await page.evaluate(() => document.body.scrollWidth);
+      const viewportWidth = await page.evaluate(() => window.innerWidth);
+      expect(bodyWidth).toBeLessThanOrEqual(viewportWidth + 1);
+      
+      // Check key elements visible
+      await expect(page.locator('h1')).toBeVisible();
+      await expect(page.locator('nav')).toBeVisible();
+      await expect(page.locator('footer')).toBeVisible();
+    });
+  }
+
+});
+```
+
+### tests/seo.spec.js
+```javascript
+const { test, expect } = require('@playwright/test');
+
+const pages = [
+  { path: '/', name: 'Homepage' },
+  { path: '/features', name: 'Features' },
+  { path: '/pricing', name: 'Pricing' },
+  { path: '/faq', name: 'FAQ' },
+  { path: '/contact', name: 'Contact' },
+  { path: '/about', name: 'About' },
+];
+
+test.describe('SEO Tests', () => {
+
+  for (const pageInfo of pages) {
+    test(`${pageInfo.name} has proper SEO tags`, async ({ page }) => {
+      await page.goto(pageInfo.path);
+      
+      // Check title exists and is reasonable length
+      const title = await page.title();
+      expect(title.length).toBeGreaterThan(10);
+      expect(title.length).toBeLessThan(70);
+      
+      // Check meta description exists
+      const metaDesc = await page.locator('meta[name="description"]').getAttribute('content');
+      expect(metaDesc).toBeTruthy();
+      expect(metaDesc.length).toBeGreaterThan(50);
+      expect(metaDesc.length).toBeLessThan(170);
+      
+      // Check canonical URL
+      const canonical = await page.locator('link[rel="canonical"]').getAttribute('href');
+      expect(canonical).toBeTruthy();
+      
+      // Check only one H1
+      const h1Count = await page.locator('h1').count();
+      expect(h1Count).toBe(1);
+      
+      // Check viewport meta
+      const viewport = await page.locator('meta[name="viewport"]').getAttribute('content');
+      expect(viewport).toContain('width=device-width');
+    });
+  }
+
+  test('robots.txt is accessible', async ({ page }) => {
+    const response = await page.goto('/robots.txt');
+    expect(response.status()).toBe(200);
+    
+    const content = await page.content();
+    expect(content).toContain('User-agent');
+    expect(content).toContain('Sitemap');
+  });
+
+  test('sitemap.xml is valid', async ({ page }) => {
+    const response = await page.goto('/sitemap.xml');
+    expect(response.status()).toBe(200);
+    
+    const content = await page.content();
+    expect(content).toContain('urlset');
+    expect(content).toContain('mydigitalinvoice.com');
+  });
+
+});
+```
+
+### tests/links.spec.js
+```javascript
+const { test, expect } = require('@playwright/test');
+
+test.describe('Link Tests', () => {
+
+  test('No broken internal links on homepage', async ({ page }) => {
+    await page.goto('/');
+    
+    const links = await page.locator('a[href^="/"], a[href^="https://mydigitalinvoice.com"]').all();
+    
+    for (const link of links) {
+      const href = await link.getAttribute('href');
+      if (href && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+        const response = await page.request.get(href);
+        expect(response.status(), `Link ${href} is broken`).toBeLessThan(400);
+      }
+    }
+  });
+
+  test('WhatsApp button has correct link', async ({ page }) => {
+    await page.goto('/');
+    
+    const whatsappLink = page.locator('.whatsapp-float');
+    await expect(whatsappLink).toHaveAttribute('href', /wa\.me\/923336820820/);
+  });
+
+  test('CTA buttons link to app signup', async ({ page }) => {
+    await page.goto('/');
+    
+    const ctaButtons = page.locator('a:has-text("Start Free Trial"), a:has-text("Start 60")');
+    const count = await ctaButtons.count();
+    
+    for (let i = 0; i < count; i++) {
+      const href = await ctaButtons.nth(i).getAttribute('href');
+      expect(href).toContain('fbr.mydigitalinvoice.com');
+    }
+  });
+
+});
+```
+
+## 17.3 Run Tests Command
+
+```bash
+# Install Playwright
+npm init -y
+npm install -D @playwright/test
+npx playwright install
+
+# Run all tests
+npx playwright test
+
+# Run specific test file
+npx playwright test tests/navigation.spec.js
+
+# Run with UI
+npx playwright test --ui
+
+# Generate report
+npx playwright show-report
+```
 
 ---
 
-*End of Implementation Guide*
+# 18. ISSUE TRACKING TEMPLATE
+
+## Issue Template
+
+```markdown
+## Issue #[NUMBER]
+
+**Page:** [Page URL]
+**Severity:** [Critical/High/Medium/Low]
+**Category:** [Navigation/Content/SEO/Performance/Accessibility/Responsive/Functionality]
+
+**Description:**
+[Clear description of the issue]
+
+**Expected Behavior:**
+[What should happen]
+
+**Actual Behavior:**
+[What actually happens]
+
+**Steps to Reproduce:**
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
+
+**Screenshot/Video:**
+[Attach if applicable]
+
+**Browser/Device:**
+[Browser name and version, device]
+
+**Assigned To:** [Persona]
+**Status:** [Open/In Progress/Fixed/Verified]
+**Fix Applied:** [Date]
+**Verified By:** [Name]
+```
+
+## Sample Issue Log
+
+| # | Page | Severity | Category | Description | Status |
+|---|------|----------|----------|-------------|--------|
+| 1 | Pricing | High | Functionality | Mobile accordion not working | Open |
+| 2 | Homepage | High | Functionality | Product preview tabs not working | Open |
+| 3 | | | | | |
+| 4 | | | | | |
+| 5 | | | | | |
+
+---
+
+# 19. FIX IMPLEMENTATION GUIDELINES
+
+## Priority Order
+
+1. **Critical Fixes First:**
+   - Broken functionality (accordions, tabs)
+   - Broken links
+   - Console errors
+   - Security issues
+
+2. **High Priority:**
+   - SEO issues (missing meta tags)
+   - Content issues (dummy data)
+   - Mobile responsiveness
+
+3. **Medium Priority:**
+   - Performance optimizations
+   - Accessibility improvements
+   - Minor UI polish
+
+4. **Low Priority:**
+   - Nice-to-have enhancements
+   - Minor copy changes
+
+## Fix Verification Process
+
+```
+1. Identify issue
+2. Document current state
+3. Implement fix
+4. Test fix locally
+5. Test on staging (if available)
+6. Deploy to production
+7. Verify fix on production
+8. Mark issue as resolved
+9. Re-test related functionality
+```
+
+## Deployment Checklist
+
+Before each deployment:
+- [ ] All changes tested locally
+- [ ] No new console errors introduced
+- [ ] Google Analytics still working
+- [ ] Forms still working
+- [ ] Mobile still working
+- [ ] No broken links introduced
+
+---
+
+# APPENDIX: QUICK REFERENCE
+
+## Key URLs
+- Website: https://mydigitalinvoice.com
+- App: https://fbr.mydigitalinvoice.com/login
+- WhatsApp: https://wa.me/923336820820
+- Phone: +92 333 6820 820
+
+## Correct Pricing
+| Plan | Price | Invoices |
+|------|-------|----------|
+| Starter | FREE | Up to 5/mo |
+| Business | Rs 1,000/mo | 5-20/mo |
+| Enterprise | Rs 2,000/mo | 20-200/mo |
+| Unlimited | Rs 2,500/mo | Unlimited |
+
+## Key Messages
+- 60-Day FREE Trial
+- No Setup Fee
+- No Credit Card Required
+- FBR compliance is NOW MANDATORY
+
+## DO NOT INCLUDE
+- Net metering references
+- December 31, 2025 deadline
+- Urdu content (ditched)
+- Old pricing
+
+---
+
+*End of Comprehensive Website Audit Document*
