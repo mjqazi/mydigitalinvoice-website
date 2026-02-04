@@ -24,8 +24,8 @@
   <link rel="dns-prefetch" href="https://snap.licdn.com">
 
   <!-- Stylesheet -->
-  <link rel="preload" href="css/styles.css?v=7" as="style">
-  <link rel="stylesheet" href="css/styles.css?v=7">
+  <link rel="preload" href="css/styles.css?v=8" as="style">
+  <link rel="stylesheet" href="css/styles.css?v=8">
   <style>
     .page-hero {
       padding: 120px 0 60px;
@@ -146,6 +146,19 @@
     .step-visual-box p {
       color: var(--gray-500);
       font-size: 0.9rem;
+    }
+
+    /* Screenshot visual boxes */
+    .step-visual-screenshot {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--gray-200);
+    }
+    .step-visual-screenshot img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     @media (max-width: 768px) {
@@ -357,14 +370,8 @@
               </li>
             </ul>
           </div>
-          <div class="step-visual-box">
-            <div class="big-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-              </svg>
-            </div>
-            <h4>Invoice Editor</h4>
-            <p>Clean, intuitive interface for creating professional invoices</p>
+          <div class="step-visual-screenshot">
+            <img src="images/screenshots/invoice-creation.png" alt="Invoice creation interface showing buyer details and item entry" loading="lazy">
           </div>
         </div>
 
@@ -396,14 +403,8 @@
               </li>
             </ul>
           </div>
-          <div class="step-visual-box">
-            <div class="big-icon" style="background: var(--success-50);">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--success-500);">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
-              </svg>
-            </div>
-            <h4>FBR Integration</h4>
-            <p>Direct connection to IRIS for seamless submission</p>
+          <div class="step-visual-screenshot">
+            <img src="images/screenshots/invoice-generated.png" alt="Generated invoice with FBR IRN number and QR code" loading="lazy">
           </div>
         </div>
 
@@ -435,14 +436,8 @@
               </li>
             </ul>
           </div>
-          <div class="step-visual-box">
-            <div class="big-icon" style="background: var(--purple-50, #f3e8ff);">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--purple-500, #8b5cf6);">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-              </svg>
-            </div>
-            <h4>Reports & Analytics</h4>
-            <p>Comprehensive reports for tax filing and compliance</p>
+          <div class="step-visual-screenshot">
+            <img src="images/screenshots/reports-analytics.png" alt="Reports and analytics dashboard showing sales summaries and tax reports" loading="lazy">
           </div>
         </div>
       </div>

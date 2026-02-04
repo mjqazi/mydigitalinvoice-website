@@ -75,6 +75,64 @@
   }
   </script>
 
+  <!-- FAQ Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the FBR digital invoicing requirement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FBR requires all sales tax-registered entities (manufacturers, importers, wholesalers, distributors, corporate and non-corporate persons) to generate digital invoices through FBR-approved software integrated with IRIS. Each invoice must include unique IRN (Invoice Reference Number), QR code, HS codes, and be submitted in real-time. As of December 31, 2025, FBR mandates digital invoicing for all businesses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does auto-submission to FBR work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When you create an invoice in My Digital Invoice, our system automatically submits it to FBR's IRIS system via our licensed integrator. You instantly receive the unique IRN and QR code. All invoices are submitted in real-time (within 24 hours as required by FBR), ensuring you never miss a submission."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the subscription prices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer four plans: Starter (FREE - 5 invoices/mo), Business (Rs 1,000/mo - most popular), Enterprise (Rs 2,000/mo), and Custom plans with QuickBooks integration. Join now and get 2 months FREE - no credit card required. All plans include full FBR integration with auto-submission."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who needs to be FBR compliant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All sales tax-registered entities must comply, including: manufacturers, importers, wholesalers, distributors, retailers, service providers, and any business paying sales tax to FBR. If you have an NTN and are registered for sales tax, you need FBR-compliant digital invoicing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I miss the deadline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non-compliance with FBR's digital invoicing requirements can result in penalties, fines, and issues with your tax filings. FBR has been strict about enforcement. As of December 31, 2025, digital invoicing is mandatory - start your free trial today and get compliant now."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I try the system before subscribing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We offer a free trial so you can explore all features before subscribing. Test the FBR integration, create sample invoices, and see how easy compliance can be. No credit card required to start."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -88,8 +146,8 @@
   <link rel="dns-prefetch" href="https://snap.licdn.com">
 
   <!-- Stylesheet with preload (high priority for above-the-fold content) -->
-  <link rel="preload" href="css/styles.css?v=7" as="style" fetchpriority="high">
-  <link rel="stylesheet" href="css/styles.css?v=7">
+  <link rel="preload" href="css/styles.css?v=8" as="style" fetchpriority="high">
+  <link rel="stylesheet" href="css/styles.css?v=8">
 
   <!-- Preload hero section logo for faster LCP -->
   <link rel="preload" href="assets/fbr-logo-1.png" as="image" fetchpriority="high">
@@ -1383,6 +1441,54 @@
             </tbody>
           </table>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- See It In Action Section -->
+    <section class="product-preview" id="product-preview">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Product Preview</span>
+          <h2 class="section-title">
+            See MyDigitalInvoice
+            <span class="gradient-text">In Action</span>
+          </h2>
+          <p class="section-description">Simple, powerful, and fully FBR-compliant</p>
+        </div>
+
+        <div class="preview-tabs">
+          <button class="preview-tab active" data-tab="dashboard">Dashboard</button>
+          <button class="preview-tab" data-tab="invoice">Create Invoice</button>
+          <button class="preview-tab" data-tab="generated">FBR Submission</button>
+          <button class="preview-tab" data-tab="reports">Reports</button>
+          <button class="preview-tab" data-tab="mobile">Mobile View</button>
+        </div>
+
+        <div class="preview-screenshots">
+          <div class="screenshot-container active" id="tab-dashboard">
+            <img src="images/screenshots/dashboard-overview.png" alt="Dashboard showing invoice summary, recent activity, and compliance status" loading="lazy">
+          </div>
+          <div class="screenshot-container" id="tab-invoice">
+            <img src="images/screenshots/invoice-creation.png" alt="Invoice creation form with buyer details, items, and tax calculations" loading="lazy">
+          </div>
+          <div class="screenshot-container" id="tab-generated">
+            <img src="images/screenshots/invoice-generated.png" alt="Generated invoice with FBR IRN number and QR code" loading="lazy">
+          </div>
+          <div class="screenshot-container" id="tab-reports">
+            <img src="images/screenshots/reports-analytics.png" alt="Reports dashboard showing sales analytics and tax summaries" loading="lazy">
+          </div>
+          <div class="screenshot-container" id="tab-mobile">
+            <img src="images/screenshots/mobile-view.png" alt="Mobile responsive view of MyDigitalInvoice" class="mobile-screenshot" loading="lazy">
+          </div>
+        </div>
+
+        <div class="preview-cta">
+          <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary">Start Your FREE 60-Day Trial</a>
+          <a href="https://www.youtube.com/watch?v=hqTbLX9U2i0" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;margin-right:8px;"><path d="M8 5v14l11-7z"/></svg>
+            Watch Full Demo
+          </a>
         </div>
       </div>
     </section>

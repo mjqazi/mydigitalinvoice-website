@@ -252,3 +252,45 @@ function togglePricingTier(header) {
   // Open clicked tier
   tier.classList.add('active');
 }
+
+// ==========================================
+// Product Preview Screenshot Tab Switching
+// ==========================================
+(function() {
+  'use strict';
+
+  function initPreviewTabs() {
+    const tabs = document.querySelectorAll('.preview-tab');
+    const screenshots = document.querySelectorAll('.screenshot-container');
+
+    if (tabs.length === 0) return;
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        const targetId = 'tab-' + this.getAttribute('data-tab');
+
+        // Remove active from all tabs and screenshots
+        tabs.forEach(function(t) {
+          t.classList.remove('active');
+        });
+        screenshots.forEach(function(s) {
+          s.classList.remove('active');
+        });
+
+        // Add active to clicked tab and target screenshot
+        this.classList.add('active');
+        var targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.classList.add('active');
+        }
+      });
+    });
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPreviewTabs);
+  } else {
+    initPreviewTabs();
+  }
+})();

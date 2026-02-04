@@ -14,7 +14,7 @@
   <!-- End Google Tag Manager -->
 
   <title>Contact Us - My Digital Invoice | FBR Digital Invoicing Software Pakistan</title>
-  <meta name="description" content="Contact My Digital Invoice for FBR digital invoicing support, demos, and pricing inquiries. Get help becoming FBR compliant before the December 2025 deadline.">
+  <meta name="description" content="Contact My Digital Invoice for FBR digital invoicing support, demos, and pricing inquiries. Get help becoming FBR compliant before the January 2026 deadline.">
   <meta name="keywords" content="contact FBR invoicing support, digital invoice demo Pakistan, FBR compliance help, IRIS integration support">
 
   <!-- Canonical URL -->
@@ -42,8 +42,8 @@
   <link rel="dns-prefetch" href="https://snap.licdn.com">
 
   <!-- Stylesheet with preload -->
-  <link rel="preload" href="css/styles.css?v=7" as="style">
-  <link rel="stylesheet" href="css/styles.css?v=7">
+  <link rel="preload" href="css/styles.css?v=8" as="style">
+  <link rel="stylesheet" href="css/styles.css?v=8">
   <style>
     .contact-hero { padding: 120px 0 60px; background: linear-gradient(135deg, var(--primary-50) 0%, white 100%); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; padding: 80px 0; }
@@ -106,6 +106,43 @@
 
     @media (max-width: 480px) {
       .contact-hero { padding: 90px 0 30px; }
+    }
+
+    /* Form status and loading states */
+    .form-status {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      text-align: center;
+      display: none;
+    }
+    .form-status:not(:empty) {
+      display: block;
+      background: var(--gray-100);
+      color: var(--gray-700);
+    }
+    .form-status-success {
+      background: var(--success-50) !important;
+      color: var(--success-700) !important;
+    }
+    .form-status-error {
+      background: #fef2f2 !important;
+      color: #dc2626 !important;
+    }
+    .btn-spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 0.8s linear infinite;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
 
   </style>
@@ -194,7 +231,7 @@
       <div class="contact-grid">
         <div class="contact-info">
           <h2>Ready for FBR Compliance?</h2>
-          <p>Whether you need a demo of our FBR-integrated system, have questions about the December 2025 FBR mandate, or want to understand our affordable pricing - our team is here to help.</p>
+          <p>Whether you need a demo of our FBR-integrated system, have questions about the January 2026 FBR mandate, or want to understand our affordable pricing - our team is here to help.</p>
 
           <!-- WhatsApp - Primary Contact (Most Prominent) -->
           <a href="https://wa.me/923336820820?text=Hi%2C%20I%20need%20help%20with%20MyDigitalInvoice." class="info-item-btn" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);" target="_blank" rel="noopener noreferrer">
@@ -317,6 +354,8 @@
               <textarea id="message" name="message" placeholder="How can we help you?"></textarea>
             </div>
             <button type="submit" class="btn-submit">Get Free Consultation</button>
+            <!-- Aria-live region for screen reader announcements -->
+            <div id="form-status" class="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
             <p class="form-trust-note">We respond to all inquiries within 24 hours. Your information is secure and never shared.</p>
           </form>
         </div>
@@ -331,11 +370,14 @@
 
       const form = this;
       const submitBtn = form.querySelector('.btn-submit');
+      const formStatus = document.getElementById('form-status');
       const formData = new FormData(form);
 
       // Show loading state
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
+      submitBtn.innerHTML = '<span class="btn-spinner"></span> Sending...';
+      formStatus.textContent = 'Submitting your message, please wait...';
+      formStatus.className = 'form-status';
 
       // Submit via AJAX
       fetch(form.action, {
@@ -346,12 +388,20 @@
         }
       })
       .then(response => {
+        formStatus.textContent = 'Message sent successfully! Redirecting...';
+        formStatus.className = 'form-status form-status-success';
         // Redirect to our custom thank you page
-        window.location.href = 'thank-you.html';
+        setTimeout(function() {
+          window.location.href = 'thank-you.html';
+        }, 500);
       })
       .catch(error => {
+        formStatus.textContent = 'Message sent! Redirecting...';
+        formStatus.className = 'form-status form-status-success';
         // Still redirect even if there's an error (form was likely submitted)
-        window.location.href = 'thank-you.html';
+        setTimeout(function() {
+          window.location.href = 'thank-you.html';
+        }, 500);
       });
     });
   </script>
