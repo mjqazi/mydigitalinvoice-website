@@ -13,12 +13,66 @@
   const navMenu = document.getElementById('nav-menu');
 
   if (navToggle && navMenu) {
+    // Get all focusable elements in the nav menu
+    function getFocusableElements() {
+      return navMenu.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+    }
+
+    // Focus trap handler for mobile menu
+    function handleFocusTrap(e) {
+      if (!navMenu.classList.contains('active')) return;
+
+      const focusableElements = getFocusableElements();
+      if (focusableElements.length === 0) return;
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      // If Tab key pressed
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          // Shift+Tab: if on first element, go to last
+          if (document.activeElement === firstElement || document.activeElement === navToggle) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          // Tab: if on last element, go to toggle button
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            navToggle.focus();
+          }
+        }
+      }
+
+      // Close menu on Escape key
+      if (e.key === 'Escape') {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.focus();
+      }
+    }
+
     navToggle.addEventListener('click', function() {
       navMenu.classList.toggle('active');
       navToggle.classList.toggle('active');
       const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', !isExpanded);
+
+      // When opening menu, focus first menu item
+      if (!isExpanded) {
+        const focusableElements = getFocusableElements();
+        if (focusableElements.length > 0) {
+          setTimeout(function() {
+            focusableElements[0].focus();
+          }, 100);
+        }
+      }
     });
+
+    // Add focus trap event listener
+    document.addEventListener('keydown', handleFocusTrap);
   }
 
   // ==========================================
