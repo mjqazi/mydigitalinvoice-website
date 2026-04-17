@@ -41,3 +41,22 @@
   z-index: 1;
   pointer-events: auto;
 }
+
+/* Anchor-scroll offset — any section that may be linked via #anchor should
+   land BELOW the fixed sticky header (~90px desktop, 72px mobile) so its
+   heading is visible, not clipped behind the header. */
+html {
+  scroll-behavior: smooth;
+}
+section[id],
+article[id],
+div[id][class*="section"] {
+  scroll-margin-top: 96px;
+}
+@media (max-width: 768px) {
+  section[id],
+  article[id],
+  div[id][class*="section"] {
+    scroll-margin-top: 72px;
+  }
+}
