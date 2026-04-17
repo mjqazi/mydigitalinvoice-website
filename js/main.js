@@ -1,43 +1,45 @@
 /**
  * My Digital Invoice - Landing Page JavaScript
  * Pure vanilla JS for Hostinger static hosting
+ * v3 - Performance + robustness: defer-safe, event delegation, no inline onclick dependency
  */
 
 (function() {
   'use strict';
 
   // ==========================================
+  // Update Current Year in Footer
+  // ==========================================
+  var yearSpan = document.getElementById('current-year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
+  // ==========================================
   // Navigation Toggle (Mobile)
   // ==========================================
-  const navToggle = document.getElementById('nav-toggle');
-  const navMenu = document.getElementById('nav-menu');
+  var navToggle = document.getElementById('nav-toggle');
+  var navMenu = document.getElementById('nav-menu');
 
   if (navToggle && navMenu) {
-    // Get all focusable elements in the nav menu
     function getFocusableElements() {
       return navMenu.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
     }
 
-    // Focus trap handler for mobile menu
     function handleFocusTrap(e) {
       if (!navMenu.classList.contains('active')) return;
-
-      const focusableElements = getFocusableElements();
+      var focusableElements = getFocusableElements();
       if (focusableElements.length === 0) return;
+      var firstElement = focusableElements[0];
+      var lastElement = focusableElements[focusableElements.length - 1];
 
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-
-      // If Tab key pressed
       if (e.key === 'Tab') {
         if (e.shiftKey) {
-          // Shift+Tab: if on first element, go to last
           if (document.activeElement === firstElement || document.activeElement === navToggle) {
             e.preventDefault();
             lastElement.focus();
           }
         } else {
-          // Tab: if on last element, go to toggle button
           if (document.activeElement === lastElement) {
             e.preventDefault();
             navToggle.focus();
@@ -45,7 +47,6 @@
         }
       }
 
-      // Close menu on Escape key
       if (e.key === 'Escape') {
         navMenu.classList.remove('active');
         navToggle.classList.remove('active');
@@ -57,28 +58,23 @@
     navToggle.addEventListener('click', function() {
       navMenu.classList.toggle('active');
       navToggle.classList.toggle('active');
-      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      var isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', !isExpanded);
-
-      // When opening menu, focus first menu item
       if (!isExpanded) {
-        const focusableElements = getFocusableElements();
+        var focusableElements = getFocusableElements();
         if (focusableElements.length > 0) {
-          setTimeout(function() {
-            focusableElements[0].focus();
-          }, 100);
+          setTimeout(function() { focusableElements[0].focus(); }, 100);
         }
       }
     });
 
-    // Add focus trap event listener
     document.addEventListener('keydown', handleFocusTrap);
   }
 
   // ==========================================
   // Sticky Header on Scroll
   // ==========================================
-  const header = document.getElementById('header');
+  var header = document.getElementById('header');
 
   function handleScroll() {
     if (header) {
@@ -91,50 +87,40 @@
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // Check on initial load
+  handleScroll();
 
   // ==========================================
   // Smooth Scroll for Anchor Links
   // ==========================================
-  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-
-      if (targetId && targetId !== '#') {
+  document.addEventListener('click', function(e) {
+    var anchor = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+    var targetId = anchor.getAttribute('href');
+    if (targetId && targetId !== '#') {
+      var target = document.querySelector(targetId);
+      if (target) {
         e.preventDefault();
-        const target = document.querySelector(targetId);
-
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-
-          // Close mobile menu if open
-          if (navMenu) {
-            navMenu.classList.remove('active');
-          }
-          if (navToggle) {
-            navToggle.classList.remove('active');
-            navToggle.setAttribute('aria-expanded', 'false');
-          }
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (navMenu) {
+          navMenu.classList.remove('active');
+        }
+        if (navToggle) {
+          navToggle.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
         }
       }
-    });
+    }
   });
 
   // ==========================================
   // FAQ Accordion (Only one open at a time)
   // ==========================================
-  const faqItems = document.querySelectorAll('.faq-item');
-
+  var faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(function(item) {
     item.addEventListener('toggle', function() {
       if (item.open) {
         faqItems.forEach(function(otherItem) {
-          if (otherItem !== item) {
-            otherItem.open = false;
-          }
+          if (otherItem !== item) otherItem.open = false;
         });
       }
     });
@@ -144,11 +130,10 @@
   // Counter Animation for Stats
   // ==========================================
   function animateCounter(counter) {
-    const target = parseInt(counter.getAttribute('data-count'), 10);
-    const duration = 2000;
-    const step = target / (duration / 16);
-    let current = 0;
-
+    var target = parseInt(counter.getAttribute('data-count'), 10);
+    var duration = 2000;
+    var step = target / (duration / 16);
+    var current = 0;
     function updateCounter() {
       current += step;
       if (current < target) {
@@ -158,15 +143,12 @@
         counter.textContent = target;
       }
     }
-
     updateCounter();
   }
 
-  // Use Intersection Observer to animate counters when visible
-  const counters = document.querySelectorAll('[data-count]');
-
+  var counters = document.querySelectorAll('[data-count]');
   if (counters.length > 0 && 'IntersectionObserver' in window) {
-    const counterObserver = new IntersectionObserver(function(entries) {
+    var counterObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           animateCounter(entry.target);
@@ -174,58 +156,36 @@
         }
       });
     }, { threshold: 0.5 });
-
-    counters.forEach(function(counter) {
-      counterObserver.observe(counter);
-    });
+    counters.forEach(function(counter) { counterObserver.observe(counter); });
   } else {
-    // Fallback for browsers without IntersectionObserver
     counters.forEach(animateCounter);
   }
 
   // ==========================================
-  // Update Current Year in Footer
+  // 3D Tilt Effect for Pricing Cards (desktop only, reduced motion respected)
   // ==========================================
-  const yearSpan = document.getElementById('current-year');
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isDesktop = window.matchMedia && window.matchMedia('(min-width: 1024px)').matches;
 
-  // ==========================================
-  // 3D Tilt Effect for Pricing Cards
-  // ==========================================
-  function initTiltEffect() {
-    const cards = document.querySelectorAll('.pricing-card');
-
-    cards.forEach(function(card) {
-      // Add glare element
-      const glare = document.createElement('div');
+  if (!prefersReducedMotion && isDesktop) {
+    var tiltCards = document.querySelectorAll('.pricing-card');
+    tiltCards.forEach(function(card) {
+      var glare = document.createElement('div');
       glare.className = 'card-glare';
       card.appendChild(glare);
 
       card.addEventListener('mousemove', function(e) {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        // Calculate rotation (max 4 degrees for subtle effect)
-        const rotateX = ((y - centerY) / centerY) * -4;
-        const rotateY = ((x - centerX) / centerX) * 4;
-
-        // Apply transform (subtle tilt with minimal scale)
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -4;
+        var rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 4;
         card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale3d(1.005, 1.005, 1.005)';
-
-        // Update glare position
-        const glareX = (x / rect.width) * 100;
-        const glareY = (y / rect.height) * 100;
-        card.style.setProperty('--mouse-x', glareX + '%');
-        card.style.setProperty('--mouse-y', glareY + '%');
+        card.style.setProperty('--mouse-x', (x / rect.width) * 100 + '%');
+        card.style.setProperty('--mouse-y', (y / rect.height) * 100 + '%');
       });
 
       card.addEventListener('mouseleave', function() {
-        // Smoothly reset transform
         card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
       });
 
@@ -235,33 +195,79 @@
     });
   }
 
-  // Initialize tilt effect when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTiltEffect);
-  } else {
-    initTiltEffect();
+  // ==========================================
+  // Mobile Pricing Accordion (event delegation — robust)
+  // ==========================================
+  document.addEventListener('click', function(e) {
+    var header = e.target.closest && e.target.closest('.pricing-tier-header');
+    if (!header) return;
+    var tier = header.closest('.pricing-tier');
+    if (!tier) return;
+
+    var isActive = tier.classList.contains('active');
+    if (isActive) {
+      tier.classList.remove('active');
+      return;
+    }
+
+    var accordion = tier.closest('.mobile-pricing-accordion');
+    if (accordion) {
+      accordion.querySelectorAll('.pricing-tier').forEach(function(t) {
+        t.classList.remove('active');
+      });
+    }
+    tier.classList.add('active');
+  });
+
+  // ==========================================
+  // Product Preview Screenshot Tab Switching (event delegation)
+  // ==========================================
+  function initPreviewTabs() {
+    var tabContainer = document.querySelector('.preview-tabs');
+    if (!tabContainer) return;
+
+    // Ensure first tab active by default if none marked
+    if (!tabContainer.querySelector('.preview-tab.active')) {
+      var firstTab = tabContainer.querySelector('.preview-tab');
+      if (firstTab) firstTab.classList.add('active');
+    }
+    if (!document.querySelector('.screenshot-container.active')) {
+      var firstScreenshot = document.querySelector('.screenshot-container');
+      if (firstScreenshot) firstScreenshot.classList.add('active');
+    }
+
+    tabContainer.addEventListener('click', function(e) {
+      var tab = e.target.closest && e.target.closest('.preview-tab');
+      if (!tab) return;
+
+      var targetId = 'tab-' + tab.getAttribute('data-tab');
+      document.querySelectorAll('.preview-tab').forEach(function(t) { t.classList.remove('active'); });
+      document.querySelectorAll('.screenshot-container').forEach(function(s) { s.classList.remove('active'); });
+      tab.classList.add('active');
+      var targetEl = document.getElementById(targetId);
+      if (targetEl) targetEl.classList.add('active');
+    });
   }
+  initPreviewTabs();
 
   // ==========================================
   // Comparison Table Scroll Indicator
   // ==========================================
   function initComparisonTableScroll() {
-    const tableContainer = document.querySelector('.comparison-table-container');
-    const tableWrapper = document.querySelector('.comparison-table-wrapper');
-    const scrollHint = document.querySelector('.scroll-hint');
+    var tableContainer = document.querySelector('.comparison-table-container');
+    var tableWrapper = document.querySelector('.comparison-table-wrapper');
+    var scrollHint = document.querySelector('.scroll-hint');
 
     if (tableWrapper && tableContainer) {
       function checkScrollPosition() {
-        const scrollLeft = tableWrapper.scrollLeft;
-        const scrollWidth = tableWrapper.scrollWidth;
-        const clientWidth = tableWrapper.clientWidth;
-        const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 10;
+        var scrollLeft = tableWrapper.scrollLeft;
+        var scrollWidth = tableWrapper.scrollWidth;
+        var clientWidth = tableWrapper.clientWidth;
+        var isAtEnd = scrollLeft + clientWidth >= scrollWidth - 10;
 
         if (isAtEnd) {
           tableContainer.classList.add('scrolled-end');
-          if (scrollHint) {
-            scrollHint.style.display = 'none';
-          }
+          if (scrollHint) scrollHint.style.display = 'none';
         } else {
           tableContainer.classList.remove('scrolled-end');
         }
@@ -269,82 +275,58 @@
 
       tableWrapper.addEventListener('scroll', checkScrollPosition, { passive: true });
       window.addEventListener('resize', checkScrollPosition, { passive: true });
-      checkScrollPosition(); // Initial check
+      checkScrollPosition();
     }
   }
+  initComparisonTableScroll();
 
-  // Initialize comparison table scroll when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initComparisonTableScroll);
-  } else {
-    initComparisonTableScroll();
+  // ==========================================
+  // Exit Intent Popup (desktop only, one-time per session)
+  // ==========================================
+  var exitPopup = document.getElementById('exit-intent-popup');
+  if (exitPopup && !sessionStorage.getItem('exitShown')) {
+    var exitDesktop = window.matchMedia && window.matchMedia('(min-width: 1024px)').matches;
+    if (exitDesktop) {
+      var exitHandler = function(e) {
+        if (e.clientY < 10) {
+          exitPopup.classList.add('active');
+          sessionStorage.setItem('exitShown', '1');
+          document.removeEventListener('mouseout', exitHandler);
+          if (typeof gtag === 'function') {
+            gtag('event', 'popup_shown', { event_category: 'exit_intent' });
+          }
+        }
+      };
+      document.addEventListener('mouseout', exitHandler);
+    }
+
+    // Close popup
+    document.addEventListener('click', function(e) {
+      if (e.target.matches && (e.target.matches('.exit-popup-close') || e.target.closest('.exit-popup-close'))) {
+        exitPopup.classList.remove('active');
+      }
+      if (e.target === exitPopup) {
+        exitPopup.classList.remove('active');
+      }
+    });
   }
 
 })();
 
 // ==========================================
-// Mobile Pricing Tier Toggle (Global function)
+// Backwards-compatible global for any inline onclick="togglePricingTier(this)" callers
 // ==========================================
-function togglePricingTier(header) {
-  const tier = header.closest('.pricing-tier');
+window.togglePricingTier = function(headerEl) {
+  var tier = headerEl.closest('.pricing-tier');
   if (!tier) return;
-
-  const isActive = tier.classList.contains('active');
-
-  // If clicking on already active tier, just close it
+  var isActive = tier.classList.contains('active');
   if (isActive) {
     tier.classList.remove('active');
     return;
   }
-
-  // Close all other tiers (accordion behavior)
-  const allTiers = document.querySelectorAll('.pricing-tier');
-  allTiers.forEach(function(t) {
-    t.classList.remove('active');
-  });
-
-  // Open clicked tier
+  var accordion = tier.closest('.mobile-pricing-accordion');
+  if (accordion) {
+    accordion.querySelectorAll('.pricing-tier').forEach(function(t) { t.classList.remove('active'); });
+  }
   tier.classList.add('active');
-}
-
-// ==========================================
-// Product Preview Screenshot Tab Switching
-// ==========================================
-(function() {
-  'use strict';
-
-  function initPreviewTabs() {
-    const tabs = document.querySelectorAll('.preview-tab');
-    const screenshots = document.querySelectorAll('.screenshot-container');
-
-    if (tabs.length === 0) return;
-
-    tabs.forEach(function(tab) {
-      tab.addEventListener('click', function() {
-        const targetId = 'tab-' + this.getAttribute('data-tab');
-
-        // Remove active from all tabs and screenshots
-        tabs.forEach(function(t) {
-          t.classList.remove('active');
-        });
-        screenshots.forEach(function(s) {
-          s.classList.remove('active');
-        });
-
-        // Add active to clicked tab and target screenshot
-        this.classList.add('active');
-        var targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.classList.add('active');
-        }
-      });
-    });
-  }
-
-  // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPreviewTabs);
-  } else {
-    initPreviewTabs();
-  }
-})();
+};

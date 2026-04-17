@@ -1,9 +1,13 @@
 # robots.txt for mydigitalinvoice.com
+# FBR Digital Invoicing Software — Pakistan
 # https://www.robotstxt.org/robotstxt.html
 
 # Allow all standard search engine crawlers
 User-agent: *
 Allow: /
+Disallow: /payments
+Disallow: /payment-success
+Disallow: /thank-you
 
 # Block AI training bots and scrapers
 User-agent: GPTBot
@@ -28,6 +32,12 @@ User-agent: Bytespider
 Disallow: /
 
 User-agent: cohere-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: ClaudeBot
 Disallow: /
 
 # Sitemap location
