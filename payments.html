@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <meta name="google-site-verification" content="4tIn63CfQZHIkKv0N44dmfcwzmzig4y1qplAvHfcew8" />
 
   <!-- Google Tag Manager -->
@@ -14,18 +15,12 @@
   <!-- End Google Tag Manager -->
 
   <title>Payment - My Digital Invoice | FBR Digital Invoicing Software Pakistan</title>
+  <link rel="canonical" href="https://mydigitalinvoice.com/payments">
   <meta name="description" content="Complete your payment for My Digital Invoice subscription. Bank transfer details and payment confirmation form.">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <!-- Preconnect to external domains -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://connect.facebook.net">
-  <link rel="preconnect" href="https://www.facebook.com">
-  <link rel="dns-prefetch" href="https://snap.licdn.com">
-
-  <!-- Stylesheet with preload -->
-  <link rel="preload" href="css/styles.css?v=8" as="style">
-  <link rel="stylesheet" href="css/styles.css?v=8">
+  <link rel="preconnect" href="https://www.googletagmanager.com"><link rel="stylesheet" href="css/styles.css?v=9">
   <style>
     .payment-hero {
       padding: 120px 0 60px;
@@ -385,9 +380,9 @@
           <li><a href="/features" class="nav-link">Features</a></li>
           <li><a href="/how-it-works" class="nav-link">How It Works</a></li>
           <li><a href="/pricing" class="nav-link">Pricing</a></li>
-          <li><a href="/blog/" class="nav-link">Blog</a></li>
+          <li><a href="/bulk-upload" class="nav-link">Bulk Upload</a></li>
+          <li><a href="/for-accountants" class="nav-link">For Accountants</a></li>
           <li><a href="/#testimonials" class="nav-link">Testimonials</a></li>
-          <li><a href="/faq" class="nav-link">FAQ</a></li>
           <li><a href="/contact.html" class="nav-link">Contact</a></li>
           <li class="mobile-nav-actions">
             <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-block">Login / Sign Up</a>
@@ -462,20 +457,32 @@
           <div class="pricing-reminder">
             <h3>Subscription Plans</h3>
             <div class="pricing-reminder-item">
+              <span>Free Plan</span>
+              <span>FREE (0-5 invoices/mo)</span>
+            </div>
+            <div class="pricing-reminder-item">
               <span>Starter Plan</span>
-              <span>FREE (5 invoices/mo)</span>
+              <span>Rs 1,000 + tax (6-20 invoices/mo)</span>
             </div>
             <div class="pricing-reminder-item">
-              <span>Business Plan</span>
-              <span>Rs 1,000/month</span>
+              <span>Standard Plan <strong style="color:#10b981;">★ Most Popular</strong></span>
+              <span>Rs 2,000 + tax (21-200 invoices/mo)</span>
             </div>
             <div class="pricing-reminder-item">
-              <span>Enterprise Plan</span>
-              <span>Rs 2,000/month</span>
+              <span>Unlimited Plan</span>
+              <span>Rs 3,000 + tax (201+ invoices/mo)</span>
             </div>
             <div class="pricing-reminder-item">
-              <span>Custom Plan</span>
-              <span>Contact Sales</span>
+              <span>Bulk Upload Add-on</span>
+              <span>+ Rs 5,000/month + tax (optional)</span>
+            </div>
+            <div class="pricing-reminder-item">
+              <span>Shopify Integration Add-on</span>
+              <span>+ Rs 1,000/mo + tax base (Free bracket = no extra), +Rs 1,000 per extra 3k</span>
+            </div>
+            <div class="pricing-reminder-item" style="background:#fef3c7;border-radius:6px;padding:0.5rem 0.75rem;margin-top:0.5rem;">
+              <span><strong>One-time Integration Fee</strong></span>
+              <span><strong>Rs 5,000 + tax</strong> (pay 1 week after integration)</span>
             </div>
           </div>
 
@@ -535,10 +542,13 @@
               <label for="plan">Select Plan <span style="color: #dc2626;">*</span></label>
               <select id="plan" name="plan" required>
                 <option value="">Choose your plan</option>
-                <option value="Starter Plan - FREE">Starter Plan - FREE (5 invoices/mo)</option>
-                <option value="Business Plan - Rs 1,000/month">Business Plan - Rs 1,000/month (Most Popular)</option>
-                <option value="Enterprise Plan - Rs 2,000/month">Enterprise Plan - Rs 2,000/month</option>
-                <option value="Custom Plan - Contact Sales">Custom Plan - Contact Sales</option>
+                <option value="Free Bracket - FREE">Free Bracket (0-5 invoices) - FREE</option>
+                <option value="Starter Bracket - Rs 1,000/mo + tax">Starter Bracket (6-20 invoices) - Rs 1,000/mo + tax</option>
+                <option value="Standard Bracket - Rs 2,000/mo + tax">Standard Bracket (21-200 invoices) - Rs 2,000/mo + tax (Most Popular)</option>
+                <option value="Unlimited Bracket - Rs 3,000/mo + tax">Unlimited Bracket (201+ invoices, no cap) - Rs 3,000/mo + tax</option>
+                <option value="Bulk Upload Add-on - Rs 5,000/mo + tax">+ Bulk Upload Add-on - Rs 5,000/mo + tax (stacks on top of bracket)</option>
+                <option value="Shopify Add-on">+ Shopify Integration Add-on - Rs 1,000 + tax base (Free bracket = nothing extra), +Rs 1,000 per extra 3k block</option>
+                <option value="Integration Fee - Rs 5,000 + tax">One-time Integration Fee - Rs 5,000 + tax (paid 1 week after integration)</option>
               </select>
             </div>
 
@@ -607,6 +617,8 @@
           <ul>
             <li><a href="/features">Features</a></li>
             <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/bulk-upload">Bulk Upload</a></li>
+            <li><a href="/for-accountants">For Accountants</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a href="/#testimonials">Testimonials</a></li>
             <li><a href="/faq">FAQ</a></li>
@@ -655,7 +667,7 @@
     </svg>
   </a>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=3" defer></script>
   <script>
     // Copy to clipboard function
     function copyToClipboard(text) {
