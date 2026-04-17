@@ -32,6 +32,10 @@
   <meta property="twitter:description" content="Pakistan's complete digital invoicing platform with FBR IRIS integration, electronic invoice generation, bulk upload, and accountant portal. Start FREE — no credit card.">
 
   <!-- Canonical URL -->
+  <!-- Bilingual hreflang alternates -->
+  <link rel="alternate" hreflang="en" href="https://mydigitalinvoice.com/" />
+  <link rel="alternate" hreflang="ur" href="https://mydigitalinvoice.com/ur/" />
+  <link rel="alternate" hreflang="x-default" href="https://mydigitalinvoice.com/" />
   <link rel="canonical" href="https://mydigitalinvoice.com/">
 
   <!-- Organization Schema -->
@@ -224,6 +228,7 @@
 
   <!-- Stylesheet — single load, critical above-the-fold CSS inlined below -->
   <link rel="stylesheet" href="css/styles.css?v=9">
+  <link rel="stylesheet" href="/css/switcher.css?v=1">
 
   <!-- Preload hero section logo for faster LCP (WebP with PNG fallback) -->
   <link rel="preload" href="assets/fbr-logo-1.webp" as="image" type="image/webp" fetchpriority="high">
@@ -1037,6 +1042,7 @@
           <li><a href="/bulk-upload" class="nav-link">Bulk Upload</a></li>
           <li><a href="/for-accountants" class="nav-link">For Accountants</a></li>
           <li><a href="/contact.html" class="nav-link">Contact</a></li>
+          <li><a href="/ur/" class="lang-switch" hreflang="ur" lang="ur" aria-label="اردو میں دیکھیں"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg><span>اردو</span></a></li>
           <!-- Mobile nav actions -->
           <li class="mobile-nav-actions">
             <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-block">Login / Sign Up</a>
@@ -1071,6 +1077,13 @@
 
   <!-- Main Content -->
   <main id="main-content">
+    <!-- Urdu availability strip — signals bilingual support to Pakistani visitors -->
+    <a href="/ur/" hreflang="ur" style="display:block;background:linear-gradient(90deg,#01411C 0%,#016d30 50%,#0066CC 100%);color:#fff;text-align:center;padding:0.55rem 1rem;font-size:0.9rem;font-weight:500;text-decoration:none;letter-spacing:0.01em;">
+      <span style="opacity:0.95;">یہ ویب سائٹ اردو میں بھی دستیاب ہے</span>
+      <span style="display:inline-block;margin:0 0.6rem;opacity:0.6;">•</span>
+      <span style="font-weight:600;text-decoration:underline;text-underline-offset:2px;">اردو میں دیکھیں ←</span>
+    </a>
+
     <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-bg">
@@ -1327,9 +1340,9 @@
               </a>
             </div>
           </div>
-          <div style="text-align:center;min-width:180px;">
-            <div style="font-size:3.5rem;font-weight:900;color:#dc2626;line-height:1;letter-spacing:-0.03em;">500K</div>
-            <div style="font-size:0.95rem;color:#92400e;font-weight:600;margin-top:0.25rem;">PKR maximum<br>per FBR notice</div>
+          <div style="text-align:center;min-width:220px;">
+            <div style="font-size:3rem;font-weight:900;color:#dc2626;line-height:1.1;letter-spacing:-0.02em;white-space:nowrap;">5 Lakh</div>
+            <div style="font-size:0.95rem;color:#92400e;font-weight:600;margin-top:0.4rem;">PKR maximum<br>per FBR notice</div>
           </div>
         </div>
       </div>

@@ -1,0 +1,694 @@
+/* =========================================================
+   RTL overrides + Urdu typographic polish
+   Loaded after styles.css on pages with <html dir="rtl">
+   Optimized for Nastaliq rendering (tall ascenders/descenders)
+   ========================================================= */
+
+/* =====================================
+   TYPOGRAPHY — the critical fix
+   Nastaliq needs WIDE line-heights and slightly larger sizes
+   ===================================== */
+
+html[dir="rtl"] body,
+html[dir="rtl"] .nav-link,
+html[dir="rtl"] p,
+html[dir="rtl"] li,
+html[dir="rtl"] span,
+html[dir="rtl"] a,
+html[dir="rtl"] label,
+html[dir="rtl"] button,
+html[dir="rtl"] blockquote,
+html[dir="rtl"] select,
+html[dir="rtl"] textarea,
+html[dir="rtl"] input:not([type="tel"]):not([type="email"]):not([type="url"]):not([type="number"]) {
+  font-family: 'Gulzar', 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Alvi Nastaleeq', 'Noto Naskh Arabic', system-ui, -apple-system, sans-serif;
+  line-height: 2.15;
+  letter-spacing: 0;
+  font-feature-settings: "liga", "kern";
+  text-rendering: optimizeLegibility;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] .section-title,
+html[dir="rtl"] .hero-title,
+html[dir="rtl"] .cta-title,
+html[dir="rtl"] .feature-title,
+html[dir="rtl"] .form-title,
+html[dir="rtl"] .footer-nav-title {
+  font-family: 'Gulzar', 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Alvi Nastaleeq', 'Noto Naskh Arabic', system-ui, sans-serif;
+  font-weight: 500;
+}
+
+/* Heading line-heights tuned per scale — Nastaliq needs ALL of these
+   !important is critical: page-level inline <style> blocks with tight values
+   load after rtl.css and would otherwise win on cascade */
+html[dir="rtl"] h1,
+html[dir="rtl"] .hero-title,
+html[dir="rtl"] .hero-title-main,
+html[dir="rtl"] .hero-title-sub,
+html[dir="rtl"] .cta-title { line-height: 1.85 !important; }
+
+html[dir="rtl"] h2,
+html[dir="rtl"] .section-title { line-height: 1.85 !important; }
+
+html[dir="rtl"] h3,
+html[dir="rtl"] .feature-title,
+html[dir="rtl"] .form-title,
+html[dir="rtl"] .benefit-card h3,
+html[dir="rtl"] .add-feature-content h4,
+html[dir="rtl"] .firm-section h2,
+html[dir="rtl"] .firm-section h3 { line-height: 1.9 !important; }
+
+html[dir="rtl"] h4,
+html[dir="rtl"] .footer-nav-title { line-height: 1.9 !important; }
+
+/* Body paragraphs — generous line spacing */
+html[dir="rtl"] p,
+html[dir="rtl"] blockquote,
+html[dir="rtl"] li,
+html[dir="rtl"] .feature-description,
+html[dir="rtl"] .section-description,
+html[dir="rtl"] .hero-description,
+html[dir="rtl"] .cta-description,
+html[dir="rtl"] .hero-cta-note,
+html[dir="rtl"] .firm-section p,
+html[dir="rtl"] .benefit-card p,
+html[dir="rtl"] .add-feature-content p,
+html[dir="rtl"] .workflow-list li span,
+html[dir="rtl"] .workflow-ol li span,
+html[dir="rtl"] .pcard-desc,
+html[dir="rtl"] .addon-card p,
+html[dir="rtl"] .integration-fee-box p,
+html[dir="rtl"] .footer-tagline {
+  line-height: 2.2 !important;
+}
+
+html[dir="rtl"] .hero-features li { line-height: 2 !important; padding: 0.5rem 0; }
+html[dir="rtl"] .faq-question { line-height: 1.95 !important; }
+html[dir="rtl"] .faq-answer p { line-height: 2.25 !important; }
+html[dir="rtl"] .testimonial-quote { line-height: 2.25 !important; }
+html[dir="rtl"] .pcard-features li { line-height: 1.95 !important; }
+html[dir="rtl"] .workflow-ol li strong { line-height: 1.85 !important; }
+html[dir="rtl"] .info-content h3 { line-height: 1.9 !important; }
+html[dir="rtl"] .pcard-name { line-height: 1.4 !important; }
+
+/* Bump body font slightly — Nastaliq reads small at 16px */
+html[dir="rtl"] body { font-size: 17px; }
+html[dir="rtl"] .hero-description { font-size: 1.15rem; }
+html[dir="rtl"] .section-description { font-size: 1.1rem; }
+
+/* Keep latin-script numbers/logos/code in the English family */
+html[dir="rtl"] .logo-text,
+html[dir="rtl"] .en-inline,
+html[dir="rtl"] .en-text,
+html[dir="rtl"] .pricing-tier-amount,
+html[dir="rtl"] .pricing-tier-period,
+html[dir="rtl"] .ribbon-percent,
+html[dir="rtl"] .ribbon-off,
+html[dir="rtl"] .stat-card .num,
+html[dir="rtl"] .testimonial-stat,
+html[dir="rtl"] code,
+html[dir="rtl"] input[type="tel"],
+html[dir="rtl"] input[type="email"],
+html[dir="rtl"] input[type="url"],
+html[dir="rtl"] input[type="number"] {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  line-height: 1.3;
+  letter-spacing: normal;
+}
+
+html[dir="rtl"] .en-inline {
+  direction: ltr;
+  unicode-bidi: embed;
+  display: inline-block;
+  margin: 0 0.15em;
+  font-weight: 500;
+}
+
+/* =====================================
+   LAYOUT — RTL mirroring
+   ===================================== */
+
+html[dir="rtl"] body { text-align: right; }
+html[dir="rtl"] .section-header,
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .cta-content { text-align: center; }
+
+html[dir="rtl"] .nav,
+html[dir="rtl"] .nav-menu,
+html[dir="rtl"] .nav-actions,
+html[dir="rtl"] .hero-cta,
+html[dir="rtl"] .cta-actions,
+html[dir="rtl"] .preview-cta,
+html[dir="rtl"] .value-prop,
+html[dir="rtl"] .trust-banner-header,
+html[dir="rtl"] .trust-banner-items,
+html[dir="rtl"] .footer-contact,
+html[dir="rtl"] .footer-bottom,
+html[dir="rtl"] .info-item,
+html[dir="rtl"] .info-item-btn {
+  flex-direction: row-reverse;
+}
+
+/* Hero features UL must stay a vertical stack, not a horizontal flex row.
+   Only the inner <li> icon-text pair gets flipped. */
+html[dir="rtl"] .hero-features {
+  display: block !important;
+  flex-direction: unset !important;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+/* Arrow icons that point — mirror them for RTL */
+html[dir="rtl"] .btn-icon,
+html[dir="rtl"] .btn-arrow,
+html[dir="rtl"] .alert-btn svg:last-child { transform: scaleX(-1); }
+
+/* Hero text block alignment */
+html[dir="rtl"] .hero-text { text-align: right; }
+html[dir="rtl"] .hero-title,
+html[dir="rtl"] .hero-description,
+html[dir="rtl"] .hero-cta-note { text-align: right; }
+
+/* Hero features — icons on right, proper spacing */
+html[dir="rtl"] .hero-features { padding: 0; list-style: none; }
+html[dir="rtl"] .hero-features li {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  align-items: center;
+  font-size: 1.05rem;
+}
+html[dir="rtl"] .hero-features li .feature-check { flex-shrink: 0; }
+
+/* Keep the dashboard preview LTR inside (it's a product screenshot) */
+html[dir="rtl"] .dashboard-preview,
+html[dir="rtl"] .dashboard-header,
+html[dir="rtl"] .dashboard-cards,
+html[dir="rtl"] .dashboard-chart,
+html[dir="rtl"] .dash-card,
+html[dir="rtl"] .float-card {
+  direction: ltr;
+}
+
+/* Card text alignment */
+html[dir="rtl"] .feature-card,
+html[dir="rtl"] .value-card,
+html[dir="rtl"] .benefit-card,
+html[dir="rtl"] .feature-card-bulk,
+html[dir="rtl"] .testimonial-card,
+html[dir="rtl"] .add-feature-item { text-align: right; }
+
+html[dir="rtl"] .add-feature-item { flex-direction: row-reverse; }
+html[dir="rtl"] .testimonial-author,
+html[dir="rtl"] .author-info { text-align: right; }
+
+/* Workflow / step lists with numbered bullets */
+html[dir="rtl"] .workflow-list li {
+  padding: 1rem 4rem 1rem 1rem;
+  border-left: none;
+  border-right: 4px solid var(--primary-500);
+}
+html[dir="rtl"] .workflow-list li::before {
+  left: auto;
+  right: 1rem;
+}
+
+html[dir="rtl"] .process-step {
+  grid-template-columns: 1fr 56px;
+  border-left: none;
+  border-right: 4px solid var(--primary-500);
+}
+html[dir="rtl"] .process-step > :first-child { order: 2; }
+html[dir="rtl"] .process-step > :last-child { order: 1; }
+
+/* Pricing tier headers */
+html[dir="rtl"] .pricing-tier-header { flex-direction: row-reverse; }
+html[dir="rtl"] .pricing-tier-info,
+html[dir="rtl"] .pricing-tier-price { text-align: right; }
+
+/* Footer */
+html[dir="rtl"] .footer-grid { direction: rtl; }
+html[dir="rtl"] .footer-nav ul,
+html[dir="rtl"] .footer-nav p { text-align: right; }
+
+html[dir="rtl"] .nav-menu { padding-inline-start: 0; }
+
+/* WhatsApp floating — keep on right (bottom-right) */
+html[dir="rtl"] .whatsapp-float { right: 24px; left: auto; }
+
+/* Skip link stays on left for a11y */
+html[dir="rtl"] .skip-link { left: 0; right: auto; }
+
+/* Border accents */
+html[dir="rtl"] .pricing-guarantee {
+  border-left: none;
+  border-right: 4px solid var(--primary-500);
+  padding-left: 1rem;
+  padding-right: 1.5rem;
+}
+
+/* Input direction for latin-script inputs */
+html[dir="rtl"] input[type="email"],
+html[dir="rtl"] input[type="tel"],
+html[dir="rtl"] input[type="url"] {
+  direction: ltr;
+  text-align: left;
+}
+
+/* =====================================
+   LANGUAGE SWITCHER (shared with LTR too)
+   ===================================== */
+.lang-switch {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem !important;
+  border: 1.5px solid var(--primary-500) !important;
+  border-radius: 999px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: var(--primary-500) !important;
+  text-decoration: none !important;
+  transition: all 0.2s;
+  background: #fff !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0.02em;
+}
+.lang-switch:hover {
+  background: var(--primary-500) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+}
+
+/* =====================================
+   VISUAL POLISH for Urdu pages
+   Richer cards, better depth, more spacing
+   ===================================== */
+
+/* Section spacing — Urdu reads taller, needs more air */
+html[dir="rtl"] section { padding-top: 5rem; padding-bottom: 5rem; }
+html[dir="rtl"] .hero { padding-top: 0; }
+html[dir="rtl"] .page-hero { padding: 130px 0 70px !important; }
+
+html[dir="rtl"] .section-header { margin-bottom: 3.5rem; }
+html[dir="rtl"] .section-title { margin-bottom: 1.2rem; }
+html[dir="rtl"] .section-badge {
+  font-family: system-ui, sans-serif !important;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+}
+
+/* Feature cards — richer, more depth, warmer feel */
+html[dir="rtl"] .feature-card,
+html[dir="rtl"] .benefit-card,
+html[dir="rtl"] .feature-card-bulk {
+  padding: 2.25rem 2rem !important;
+  border-radius: 16px !important;
+  border: 1px solid #e8ecf1;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html[dir="rtl"] .feature-card:hover,
+html[dir="rtl"] .benefit-card:hover,
+html[dir="rtl"] .feature-card-bulk:hover {
+  border-color: rgba(0, 102, 204, 0.3);
+  box-shadow: 0 20px 50px -15px rgba(0, 102, 204, 0.18), 0 8px 20px -8px rgba(15, 23, 42, 0.08);
+  transform: translateY(-4px);
+}
+
+html[dir="rtl"] .feature-title,
+html[dir="rtl"] .benefit-card h3 {
+  font-size: 1.3rem !important;
+  margin-bottom: 0.85rem !important;
+}
+
+html[dir="rtl"] .feature-description,
+html[dir="rtl"] .benefit-card p {
+  font-size: 1rem !important;
+  color: #475569 !important;
+}
+
+/* Feature icon — bigger, more depth */
+html[dir="rtl"] .feature-icon,
+html[dir="rtl"] .benefit-icon {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 20px -6px rgba(0, 102, 204, 0.35);
+  margin-bottom: 1.4rem !important;
+}
+html[dir="rtl"] .feature-icon svg,
+html[dir="rtl"] .benefit-icon svg {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+/* Icon color variants — consistent gradient backgrounds */
+html[dir="rtl"] .feature-icon { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); }
+html[dir="rtl"] .feature-icon svg { color: #0066CC; }
+html[dir="rtl"] .feature-icon.green { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); }
+html[dir="rtl"] .feature-icon.green svg { color: #059669; }
+html[dir="rtl"] .feature-icon.purple { background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); }
+html[dir="rtl"] .feature-icon.purple svg { color: #7c3aed; }
+html[dir="rtl"] .feature-icon.orange { background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%); }
+html[dir="rtl"] .feature-icon.orange svg { color: #ea580c; }
+html[dir="rtl"] .feature-icon.cyan { background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%); }
+html[dir="rtl"] .feature-icon.cyan svg { color: #0891b2; }
+html[dir="rtl"] .feature-icon.red { background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%); }
+html[dir="rtl"] .feature-icon.red svg { color: #dc2626; }
+
+/* Testimonial cards */
+html[dir="rtl"] .testimonial-card {
+  padding: 2rem !important;
+  border-radius: 18px !important;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05) !important;
+}
+html[dir="rtl"] .testimonial-quote {
+  font-size: 1.02rem !important;
+  color: #374151 !important;
+  line-height: 2.25 !important;
+}
+
+/* Hero title — stronger contrast + generous vertical breathing room */
+html[dir="rtl"] .hero-title {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+html[dir="rtl"] .hero-title-main {
+  font-size: 2.4rem !important;
+  font-weight: 500 !important;
+  color: #0f172a;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+html[dir="rtl"] .hero-title-sub {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #475569 !important;
+  display: block;
+  margin-top: 0.5rem;
+}
+html[dir="rtl"] .text-teal { color: #0066CC !important; }
+
+/* Hero description: more breathing room */
+html[dir="rtl"] .hero-description {
+  margin-top: 1.5rem !important;
+  margin-bottom: 2rem !important;
+  max-width: 640px;
+}
+
+/* Hero features list — proper vertical rhythm, icon and text vertically centered */
+html[dir="rtl"] .hero-features li {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0 !important;
+  font-size: 1.05rem;
+  line-height: 2 !important;
+}
+html[dir="rtl"] .hero-features li .feature-check {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: #10b981;
+  margin-top: 0.35em; /* Nastaliq text has tall ascenders — nudge icon down to visual center */
+}
+
+/* Hero CTA row — space above */
+html[dir="rtl"] .hero-cta {
+  margin-top: 2rem !important;
+  gap: 0.85rem;
+}
+html[dir="rtl"] .hero-cta-note {
+  margin-top: 1.25rem !important;
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 2 !important;
+}
+
+/* Hero content grid — give the left text column more air on wide screens */
+@media (min-width: 1024px) {
+  html[dir="rtl"] .hero-content {
+    gap: 4rem;
+    align-items: center;
+  }
+  html[dir="rtl"] .hero-text {
+    padding-inline-end: 1rem;
+  }
+}
+
+/* Hero padding: more top space for Urdu content */
+html[dir="rtl"] .hero {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+/* Greeting pill whitespace cleanup — prevent any inherited line-height from rtl.css
+   squashing the single-line pill */
+html[dir="rtl"] .ur-greeting { line-height: 1.7 !important; }
+html[dir="rtl"] .ur-greeting span { line-height: 1.7 !important; }
+
+/* =====================================
+   BUTTONS — Urdu-aware comprehensive fix
+   Nastaliq letters are visually taller/deeper than Latin, so buttons need:
+   - generous min-height instead of fixed heights
+   - line-height 1.7+ (not 1.0 like English)
+   - padding calibrated for ascender/descender clearance
+   - correct flex direction with icon-text ordering preserved
+   ===================================== */
+
+html[dir="rtl"] .btn,
+html[dir="rtl"] .btn-sm,
+html[dir="rtl"] .btn-lg,
+html[dir="rtl"] .btn-primary,
+html[dir="rtl"] .btn-cta-primary,
+html[dir="rtl"] .btn-cta-secondary,
+html[dir="rtl"] .btn-white,
+html[dir="rtl"] .btn-ghost-white,
+html[dir="rtl"] .btn-outline,
+html[dir="rtl"] .btn-outline-white,
+html[dir="rtl"] .btn-whatsapp-outline,
+html[dir="rtl"] .btn-submit {
+  display: inline-flex !important;
+  flex-direction: row-reverse !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.55rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.7 !important;
+  padding: 0.85rem 1.6rem !important;
+  min-height: unset !important;
+  height: auto !important;
+  border-radius: 10px !important;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+html[dir="rtl"] .btn-lg,
+html[dir="rtl"] .btn-cta-primary,
+html[dir="rtl"] .btn-cta-secondary {
+  padding: 1rem 1.85rem !important;
+  font-size: 1.02rem !important;
+}
+
+html[dir="rtl"] .btn-sm {
+  padding: 0.6rem 1.1rem !important;
+  font-size: 0.88rem !important;
+}
+
+html[dir="rtl"] .btn-cta-primary {
+  box-shadow: 0 12px 30px -8px rgba(0, 102, 204, 0.4) !important;
+}
+
+/* SVG inside buttons — fix size + vertical centering with Nastaliq baseline */
+html[dir="rtl"] .btn svg,
+html[dir="rtl"] .btn-sm svg,
+html[dir="rtl"] .btn-lg svg,
+html[dir="rtl"] .btn-primary svg,
+html[dir="rtl"] .btn-cta-primary svg,
+html[dir="rtl"] .btn-cta-secondary svg,
+html[dir="rtl"] .btn-white svg,
+html[dir="rtl"] .btn-ghost-white svg,
+html[dir="rtl"] .btn-outline svg,
+html[dir="rtl"] .btn-outline-white svg,
+html[dir="rtl"] .btn-whatsapp-outline svg,
+html[dir="rtl"] .btn-submit svg {
+  flex-shrink: 0 !important;
+  width: 18px !important;
+  height: 18px !important;
+  display: block !important;
+  margin: 0 !important;
+  transform: none !important;  /* reset any previous scaleX flips */
+}
+
+/* Forward/back arrow icons (btn-icon class) need RTL mirror since they point a direction */
+html[dir="rtl"] .btn .btn-icon,
+html[dir="rtl"] .btn-lg .btn-icon,
+html[dir="rtl"] .btn-cta-primary .btn-icon,
+html[dir="rtl"] .btn-cta-secondary .btn-icon,
+html[dir="rtl"] .btn-white .btn-icon,
+html[dir="rtl"] .btn-sm .btn-icon {
+  transform: scaleX(-1) !important;
+}
+
+/* Sub-buttons on pricing cards (custom class) */
+html[dir="rtl"] .pcard-cta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 2.75rem;
+  line-height: 1.6 !important;
+  padding: 0.85rem 1rem !important;
+}
+
+/* =====================================
+   PILLS / BADGES — same Nastaliq treatment
+   ===================================== */
+
+html[dir="rtl"] .section-badge,
+html[dir="rtl"] .pricing-tier-badge,
+html[dir="rtl"] .ur-greeting,
+html[dir="rtl"] .lang-switch {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  line-height: 1.65 !important;
+  padding-top: 0.35rem !important;
+  padding-bottom: 0.35rem !important;
+  vertical-align: middle;
+}
+
+html[dir="rtl"] .section-badge { padding: 0.4rem 0.9rem !important; }
+
+/* Red/yellow/green inline status badges (penalty callout, testimonial badges) */
+html[dir="rtl"] [style*="border-radius:999px"],
+html[dir="rtl"] [style*="border-radius: 999px"] {
+  line-height: 1.65 !important;
+}
+
+/* Ensure icons inside all inline-flex pills are flex-shrink: 0 */
+html[dir="rtl"] .section-badge > svg,
+html[dir="rtl"] .ur-greeting > svg,
+html[dir="rtl"] .lang-switch > svg {
+  flex-shrink: 0 !important;
+}
+
+/* Hero visual — add subtle backdrop */
+html[dir="rtl"] .hero-visual .dashboard-preview {
+  box-shadow: 0 40px 80px -20px rgba(0, 102, 204, 0.25), 0 20px 40px -15px rgba(15, 23, 42, 0.15);
+  border-radius: 16px;
+}
+
+/* Penalty callout — richer */
+html[dir="rtl"] .penalty-callout {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 60%, #fcd34d 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+html[dir="rtl"] .penalty-callout::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(220,38,38,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Pricing cards — more visual weight */
+html[dir="rtl"] .pcard {
+  padding: 2.25rem 1.75rem !important;
+  border-radius: 18px !important;
+}
+html[dir="rtl"] .pcard-name {
+  font-family: system-ui, sans-serif !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.75rem !important;
+  line-height: 1.4 !important;
+}
+html[dir="rtl"] .pcard-desc { line-height: 2; font-size: 0.98rem !important; }
+html[dir="rtl"] .pcard-features li { line-height: 1.95 !important; }
+html[dir="rtl"] .pcard-cta {
+  line-height: 1.5 !important;
+  padding: 0.85rem 1rem !important;
+  margin-top: 1.75rem !important;
+}
+
+/* FAQ items */
+html[dir="rtl"] .faq-item {
+  padding: 1.5rem 1.75rem !important;
+  border-radius: 14px !important;
+}
+html[dir="rtl"] .faq-question { font-size: 1.1rem !important; font-weight: 500 !important; }
+
+/* Footer — better spacing for Urdu */
+html[dir="rtl"] .footer { padding: 4rem 0 2rem; }
+html[dir="rtl"] .footer-nav ul li { margin-bottom: 0.4rem; }
+html[dir="rtl"] .footer-nav ul li a { line-height: 2; font-size: 0.95rem; }
+html[dir="rtl"] .footer-tagline { line-height: 2.15; }
+
+/* CTA (final) section with Pakistani-flag green accent on top border */
+html[dir="rtl"] .cta {
+  position: relative;
+  padding: 5rem 0 !important;
+}
+html[dir="rtl"] .cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #01411C 0%, #10B981 30%, #0066CC 70%, #0052A3 100%);
+}
+
+/* Alert banner for mobile */
+html[dir="rtl"] .hero-alert-banner .alert-text { line-height: 1.8; }
+
+/* Sticky header polish */
+html[dir="rtl"] .header { backdrop-filter: blur(10px); }
+html[dir="rtl"] .header.scrolled { box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08); }
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  html[dir="rtl"] .hero-title-main { font-size: 2.1rem !important; }
+  html[dir="rtl"] .hero-title-sub { font-size: 1.2rem !important; }
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] body { font-size: 16px; }
+  html[dir="rtl"] .hero-title-main { font-size: 1.75rem !important; line-height: 1.8 !important; }
+  html[dir="rtl"] .hero-title-sub { font-size: 1.08rem !important; line-height: 1.9 !important; }
+  html[dir="rtl"] .section-title { font-size: 1.5rem !important; line-height: 1.85 !important; }
+  html[dir="rtl"] .hero-features li { font-size: 0.95rem; line-height: 1.95 !important; }
+  html[dir="rtl"] .workflow-list li { padding: 1rem 3.5rem 1rem 1rem; }
+  html[dir="rtl"] .feature-card,
+  html[dir="rtl"] .benefit-card,
+  html[dir="rtl"] .feature-card-bulk { padding: 1.75rem 1.5rem !important; }
+  html[dir="rtl"] .feature-title,
+  html[dir="rtl"] .benefit-card h3 { font-size: 1.15rem !important; }
+  html[dir="rtl"] .pcard { padding: 1.75rem 1.25rem !important; }
+  html[dir="rtl"] section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  html[dir="rtl"] .section-header { margin-bottom: 2.5rem; }
+}
+
+@media (max-width: 480px) {
+  html[dir="rtl"] .hero-title-main { font-size: 1.45rem !important; }
+  html[dir="rtl"] .hero-title-sub { font-size: 1rem !important; }
+  html[dir="rtl"] .section-title { font-size: 1.3rem !important; }
+}
