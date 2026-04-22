@@ -21,8 +21,6 @@
     window.dataLayer = window.dataLayer || [];
     var evts = ['scroll','click','touchstart','keydown','mousemove'];
     evts.forEach(function(e){ window.addEventListener(e, loadGTM, {once:true, passive:true}); });
-    // Safety net for fast-bouncers: fire after 4s if no interaction yet
-    setTimeout(loadGTM, 4000);
   })();
 </script>
 
@@ -56,8 +54,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gulzar&family=Noto+Nastaliq+Urdu:wght@400..700&display=swap">
-  <link rel="preload" href="/css/styles.css?v=10" as="style">
-  <link rel="stylesheet" href="/css/styles.css?v=10">
+  <link rel="preload" href="/css/styles.css?v=10" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="preload" href="/css/styles.css?v=10" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/styles.css?v=10"></noscript></noscript>
   <link rel="stylesheet" href="/css/rtl.css?v=5">
 
   <style>

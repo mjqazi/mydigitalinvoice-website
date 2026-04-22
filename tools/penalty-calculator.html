@@ -22,8 +22,6 @@
     window.dataLayer = window.dataLayer || [];
     var evts = ['scroll','click','touchstart','keydown','mousemove'];
     evts.forEach(function(e){ window.addEventListener(e, loadGTM, {once:true, passive:true}); });
-    // Safety net for fast-bouncers: fire after 4s if no interaction yet
-    setTimeout(loadGTM, 4000);
   })();
 </script>
   <!-- End Google Tag Manager -->
@@ -107,8 +105,9 @@
   <link rel="preconnect" href="https://www.facebook.com">
 
   <!-- Stylesheet -->
-  <link rel="preload" href="../css/styles.css?v=10" as="style">
-  <link rel="stylesheet" href="../css/styles.css?v=10">
+  <link rel="preload" href="../css/styles.css?v=10" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="preload" href="../css/styles.css?v=10" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../css/styles.css?v=10"></noscript></noscript>
   <link rel="stylesheet" href="/css/switcher.css?v=3">
   <style>
     .tool-hero {
