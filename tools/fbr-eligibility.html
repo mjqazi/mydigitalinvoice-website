@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="4tIn63CfQZHIkKv0N44dmfcwzmzig4y1qplAvHfcew8" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P8GTPRJZ');</script>
+  <!-- End Google Tag Manager -->
+
+  <title>FBR E-Invoicing Eligibility Check — Free Tool | MyDigitalInvoice</title>
+  <meta name="description" content="Free 60-second check: is your Pakistani business required to submit digital invoices to FBR IRIS? Based on current SRO guidance. No signup needed.">
+  <meta name="keywords" content="FBR e-invoicing eligibility, am I required FBR, SRO 709 check, tier-1 retailer Pakistan, FBR sales tax compliance check">
+
+  <link rel="canonical" href="https://mydigitalinvoice.com/tools/fbr-eligibility">
+  <link rel="alternate" hreflang="en" href="https://mydigitalinvoice.com/tools/fbr-eligibility">
+  <link rel="alternate" hreflang="x-default" href="https://mydigitalinvoice.com/tools/fbr-eligibility">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mydigitalinvoice.com/tools/fbr-eligibility">
+  <meta property="og:title" content="FBR E-Invoicing Eligibility Check — Free Tool">
+  <meta property="og:description" content="60-second check: is your business required to submit digital invoices to FBR IRIS? Based on current SRO guidance.">
+  <meta property="og:image" content="https://mydigitalinvoice.com/assets/og-image.png">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://mydigitalinvoice.com/tools/fbr-eligibility">
+  <meta property="twitter:title" content="FBR E-Invoicing Eligibility Check — Free Tool">
+  <meta property="twitter:description" content="60-second check: is your Pakistani business required to submit digital invoices to FBR IRIS?">
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mydigitalinvoice.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://mydigitalinvoice.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "FBR Eligibility Check", "item": "https://mydigitalinvoice.com/tools/fbr-eligibility"}
+    ]
+  }
+  </script>
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "FBR E-Invoicing Eligibility Check",
+    "description": "Interactive decision-tree to determine whether a Pakistani business is currently required to submit digital invoices to FBR IRIS under SRO 709 and related notifications.",
+    "url": "https://mydigitalinvoice.com/tools/fbr-eligibility",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "PKR"},
+    "provider": {"@type": "Organization", "name": "MyDigitalInvoice", "url": "https://mydigitalinvoice.com"}
+  }
+  </script>
+
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://connect.facebook.net">
+  <link rel="preconnect" href="https://www.facebook.com">
+  <link rel="stylesheet" href="../css/styles.css?v=10">
+  <link rel="stylesheet" href="/css/switcher.css?v=3">
+  <style>
+    .tool-hero { padding: 120px 0 50px; background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%); text-align: center; }
+    .tool-hero .badge { display: inline-block; padding: 6px 14px; background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; border-radius: 999px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
+    .tool-hero h1 { font-size: 2.4rem; margin: 12px 0 16px; color: #0f172a; line-height: 1.15; }
+    .tool-hero h1 .accent { background: linear-gradient(135deg, #10b981, #047857); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .tool-hero .subtitle { font-size: 1.1rem; color: #475569; max-width: 640px; margin: 0 auto; line-height: 1.6; }
+    .tool-hero .meta { margin-top: 14px; font-size: 0.85rem; color: #64748b; }
+    .tool-hero .meta strong { color: #334155; }
+
+    .quiz-section { padding: 40px 0 60px; }
+    .quiz-card { max-width: 720px; margin: 0 auto; background: #fff; border-radius: 20px; box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08); border: 1px solid #e5e7eb; padding: 40px; }
+    @media (max-width: 640px) { .quiz-card { padding: 24px; border-radius: 14px; } }
+
+    .progress-wrapper { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+    .progress-bar { flex: 1; height: 8px; background: #f1f5f9; border-radius: 4px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #10b981, #059669); border-radius: 4px; transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+    .progress-text { font-size: 0.85rem; font-weight: 600; color: #475569; white-space: nowrap; }
+
+    .question { display: none; animation: fadeIn 0.35s ease; }
+    .question.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .question h2 { font-size: 1.4rem; color: #0f172a; margin: 0 0 8px; line-height: 1.3; }
+    .question .q-hint { font-size: 0.9rem; color: #64748b; margin: 0 0 24px; line-height: 1.55; }
+
+    .options { display: grid; gap: 12px; margin-bottom: 24px; }
+    .option {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 16px 18px; background: #fff; border: 2px solid #e5e7eb; border-radius: 12px;
+      cursor: pointer; transition: all 0.2s; text-align: left; font-family: inherit;
+      width: 100%; box-sizing: border-box;
+    }
+    .option:hover { border-color: #10b981; background: #f0fdf4; }
+    .option:focus-visible { outline: 3px solid rgba(16, 185, 129, 0.4); outline-offset: 2px; }
+    .option-icon {
+      width: 24px; height: 24px; flex-shrink: 0;
+      border: 2px solid #cbd5e1; border-radius: 50%;
+      display: inline-block; margin-top: 2px;
+      transition: all 0.2s;
+    }
+    .option.selected { border-color: #10b981; background: #ecfdf5; }
+    .option.selected .option-icon { border-color: #10b981; background: #10b981; box-shadow: inset 0 0 0 4px #fff; }
+    .option-text { flex: 1; }
+    .option-text strong { display: block; color: #0f172a; font-size: 1rem; margin-bottom: 2px; }
+    .option-text span { color: #64748b; font-size: 0.88rem; line-height: 1.5; }
+
+    .q-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 16px; }
+    .q-btn { padding: 12px 24px; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: all 0.2s; border: 2px solid transparent; font-family: inherit; }
+    .q-btn-back { background: transparent; color: #64748b; border-color: #e5e7eb; }
+    .q-btn-back:hover { color: #334155; border-color: #94a3b8; }
+    .q-btn-next { background: linear-gradient(135deg, #10b981, #059669); color: #fff; border-color: transparent; }
+    .q-btn-next:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35); }
+    .q-btn-next:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .result { display: none; }
+    .result.active { display: block; animation: fadeIn 0.45s ease; }
+    .result-header { text-align: center; margin-bottom: 28px; padding: 20px; border-radius: 14px; }
+    .result-header.required { background: linear-gradient(135deg, #fef2f2, #fff); border: 2px solid #fecaca; }
+    .result-header.likely { background: linear-gradient(135deg, #fffbeb, #fff); border: 2px solid #fde68a; }
+    .result-header.maybe { background: linear-gradient(135deg, #eff6ff, #fff); border: 2px solid #bfdbfe; }
+    .result-header.not-yet { background: linear-gradient(135deg, #f0fdf4, #fff); border: 2px solid #bbf7d0; }
+    .result-icon { width: 56px; height: 56px; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 1.8rem; font-weight: 900; color: #fff; }
+    .result-header.required .result-icon { background: #dc2626; }
+    .result-header.likely .result-icon { background: #d97706; }
+    .result-header.maybe .result-icon { background: #0066cc; }
+    .result-header.not-yet .result-icon { background: #059669; }
+    .result-header h2 { font-size: 1.6rem; color: #0f172a; margin: 4px 0 6px; }
+    .result-header p { color: #475569; font-size: 1rem; margin: 0; line-height: 1.55; }
+
+    .result-details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; margin-bottom: 22px; }
+    .result-details h3 { font-size: 1.05rem; color: #0f172a; margin: 0 0 10px; }
+    .result-details ul { margin: 0; padding-left: 20px; color: #475569; line-height: 1.7; font-size: 0.93rem; }
+    .result-details li { margin-bottom: 6px; }
+
+    .disclaimer { background: #fffbeb; border-left: 3px solid #f59e0b; padding: 12px 16px; border-radius: 6px; font-size: 0.85rem; color: #78350f; margin-bottom: 22px; line-height: 1.55; }
+    .disclaimer strong { color: #78350f; }
+
+    .result-cta { display: grid; gap: 10px; }
+    @media (min-width: 520px) { .result-cta { grid-template-columns: 1fr 1fr; } }
+    .cta-box { padding: 16px 18px; border-radius: 12px; text-decoration: none; transition: transform 0.15s, box-shadow 0.2s; display: flex; flex-direction: column; gap: 4px; }
+    .cta-box:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12); }
+    .cta-box.whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; }
+    .cta-box.trial { background: linear-gradient(135deg, #0066cc, #0052a3); color: #fff; }
+    .cta-box strong { font-size: 1rem; }
+    .cta-box span { font-size: 0.82rem; opacity: 0.92; }
+
+    .restart-row { text-align: center; margin-top: 18px; font-size: 0.88rem; }
+    .restart-row a { color: #64748b; text-decoration: underline; cursor: pointer; }
+
+    .trust-strip { max-width: 720px; margin: 20px auto 0; display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; font-size: 0.82rem; color: #64748b; }
+    .trust-strip span { display: inline-flex; gap: 6px; align-items: center; }
+    .trust-strip svg { color: #10b981; }
+
+    .bottom-info { padding: 50px 0 70px; background: #f8fafc; }
+    .bottom-info h2 { font-size: 1.6rem; text-align: center; margin: 0 0 12px; color: #0f172a; }
+    .bottom-info .intro { text-align: center; color: #475569; max-width: 640px; margin: 0 auto 32px; line-height: 1.6; }
+    .info-grid { display: grid; gap: 18px; max-width: 960px; margin: 0 auto; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .info-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 22px; }
+    .info-card h3 { margin: 0 0 8px; font-size: 1rem; color: #0f172a; }
+    .info-card p { margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.6; }
+
+    .reviewer-stamp { max-width: 720px; margin: 18px auto 0; padding: 12px 16px; background: #fff; border: 1px dashed #cbd5e1; border-radius: 10px; font-size: 0.82rem; color: #64748b; display: flex; gap: 10px; align-items: center; justify-content: center; text-align: center; }
+    .reviewer-stamp svg { color: #10b981; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8GTPRJZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/" class="logo" aria-label="My Digital Invoice - Home">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+            <path d="M12 14h16M12 20h12M12 26h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="28" cy="26" r="4" fill="#10B981"/>
+            <path d="M26 26l1.5 1.5L30 25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                <stop offset="0%" stop-color="#0066CC"/>
+                <stop offset="100%" stop-color="#0052A3"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="logo-text">My Digital Invoice</span>
+        </a>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="/features" class="nav-link">Features</a></li>
+          <li><a href="/how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="/pricing" class="nav-link">Pricing</a></li>
+          <li><a href="/bulk-upload" class="nav-link">Bulk Upload</a></li>
+          <li><a href="/for-accountants" class="nav-link">For Accountants</a></li>
+          <li><a href="/#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="/contact" class="nav-link">Contact</a></li>
+          <li><a href="/ur/" class="lang-switch" hreflang="ur" lang="ur" aria-label="اردو میں دیکھیں"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg><span>اردو</span></a></li>
+          <li class="mobile-nav-actions"><a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary btn-block">Login / Sign Up</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="tel:+923336820820" class="nav-phone">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span>+92 333 6820 820</span>
+          </a>
+          <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary">Login / Sign Up</a>
+        </div>
+        <div class="mobile-controls">
+          <a href="tel:+923336820820" class="mobile-phone-btn" aria-label="Call us">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </a>
+          <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary mobile-login-btn">Login</a>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span class="hamburger"></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="tool-hero">
+      <div class="container">
+        <span class="badge">Free • 60 seconds • No signup</span>
+        <h1>Does your business <span class="accent">have to file FBR digital invoices?</span></h1>
+        <p class="subtitle">Answer 4 questions. Find out whether the FBR IRIS e-invoicing requirement applies to your business today — or whether it's coming soon.</p>
+        <div class="meta">Based on <strong>SRO 709</strong> and current FBR notifications. Last reviewed: <strong>April 2026</strong>.</div>
+      </div>
+    </section>
+
+    <section class="quiz-section">
+      <div class="container">
+        <div class="quiz-card" id="quiz-card">
+          <div class="progress-wrapper">
+            <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width: 25%;"></div></div>
+            <span class="progress-text" id="progress-text">Step 1 of 4</span>
+          </div>
+
+          <!-- Q1: Sales tax registration -->
+          <div class="question active" data-step="1">
+            <h2>Is your business registered for sales tax with FBR?</h2>
+            <p class="q-hint">You'd have an STRN (Sales Tax Registration Number) or your NTN is listed as an active sales tax filer on IRIS.</p>
+            <div class="options" role="radiogroup" aria-label="Sales tax registration">
+              <button type="button" class="option" data-q="strn" data-val="yes" role="radio" aria-checked="false">
+                <span class="option-icon"></span>
+                <span class="option-text"><strong>Yes, we're registered</strong><span>Have an STRN or active sales tax status on IRIS</span></span>
+              </button>
+              <button type="button" class="option" data-q="strn" data-val="no" role="radio" aria-checked="false">
+                <span class="option-icon"></span>
+                <span class="option-text"><strong>No, not registered</strong><span>No STRN; we file income tax only</span></span>
+              </button>
+              <button type="button" class="option" data-q="strn" data-val="unsure" role="radio" aria-checked="false">
+                <span class="option-icon"></span>
+                <span class="option-text"><strong>Not sure</strong><span>Our accountant handles this</span></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Q2: Business type -->
+          <div class="question" data-step="2">
+            <h2>What type of business do you run?</h2>
+            <p class="q-hint">Pick the closest match — this determines which FBR notifications apply.</p>
+            <div class="options" role="radiogroup" aria-label="Business type">
+              <button type="button" class="option" data-q="type" data-val="manufacturer" role="radio" aria-checked="false"><span class="option-icon"></span><span class="option-text"><strong>Manufacturer</strong><span>We produce goods in Pakistan</span></span></button>
+              <button type="button" class="option" data-q="type" data-val="importer" role="radio" aria-checked="false"><span class="option-icon"></span><span class="option-text"><strong>Importer</strong><span>We import goods and sell in PK</span></span></button>
+              <button type="button" class="option" data-q="type" data-val="wholesaler" role="radio" aria-checked="false"><span class="option-icon"></span><span class="option-text"><strong>Wholesaler / Distributor</strong><span>B2B sales to retailers or other businesses</span></span></button>
+              <button type="button" class="option" data-q="type" data-val="retailer" role="radio" aria-checked="false"><span class="option-icon"></span><span class="option-text"><strong>Retailer / Shop</strong><span>Direct sales to end customers (walk-in or POS)</span></span></button>
+              <button type="button" class="option" data-q="type" data-val="services" role="radio" aria-checked="false"><span class="option-icon"></span><span class="option-text"><strong>Services / Consulting</strong><span>We bill for services, not physical goods</span></span></button>
+            </div>
+          </div>
+
+          <!-- Q3: Turnover -->
+          <div class="question" data-step="3">
+            <h2>What's your approximate annual turnover?</h2>
+            <p class="q-hint">Turnover = total invoice value in a year. Turnover thresholds affect which SROs apply to you.</p>
+            <div class="options" role="radiogroup" aria-label="Annual turnover">
+              <button type="button" class="option" data-q="turnover" data-val="under-10m" role="radio" aria-checked="false"><span class="option-icon"></span><span class="option-text"><strong>Under Rs 10 million</strong><span>Micro / very small business</span></span></button>
+              <button type="button" class="option" data-q="turnover" data-val="10m-100m" role="radio" aria-checked="false"><span class="option-icon"></span><span class="option-text"><strong>Rs 10 million – Rs 100 million</strong><span>Small business</span></span></button>
+              <button type="button" class="option" data-q="turnover" data-val="100m-250m" role="radio" aria-checked="false"><span class="option-icon"></span><span class="option-text"><strong>Rs 100 million – Rs 250 million</strong><span>Growing SME</span></span></button>
+              <button type="button" class="option" data-q="turnover" data-val="over-250m" role="radio" aria-checked="false"><span class="option-icon"></span><span class="option-text"><strong>Over Rs 250 million</strong><span>Mid-market or above</span></span></button>
+            </div>
+          </div>
+
+          <!-- Q4: Tier-1 retailer triggers -->
+          <div class="question" data-step="4">
+            <h2>Do any of these apply to your retail operation?</h2>
+            <p class="q-hint">These are the "Tier-1 retailer" markers from SRO 1006 — pick all that are true. Skip if you don't do retail.</p>
+            <div class="options" role="group" aria-label="Tier-1 retailer triggers">
+              <button type="button" class="option" data-q="tier1" data-val="franchise" data-multi="true"><span class="option-icon"></span><span class="option-text"><strong>We're part of a national/international franchise or chain</strong><span>e.g., a branded multi-outlet operation</span></span></button>
+              <button type="button" class="option" data-q="tier1" data-val="ac-shop" data-multi="true"><span class="option-icon"></span><span class="option-text"><strong>We operate from an air-conditioned shop in a mall</strong><span>Central-cooled shopping centre</span></span></button>
+              <button type="button" class="option" data-q="tier1" data-val="large-shop" data-multi="true"><span class="option-icon"></span><span class="option-text"><strong>Our shop floor is bigger than 1,000 sq ft</strong><span>Applies to jewellers: over 300 sq ft</span></span></button>
+              <button type="button" class="option" data-q="tier1" data-val="high-utility" data-multi="true"><span class="option-icon"></span><span class="option-text"><strong>Electricity bill over Rs 1.2 million in the past year</strong><span>Or credit/debit card machine (POS) installed</span></span></button>
+              <button type="button" class="option" data-q="tier1" data-val="none" data-multi="false"><span class="option-icon"></span><span class="option-text"><strong>None of the above</strong><span>We're a small neighbourhood shop, or we don't do retail</span></span></button>
+            </div>
+          </div>
+
+          <div class="q-actions">
+            <button type="button" class="q-btn q-btn-back" id="btn-back" style="visibility:hidden;">← Back</button>
+            <button type="button" class="q-btn q-btn-next" id="btn-next" disabled>Next →</button>
+          </div>
+
+          <!-- Result -->
+          <div class="result" id="result">
+            <div class="result-header" id="result-header">
+              <div class="result-icon" id="result-icon">!</div>
+              <h2 id="result-title">Your result</h2>
+              <p id="result-desc"></p>
+            </div>
+
+            <div class="result-details">
+              <h3>What this means for you</h3>
+              <ul id="result-details-list"></ul>
+            </div>
+
+            <div class="disclaimer">
+              <strong>Note:</strong> This tool gives a general guidance read based on current publicly available FBR notifications. Final determination is always the call of a qualified tax professional or your FBR practitioner. SROs change often — cross-check with your accountant before acting.
+            </div>
+
+            <div class="result-cta">
+              <a href="https://wa.me/923336820820?text=Assalamualaikum%2C%20I%20just%20did%20the%20FBR%20eligibility%20check%20and%20want%20a%20clearer%20answer%20for%20my%20business." class="cta-box whatsapp" id="cta-whatsapp" rel="noopener" target="_blank">
+                <strong>Get a personal answer on WhatsApp</strong>
+                <span>Reply in under 2 hours — business days</span>
+              </a>
+              <a href="https://fbr.mydigitalinvoice.com/login" class="cta-box trial">
+                <strong>Start the Free plan (0–5 invoices/month)</strong>
+                <span>No credit card. Go live before FBR audits you.</span>
+              </a>
+            </div>
+
+            <div class="restart-row">
+              <a id="restart-link">← Run the check again</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviewer-stamp">
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span>Logic reviewed against FBR SRO 709 (rev. 2025) + SRO 1006 tier-1 retailer criteria. Tool accuracy: guidance only — consult a registered tax practitioner for formal determination.</span>
+        </div>
+
+        <!-- Real customer validation -->
+        <div style="max-width:720px;margin:24px auto 0;background:#fff;border:1px solid #e5e7eb;border-left:4px solid #10b981;border-radius:10px;padding:16px 20px;font-size:0.9rem;color:#334155;line-height:1.6;">
+          <em>"We run three branches in Lahore and I handle all the taxes myself. When FBR officers came in and started questioning specific entries, I pulled up each one with a single click — invoice, attachments, audit trail, all there. They stopped asking."</em>
+          <div style="margin-top:8px;font-size:0.82rem;color:#64748b;"><strong style="color:#0f172a;">Mudassir Niazi</strong> · Owner, New Age Tires (3 branches) · <a href="/#testimonials" style="color:#0066cc;text-decoration:none;font-weight:600;">Full story →</a></div>
+        </div>
+
+        <div class="trust-strip">
+          <span><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> No email needed</span>
+          <span><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Nothing saved, nothing shared</span>
+          <span><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Free tool</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-info">
+      <div class="container">
+        <h2>What is FBR digital invoicing, in plain language?</h2>
+        <p class="intro">FBR (Federal Board of Revenue) is Pakistan's tax authority. Through the <strong>IRIS</strong> portal, FBR now requires every sales-tax-registered business to submit invoices electronically — with a unique IRN and QR code on each invoice — within 24 hours of issue.</p>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Who's required today</h3>
+            <p>All sales-tax-registered businesses covered by SRO 709 — typically manufacturers, importers, wholesalers, distributors, and tier-1 retailers. Coverage has been expanding every quarter.</p>
+          </div>
+          <div class="info-card">
+            <h3>What the penalties look like</h3>
+            <p>Fixed penalties up to <strong>Rs 500,000</strong> for corporates, <strong>Rs 250,000</strong> for non-corporates — plus 0.1% of turnover per non-compliance incident. <a href="/tools/penalty-calculator">See your exposure →</a></p>
+          </div>
+          <div class="info-card">
+            <h3>What changes in your workflow</h3>
+            <p>Every sales invoice goes through IRIS before it reaches the customer. You keep a 10-year audit trail, live IRN on the printed invoice, and automatic Annexure-C population.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">
+            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)"/>
+              <path d="M12 14h16M12 20h12M12 26h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="28" cy="26" r="4" fill="#10B981"/>
+              <path d="M26 26l1.5 1.5L30 25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#0066CC"/><stop offset="100%" stop-color="#0052A3"/></linearGradient></defs>
+            </svg>
+            <span class="logo-text">My Digital Invoice</span>
+          </a>
+          <p>Pakistan's affordable FBR digital invoicing platform. FBR-integrated. Built for SMBs.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Product"><p class="footer-nav-title">Product</p>
+          <ul><li><a href="/features">Features</a></li><li><a href="/how-it-works">How It Works</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/bulk-upload">Bulk Upload</a></li><li><a href="/for-accountants">For Accountants</a></li><li><a href="/blog/">Blog</a></li><li><a href="/#testimonials">Testimonials</a></li><li><a href="/faq">FAQ</a></li></ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Industries"><p class="footer-nav-title">Industries</p>
+          <ul><li><a href="/industries/manufacturing">Manufacturing</a></li><li><a href="/industries/retail">Retail</a></li><li><a href="/industries/wholesale">Wholesale</a></li><li><a href="/industries/services">Services</a></li></ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Resources"><p class="footer-nav-title">Resources</p>
+          <ul><li><a href="/tools/fbr-eligibility">Eligibility Check</a></li><li><a href="/tools/penalty-calculator">Penalty Calculator</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Legal"><p class="footer-nav-title">Legal</p>
+          <ul><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Service</a></li><li><a href="/cookies">Cookie Policy</a></li></ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> My Digital Invoice. All rights reserved.</p>
+        <p class="footer-made">Made with precision for professionals.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/923336820820?text=Assalamualaikum%2C%20I%27m%20interested%20in%20MyDigitalInvoice%20for%20FBR%20compliance." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat with us on WhatsApp" style="position:fixed;bottom:24px;right:24px;width:60px;height:60px;background-color:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(37,211,102,0.4);z-index:9999;text-decoration:none;">
+    <svg viewBox="0 0 24 24" fill="white" style="width:32px;height:32px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="../js/main.js?v=4" defer></script>
+  <script src="/js/consent.js?v=1" defer></script>
+  <script>
+    (function () {
+      'use strict';
+      var state = { strn: null, type: null, turnover: null, tier1: [] };
+      var currentStep = 1;
+      var totalSteps = 4;
+
+      var questions = document.querySelectorAll('.question');
+      var progressFill = document.getElementById('progress-fill');
+      var progressText = document.getElementById('progress-text');
+      var btnBack = document.getElementById('btn-back');
+      var btnNext = document.getElementById('btn-next');
+      var result = document.getElementById('result');
+      var quizCard = document.getElementById('quiz-card');
+
+      function show(step) {
+        questions.forEach(function (q) { q.classList.toggle('active', parseInt(q.dataset.step, 10) === step); });
+        progressFill.style.width = (step / totalSteps * 100) + '%';
+        progressText.textContent = 'Step ' + step + ' of ' + totalSteps;
+        btnBack.style.visibility = step > 1 ? 'visible' : 'hidden';
+        btnNext.textContent = step === totalSteps ? 'See my result →' : 'Next →';
+        validateStep();
+      }
+
+      function validateStep() {
+        var stepEl = document.querySelector('.question[data-step="' + currentStep + '"]');
+        if (!stepEl) return;
+        var q = stepEl.querySelector('.option[data-q]').dataset.q;
+        var isMulti = q === 'tier1';
+        var has = isMulti ? state[q].length > 0 : state[q] !== null;
+        btnNext.disabled = !has;
+      }
+
+      document.querySelectorAll('.option').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var q = this.dataset.q, v = this.dataset.val, multi = this.dataset.multi === 'true';
+          if (q === 'tier1') {
+            if (v === 'none') {
+              state.tier1 = ['none'];
+              document.querySelectorAll('.option[data-q="tier1"]').forEach(function (o) { o.classList.remove('selected'); o.setAttribute('aria-checked', 'false'); });
+              this.classList.add('selected'); this.setAttribute('aria-checked', 'true');
+            } else {
+              var noneBtn = document.querySelector('.option[data-q="tier1"][data-val="none"]');
+              if (noneBtn) { noneBtn.classList.remove('selected'); noneBtn.setAttribute('aria-checked', 'false'); }
+              state.tier1 = state.tier1.filter(function (x) { return x !== 'none'; });
+              if (state.tier1.indexOf(v) === -1) { state.tier1.push(v); this.classList.add('selected'); this.setAttribute('aria-checked', 'true'); }
+              else { state.tier1 = state.tier1.filter(function (x) { return x !== v; }); this.classList.remove('selected'); this.setAttribute('aria-checked', 'false'); }
+            }
+          } else {
+            state[q] = v;
+            document.querySelectorAll('.option[data-q="' + q + '"]').forEach(function (o) { o.classList.remove('selected'); o.setAttribute('aria-checked', 'false'); });
+            this.classList.add('selected'); this.setAttribute('aria-checked', 'true');
+          }
+          validateStep();
+        });
+      });
+
+      btnNext.addEventListener('click', function () {
+        if (currentStep < totalSteps) {
+          currentStep++;
+          show(currentStep);
+          quizCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          showResult();
+        }
+      });
+
+      btnBack.addEventListener('click', function () {
+        if (currentStep > 1) { currentStep--; show(currentStep); quizCard.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+
+      function showResult() {
+        // Decision tree
+        var verdict, tier;
+        if (state.strn === 'no') {
+          verdict = 'not-yet'; tier = 'Not currently required';
+        } else {
+          var highTurnover = state.turnover === 'over-250m' || state.turnover === '100m-250m';
+          var tier1Flags = state.tier1.filter(function (x) { return x !== 'none'; });
+          var isTier1 = state.type === 'retailer' && tier1Flags.length > 0;
+          var isBusinessType = state.type === 'manufacturer' || state.type === 'importer' || state.type === 'wholesaler' || isTier1;
+          if (state.strn === 'yes' && isBusinessType) { verdict = 'required'; tier = 'Required now'; }
+          else if (state.strn === 'yes' && (state.type === 'retailer' || state.type === 'services')) {
+            if (highTurnover) { verdict = 'likely'; tier = 'Very likely required'; }
+            else { verdict = 'maybe'; tier = 'Possibly required — verify'; }
+          } else if (state.strn === 'unsure') {
+            verdict = 'maybe'; tier = 'We need to verify your FBR status';
+          } else { verdict = 'likely'; tier = 'Likely required soon'; }
+        }
+
+        var header = document.getElementById('result-header');
+        var icon = document.getElementById('result-icon');
+        var title = document.getElementById('result-title');
+        var desc = document.getElementById('result-desc');
+        var list = document.getElementById('result-details-list');
+        var whatsapp = document.getElementById('cta-whatsapp');
+
+        header.classList.remove('required','likely','maybe','not-yet');
+        header.classList.add(verdict);
+
+        var copy = {
+          'required': {
+            icon: '!', title: 'Yes — you are required to file FBR digital invoices today',
+            desc: 'Based on your answers, the FBR IRIS mandate applies to your business right now. Delay = penalty exposure.',
+            bullets: [
+              'Under SRO 709, registered manufacturers/importers/wholesalers must submit every sales invoice to FBR IRIS with an IRN and QR code — within 24 hours of issue.',
+              'Maximum penalty for non-compliance is currently <strong>Rs 500,000 + 0.1% of turnover</strong>, per incident.',
+              'If you\'re filing manually or not at all, switching to an automated tool is far cheaper than a single audit finding.',
+              'Your accountant can verify — but most of the firms we work with confirm this read within 10 minutes.'
+            ],
+            wa: 'I%20just%20did%20the%20FBR%20eligibility%20check%20and%20it%20says%20I%27m%20required%20now.%20I%20want%20to%20get%20compliant%20this%20week.'
+          },
+          'likely': {
+            icon: '!', title: 'Very likely required — verify with your accountant this week',
+            desc: 'Your business profile matches most of the triggers in current FBR SROs. The coverage is expanding quarter-over-quarter.',
+            bullets: [
+              'Higher-turnover retailers and service businesses have been phased into the mandate progressively — and are next in line.',
+              'If you\'re already sales-tax registered, FBR can notify you any month to onboard to IRIS.',
+              'The safer play: get your invoicing system ready now, so you aren\'t scrambling when the notification arrives.',
+              'A 15-minute WhatsApp call with us can confirm your exact exposure.'
+            ],
+            wa: 'I%20just%20did%20the%20FBR%20eligibility%20check%20and%20it%20says%20I%27m%20very%20likely%20required.%20Can%20you%20confirm%20for%20my%20specific%20situation%3F'
+          },
+          'maybe': {
+            icon: '?', title: 'Possibly required — let\'s verify',
+            desc: 'Your situation has a few ambiguities — this is where a 2-minute WhatsApp check from our team saves you a headache.',
+            bullets: [
+              'Whether the mandate applies depends on details we can\'t infer from four questions alone (sector-specific SROs, notifications you may have received, and your firm\'s filing history).',
+              'Ignoring it is expensive if it turns out you\'re covered; over-investing isn\'t helpful if you\'re not.',
+              'Easiest next step: message us your NTN/STRN on WhatsApp — we\'ll check your IRIS profile for you.'
+            ],
+            wa: 'I%20just%20did%20the%20FBR%20eligibility%20check%20and%20the%20result%20was%20inconclusive.%20Here%27s%20my%20NTN%2FSTRN%3A%20%5Badd%20yours%5D.%20Please%20verify%20for%20me.'
+          },
+          'not-yet': {
+            icon: '✓', title: 'Not currently required — but worth knowing',
+            desc: 'Since you\'re not sales-tax registered, the FBR digital invoicing mandate doesn\'t apply to you today.',
+            bullets: [
+              'The mandate targets <strong>sales-tax-registered</strong> businesses — those filing via IRIS.',
+              'If your turnover is growing, you may cross a threshold that requires registration — at which point digital invoicing becomes mandatory.',
+              'The Free bracket on MyDigitalInvoice (0–5 invoices/month) is a zero-cost way to be ready in case your status changes.'
+            ],
+            wa: 'I%20just%20did%20the%20FBR%20eligibility%20check%20and%20it%20says%20I%27m%20not%20required%20yet.%20But%20can%20you%20tell%20me%20what%20to%20watch%20for%20so%20I%20don%27t%20miss%20a%20registration%20trigger%3F'
+          }
+        };
+
+        var c = copy[verdict];
+        icon.textContent = c.icon;
+        title.textContent = c.title;
+        desc.textContent = c.desc;
+        list.innerHTML = '';
+        c.bullets.forEach(function (b) { var li = document.createElement('li'); li.innerHTML = b; list.appendChild(li); });
+        whatsapp.setAttribute('href', 'https://wa.me/923336820820?text=Assalamualaikum%2C%20' + c.wa);
+
+        document.querySelectorAll('.question').forEach(function (q) { q.classList.remove('active'); });
+        document.querySelector('.q-actions').style.display = 'none';
+        progressFill.style.width = '100%';
+        progressText.textContent = 'Result ready';
+        result.classList.add('active');
+        result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'eligibility_tool_completed',
+            eligibility_verdict: verdict,
+            business_type: state.type,
+            turnover_bracket: state.turnover,
+            sales_tax_registered: state.strn
+          });
+        }
+      }
+
+      document.getElementById('restart-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        state = { strn: null, type: null, turnover: null, tier1: [] };
+        currentStep = 1;
+        document.querySelectorAll('.option').forEach(function (o) { o.classList.remove('selected'); o.setAttribute('aria-checked', 'false'); });
+        result.classList.remove('active');
+        document.querySelector('.q-actions').style.display = 'flex';
+        show(1);
+        quizCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      if (window.dataLayer) { window.dataLayer.push({ event: 'eligibility_tool_started' }); }
+    })();
+  </script>
+</body>
+</html>

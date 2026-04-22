@@ -19,6 +19,8 @@
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://mydigitalinvoice.com/blog/">
+  <link rel="alternate" hreflang="en" href="https://mydigitalinvoice.com/blog/">
+  <link rel="alternate" hreflang="x-default" href="https://mydigitalinvoice.com/blog/">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -65,9 +67,11 @@
 
   <!-- Preconnect to external domains -->
   <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://connect.facebook.net">
+  <link rel="preconnect" href="https://www.facebook.com">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="../css/styles.css?v=9">
+  <link rel="stylesheet" href="../css/styles.css?v=10">
   <link rel="stylesheet" href="/css/switcher.css?v=3">
 
   <style>
@@ -419,9 +423,34 @@
       <div class="blog-grid">
 
         <!-- Blog Card 1 -->
+        <!-- Blog Card 0 — NEW: What is an IRN? -->
+        <article class="blog-card">
+          <div class="blog-card-image" style="background:linear-gradient(135deg,#0f172a,#1e293b);display:flex;align-items:center;justify-content:center;aspect-ratio:16/10;">
+            <div style="color:#10b981;font-family:'Courier New',Courier,monospace;font-size:0.82rem;padding:0 18px;text-align:center;letter-spacing:0.02em;line-height:1.5;">IRN-0123456789<br>STRN-112233<br>FY2026-Q2-00045782</div>
+            <div class="blog-card-tags">
+              <span class="blog-tag fbr">FBR</span>
+              <span class="blog-tag guide">Explainer</span>
+            </div>
+          </div>
+          <div class="blog-card-content">
+            <h2 class="blog-card-title">
+              <a href="/blog/what-is-irn-invoice-reference-number">What is an IRN? Invoice Reference Number Explained for Pakistan</a>
+            </h2>
+            <div class="blog-card-meta">
+              <div>
+                <span class="blog-card-date">April 22, 2026</span>
+                <span class="blog-card-author"> - By <span class="blog-card-author-name">MDI Tax Review Team</span></span>
+              </div>
+              <button class="blog-card-share" aria-label="Share article">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
         <article class="blog-card">
           <div class="blog-card-image">
-            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop" alt="FBR Digital Invoicing Guide" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop" alt="Complete FBR digital invoicing workflow diagram showing creation, validation, IRN generation, and IRIS submission" loading="lazy">
             <div class="blog-card-tags">
               <span class="blog-tag fbr">FBR</span>
               <span class="blog-tag guide">Complete Guide</span>
@@ -429,7 +458,7 @@
           </div>
           <div class="blog-card-content">
             <h2 class="blog-card-title">
-              <a href="/blog/fbr-digital-invoicing-complete-guide.html">Complete Guide to FBR Digital Invoicing in Pakistan 2025</a>
+              <a href="/blog/fbr-digital-invoicing-complete-guide">Complete Guide to FBR Digital Invoicing in Pakistan 2025</a>
             </h2>
             <div class="blog-card-meta">
               <div>
@@ -448,7 +477,7 @@
         <!-- Blog Card 2 -->
         <article class="blog-card">
           <div class="blog-card-image">
-            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop" alt="FBR Penalties" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop" alt="FBR penalty enforcement notice illustrating fines for non-compliant digital invoicing in Pakistan" loading="lazy">
             <div class="blog-card-tags">
               <span class="blog-tag compliance">Compliance</span>
               <span class="blog-tag tips">Tips</span>
@@ -456,7 +485,7 @@
           </div>
           <div class="blog-card-content">
             <h2 class="blog-card-title">
-              <a href="/blog/fbr-penalties-non-compliance.html">FBR Penalties for Non-Compliance: What You Need to Know</a>
+              <a href="/blog/fbr-penalties-non-compliance">FBR Penalties for Non-Compliance: What You Need to Know</a>
             </h2>
             <div class="blog-card-meta">
               <div>
@@ -475,7 +504,7 @@
         <!-- Blog Card 3 -->
         <article class="blog-card">
           <div class="blog-card-image">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop" alt="Construction Company FBR Compliance" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop" alt="Pakistani construction company achieving FBR digital invoicing compliance with progress billing" loading="lazy">
             <div class="blog-card-tags">
               <span class="blog-tag industry">Construction</span>
               <span class="blog-tag fbr">FBR</span>
@@ -483,7 +512,7 @@
           </div>
           <div class="blog-card-content">
             <h2 class="blog-card-title">
-              <a href="/blog/construction-company-fbr-compliance.html">How Construction Companies Can Achieve FBR Compliance</a>
+              <a href="/blog/construction-company-fbr-compliance">How Construction Companies Can Achieve FBR Compliance</a>
             </h2>
             <div class="blog-card-meta">
               <div>
@@ -502,7 +531,7 @@
         <!-- Blog Card 4 -->
         <article class="blog-card">
           <div class="blog-card-image">
-            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop" alt="IRIS Integration" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop" alt="FBR IRIS portal dashboard integrated with cloud-based digital invoicing software" loading="lazy">
             <div class="blog-card-tags">
               <span class="blog-tag fbr">IRIS</span>
               <span class="blog-tag guide">Technical</span>
@@ -529,7 +558,7 @@
         <!-- Blog Card 5 -->
         <article class="blog-card">
           <div class="blog-card-image">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=400&fit=crop" alt="Small Business Tax Tips" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=400&fit=crop" alt="Pakistani small business owner reviewing FBR sales tax compliance documents" loading="lazy">
             <div class="blog-card-tags">
               <span class="blog-tag tips">Tips</span>
               <span class="blog-tag tax">Tax</span>
@@ -556,7 +585,7 @@
         <!-- Blog Card 6 -->
         <article class="blog-card">
           <div class="blog-card-image">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="QR Code Invoice" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="FBR-verifiable QR code printed on a digital sales tax invoice from IRIS" loading="lazy">
             <div class="blog-card-tags">
               <span class="blog-tag fbr">FBR</span>
               <span class="blog-tag news">News</span>
@@ -583,7 +612,7 @@
         <!-- Blog Card 7 -->
         <article class="blog-card">
           <div class="blog-card-image">
-            <img src="https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=600&h=400&fit=crop" alt="Retail FBR Compliance" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=600&h=400&fit=crop" alt="Pakistani retail store POS system with FBR-integrated digital invoicing for tier-1 retailers" loading="lazy">
             <div class="blog-card-tags">
               <span class="blog-tag industry">Retail</span>
               <span class="blog-tag compliance">Compliance</span>
@@ -610,7 +639,7 @@
         <!-- Blog Card 8 -->
         <article class="blog-card">
           <div class="blog-card-image">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="FBR Compliance Now Mandatory" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="FBR digital invoicing mandate enforcement notice for Pakistani registered businesses" loading="lazy">
             <div class="blog-card-tags">
               <span class="blog-tag news">Compliance</span>
               <span class="blog-tag fbr">FBR</span>
@@ -637,7 +666,7 @@
         <!-- Blog Card 9 -->
         <article class="blog-card">
           <div class="blog-card-image">
-            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="HS Codes Guide" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="HS code classification reference guide for Pakistani sales tax digital invoicing" loading="lazy">
             <div class="blog-card-tags">
               <span class="blog-tag guide">Guide</span>
               <span class="blog-tag tax">HS Codes</span>
@@ -759,6 +788,7 @@
   </a>
 
   <!-- JavaScript -->
-  <script src="../js/main.js?v=3" defer></script>
+  <script src="../js/main.js?v=4" defer></script>
+  <script src="/js/consent.js?v=1" defer></script>
 </body>
 </html>
