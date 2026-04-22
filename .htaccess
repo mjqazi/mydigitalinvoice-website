@@ -98,11 +98,15 @@ RewriteRule ^(.+)$ $1.html [L]
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
 
-    # HTML - no cache (always fresh)
+    # HTML — browser revalidates on every visit, but Cloudflare edges cache
+    # for 5 minutes (s-maxage) so repeat visitors get ~20ms TTFB instead of
+    # hitting Hostinger origin every time (~1.4s). Deploys purge edge automatically
+    # on Cloudflare's Tiered Cache; worst case, 5-min delay for a fresh visitor
+    # after deploy is acceptable.
     <FilesMatch "\.(html|htm)$">
-        Header set Cache-Control "no-cache, no-store, must-revalidate"
-        Header set Pragma "no-cache"
-        Header set Expires 0
+        Header set Cache-Control "public, max-age=0, s-maxage=300, must-revalidate, stale-while-revalidate=60"
+        Header unset Pragma
+        Header unset Expires
     </FilesMatch>
 </IfModule>
 
