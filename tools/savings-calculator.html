@@ -27,7 +27,7 @@
   <!-- End Google Tag Manager -->
 
   <title>FBR Invoicing Savings Calculator — For Accountants &amp; SMBs | MyDigitalInvoice</title>
-  <meta name="description" content="How much will MyDigitalInvoice save your firm or business? Free calculator. Inputs: invoices/month, manual time per invoice, accountant hourly rate. Output: annual hours + rupees saved.">
+  <meta name="description" content="How much will MyDigitalInvoice save your firm or business? Calculator inputs: invoices/month, manual time per invoice, accountant hourly rate. Output: annual hours + rupees saved.">
   <meta name="keywords" content="FBR invoicing savings calculator, accountant ROI calculator Pakistan, digital invoicing cost savings, IRIS automation ROI, FBR compliance cost">
 
   <link rel="canonical" href="https://mydigitalinvoice.com/tools/savings-calculator">
@@ -206,7 +206,7 @@
   <main id="main-content">
     <section class="tool-hero">
       <div class="container">
-        <span class="badge">Free tool · Built for accountants &amp; SMBs</span>
+        <span class="badge">Built for accountants &amp; SMBs</span>
         <h1>How much will MyDigitalInvoice <span class="accent">save your firm or business</span>?</h1>
         <p class="subtitle">Enter 3 numbers. See the hours + rupees you're losing to manual FBR invoicing each month — and what you'd save by automating.</p>
       </div>
@@ -304,9 +304,9 @@
                 <strong>Book a 15-min demo</strong>
                 <span>See the firm portal with your own data</span>
               </a>
-              <a href="https://fbr.mydigitalinvoice.com/login" class="cta-box blue" data-cta="savings-start-free">
-                <strong>Start the free plan →</strong>
-                <span>No credit card. Integrate first, pay later.</span>
+              <a href="https://fbr.mydigitalinvoice.com/login" class="cta-box blue" data-cta="savings-start-basic">
+                <strong>Get started →</strong>
+                <span>PKR 1,000 + 5% service tax setup fee applies before setup.</span>
               </a>
             </div>
           </div>
@@ -357,7 +357,7 @@
         <nav class="footer-nav" aria-label="Product"><p class="footer-nav-title">Product</p>
           <ul><li><a href="/features">Features</a></li><li><a href="/how-it-works">How It Works</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/bulk-upload">Bulk Upload</a></li><li><a href="/for-accountants">For Accountants</a></li><li><a href="/demo">Book Demo</a></li><li><a href="/blog/">Blog</a></li><li><a href="/#testimonials">Testimonials</a></li><li><a href="/faq">FAQ</a></li></ul>
         </nav>
-        <nav class="footer-nav" aria-label="Tools"><p class="footer-nav-title">Free Tools</p>
+        <nav class="footer-nav" aria-label="Tools"><p class="footer-nav-title">Tools</p>
           <ul><li><a href="/tools/savings-calculator">Savings Calculator</a></li><li><a href="/tools/penalty-calculator">Penalty Calculator</a></li><li><a href="/tools/fbr-eligibility">Eligibility Check</a></li></ul>
         </nav>
         <nav class="footer-nav" aria-label="Case Studies"><p class="footer-nav-title">Case Studies</p>
@@ -410,9 +410,9 @@
         return 'Rs ' + r.toLocaleString('en-PK');
       }
 
-      // MDI pricing brackets per client per month (excl. tax)
+      // MDI pricing brackets per client per month before 5% service tax.
       function mdiClientCost(invoicesPerMonth) {
-        if (invoicesPerMonth <= 5) return 0;
+        if (invoicesPerMonth <= 5) return 500;
         if (invoicesPerMonth <= 20) return 1000;
         if (invoicesPerMonth <= 200) return 2000;
         return 3000;
@@ -470,8 +470,6 @@
         var roiMultiple = (mdiMonthly > 0) ? (savedTimeValueMonthly / mdiMonthly) : 99;
         if (netAnnual >= 0 && mdiMonthly > 0) {
           out.roiPill.textContent = '✅ ' + roiMultiple.toFixed(1) + '× ROI · pays for itself';
-        } else if (mdiMonthly === 0) {
-          out.roiPill.textContent = '✅ Free bracket — pure savings';
         } else {
           out.roiPill.textContent = 'Break-even zone';
         }
