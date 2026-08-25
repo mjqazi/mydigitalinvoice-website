@@ -106,17 +106,18 @@
     "softwareVersion": "2.0",
     "offers": {
       "@type": "AggregateOffer",
-      "lowPrice": "0",
-      "highPrice": "3000",
+      "lowPrice": "500",
+      "highPrice": "5000",
       "priceCurrency": "PKR",
-      "offerCount": "6",
+      "offerCount": "7",
       "offers": [
         {"@type": "Offer", "name": "Basic bracket", "price": "500", "priceCurrency": "PKR", "description": "0-5 FBR invoices/month. Rs 500/month + 5% service tax."},
         {"@type": "Offer", "name": "اسٹارٹر بریکٹ", "price": "1000", "priceCurrency": "PKR", "description": "6-20 FBR انوائسز/ماہ۔ مہینے کے آخر میں بل۔ ٹیکس علیحدہ۔"},
         {"@type": "Offer", "name": "اسٹینڈرڈ بریکٹ", "price": "2000", "priceCurrency": "PKR", "description": "21-200 FBR انوائسز/ماہ — سب سے مقبول۔ استعمال کی بنیاد پر بلنگ۔ ٹیکس علیحدہ۔"},
         {"@type": "Offer", "name": "ان لمیٹڈ بریکٹ", "price": "3000", "priceCurrency": "PKR", "description": "201+ FBR انوائسز/ماہ۔ کوئی اوپری حد نہیں۔ ٹیکس علیحدہ۔"},
         {"@type": "Offer", "name": "بلک اپ لوڈ ایڈ-آن", "price": "2000", "priceCurrency": "PKR", "description": "2,000 روپے + ٹیکس/ماہ کا اختیاری فلیٹ ایڈ-آن۔ ایکسل بلک اپ لوڈ بغیر کسی انوائس حد کے۔"},
-        {"@type": "Offer", "name": "Shopify integration add-on", "price": "1000", "priceCurrency": "PKR", "description": "Starts at Rs 1,000/month + 5% service tax. Basic bracket users pay the normal add-on charge."}
+        {"@type": "Offer", "name": "Shopify integration add-on", "price": "1000", "priceCurrency": "PKR", "description": "Starts at Rs 1,000/month + 5% service tax. Basic bracket users pay the normal add-on charge."},
+        {"@type": "Offer", "name": "Regular wallet top-up", "price": "5000", "priceCurrency": "PKR", "description": "Pay PKR 5,000 and receive PKR 7,000 wallet credits, including a 40% bonus on every regular top-up. Optional annual advance funding receives 50% bonus credits."}
       ]
     },
     "featureList": [
@@ -172,7 +173,7 @@
         "name": "قیمتیں کیا ہیں؟",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Usage-based billing. Basic: 0-5 invoices = Rs 500 + 5% service tax. Starter: 6-20 = Rs 1,000 + 5% service tax. Standard: 21-200 = Rs 2,000 + 5% service tax. Unlimited: 201+ = Rs 3,000 + 5% service tax. Initial setup fee is PKR 4,500, payable before setup."
+          "text": "Wallet-based, usage-based billing. Basic: 0-5 invoices = Rs 500 + 5% service tax. Starter: 6-20 = Rs 1,000 + 5% service tax. Standard: 21-200 = Rs 2,000 + 5% service tax. Unlimited: 201+ = Rs 3,000 + 5% service tax. Every regular PKR 5,000 top-up adds PKR 7,000 wallet credits (40% bonus); optional annual advance funding receives 50% bonus credits. No separate setup fee."
         }
       },
       {
@@ -193,10 +194,10 @@
       },
       {
         "@type": "Question",
-        "name": "کیا میں سبسکرپشن سے پہلے سسٹم آزما سکتا ہوں؟",
+        "name": "کیا کوئی الگ سیٹ اپ فیس ہے؟",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Basic plan is Rs 500/month + 5% service tax for 0-5 invoices/month. Initial setup fee is PKR 4,500, payable before setup."
+          "text": "Basic plan is Rs 500/month + 5% service tax for 0-5 invoices/month, deducted from wallet credits. A regular PKR 5,000 top-up adds PKR 7,000 credits. No separate setup fee."
         }
       }
     ]
@@ -383,7 +384,7 @@
                 واٹس ایپ پر بات کریں
               </a>
             </div>
-            <p class="hero-cta-note animate-fade-in-up delay-3">Basic plan: Rs 500/month + 5% service tax for 0-5 invoices. Initial setup fee: PKR 4,500, payable before setup.</p>
+            <p class="hero-cta-note animate-fade-in-up delay-3">PKR 5,000 top-up karein, PKR 7,000 wallet credits payein — har regular top-up par 40% bonus.</p>
           </div>
 
           <div class="hero-visual animate-fade-in-left delay-2">
@@ -730,11 +731,11 @@
         <div class="section-header">
           <span class="section-badge">قیمتیں</span>
           <h2 id="pricing-title" class="section-title">
-            کفایتی ماہانہ
-            <span class="gradient-text">سبسکرپشن پلانز</span>
+            Usage-Based Pricing
+            <span class="gradient-text">Wallet Credits Se</span>
           </h2>
           <p class="section-description">
-            Pay only for the invoices you submit each month. Initial setup fee: <span class="en-inline">PKR 4,500</span>, payable before setup.
+            Har regular <span class="en-inline">PKR 5,000</span> top-up par <span class="en-inline">PKR 7,000</span> wallet credits milte hain. 1 saal advance fund karein to <span class="en-inline">50%</span> bonus credits milte hain. Koi alag setup fee nahi.
           </p>
         </div>
 
@@ -909,7 +910,7 @@
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </summary>
             <div class="faq-answer">
-              <p>Usage-based billing. Basic: <span class="en-inline">0-5</span> invoices = <span class="en-inline">Rs 500</span> + <span class="en-inline">5%</span> service tax. Starter, Standard, and Unlimited scale with monthly invoice volume. Initial setup fee is payable before setup.</p>
+              <p>Wallet-based, usage-based billing. Basic: <span class="en-inline">0-5</span> invoices = <span class="en-inline">Rs 500</span> + <span class="en-inline">5%</span> service tax. Monthly bill wallet credits se kat jata hai. Har regular top-up par <span class="en-inline">40%</span> bonus aur annual advance funding par <span class="en-inline">50%</span> bonus credits milte hain.</p>
             </div>
           </details>
 
@@ -935,11 +936,11 @@
 
           <details class="faq-item">
             <summary class="faq-question">
-              کیا میں سبسکرپشن سے پہلے سسٹم آزما سکتا ہوں؟
+              کیا کوئی الگ سیٹ اپ فیس ہے؟
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </summary>
             <div class="faq-answer">
-              <p>Basic plan is <span class="en-inline">Rs 500</span>/month + <span class="en-inline">5%</span> service tax for <span class="en-inline">0-5</span> invoices/month. Initial setup fee is <span class="en-inline">PKR 4,500</span>, payable before setup.</p>
+              <p>Basic plan is <span class="en-inline">Rs 500</span>/month + <span class="en-inline">5%</span> service tax for <span class="en-inline">0-5</span> invoices/month. Yeh amount wallet credits se deduct hota hai. Koi alag setup fee nahi.</p>
             </div>
           </details>
         </div>
@@ -968,7 +969,7 @@
 
           <article style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;text-align:left;font-family:system-ui,-apple-system,sans-serif;">
             <h3 style="font-size:1.05rem;font-weight:700;color:#0f172a;margin:0 0 0.5rem;line-height:1.5;">FBR IRIS integration ka matlab kya hai?</h3>
-            <p style="margin:0;color:#475569;font-size:0.92rem;line-height:1.65;">IRIS FBR ka official digital system hai jahan har invoice submit hoti hai. MyDigitalInvoice licensed integrator ke through IRIS se direct connect hai — aap ko alag se kuch setup nahi karna parta. Initial setup fee PKR 4,500 setup se pehle payable hai.</p>
+            <p style="margin:0;color:#475569;font-size:0.92rem;line-height:1.65;">IRIS FBR ka official digital system hai jahan har invoice submit hoti hai. MyDigitalInvoice licensed integrator ke through IRIS se direct connect hai — aap ko alag se kuch setup nahi karna parta aur koi alag setup fee nahi.</p>
           </article>
 
           <article style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;text-align:left;font-family:system-ui,-apple-system,sans-serif;">
@@ -997,7 +998,7 @@
       <div class="container">
         <div class="cta-content">
           <h2 id="cta-title" class="cta-title">FBR ڈیجیٹل انوائسنگ اب لازمی ہے</h2>
-          <p class="cta-description">Do not risk penalties. Join Pakistani businesses using <span class="en-inline">MyDigitalInvoice</span> for easy FBR compliance. <strong>Usage-based billing - no subscription.</strong> Get started today.</p>
+          <p class="cta-description">Do not risk penalties. Join Pakistani businesses using <span class="en-inline">MyDigitalInvoice</span> for easy FBR compliance. <strong>Wallet-based, usage-based billing.</strong> Regular top-up par <span class="en-inline">40%</span> aur annual advance funding par <span class="en-inline">50%</span> bonus credits.</p>
           <div class="cta-actions">
             <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-white btn-lg">
               Get Started
