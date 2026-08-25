@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Inter', 'Segoe UI', sans-serif; background: #FFFFFF; }
+    a { color: #0052A3; text-decoration: none; }
+    a:hover { color: #003D7A; }
+
+    @keyframes rowIn  { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    @keyframes barGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    .m-row { animation: rowIn .5s cubic-bezier(.2,.7,.3,1) both; }
+    .m-row:nth-child(1) { animation-delay: .05s }
+    .m-row:nth-child(2) { animation-delay: .35s }
+    .m-row:nth-child(3) { animation-delay: .65s }
+    .m-row:nth-child(4) { animation-delay: .95s }
+    .m-row:nth-child(5) { animation-delay: 1.25s }
+    .bar { transform-origin: left center; animation: barGrow .55s cubic-bezier(.2,.7,.3,1) both; }
+    .m-row:nth-child(1) .bar { animation-delay: .25s }
+    .m-row:nth-child(3) .bar { animation-delay: .85s }
+    .m-row:nth-child(4) .bar { animation-delay: 1.15s }
+    .m-row:nth-child(5) .bar { animation-delay: 1.45s }
+
+    @media (prefers-reduced-motion: reduce) {
+      .m-row, .bar { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</helmet>
+
+<div style="width: 980px; min-height: 1080px; background: #FFFFFF; color: #111827; display: flex; flex-direction: column;">
+
+  <div style="display: flex; align-items: baseline; gap: 12px; padding: 14px 40px; background: #111827; color: #FFFFFF;">
+    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9CA3AF;">Pricing</span>
+    <span style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700;">What it costs, in full</span>
+  </div>
+
+  <div style="padding: 38px 40px 44px; display: flex; flex-direction: column; gap: 30px;">
+
+    <div style="display: flex; flex-direction: column; gap: 9px;">
+      <h2 style="font-family: 'Poppins', sans-serif; font-size: 30px; font-weight: 800; letter-spacing: -.022em; margin: 0;">You pay for the invoices you actually submit</h2>
+      <p style="margin: 0; font-size: 16px; color: #4B5563; max-width: 66ch; line-height: 1.55;">
+        No subscription and no per-user seats. At the end of each month we count the invoices you sent to FBR
+        and charge the one bracket you landed in. Submit nothing, pay nothing.
+      </p>
+    </div>
+
+    <!-- 1. signup: one payment that covers integration and leaves credit behind -->
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: baseline; gap: 12px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .13em; text-transform: uppercase; color: #6B7280; width: 92px; flex: 0 0 auto;">Step 1</span>
+        <span style="font-size: 16.5px; font-weight: 600;">Join for PKR 5,000 — and start with more credit than you paid</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 22px; border: 1px solid #A7D9C6; background: #F6FDFA; border-radius: 10px; padding: 22px; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          <span style="font-size: 15px; color: #374151; line-height: 1.55;">
+            One payment at signup. It lands in your wallet at more than face value, your FBR integration
+            comes out of it, and what's left is yours to spend on monthly usage.
+          </span>
+          <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; font-weight: 600; color: #065F46;">
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 00-1.4 1.4l2 2a1 1 0 001.4 0l4-4z" clip-rule="evenodd"/></svg>
+            At the Basic bracket that is roughly your first 11 months already funded.
+          </span>
+          <span style="font-size: 12.5px; color: #6B7280;">Available at signup only.</span>
+        </div>
+
+        <!-- the arithmetic, laid out as a statement -->
+        <div style="background: #FFFFFF; border: 1px solid #D8E9E1; border-radius: 8px; padding: 16px 18px;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 9px;">
+            <span style="font-size: 13.5px; color: #4B5563;">You pay</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 600;">PKR 5,000</span>
+          </div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 9px;">
+            <span style="font-size: 13.5px; color: #4B5563;">Credited to wallet</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 600; color: #047857;">PKR 10,500</span>
+          </div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px;">
+            <span style="font-size: 13.5px; color: #4B5563;">Less FBR integration</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 16px; color: #4B5563;">&minus; PKR 4,500</span>
+          </div>
+          <div style="height: 1px; background: #D8E9E1;"></div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 11px;">
+            <span style="font-size: 14px; font-weight: 700;">Credit left to spend</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 700; color: #047857;">PKR 6,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. the monthly rate table -->
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: baseline; gap: 12px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .13em; text-transform: uppercase; color: #6B7280; width: 92px; flex: 0 0 auto;">Step 2</span>
+        <span style="font-size: 16.5px; font-weight: 600;">Then a monthly charge, set by your usage</span>
+      </div>
+
+      <div style="border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden;">
+        <div style="display: grid; grid-template-columns: 190px minmax(0, 1fr) 170px; padding: 11px 20px; background: #F9FAFB; border-bottom: 1px solid #E5E7EB;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #6B7280;">Bracket</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #6B7280;">FBR invoices that month</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #6B7280; text-align: right;">Charge</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 190px minmax(0, 1fr) 170px; padding: 15px 20px; border-bottom: 1px solid #F3F4F6; align-items: baseline; background: #ECFDF5;">
+          <span style="font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+            Zero usage
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: #065F46; border: 1px solid #A7D9C6; background: #D1FAE5; border-radius: 3px; padding: 1px 6px;">Free</span>
+          </span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4B5563;">none</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600; text-align: right; color: #047857;">Rs 0</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 190px minmax(0, 1fr) 170px; padding: 15px 20px; border-bottom: 1px solid #F3F4F6; align-items: baseline;">
+          <span style="font-size: 15px; font-weight: 600;">Basic</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4B5563;">1 – 5</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600; text-align: right;">Rs 500</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 190px minmax(0, 1fr) 170px; padding: 15px 20px; border-bottom: 1px solid #F3F4F6; align-items: baseline;">
+          <span style="font-size: 15px; font-weight: 600;">Starter</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4B5563;">6 – 20</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600; text-align: right;">Rs 1,000</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 190px minmax(0, 1fr) 170px; padding: 15px 20px; border-bottom: 1px solid #F3F4F6; align-items: baseline; background: #F5F9FF;">
+          <span style="font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+            Standard
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: #0052A3; border: 1px solid #B3D4FF; background: #E6F0FF; border-radius: 3px; padding: 1px 6px;">Most</span>
+          </span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4B5563;">21 – 200</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600; text-align: right;">Rs 2,000</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 190px minmax(0, 1fr) 170px; padding: 15px 20px; align-items: baseline;">
+          <span style="font-size: 15px; font-weight: 600;">Unlimited</span>
+          <span style="display: flex; flex-direction: column; gap: 2px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4B5563;">201 +</span>
+            <span style="font-size: 12.5px; color: #6B7280;">Fair use: 30,000 invoices/month</span>
+          </span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600; text-align: right;">Rs 3,000</span>
+        </div>
+      </div>
+      <p style="margin: 0; font-size: 13.5px; color: #6B7280;">Every monthly charge is subject to 5% service tax. The bracket is decided by that month's count alone — it never carries over. Unlimited is subject to a fair use policy of 30,000 invoices per month; if you expect more, talk to us and we'll price it properly.</p>
+    </div>
+
+    <!-- 3. funding -->
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: baseline; gap: 12px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .13em; text-transform: uppercase; color: #6B7280; width: 92px; flex: 0 0 auto;">Step 3</span>
+        <span style="font-size: 16.5px; font-weight: 600;">Top up again whenever the balance runs low</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 22px; border: 1px solid #E5E7EB; border-radius: 10px; padding: 22px; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <span style="font-size: 15px; color: #374151; line-height: 1.55;">
+            Each month's charge is deducted from the balance. No card kept on file, no surprise debit,
+            and you can see what's left before the month closes.
+          </span>
+          <span style="font-size: 14px; color: #4B5563;">Later top-ups carry a 40% bonus. Funding a year in advance earns 50%.</span>
+        </div>
+
+        <div style="border: 1px solid #E5E7EB; background: #F9FAFB; border-radius: 10px; padding: 18px;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+            <span style="font-size: 13px; color: #4B5563;">You pay</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 19px; font-weight: 600; color: #111827;">PKR 5,000</span>
+          </div>
+          <div style="height: 1px; background: #E5E7EB; margin: 12px 0;"></div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+            <span style="font-size: 13px; color: #4B5563;">You receive</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 23px; font-weight: 600; color: #047857;">PKR 7,000</span>
+          </div>
+          <div style="margin-top: 10px; font-size: 12.5px; color: #4B5563;">
+            A <strong style="font-weight: 700;">40% bonus</strong> on every regular top-up, after signup.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- worked example: five real months, with the balance carried down -->
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: baseline; gap: 12px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .13em; text-transform: uppercase; color: #6B7280; width: 92px; flex: 0 0 auto;">Example</span>
+        <span style="font-size: 16.5px; font-weight: 600;">Your first five months, starting from that PKR 6,000</span>
+      </div>
+
+      <div style="border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden;">
+        <div style="display: grid; grid-template-columns: 112px 120px 172px 118px 138px; padding: 11px 20px; background: #F9FAFB; border-bottom: 1px solid #E5E7EB;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #6B7280;">Month</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #6B7280;">Invoices</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #6B7280;">Bracket</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #6B7280; text-align: right;">Charged</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #6B7280; text-align: right;">Wallet left</span>
+        </div>
+
+        <div>
+          <div class="m-row" style="display: grid; grid-template-columns: 112px 120px 172px 118px 138px; padding: 14px 20px; border-bottom: 1px solid #F3F4F6; align-items: center;">
+            <span style="font-size: 14.5px; font-weight: 600;">September</span>
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <span class="bar" style="display: block; height: 7px; width: 44px; background: #0066CC; border-radius: 3px;"></span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13.5px;">40</span>
+            </span>
+            <span style="font-size: 13.5px; color: #4B5563;">Standard &middot; 21–200</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; text-align: right;">2,100</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; text-align: right;">3,900</span>
+          </div>
+
+          <div class="m-row" style="display: grid; grid-template-columns: 112px 120px 172px 118px 138px; padding: 14px 20px; border-bottom: 1px solid #F3F4F6; align-items: center; background: #ECFDF5;">
+            <span style="font-size: 14.5px; font-weight: 600;">October</span>
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; color: #6B7280;">none</span>
+            </span>
+            <span style="font-size: 13.5px; color: #065F46; font-weight: 600;">Zero usage &middot; no bill</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; text-align: right; color: #047857; font-weight: 600;">0</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; text-align: right;">3,900</span>
+          </div>
+
+          <div class="m-row" style="display: grid; grid-template-columns: 112px 120px 172px 118px 138px; padding: 14px 20px; border-bottom: 1px solid #F3F4F6; align-items: center;">
+            <span style="font-size: 14.5px; font-weight: 600;">November</span>
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <span class="bar" style="display: block; height: 7px; width: 20px; background: #0066CC; border-radius: 3px;"></span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13.5px;">12</span>
+            </span>
+            <span style="font-size: 13.5px; color: #4B5563;">Starter &middot; 6–20</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; text-align: right;">1,050</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; text-align: right;">2,850</span>
+          </div>
+
+          <div class="m-row" style="display: grid; grid-template-columns: 112px 120px 172px 118px 138px; padding: 14px 20px; border-bottom: 1px solid #F3F4F6; align-items: center;">
+            <span style="font-size: 14.5px; font-weight: 600;">December</span>
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <span class="bar" style="display: block; height: 7px; width: 9px; background: #0066CC; border-radius: 3px;"></span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13.5px;">3</span>
+            </span>
+            <span style="font-size: 13.5px; color: #4B5563;">Basic &middot; 1–5</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; text-align: right;">525</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; text-align: right;">2,325</span>
+          </div>
+
+          <div class="m-row" style="display: grid; grid-template-columns: 112px 120px 172px 118px 138px; padding: 14px 20px; align-items: center;">
+            <span style="font-size: 14.5px; font-weight: 600;">January</span>
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <span class="bar" style="display: block; height: 7px; width: 58px; background: #0066CC; border-radius: 3px;"></span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13.5px;">88</span>
+            </span>
+            <span style="font-size: 13.5px; color: #4B5563;">Standard &middot; 21–200</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; text-align: right;">2,100</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; text-align: right;">225</span>
+          </div>
+        </div>
+
+        <div style="padding: 13px 20px; background: #F9FAFB; border-top: 1px solid #E5E7EB; font-size: 13.5px; color: #4B5563;">
+          Five months of trading on the signup credit alone. When the balance runs low, top up — no contract, no card on file.
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+        <div style="border: 1px solid #A7D9C6; background: #F6FDFA; border-radius: 8px; padding: 13px 16px;">
+          <div style="font-size: 13.5px; font-weight: 600; color: #065F46; margin-bottom: 3px;">October cost nothing</div>
+          <div style="font-size: 13px; color: #4B5563; line-height: 1.5;">No invoices submitted, so no charge — and the account stays live.</div>
+        </div>
+        <div style="border: 1px solid #E5E7EB; border-radius: 8px; padding: 13px 16px;">
+          <div style="font-size: 13.5px; font-weight: 600; margin-bottom: 3px;">Brackets never carry over</div>
+          <div style="font-size: 13px; color: #4B5563; line-height: 1.5;">A busy September doesn't put October on a higher rate. Each month is counted alone.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="background: #0066CC; color: #fff; font-weight: 600; font-size: 15px; padding: 15px 24px; border-radius: 8px; min-height: 48px; display: inline-flex; align-items: center;">Get started</span>
+      <span style="border: 1px solid #D1D5DB; color: #111827; font-weight: 600; font-size: 15px; padding: 14px 22px; border-radius: 8px; min-height: 48px; display: inline-flex; align-items: center;">Calculate savings for your firm</span>
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 600; color: #047857; min-height: 44px;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.6L2.2 22l5.5-1.4A9.8 9.8 0 1 0 12 2Z"/></svg>
+        Ask on WhatsApp
+      </span>
+    </div>
+  </div>
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

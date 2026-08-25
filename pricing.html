@@ -75,7 +75,7 @@
         "priceCurrency": "PKR",
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
-        "description": "0-5 FBR invoices/month at Rs 500/month + 5% service tax. The monthly bill is deducted from wallet credits."
+        "description": "1-5 FBR invoices/month at Rs 500/month + 5% service tax. The monthly bill is deducted from wallet credits."
       },
       {
         "@type": "Offer",
@@ -102,7 +102,7 @@
         "priceCurrency": "PKR",
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
-        "description": "201+ FBR invoices/month. No upper limit. 5% service tax applies."
+        "description": "201+ FBR invoices/month. Fair use policy of 30,000 invoices per month. 5% service tax applies."
       },
       {
         "@type": "Offer",
@@ -824,15 +824,47 @@
 
           <!-- Mobile Pricing Accordion (shown on mobile only) -->
           <div class="mobile-pricing-accordion">
+            <!-- Zero-usage tier -->
+            <div class="pricing-tier" data-tier="zero">
+              <button type="button" class="pricing-tier-header" aria-expanded="false">
+                <div class="pricing-tier-info">
+                  <div class="pricing-tier-name">
+                    Zero Usage
+                    <span class="pricing-tier-badge starter">Free month</span>
+                  </div>
+                  <div class="pricing-tier-tagline">No invoices submitted this month</div>
+                </div>
+                <div class="pricing-tier-price">
+                  <div class="pricing-tier-amount">Rs 0</div>
+                  <span class="pricing-tier-period">/month</span>
+                </div>
+                <div class="pricing-tier-expand">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+              </button>
+              <div class="pricing-tier-details">
+                <div class="pricing-tier-features">
+                  <ul>
+                    <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>No monthly charge in a month with no FBR submissions</li>
+                    <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Account stays live — your data, IRNs and audit trail remain accessible</li>
+                    <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Submit one invoice and you move to the Rs 500 bracket for that month</li>
+                    <li><svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>One-off PKR 4,500 signup fee still applies</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
             <!-- Basic Tier -->
             <div class="pricing-tier" data-tier="free">
-              <div class="pricing-tier-header" onclick="togglePricingTier(this)">
+              <button type="button" class="pricing-tier-header" aria-expanded="false">
                 <div class="pricing-tier-info">
                   <div class="pricing-tier-name">
                     Basic
                     <span class="pricing-tier-badge starter">Basic</span>
                   </div>
-                  <div class="pricing-tier-tagline">0–5 FBR invoices/month</div>
+                  <div class="pricing-tier-tagline">1–5 FBR invoices/month</div>
                 </div>
                 <div class="pricing-tier-price">
                   <div class="pricing-tier-amount">Rs 500</div>
@@ -843,7 +875,7 @@
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                   </svg>
                 </div>
-              </div>
+              </button>
               <div class="pricing-tier-details">
                 <div class="pricing-tier-features">
                   <ul>
@@ -858,7 +890,7 @@
 
             <!-- Starter Tier -->
             <div class="pricing-tier" data-tier="starter">
-              <div class="pricing-tier-header" onclick="togglePricingTier(this)">
+              <button type="button" class="pricing-tier-header" aria-expanded="false">
                 <div class="pricing-tier-info">
                   <div class="pricing-tier-name">
                     Starter
@@ -875,7 +907,7 @@
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                   </svg>
                 </div>
-              </div>
+              </button>
               <div class="pricing-tier-details">
                 <div class="pricing-tier-features">
                   <ul>
@@ -890,7 +922,7 @@
 
             <!-- Standard Tier (Most Popular) -->
             <div class="pricing-tier popular active" data-tier="standard">
-              <div class="pricing-tier-header" onclick="togglePricingTier(this)">
+              <button type="button" class="pricing-tier-header" aria-expanded="false">
                 <div class="pricing-tier-info">
                   <div class="pricing-tier-name">
                     Standard
@@ -907,7 +939,7 @@
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                   </svg>
                 </div>
-              </div>
+              </button>
               <div class="pricing-tier-details">
                 <div class="pricing-tier-features">
                   <ul>
@@ -922,13 +954,13 @@
 
             <!-- Unlimited Tier -->
             <div class="pricing-tier" data-tier="unlimited">
-              <div class="pricing-tier-header" onclick="togglePricingTier(this)">
+              <button type="button" class="pricing-tier-header" aria-expanded="false">
                 <div class="pricing-tier-info">
                   <div class="pricing-tier-name">
                     Unlimited
                     <span class="pricing-tier-badge custom">No Limit</span>
                   </div>
-                  <div class="pricing-tier-tagline">201+ FBR invoices/month (no cap)</div>
+                  <div class="pricing-tier-tagline">201+ FBR invoices/month (fair use: 30,000/month)</div>
                 </div>
                 <div class="pricing-tier-price">
                   <div class="pricing-tier-amount">Rs 3,000</div>
@@ -939,7 +971,7 @@
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                   </svg>
                 </div>
-              </div>
+              </button>
               <div class="pricing-tier-details">
                 <div class="pricing-tier-features">
                   <ul>
@@ -971,6 +1003,7 @@
                 <thead>
                   <tr>
                     <th>Monthly Usage</th>
+                    <th>Zero</th>
                     <th>Basic</th>
                     <th>Starter</th>
                     <th class="highlight-col">
@@ -983,13 +1016,15 @@
                 <tbody>
                   <tr>
                     <td>FBR Invoices Submitted</td>
-                    <td>0&ndash;5</td>
+                    <td>none</td>
+                    <td>1&ndash;5</td>
                     <td>6&ndash;20</td>
                     <td class="highlight-col">21&ndash;200</td>
-                    <td>201+ (no cap)</td>
+                    <td>201+<br><small>fair use 30,000/mo</small></td>
                   </tr>
                   <tr>
                     <td>Monthly Charge</td>
+                    <td><strong>Rs 0</strong><br><small>no charge</small></td>
                     <td><strong>Rs 500</strong><br><small>+ 5% service tax</small></td>
                     <td><strong>Rs 1,000</strong><br><small>+ 5% service tax</small></td>
                     <td class="highlight-col"><strong>Rs 2,000</strong><br><small>+ 5% service tax</small></td>
@@ -1004,6 +1039,7 @@
                   </tr>
                   <tr>
                     <td>Annual Advance Funding</td>
+                    <td>&mdash;</td>
                     <td><span class="check-badge">50% bonus</span></td>
                     <td><span class="check-badge">50% bonus</span></td>
                     <td class="highlight-col"><span class="check-badge">50% bonus</span></td>
@@ -1011,6 +1047,7 @@
                   </tr>
                   <tr>
                     <td>FBR IRIS Integration</td>
+                    <td>Yes</td>
                     <td><span class="check-badge">Yes</span></td>
                     <td><span class="check-badge">Yes</span></td>
                     <td class="highlight-col"><span class="check-badge">Yes</span></td>
@@ -1018,6 +1055,7 @@
                   </tr>
                   <tr>
                     <td>IRN &amp; QR Code Generation</td>
+                    <td>Yes</td>
                     <td><span class="check-badge">Yes</span></td>
                     <td><span class="check-badge">Yes</span></td>
                     <td class="highlight-col"><span class="check-badge">Yes</span></td>
@@ -1025,6 +1063,7 @@
                   </tr>
                   <tr>
                     <td>Phone &amp; Online Support</td>
+                    <td>Yes</td>
                     <td><span class="check-badge">Yes</span></td>
                     <td><span class="check-badge">Yes</span></td>
                     <td class="highlight-col"><span class="check-badge">Yes</span></td>
@@ -1119,7 +1158,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr><td style="padding:0.45rem 0.75rem;color:#4b5563;">0&ndash;5</td><td style="text-align:right;padding:0.45rem 0.75rem;color:#047857;font-weight:600;">Rs 500</td></tr>
+                      <tr><td style="padding:0.45rem 0.75rem;color:#4b5563;">1&ndash;5</td><td style="text-align:right;padding:0.45rem 0.75rem;color:#047857;font-weight:600;">Rs 500</td></tr>
                       <tr><td style="padding:0.45rem 0.75rem;color:#4b5563;">6&ndash;20</td><td style="text-align:right;padding:0.45rem 0.75rem;">Rs 1,000 + Rs 1,000 = <strong>Rs 2,000</strong></td></tr>
                       <tr><td style="padding:0.45rem 0.75rem;color:#4b5563;">21&ndash;200</td><td style="text-align:right;padding:0.45rem 0.75rem;">Rs 2,000 + Rs 1,000 = <strong>Rs 3,000</strong></td></tr>
                       <tr><td style="padding:0.45rem 0.75rem;color:#4b5563;">201&ndash;3,000</td><td style="text-align:right;padding:0.45rem 0.75rem;">Rs 3,000 + Rs 1,000 = <strong>Rs 4,000</strong></td></tr>

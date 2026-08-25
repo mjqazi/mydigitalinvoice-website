@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Inter', 'Segoe UI', sans-serif; background: #FFFFFF; }
+    a { color: #0052A3; text-decoration: none; }
+    a:hover { color: #003D7A; }
+  </style>
+</helmet>
+
+<div style="width: 390px; min-height: 800px; background: #FFFFFF; color: #111827; display: flex; flex-direction: column;">
+
+  <div style="padding: 9px 16px; background: #111827; color: #9CA3AF; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase;">A — Ledger · 390px</div>
+
+  <!-- header: wordmark fits, one action, call always reachable -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 14px; height: 56px; border-bottom: 1px solid #E5E7EB;">
+    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
+      <svg width="24" height="24" viewBox="0 0 24 24" style="flex: 0 0 auto;" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#0066CC"/><path d="M7 8h10M7 12h7M7 16h4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; white-space: nowrap;">My Digital Invoice</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px; flex: 0 0 auto;">
+      <span style="width: 44px; height: 44px; border: 1px solid #E5E7EB; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center;">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="#047857" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1l-2.23 2.2Z"/></svg>
+      </span>
+      <span style="width: 44px; height: 44px; border: 1px solid #E5E7EB; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" stroke="#111827" stroke-width="2" stroke-linecap="round" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </span>
+    </div>
+  </div>
+
+  <!-- notice: one line, not a three-row block -->
+  <div style="display: flex; align-items: flex-start; gap: 9px; padding: 11px 16px; background: #FFFBEB; border-bottom: 1px solid #FDE68A;">
+    <svg width="15" height="15" viewBox="0 0 20 20" fill="#B45309" style="flex: 0 0 auto; margin-top: 1px;" aria-hidden="true"><path d="M10 1.6 1.2 17h17.6L10 1.6Zm0 5.2a.9.9 0 0 1 .9.9v4a.9.9 0 1 1-1.8 0v-4a.9.9 0 0 1 .9-.9Zm0 8.6a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1Z"/></svg>
+    <span style="font-size: 12.5px; line-height: 1.45; color: #78350F;"><strong style="font-weight: 700;">One missed FBR invoice = Rs 500,000 penalty.</strong> <a href="#" style="color: #B45309; text-decoration: underline; text-underline-offset: 2px; font-weight: 600;">See your exposure</a></span>
+  </div>
+
+  <div style="padding: 22px 16px 24px; display: flex; flex-direction: column; gap: 16px;">
+    <h1 style="font-family: 'Poppins', sans-serif; font-size: 27px; line-height: 1.18; font-weight: 800; letter-spacing: -.02em; margin: 0; text-wrap: balance;">
+      FBR digital invoicing for Pakistani businesses — and the accountants who run their books.
+      <span style="display: block; color: #B45309; margin-top: 5px;">Avoid the Rs 500,000 penalty.</span>
+    </h1>
+
+    <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #374151;">
+      One missed IRIS submission. One Rs 500,000 fine. We make sure it doesn't happen.
+    </p>
+
+    <!-- product proof BEFORE the long copy, per the mobile-order note -->
+    <div style="border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden;">
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));">
+        <div style="padding: 12px 10px; border-right: 1px solid #E5E7EB;">
+          <div style="font-size: 11px; color: #6B7280;">Submitted</div>
+          <div style="font-family: 'Poppins', sans-serif; font-size: 19px; font-weight: 700;">156</div>
+        </div>
+        <div style="padding: 12px 10px; border-right: 1px solid #E5E7EB;">
+          <div style="font-size: 11px; color: #6B7280;">Tax due</div>
+          <div style="font-family: 'Poppins', sans-serif; font-size: 19px; font-weight: 700;">2.4L</div>
+        </div>
+        <div style="padding: 12px 10px; background: #F5F9FF;">
+          <div style="font-size: 11px; color: #6B7280;">Compliance</div>
+          <div style="font-family: 'Poppins', sans-serif; font-size: 19px; font-weight: 700; color: #0052A3;">100%</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 12px; border-top: 1px solid #E5E7EB;">
+        <div style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #6B7280;">IRN</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600; color: #0052A3;">Invoice #4521</span>
+          <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; font-weight: 600; color: #047857;">
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 00-1.4 1.4l2 2a1 1 0 001.4 0l4-4z"/></svg>
+            Validated by FBR
+          </span>
+        </div>
+        <svg width="58" height="58" viewBox="0 0 11 11" shape-rendering="crispEdges" role="img" aria-label="Verifiable FBR QR code" style="flex: 0 0 auto; border: 1px solid #E5E7EB; border-radius: 4px; padding: 3px; background: #fff;">
+          <title>Verifiable FBR QR code</title>
+          <g fill="#111827">
+            <rect x="0" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="6" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="9" y="0" width="1" height="1"/><rect x="10" y="0" width="1" height="1"/>
+            <rect x="0" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="6" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="8" y="1" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/>
+            <rect x="0" y="2" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="8" y="2" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="2" width="1" height="1"/>
+            <rect x="3" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/>
+            <rect x="0" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="9" y="4" width="1" height="1"/><rect x="10" y="4" width="1" height="1"/>
+            <rect x="1" y="5" width="1" height="1"/><rect x="3" y="5" width="1" height="1"/><rect x="4" y="5" width="1" height="1"/><rect x="5" y="5" width="1" height="1"/><rect x="7" y="5" width="1" height="1"/><rect x="9" y="5" width="1" height="1"/>
+            <rect x="0" y="6" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="7" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/>
+            <rect x="3" y="7" width="1" height="1"/><rect x="4" y="7" width="1" height="1"/><rect x="6" y="7" width="1" height="1"/><rect x="7" y="7" width="1" height="1"/><rect x="9" y="7" width="1" height="1"/>
+            <rect x="0" y="8" width="1" height="1"/><rect x="1" y="8" width="1" height="1"/><rect x="2" y="8" width="1" height="1"/><rect x="4" y="8" width="1" height="1"/><rect x="6" y="8" width="1" height="1"/><rect x="7" y="8" width="1" height="1"/><rect x="9" y="8" width="1" height="1"/>
+            <rect x="0" y="9" width="1" height="1"/><rect x="2" y="9" width="1" height="1"/><rect x="3" y="9" width="1" height="1"/><rect x="5" y="9" width="1" height="1"/><rect x="6" y="9" width="1" height="1"/><rect x="8" y="9" width="1" height="1"/><rect x="10" y="9" width="1" height="1"/>
+            <rect x="0" y="10" width="1" height="1"/><rect x="1" y="10" width="1" height="1"/><rect x="2" y="10" width="1" height="1"/><rect x="4" y="10" width="1" height="1"/><rect x="7" y="10" width="1" height="1"/><rect x="9" y="10" width="1" height="1"/><rect x="10" y="10" width="1" height="1"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- one primary, full width; secondary quiet -->
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <span style="background: #0066CC; color: #fff; font-weight: 600; font-size: 15px; padding: 15px 18px; border-radius: 8px; text-align: center; min-height: 48px; display: flex; align-items: center; justify-content: center;">Book a 15-min demo</span>
+      <span style="border: 1px solid #D1D5DB; color: #111827; font-weight: 600; font-size: 15px; padding: 14px 18px; border-radius: 8px; text-align: center; min-height: 48px; display: flex; align-items: center; justify-content: center;">Get started</span>
+      <span style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 14.5px; font-weight: 600; color: #047857; min-height: 44px;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.6L2.2 22l5.5-1.4A9.8 9.8 0 1 0 12 2Z"/></svg>
+        WhatsApp par chat karein
+      </span>
+    </div>
+
+    <p style="margin: 0; font-size: 13px; color: #6B7280; line-height: 1.5;">Basic plan Rs 500/month for 0–5 invoices &middot; 5% service tax applies</p>
+  </div>
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

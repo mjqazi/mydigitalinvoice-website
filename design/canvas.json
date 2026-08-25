@@ -1,0 +1,118 @@
+{
+  "pages": [
+    {
+      "id": "directions",
+      "name": "Directions"
+    },
+    {
+      "id": "pricing",
+      "name": "Pricing & billing"
+    },
+    {
+      "id": "coverage",
+      "name": "FBR + PRA & modules"
+    }
+  ],
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "page": "directions",
+      "x": 0,
+      "y": 0,
+      "w": 1200,
+      "h": 880,
+      "title": "A — Ledger"
+    },
+    {
+      "file": "Instrument.dc.html",
+      "page": "directions",
+      "x": 1280,
+      "y": 0,
+      "w": 1200,
+      "h": 880,
+      "title": "B — Instrument"
+    },
+    {
+      "file": "FirmFirst.dc.html",
+      "page": "directions",
+      "x": 2560,
+      "y": 0,
+      "w": 1200,
+      "h": 880,
+      "title": "C — Firm-first"
+    },
+    {
+      "file": "MobileLedger.dc.html",
+      "page": "directions",
+      "x": 0,
+      "y": 960,
+      "w": 390,
+      "h": 820,
+      "title": "A on Android — 390px"
+    },
+    {
+      "file": "Pricing.dc.html",
+      "page": "pricing",
+      "x": 0,
+      "y": 0,
+      "w": 980,
+      "h": 1560,
+      "title": "The plan"
+    },
+    {
+      "file": "Modules.dc.html",
+      "page": "coverage",
+      "x": 0,
+      "y": 0,
+      "w": 1180,
+      "h": 1060,
+      "title": "FBR + PRA, and the books"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "read-me-first",
+      "page": "directions",
+      "x": 0,
+      "y": -230,
+      "w": 620,
+      "text": "Three directions, one stance.\n\nCodex and Grok were asked independently for a direction. They converged: this should read like a tax instrument, not a SaaS landing page. Both named the same trap — Codex: \"this audience interprets missing detail as missing capability\"; Grok: \"they read a Linear-style page as a startup, not someone who will pick up at 9pm.\"\n\nSo none of these three is minimal-and-airy. They differ in what the hero LEADS with.\n\nPick one and I'll build it out across the site."
+    },
+    {
+      "id": "axis-note",
+      "page": "directions",
+      "x": 2560,
+      "y": -230,
+      "w": 560,
+      "text": "The axis being tested:\n\nA leads with the compliance promise, proof in a dashboard.\nB leads with the artefact — the invoice FBR stamped.\nC leads with the firm's arithmetic — 18 clients, 3 filings due.\n\nA is safest. B is the most distinctive and hardest to copy. C converts accountants fastest but risks losing the single-business buyer."
+    },
+    {
+      "id": "billing-note",
+      "page": "pricing",
+      "x": 1060,
+      "y": 0,
+      "w": 470,
+      "text": "September and October were doing too much work as one example, so the worked example is now a five-month ledger with the wallet balance carried down the right-hand side.\n\nThe two things a client needs to believe are both visible: October costs nothing, and a busy September does not push October onto a higher rate.\n\nRows animate in one after another so the balance reads as a sequence rather than a table."
+    },
+    {
+      "id": "conflicts-note",
+      "page": "pricing",
+      "x": 1060,
+      "y": 430,
+      "w": 470,
+      "text": "THREE NUMBERS DISAGREE between the Aug-26 brochure, the live site, and what you told me. I have not silently picked a winner.\n\n1. Signup credit. You: pay 5,000, get 10,500, less 4,500 integration, 6,000 left. Brochure: pay 5,000, get 7,500 credit AND integration free — which leaves 7,500. The brochure offer is better and says \"15 maheena\".\n\n2. Fair use. You said 30,000/month. The brochure says 50,000.\n\n3. Bulk upload. Brochure says 50,000 invoices per file. The live site says 9,000.\n\nThe artboards use YOUR numbers where you gave them."
+    },
+    {
+      "id": "coverage-note",
+      "page": "coverage",
+      "x": 1260,
+      "y": 0,
+      "w": 470,
+      "text": "PRA now sits beside FBR as an equal column rather than a separate page nobody finds.\n\nThe split that matters to a buyer: FBR is federal and covers goods; PRA is provincial and covers services in Punjab. Plenty of businesses owe both, and today they keep two sets of records to do it.\n\nNeither column carries a price. There is one integration fee of PKR 4,500 and it covers every integration you switch on — stated once, underneath. This matches pra-integration.html, which already says \"No separate setup fee\".\n\nModules come from the Aug-26 brochure — General Ledger, P&L, complete books, purchasing, document archive and audit trail are INCLUDED. Payroll (Rs 100/employee) and POS+PRA (Rs 1,000/mo) are the paid add-ons.\n\nSTILL OPEN, and it is about MONTHLY pricing rather than setup: the brochure sells PRA inside the POS add-on at Rs 1,000/month, while pra-integration.html bills PRA on its own 500/1,000/2,000/3,000 brackets on top of FBR. A business filing both would pay very different amounts under each."
+    }
+  ],
+  "launch": {
+    "view": "canvas",
+    "page": "coverage"
+  }
+}

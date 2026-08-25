@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Inter', 'Segoe UI', sans-serif; background: #FFFFFF; }
+    a { color: #0052A3; } a:hover { color: #003D7A; }
+
+    @keyframes colIn  { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    @keyframes tick   { from { opacity: 0; transform: scale(.5); }        to { opacity: 1; transform: none; } }
+    @keyframes sweep  { from { transform: translateX(-100%); }            to { transform: translateX(100%); } }
+
+    .col { animation: colIn .55s cubic-bezier(.2,.7,.3,1) both; }
+    .col.fbr { animation-delay: .05s }
+    .col.pra { animation-delay: .25s }
+    .mod { animation: colIn .45s cubic-bezier(.2,.7,.3,1) both; }
+    .mod:nth-child(1){animation-delay:.5s} .mod:nth-child(2){animation-delay:.58s}
+    .mod:nth-child(3){animation-delay:.66s} .mod:nth-child(4){animation-delay:.74s}
+    .mod:nth-child(5){animation-delay:.82s} .mod:nth-child(6){animation-delay:.90s}
+    .mod:nth-child(7){animation-delay:.98s} .mod:nth-child(8){animation-delay:1.06s}
+    .tk { animation: tick .3s cubic-bezier(.2,.8,.3,1) both; }
+    .hdr-sweep { position: relative; overflow: hidden; }
+    .hdr-sweep::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(100deg, transparent 40%, rgba(255,255,255,.28) 50%, transparent 60%);
+      animation: sweep 2.2s ease-in-out .4s 1 both;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .col, .mod, .tk { animation: none !important; opacity: 1 !important; transform: none !important; }
+      .hdr-sweep::after { animation: none !important; display: none; }
+    }
+  </style>
+</helmet>
+
+<div style="width: 1180px; min-height: 1000px; background: #FFFFFF; color: #111827; display: flex; flex-direction: column;">
+
+  <div style="display: flex; align-items: baseline; gap: 12px; padding: 14px 40px; background: #111827; color: #FFFFFF;">
+    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9CA3AF;">Coverage</span>
+    <span style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700;">Two tax authorities, one platform</span>
+  </div>
+
+  <div style="padding: 36px 40px 42px; display: flex; flex-direction: column; gap: 28px;">
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <h2 style="font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -.02em; margin: 0;">Federal and Punjab, filed from the same books</h2>
+      <p style="margin: 0; font-size: 15.5px; color: #4B5563; max-width: 74ch; line-height: 1.55;">
+        If you sell goods you answer to FBR. If you sell services in Punjab you answer to PRA. Plenty of
+        businesses answer to both — and keep two sets of records to do it. You don't have to.
+      </p>
+    </div>
+
+    <!-- the two authorities, side by side -->
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;">
+
+      <div class="col fbr" style="border: 1px solid #B3D4FF; border-radius: 12px; overflow: hidden;">
+        <div class="hdr-sweep" style="padding: 16px 20px; background: #0066CC; color: #fff;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; opacity: .85;">Federal</div>
+          <div style="font-family: 'Poppins', sans-serif; font-size: 19px; font-weight: 700; margin-top: 3px;">FBR Digital Invoicing</div>
+          <div style="font-size: 13px; opacity: .92; margin-top: 3px;">Sales tax on goods &middot; nationwide</div>
+        </div>
+        <div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 11px;">
+          <div style="display: flex; gap: 9px; align-items: flex-start;"><span class="tk" style="color:#0052A3; flex:0 0 auto; margin-top:1px;"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></span><span style="font-size: 14px; color: #374151;">Real-time submission to <strong style="font-weight:600;">IRIS</strong>, invoice by invoice</span></div>
+          <div style="display: flex; gap: 9px; align-items: flex-start;"><span class="tk" style="color:#0052A3; flex:0 0 auto; margin-top:1px;"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></span><span style="font-size: 14px; color: #374151;">Live <strong style="font-weight:600;">IRN</strong> and verifiable <strong style="font-weight:600;">QR stamp</strong> on every invoice</span></div>
+          <div style="display: flex; gap: 9px; align-items: flex-start;"><span class="tk" style="color:#0052A3; flex:0 0 auto; margin-top:1px;"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></span><span style="font-size: 14px; color: #374151;">All <strong style="font-weight:600;">28 FBR sale-type scenarios</strong> (SN001–SN028)</span></div>
+          <div style="display: flex; gap: 9px; align-items: flex-start;"><span class="tk" style="color:#0052A3; flex:0 0 auto; margin-top:1px;"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></span><span style="font-size: 14px; color: #374151;">HS codes, SROs and exemptions pre-loaded</span></div>
+          <div style="margin-top: 6px; padding-top: 12px; border-top: 1px solid #E6F0FF;">
+            <span style="font-size: 13px; color: #4B5563;">Mandatory for FBR-registered businesses under SRO 288/2026.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col pra" style="border: 1px solid #A7D9C6; border-radius: 12px; overflow: hidden;">
+        <div class="hdr-sweep" style="padding: 16px 20px; background: #047857; color: #fff;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; opacity: .85;">Provincial</div>
+          <div style="font-family: 'Poppins', sans-serif; font-size: 19px; font-weight: 700; margin-top: 3px;">PRA eIMS Integration</div>
+          <div style="font-size: 13px; opacity: .92; margin-top: 3px;">Services in Punjab &middot; Punjab Revenue Authority</div>
+        </div>
+        <div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 11px;">
+          <div style="display: flex; gap: 9px; align-items: flex-start;"><span class="tk" style="color:#047857; flex:0 0 auto; margin-top:1px;"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></span><span style="font-size: 14px; color: #374151;">Filing to <strong style="font-weight:600;">PRA eIMS</strong> for Punjab service businesses</span></div>
+          <div style="display: flex; gap: 9px; align-items: flex-start;"><span class="tk" style="color:#047857; flex:0 0 auto; margin-top:1px;"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></span><span style="font-size: 14px; color: #374151;">Provincial services tax handled separately from federal sales tax</span></div>
+          <div style="display: flex; gap: 9px; align-items: flex-start;"><span class="tk" style="color:#047857; flex:0 0 auto; margin-top:1px;"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></span><span style="font-size: 14px; color: #374151;">Same customers, same catalogue, same books — one login</span></div>
+          <div style="display: flex; gap: 9px; align-items: flex-start;"><span class="tk" style="color:#047857; flex:0 0 auto; margin-top:1px;"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></span><span style="font-size: 14px; color: #374151;">Run alongside FBR if you sell both goods and services</span></div>
+          <div style="margin-top: 6px; padding-top: 12px; border-top: 1px solid #ECFDF5;">
+            <span style="font-size: 13px; color: #4B5563;">For service businesses registered with the Punjab Revenue Authority.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- one integration fee, whichever authority you file to -->
+    <div style="display: flex; align-items: center; gap: 20px; border: 1px solid #E5E7EB; border-radius: 10px; padding: 18px 22px; margin-top: -6px;">
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 700; white-space: nowrap; color: #111827;">PKR 4,500</span>
+      <div style="width: 1px; align-self: stretch; background: #E5E7EB;"></div>
+      <div style="display: flex; flex-direction: column; gap: 3px;">
+        <span style="font-size: 15px; font-weight: 600;">Integration fee — covers everything</span>
+        <span style="font-size: 13.5px; color: #4B5563; line-height: 1.5;">
+          One charge, paid once, covering every integration you switch on. Monthly usage is billed separately, on the bracket you land in.
+        </span>
+      </div>
+    </div>
+
+    <!-- everything else in the box -->
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; align-items: baseline; gap: 12px;">
+        <h3 style="font-family: 'Poppins', sans-serif; font-size: 21px; font-weight: 700; letter-spacing: -.015em; margin: 0;">It isn't only invoicing — the books are in here too</h3>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #047857; border: 1px solid #A7D9C6; background: #ECFDF5; border-radius: 3px; padding: 3px 8px;">Included &middot; no extra charge</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
+        <div class="mod" style="border: 1px solid #E5E7EB; border-radius: 10px; padding: 15px 16px;">
+          <div style="font-size: 14.5px; font-weight: 600; margin-bottom: 5px;">General Ledger</div>
+          <div style="font-size: 13px; color: #4B5563; line-height: 1.5;">Double-entry, chart of accounts, journals — posted automatically from invoices.</div>
+        </div>
+        <div class="mod" style="border: 1px solid #E5E7EB; border-radius: 10px; padding: 15px 16px;">
+          <div style="font-size: 14.5px; font-weight: 600; margin-bottom: 5px;">Profit &amp; Loss</div>
+          <div style="font-size: 13px; color: #4B5563; line-height: 1.5;">Company P&amp;L live off posted GL balances, not a month-end scramble.</div>
+        </div>
+        <div class="mod" style="border: 1px solid #E5E7EB; border-radius: 10px; padding: 15px 16px;">
+          <div style="font-size: 14.5px; font-weight: 600; margin-bottom: 5px;">Complete books</div>
+          <div style="font-size: 13px; color: #4B5563; line-height: 1.5;">Trial balance, balance sheet and expenses in the same place.</div>
+        </div>
+        <div class="mod" style="border: 1px solid #E5E7EB; border-radius: 10px; padding: 15px 16px;">
+          <div style="font-size: 14.5px; font-weight: 600; margin-bottom: 5px;">Purchasing</div>
+          <div style="font-size: 13px; color: #4B5563; line-height: 1.5;">Purchase orders and supplier records feeding the same ledger.</div>
+        </div>
+        <div class="mod" style="border: 1px solid #E5E7EB; border-radius: 10px; padding: 15px 16px;">
+          <div style="font-size: 14.5px; font-weight: 600; margin-bottom: 5px;">Document archive</div>
+          <div style="font-size: 13px; color: #4B5563; line-height: 1.5;">PO, challan and bank slip attached to the invoice they belong to.</div>
+        </div>
+        <div class="mod" style="border: 1px solid #E5E7EB; border-radius: 10px; padding: 15px 16px;">
+          <div style="font-size: 14.5px; font-weight: 600; margin-bottom: 5px;">Audit trail</div>
+          <div style="font-size: 13px; color: #4B5563; line-height: 1.5;">Reviewed → Verified, with name, timestamp and IP on every invoice.</div>
+        </div>
+        <div class="mod" style="border: 1px solid #E5E7EB; border-radius: 10px; padding: 15px 16px;">
+          <div style="font-size: 14.5px; font-weight: 600; margin-bottom: 5px;">Excel bulk upload</div>
+          <div style="font-size: 13px; color: #4B5563; line-height: 1.5;">Ten to tens of thousands of invoices from one file, with auto-resume.</div>
+        </div>
+        <div class="mod" style="border: 1px solid #E5E7EB; border-radius: 10px; padding: 15px 16px;">
+          <div style="font-size: 14.5px; font-weight: 600; margin-bottom: 5px;">Accountant login</div>
+          <div style="font-size: 13px; color: #4B5563; line-height: 1.5;">A separate limited invite — your accountant never needs your password.</div>
+        </div>
+      </div>
+
+      <!-- paid add-ons, stated plainly -->
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 4px;">
+        <div style="border: 1px solid #E5C77B; background: #FFFBEB; border-radius: 10px; padding: 15px 17px; display: flex; align-items: center; justify-content: space-between; gap: 14px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+              <span style="font-size: 14.5px; font-weight: 600;">Payroll</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: #8A6011; border: 1px solid #E5C77B; border-radius: 3px; padding: 1px 6px;">Add-on</span>
+            </div>
+            <div style="font-size: 13px; color: #5C4A1E; line-height: 1.5;">Salaries, deductions and WHT §165 — the full staff record.</div>
+          </div>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; font-weight: 600; color: #8A6011; white-space: nowrap; text-align: right;">Rs 100<br><span style="font-size: 11px; font-weight: 400;">/employee/mo</span></span>
+        </div>
+        <div style="border: 1px solid #E5C77B; background: #FFFBEB; border-radius: 10px; padding: 15px 17px; display: flex; align-items: center; justify-content: space-between; gap: 14px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+              <span style="font-size: 14.5px; font-weight: 600;">POS &amp; PRA</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: #8A6011; border: 1px solid #E5C77B; border-radius: 3px; padding: 1px 6px;">Add-on</span>
+            </div>
+            <div style="font-size: 13px; color: #5C4A1E; line-height: 1.5;">Retail POS counter and Punjab Revenue Authority filing.</div>
+          </div>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; font-weight: 600; color: #8A6011; white-space: nowrap; text-align: right;">Rs 1,000<br><span style="font-size: 11px; font-weight: 400;">/month</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

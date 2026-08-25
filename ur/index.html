@@ -107,12 +107,19 @@
     "softwareVersion": "2.0",
     "offers": {
       "@type": "AggregateOffer",
-      "lowPrice": "500",
+      "lowPrice": "0",
       "highPrice": "5000",
       "priceCurrency": "PKR",
-      "offerCount": "7",
+      "offerCount": "8",
       "offers": [
-        {"@type": "Offer", "name": "Basic bracket", "price": "500", "priceCurrency": "PKR", "description": "0-5 FBR invoices/month. Rs 500/month + 5% service tax."},
+        {
+          "@type": "Offer",
+          "name": "Zero Usage",
+          "price": "0",
+          "priceCurrency": "PKR",
+          "description": "No FBR invoices submitted in the month. No monthly charge. The one-off PKR 4,500 signup fee still applies."
+        },
+        {"@type": "Offer", "name": "Basic bracket", "price": "500", "priceCurrency": "PKR", "description": "1-5 FBR invoices/month. Rs 500/month + 5% service tax."},
         {"@type": "Offer", "name": "اسٹارٹر بریکٹ", "price": "1000", "priceCurrency": "PKR", "description": "6-20 FBR انوائسز/ماہ۔ مہینے کے آخر میں بل۔ ٹیکس علیحدہ۔"},
         {"@type": "Offer", "name": "اسٹینڈرڈ بریکٹ", "price": "2000", "priceCurrency": "PKR", "description": "21-200 FBR انوائسز/ماہ — سب سے مقبول۔ استعمال کی بنیاد پر بلنگ۔ ٹیکس علیحدہ۔"},
         {"@type": "Offer", "name": "ان لمیٹڈ بریکٹ", "price": "3000", "priceCurrency": "PKR", "description": "201+ FBR انوائسز/ماہ۔ کوئی اوپری حد نہیں۔ ٹیکس علیحدہ۔"},
@@ -174,7 +181,7 @@
         "name": "قیمتیں کیا ہیں؟",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Wallet-based, usage-based billing. Basic: 0-5 invoices = Rs 500 + 5% service tax. Starter: 6-20 = Rs 1,000 + 5% service tax. Standard: 21-200 = Rs 2,000 + 5% service tax. Unlimited: 201+ = Rs 3,000 + 5% service tax. Every regular PKR 5,000 top-up adds PKR 7,000 wallet credits (40% bonus); optional annual advance funding receives 50% bonus credits. No separate setup fee."
+          "text": "Wallet-based, usage-based billing. Basic: 1-5 invoices = Rs 500 + 5% service tax. Starter: 6-20 = Rs 1,000 + 5% service tax. Standard: 21-200 = Rs 2,000 + 5% service tax. Unlimited: 201+ = Rs 3,000 + 5% service tax. Every regular PKR 5,000 top-up adds PKR 7,000 wallet credits (40% bonus); optional annual advance funding receives 50% bonus credits. No separate setup fee."
         }
       },
       {
@@ -198,7 +205,7 @@
         "name": "کیا کوئی الگ سیٹ اپ فیس ہے؟",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Basic plan is Rs 500/month + 5% service tax for 0-5 invoices/month, deducted from wallet credits. A regular PKR 5,000 top-up adds PKR 7,000 credits. No separate setup fee."
+          "text": "Basic plan is Rs 500/month + 5% service tax for 1-5 invoices/month, deducted from wallet credits. A regular PKR 5,000 top-up adds PKR 7,000 credits. No separate setup fee."
         }
       }
     ]
@@ -366,7 +373,7 @@
                 <svg class="feature-check" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
-                <span class="en-inline">0-5</span> invoices per month for Rs 500 + 5% service tax. Go live in hours.
+                <span class="en-inline">1-5</span> invoices per month for Rs 500 + 5% service tax. Go live in hours.
               </li>
             </ul>
 
@@ -921,7 +928,7 @@
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </summary>
             <div class="faq-answer">
-              <p>Wallet-based, usage-based billing. Basic: <span class="en-inline">0-5</span> invoices = <span class="en-inline">Rs 500</span> + <span class="en-inline">5%</span> service tax. Monthly bill wallet credits se kat jata hai. Har regular top-up par <span class="en-inline">40%</span> bonus aur annual advance funding par <span class="en-inline">50%</span> bonus credits milte hain.</p>
+              <p>Wallet-based, usage-based billing. Basic: <span class="en-inline">1-5</span> invoices = <span class="en-inline">Rs 500</span> + <span class="en-inline">5%</span> service tax. Monthly bill wallet credits se kat jata hai. Har regular top-up par <span class="en-inline">40%</span> bonus aur annual advance funding par <span class="en-inline">50%</span> bonus credits milte hain.</p>
             </div>
           </details>
 
@@ -951,7 +958,7 @@
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </summary>
             <div class="faq-answer">
-              <p>Basic plan is <span class="en-inline">Rs 500</span>/month + <span class="en-inline">5%</span> service tax for <span class="en-inline">0-5</span> invoices/month. Yeh amount wallet credits se deduct hota hai. Koi alag setup fee nahi.</p>
+              <p>Basic plan is <span class="en-inline">Rs 500</span>/month + <span class="en-inline">5%</span> service tax for <span class="en-inline">1-5</span> invoices/month. Yeh amount wallet credits se deduct hota hai. Koi alag setup fee nahi.</p>
             </div>
           </details>
         </div>
@@ -985,7 +992,7 @@
 
           <article style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;text-align:left;font-family:system-ui,-apple-system,sans-serif;">
             <h3 style="font-size:1.05rem;font-weight:700;color:#0f172a;margin:0 0 0.5rem;line-height:1.5;">Sales tax software Pakistan mein konsa best hai?</h3>
-            <p style="margin:0;color:#475569;font-size:0.92rem;line-height:1.65;">Zyada tar solutions Rs 50,000 se 200,000 per month charge karte hain. MyDigitalInvoice Rs 1,000/month se shuru hota hai, aur 0-5 invoices par Rs 500/month + 5% service tax. 28 FBR sale type scenarios support karte hain — standard, reduced, exempt, 3rd schedule, CNG, cement, electric vehicles, retail (SN026–028) sab kuch.</p>
+            <p style="margin:0;color:#475569;font-size:0.92rem;line-height:1.65;">Zyada tar solutions Rs 50,000 se 200,000 per month charge karte hain. MyDigitalInvoice Rs 1,000/month se shuru hota hai, aur 1-5 invoices par Rs 500/month + 5% service tax. 28 FBR sale type scenarios support karte hain — standard, reduced, exempt, 3rd schedule, CNG, cement, electric vehicles, retail (SN026–028) sab kuch.</p>
           </article>
 
           <article style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;text-align:left;font-family:system-ui,-apple-system,sans-serif;">
@@ -1017,7 +1024,7 @@
             </a>
             <a href="/ur/pricing" class="btn btn-ghost-white btn-lg">قیمتیں دیکھیں</a>
           </div>
-          <p class="cta-note"><span class="en-inline">0-5</span> invoices/month: Basic plan at <span class="en-inline">Rs 500</span> + <span class="en-inline">5%</span> service tax. Cancel anytime.</p>
+          <p class="cta-note"><span class="en-inline">1-5</span> invoices/month: Basic plan at <span class="en-inline">Rs 500</span> + <span class="en-inline">5%</span> service tax. Cancel anytime.</p>
         </div>
       </div>
     </section>

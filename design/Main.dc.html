@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Inter', 'Segoe UI', sans-serif; background: #FFFFFF; }
+    a { color: #0052A3; text-decoration: none; }
+    a:hover { color: #003D7A; }
+    .rule { height: 1px; background: #E5E7EB; }
+  </style>
+</helmet>
+
+<div style="width: 1200px; min-height: 820px; background: #FFFFFF; color: #111827; display: flex; flex-direction: column;">
+
+  <!-- direction label -->
+  <div style="display: flex; align-items: baseline; gap: 12px; padding: 14px 40px; background: #111827; color: #FFFFFF;">
+    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9CA3AF;">Direction A</span>
+    <span style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700;">Ledger</span>
+    <span style="font-size: 13px; color: #9CA3AF;">Calm regulatory authority — reads like the tax portal it talks to, not a startup landing page.</span>
+  </div>
+
+  <!-- nav -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 64px; border-bottom: 1px solid #E5E7EB;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#0066CC"/><path d="M7 8h10M7 12h7M7 16h4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: -.01em;">My Digital Invoice</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 26px; font-size: 14px; color: #4B5563;">
+      <span>Features</span><span>Pricing</span><span>For Accountants</span><span>Case Studies</span>
+      <span style="display: inline-flex; align-items: center; gap: 6px; color: #0052A3; font-weight: 600;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.6L2.2 22l5.5-1.4A9.8 9.8 0 1 0 12 2Z"/></svg>
+        WhatsApp
+      </span>
+      <span style="background: #0066CC; color: #fff; font-weight: 600; padding: 9px 16px; border-radius: 6px;">Login</span>
+    </div>
+  </div>
+
+  <!-- compliance notice: a status strip, not an alarm -->
+  <div style="display: flex; align-items: center; gap: 12px; padding: 12px 40px; background: #FFFBEB; border-bottom: 1px solid #FDE68A;">
+    <svg width="16" height="16" viewBox="0 0 20 20" fill="#B45309" aria-hidden="true"><path d="M10 1.6 1.2 17h17.6L10 1.6Zm0 5.2a.9.9 0 0 1 .9.9v4a.9.9 0 1 1-1.8 0v-4a.9.9 0 0 1 .9-.9Zm0 8.6a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1Z"/></svg>
+    <span style="font-size: 13.5px; color: #78350F;"><strong style="font-weight: 700;">One missed FBR invoice = Rs 500,000 penalty.</strong> FBR audits spike in Q4 — be live before October.</span>
+    <a href="#" style="font-size: 13.5px; font-weight: 600; color: #B45309; text-decoration: underline; text-underline-offset: 3px;">See your exposure</a>
+  </div>
+
+  <!-- hero -->
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; padding: 48px 40px 40px; align-items: start; flex-grow: 1;">
+
+    <div style="display: flex; flex-direction: column; gap: 22px;">
+      <h1 style="font-family: 'Poppins', sans-serif; font-size: 40px; line-height: 1.14; font-weight: 800; letter-spacing: -.022em; margin: 0; text-wrap: balance;">
+        FBR digital invoicing for Pakistani businesses — and the accountants who run their books.
+        <span style="display: block; color: #B45309; margin-top: 6px;">Avoid the Rs 500,000 penalty.</span>
+      </h1>
+
+      <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #374151; max-width: 46ch;">
+        One missed IRIS submission. One Rs 500,000 fine. We make sure it doesn't happen — whether you're
+        <strong style="font-weight: 600; color: #111827;">one business, or a firm managing many clients</strong>.
+      </p>
+
+      <div class="rule"></div>
+
+      <!-- capability list as a ledger, not feature cards -->
+      <div style="display: flex; flex-direction: column; gap: 0;">
+        <div style="display: grid; grid-template-columns: 152px 1fr; gap: 16px; padding: 11px 0; border-bottom: 1px solid #F3F4F6; align-items: baseline;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: #6B7280;">Submission</span>
+          <span style="font-size: 14.5px; color: #374151;">Auto-submit every invoice to FBR IRIS, live IRN &amp; QR codes</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 152px 1fr; gap: 16px; padding: 11px 0; border-bottom: 1px solid #F3F4F6; align-items: baseline;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: #6B7280;">Volume</span>
+          <span style="font-size: 14.5px; color: #374151;">9,000-invoice bulk upload with auto-resume</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 152px 1fr; gap: 16px; padding: 11px 0; border-bottom: 1px solid #F3F4F6; align-items: baseline;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: #6B7280;">Audit</span>
+          <span style="font-size: 14.5px; color: #374151;">10-year audit trail, any client, any month</span>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px; margin-top: 4px;">
+        <span style="background: #0066CC; color: #fff; font-weight: 600; font-size: 15px; padding: 14px 22px; border-radius: 6px;">Book a 15-min demo — on your invoices</span>
+        <span style="border: 1px solid #D1D5DB; color: #111827; font-weight: 600; font-size: 15px; padding: 13px 20px; border-radius: 6px;">Get started</span>
+      </div>
+      <p style="margin: 0; font-size: 13px; color: #6B7280;">Basic plan Rs 500/month for 0–5 invoices &middot; 5% service tax applies</p>
+    </div>
+
+    <!-- product evidence -->
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <div style="border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden;">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #F9FAFB; border-bottom: 1px solid #E5E7EB;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: #6B7280;">FBR Dashboard</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #047857;">
+            <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 00-1.4 1.4l2 2a1 1 0 001.4 0l4-4z"/></svg>
+            Live
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0;">
+          <div style="padding: 16px; border-right: 1px solid #E5E7EB;">
+            <div style="font-size: 11.5px; color: #6B7280; margin-bottom: 5px;">FBR Submitted</div>
+            <div style="font-family: 'Poppins', sans-serif; font-size: 26px; font-weight: 700; letter-spacing: -.02em;">156</div>
+            <div style="font-size: 11.5px; color: #047857; font-weight: 600; margin-top: 3px;">Auto</div>
+          </div>
+          <div style="padding: 16px; border-right: 1px solid #E5E7EB;">
+            <div style="font-size: 11.5px; color: #6B7280; margin-bottom: 5px;">Sales Tax Due</div>
+            <div style="font-family: 'Poppins', sans-serif; font-size: 26px; font-weight: 700; letter-spacing: -.02em;">PKR 2.4L</div>
+            <div style="font-size: 11.5px; color: #047857; font-weight: 600; margin-top: 3px;">Tracked</div>
+          </div>
+          <div style="padding: 16px; background: #F5F9FF;">
+            <div style="font-size: 11.5px; color: #6B7280; margin-bottom: 5px;">Compliance</div>
+            <div style="font-family: 'Poppins', sans-serif; font-size: 26px; font-weight: 700; letter-spacing: -.02em; color: #0052A3;">100%</div>
+            <div style="font-size: 11.5px; color: #047857; font-weight: 600; margin-top: 3px;">Verified</div>
+          </div>
+        </div>
+
+        <!-- the artefact FBR actually returns -->
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px; border-top: 1px solid #E5E7EB; background: #FFFFFF;">
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #6B7280;">IRN</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: #0052A3;">Invoice #4521</span>
+            <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: #047857;">
+              <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 00-1.4 1.4l2 2a1 1 0 001.4 0l4-4z"/></svg>
+              Invoice Validated by FBR
+            </span>
+          </div>
+          <svg width="72" height="72" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-label="Verifiable FBR QR code" role="img" style="border: 1px solid #E5E7EB; border-radius: 4px; padding: 4px; background: #fff;">
+            <title>Verifiable FBR QR code</title>
+            <g fill="#111827">
+              <rect x="0" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="6" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="9" y="0" width="1" height="1"/><rect x="10" y="0" width="1" height="1"/>
+              <rect x="0" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="6" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="8" y="1" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/>
+              <rect x="0" y="2" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="8" y="2" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="2" width="1" height="1"/>
+              <rect x="3" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/>
+              <rect x="0" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="9" y="4" width="1" height="1"/><rect x="10" y="4" width="1" height="1"/>
+              <rect x="1" y="5" width="1" height="1"/><rect x="3" y="5" width="1" height="1"/><rect x="4" y="5" width="1" height="1"/><rect x="5" y="5" width="1" height="1"/><rect x="7" y="5" width="1" height="1"/><rect x="9" y="5" width="1" height="1"/>
+              <rect x="0" y="6" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="7" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/>
+              <rect x="3" y="7" width="1" height="1"/><rect x="4" y="7" width="1" height="1"/><rect x="6" y="7" width="1" height="1"/><rect x="7" y="7" width="1" height="1"/><rect x="9" y="7" width="1" height="1"/>
+              <rect x="0" y="8" width="1" height="1"/><rect x="1" y="8" width="1" height="1"/><rect x="2" y="8" width="1" height="1"/><rect x="4" y="8" width="1" height="1"/><rect x="6" y="8" width="1" height="1"/><rect x="7" y="8" width="1" height="1"/><rect x="9" y="8" width="1" height="1"/>
+              <rect x="0" y="9" width="1" height="1"/><rect x="2" y="9" width="1" height="1"/><rect x="3" y="9" width="1" height="1"/><rect x="5" y="9" width="1" height="1"/><rect x="6" y="9" width="1" height="1"/><rect x="8" y="9" width="1" height="1"/><rect x="10" y="9" width="1" height="1"/>
+              <rect x="0" y="10" width="1" height="1"/><rect x="1" y="10" width="1" height="1"/><rect x="2" y="10" width="1" height="1"/><rect x="4" y="10" width="1" height="1"/><rect x="7" y="10" width="1" height="1"/><rect x="9" y="10" width="1" height="1"/><rect x="10" y="10" width="1" height="1"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- trust, stated flatly -->
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #E5E7EB; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden;">
+        <div style="background: #fff; padding: 13px 14px;">
+          <div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 700;">1,500+</div>
+          <div style="font-size: 12px; color: #6B7280; margin-top: 2px;">integrations</div>
+        </div>
+        <div style="background: #fff; padding: 13px 14px;">
+          <div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 700;">SN001–SN030</div>
+          <div style="font-size: 12px; color: #6B7280; margin-top: 2px;">FBR scenarios covered</div>
+        </div>
+        <div style="background: #fff; padding: 13px 14px;">
+          <div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 700;">10 years</div>
+          <div style="font-size: 12px; color: #6B7280; margin-top: 2px;">audit retention</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
