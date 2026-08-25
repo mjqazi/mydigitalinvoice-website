@@ -1,0 +1,523 @@
+/* =============================================================================
+   corrections.css — design-review fixes F-03, F-06, F-08
+   Loaded last in <head> so it wins over the page-level <style> blocks.
+
+   !important appears only where it has to beat an existing !important or an
+   inline style. Each of those is a marker for the F-02 refactor: once the
+   inline styles on index.html are retired, the !important here can go too.
+   Nothing in this file changes rendered copy.
+   ========================================================================== */
+
+/* -----------------------------------------------------------------------------
+   F-03 — One button system.
+   The page had 14 filled button styles across 6 corner radii. Collapse to three
+   ranks: primary (brand blue), secondary (outline), quiet (text link).
+   Destinations and labels are untouched — only weight and colour.
+   -------------------------------------------------------------------------- */
+
+:root{
+  --btn-radius: 12px;
+  --btn-focus: 0 0 0 3px rgba(0,102,204,.35);
+}
+
+/* rank 1 — the single primary action */
+.btn-cta-primary{
+  background-image: linear-gradient(135deg, #0066CC 0%, #003D7A 100%) !important;
+  background-color: #0066CC !important;
+  color: #fff !important;
+  border: 2px solid transparent !important;
+  border-radius: var(--btn-radius) !important;
+}
+.btn-cta-primary:hover{
+  background-image: linear-gradient(135deg, #0052A3 0%, #002952 100%) !important;
+}
+
+/* rank 2 — outline. WhatsApp keeps its own green so the channel still reads,
+   but at outline weight it stops competing with the primary. */
+.btn-cta-secondary{
+  background-image: none !important;
+  background-color: #fff !important;
+  color: #0052A3 !important;
+  border: 2px solid #B3D4FF !important;
+  border-radius: var(--btn-radius) !important;
+}
+.btn-cta-secondary:hover{ border-color: #0066CC !important; }
+
+.hero-cta .btn[href*="wa.me"]{
+  background-image: none !important;
+  background-color: #fff !important;
+  color: #047857 !important;
+  border: 2px solid #A7D9C6 !important;
+  border-radius: var(--btn-radius) !important;
+}
+.hero-cta .btn[href*="wa.me"]:hover{ border-color: #047857 !important; }
+.hero-cta .btn[href*="wa.me"] svg{ color: #25D366; fill: #25D366; }
+
+/* the full-width green bar above the CTA row was a third primary-weight
+   WhatsApp entry point. Same link, quieter surface. */
+.hero-wa-inline{
+  background-image: none !important;
+  background-color: #ECFDF5 !important;
+  color: #047857 !important;
+  border: 1px solid #A7D9C6 !important;
+  border-radius: var(--btn-radius) !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+}
+.hero-wa-inline:hover{ background-color: #D1FAE5 !important; }
+.hero-wa-inline svg,
+.hero-wa-inline img{ color: #25D366; fill: #25D366; }
+
+/* stop the primary from pulsing — motion was doing hierarchy work that colour
+   and weight now do properly */
+.cta-pulse{ animation: none !important; }
+
+/* visible keyboard focus on every control */
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible{
+  outline: 2px solid #0066CC;
+  outline-offset: 2px;
+  box-shadow: var(--btn-focus);
+}
+
+/* -----------------------------------------------------------------------------
+   F-08 — One alarm surface.
+   The hero banner, the headline and the yellow calculator band were all
+   shouting. The calculator band stays the alarm (it converts fear into an
+   action); the hero banner becomes an informational notice. Copy unchanged.
+   -------------------------------------------------------------------------- */
+
+.hero-alert-banner{
+  background-image: none !important;
+  background-color: #FEF3C7 !important;
+  border: 1px solid #FCD34D !important;
+  border-left: 4px solid #B45309 !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  color: #78350F !important;
+}
+.hero-alert-banner *{ color: #78350F !important; }
+.hero-alert-banner a,
+.hero-alert-banner .btn{
+  background-image: none !important;
+  background-color: #B45309 !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+}
+.hero-alert-banner a *{ color: #fff !important; }
+
+/* -----------------------------------------------------------------------------
+   F-06 — Legibility and touch targets on phones.
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px){
+
+  /* The comparison table was being shrunk to as little as 7.7px to fit a 380px
+     screen. Let it scroll instead and hold a readable floor. */
+  .comparison-table-container,
+  .comparison-table-wrapper{
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .comparison-table{
+    font-size: .8125rem !important;   /* 13px */
+    min-width: 580px !important;
+  }
+  .comparison-table th,
+  .comparison-table td{
+    font-size: .8125rem !important;
+    padding: .5rem .6rem !important;
+  }
+  .comparison-table th:first-child,
+  .comparison-table td:first-child{
+    width: auto !important;
+    font-size: .8125rem !important;
+  }
+  .comparison-table .table-logo{ font-size: .75rem !important; }
+  .check-badge,
+  .x-badge,
+  .neutral-badge{
+    font-size: .75rem !important;
+    padding: .25rem .45rem !important;
+  }
+
+  /* dashboard mockup labels were at 8–9.6px */
+  .dash-card-label{ font-size: .75rem !important; }
+  .dash-card-trend{ font-size: .75rem !important; }
+  .dash-card-value{ font-size: 1.0625rem !important; }
+
+  /* the line listing what every plan includes was the smallest text on the
+     page at 10.4px — smaller than the legal note under it */
+  .pricing-note{ font-size: .8125rem !important; line-height: 1.6 !important; }
+  .ribbon-off{ font-size: .75rem !important; }
+  .pricing-tier-badge{ font-size: .75rem !important; }
+
+  /* body copy floor */
+  .hero-description,
+  .section-subtitle,
+  .feature-description{ font-size: .9375rem !important; }
+
+  /* touch targets — 44px minimum */
+  .preview-tab,
+  .tab-btn{
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  .preview-tabs{ overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; justify-content: flex-start; }
+  .footer-nav a,
+  .footer-links a,
+  .footer-bottom a{
+    display: inline-block;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+  .hero-cta .btn,
+  .btn-lg{ min-height: 48px !important; }
+}
+
+/* -----------------------------------------------------------------------------
+   F-02 (partial) — corner-radius discipline.
+   Six radii were in use (0, 8, 10, 12, 999, 9999). Collapse the card-sized ones
+   onto 12px and leave pills fully round.
+   -------------------------------------------------------------------------- */
+
+.card,
+.feature-card,
+.pricing-tier,
+.testimonial-card,
+.blog-card,
+.case-study-card{ border-radius: 12px; }
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   F-06 (second pass) — the remaining sub-13px secondary text.
+   Measured after the first pass: stat labels at 11.2px, price periods at 12px,
+   testimonial body at 12.48px. Secondary text floors at 13px, body at 15px.
+   -------------------------------------------------------------------------- */
+
+.stat-label{ font-size: .8125rem !important; }
+.pricing-tier-period{ font-size: .8125rem !important; }
+.trust-label,
+.trust-badge-label,
+.section-eyebrow{ font-size: .8125rem !important; }
+
+@media (max-width: 768px){
+  .stat-label{ font-size: .8125rem !important; }
+  .hero-badge{ font-size: .8125rem !important; }
+  .hero-description{ font-size: .9375rem !important; }
+
+  /* header controls to 44px */
+  .logo{ min-height: 44px; display: inline-flex; align-items: center; }
+  .nav-link,
+  .header .btn,
+  .header a{ min-height: 44px; display: inline-flex; align-items: center; }
+}
+
+/* -----------------------------------------------------------------------------
+   F-09 — Dead navigation band at 1024–1199px.  (Found by an independent review;
+   confirmed by measurement.)
+   In that range the desktop .nav-menu is parked off-canvas AND .nav-toggle
+   resolves to display:flex at 0x0, so the page has no menu, no hamburger and no
+   Login control. Below 1024px a !important rule gives the toggle a size, which
+   is why the bug only shows in this one band.
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1199px){
+  /* the real cause: the wrapper holding the hamburger is display:none until
+     1023px, while the desktop menu is already parked off-canvas at 1199px. */
+  .mobile-controls{
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .nav-toggle{
+    display: flex !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   F-10 — White text on brand-green fills.  (Surfaced by a pixel-sampling sweep
+   after an independent review pointed out that gradient-backed text was being
+   skipped, not evaluated.)
+   WhatsApp's #25D366 carries white text at 2.66:1 — its own brand does this, but
+   it fails WCAG AA. Darken the fill, keep the green identity. The WhatsApp glyph
+   itself stays brand-accurate wherever it sits on a light surface.
+   -------------------------------------------------------------------------- */
+
+.nav-whatsapp,
+.btn-whatsapp,
+.mobile-whatsapp-btn,
+.whatsapp-float,
+.contact-card-primary.whatsapp-card,
+.cta-box.whatsapp{
+  background-image: linear-gradient(135deg, #097A52 0%, #065F46 100%) !important;
+  background-color: #097A52 !important;
+  color: #fff !important;
+}
+.nav-whatsapp:hover,
+.btn-whatsapp:hover,
+.mobile-whatsapp-btn:hover,
+.whatsapp-float:hover{
+  background-image: linear-gradient(135deg, #065F46 0%, #044E3B 100%) !important;
+}
+
+/* cyan "BEST VALUE" badge: white on #0890a7 = 3.78:1 */
+.comparison-card .badge,
+.comparison-card.highlight .badge{
+  background-color: #0E7490 !important;
+  background-image: none !important;
+  color: #fff !important;
+}
+
+/* case-study avatar initial: white on emerald-500 = 3.09:1 */
+.case-study-avatar,
+.testimonial-avatar,
+.avatar-initial{
+  background-color: #047857 !important;
+  background-image: none !important;
+  color: #fff !important;
+}
+
+/* F-10 (continued) — the last three white-on-green/teal surfaces. */
+
+/* contact.html: the WhatsApp row in the contact list */
+.info-item-btn.whatsapp,
+.info-item-btn[href*="wa.me"]{
+  background-image: linear-gradient(135deg, #097A52 0%, #065F46 100%) !important;
+  background-color: #097A52 !important;
+}
+
+/* index.html: the teal "1,500+ integrations" strip under the hero visual */
+.trust-banner-header{
+  background-image: linear-gradient(135deg, #0E7490 0%, #155E75 100%) !important;
+  background-color: #0E7490 !important;
+}
+
+/* avatar initials rendered on emerald-500 */
+[class*="avatar"]{
+  background-color: #047857;
+}
+
+/* case-studies: .cs-avatar initials on emerald-500 = 3.09:1 */
+.cs-avatar,
+.cs-avatar.a,
+.cs-avatar.m,
+.cs-avatar.y{
+  background-image: none !important;
+  background-color: #047857 !important;
+  color: #fff !important;
+}
+
+/* -----------------------------------------------------------------------------
+   F-11 — Three corrections to the corrections. (Raised by a second independent
+   review; all three confirmed by measurement.)
+   -------------------------------------------------------------------------- */
+
+/* (a) REGRESSION introduced by F-03: the penalty calculator's CTA carries
+   .btn-cta-primary, so the global blue recast it from #dc2626 to brand blue —
+   the one button on the page that should read as alarm turned corporate.
+   Scope the alarm back, at higher specificity than the global primary. */
+.penalty-callout .btn-cta-primary,
+.penalty-callout .btn.btn-lg{
+  background-image: linear-gradient(135deg, #DC2626 0%, #991B1B 100%) !important;
+  background-color: #B91C1C !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+.penalty-callout .btn-cta-primary:hover{
+  background-image: linear-gradient(135deg, #B91C1C 0%, #7F1D1D 100%) !important;
+}
+
+/* (b) F-08 gave the hero notice the SAME #FEF3C7 as the penalty band ten seconds
+   further down, so the two amber fields rhyme instead of ranking. The hero
+   notice becomes a neutral card with an amber rule; the penalty band keeps the
+   amber field and stays the single alarm surface. */
+.hero-alert-banner{
+  background-color: #FFFFFF !important;
+  border: 1px solid #E7ECF1 !important;
+  border-left: 4px solid #B45309 !important;
+  box-shadow: 0 1px 2px rgba(20,26,33,.06) !important;
+  color: #78350F !important;
+}
+.hero-alert-banner a,
+.hero-alert-banner .btn{
+  background-image: none !important;
+  background-color: transparent !important;
+  color: #B45309 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-weight: 700 !important;
+}
+.hero-alert-banner a *{ color: #B45309 !important; }
+
+/* (c) .mobile-phone-btn is white on --success-500 (#10b981) = 2.54:1. It only
+   became visible once F-09 restored .mobile-controls, so the earlier sweep
+   never saw it. */
+.mobile-phone-btn{
+  background: #047857 !important;
+  color: #fff !important;
+}
+
+/* -----------------------------------------------------------------------------
+   F-12 — IRN + QR proof row in the hero visual.
+   Replaces the abstract bar chart. The IRN and its verifiable QR are the
+   concrete artefact FBR returns for every invoice — the one thing in the hero
+   that no competitor screenshot can fake. Strings were relocated from the
+   floating card that used to overlap the dashboard; none were changed.
+   -------------------------------------------------------------------------- */
+
+.invoice-proof{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  background: var(--gray-50, #F9FAFB);
+  border: 1px solid var(--gray-200, #E5E7EB);
+  border-radius: 12px;
+}
+
+.proof-meta{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.proof-label{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gray-500, #6B7280);
+}
+
+.proof-value{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .9375rem;
+  font-weight: 700;
+  color: var(--primary-600, #0052A3);
+  letter-spacing: .01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.proof-status{
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #047857;
+  line-height: 1.3;
+}
+.proof-status svg{ flex: 0 0 auto; }
+
+.proof-qr{
+  flex: 0 0 auto;
+  width: 76px;
+  height: 76px;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid var(--gray-200, #E5E7EB);
+  border-radius: 8px;
+}
+.proof-qr-svg{
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: #0F172A;
+}
+
+/* the QR is a graphic, not text — keep it upright when the page flips */
+[dir="rtl"] .proof-qr-svg{ transform: none; }
+[dir="rtl"] .proof-label,
+[dir="rtl"] .proof-value{ direction: ltr; text-align: right; }
+
+@media (max-width: 480px){
+  .invoice-proof{ padding: 12px; gap: 12px; }
+  .proof-qr{ width: 62px; height: 62px; padding: 5px; }
+  .proof-value{ font-size: .875rem; }
+}
+
+/* F-12 (continued) — stop the ornamental overlays covering the proof.
+   .hero-trust-banner was absolutely positioned across the dashboard card and
+   .float-1 sat on top of the Compliance figure, clipping "100%". Both were
+   flagged as ornamental by two independent reviewers; with real product proof
+   now inside the card they are actively hiding content. Stack instead of
+   overlap — no elements removed, no strings changed. */
+
+.hero-visual .hero-trust-banner{
+  position: relative !important;
+  inset: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  margin-top: 16px !important;
+}
+
+.hero-visual .float-card.float-1{
+  top: -14px !important;
+  right: -8px !important;
+  bottom: auto !important;
+  left: auto !important;
+}
+
+/* -----------------------------------------------------------------------------
+   F-13 — The wordmark is clipped at 390px and below.
+   Four header controls (WhatsApp, phone, Login, menu) compete with a 20px
+   wordmark. Measured: .logo overflows its box at 390, 375, 360 and 320px, so
+   the brand name renders as "My Digital Invoic". Scale the wordmark down rather
+   than dropping any control.
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 400px){
+  /* measured overflow at 1rem was 11-13px; 0.875rem clears it with room spare */
+  .logo{
+    font-size: .875rem !important;
+    gap: 7px !important;
+    letter-spacing: -.005em;
+    flex: 0 0 auto !important;
+    min-width: 0;
+    overflow: visible;
+  }
+  .logo img,
+  .logo svg{ flex: 0 0 auto; }
+  .mobile-controls{ gap: 6px !important; }
+}
+
+@media (max-width: 344px){
+  /* below this the icon has to carry it alone; the name stays for screen readers */
+  .logo span,
+  .logo .logo-text{
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}

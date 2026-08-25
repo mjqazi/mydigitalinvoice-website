@@ -34,6 +34,9 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mydigitalinvoice.com/">
+  <meta property="og:site_name" content="MyDigitalInvoice">
+  <meta property="og:locale" content="en_PK">
+  <meta property="og:locale:alternate" content="ur_PK">
   <meta property="og:title" content="FBR Digital Invoicing Pakistan | MyDigitalInvoice">
   <meta property="og:description" content="FBR-integrated digital invoicing for Pakistani businesses. Auto IRN + QR, bulk upload, accountant portal. Basic starts at Rs 500/month + 5% service tax.">
   <meta property="og:image" content="https://mydigitalinvoice.com/assets/og-image.png">
@@ -242,8 +245,10 @@
   <link rel="dns-prefetch" href="https://wa.me">
 
   <!-- Stylesheet — single load, critical above-the-fold CSS inlined below -->
-  <link rel="preload" href="css/styles.css?v=13" as="style">
-  <link rel="stylesheet" href="css/styles.css?v=13">
+  <link rel="preload" href="/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/poppins-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="css/styles.css?v=14" as="style">
+  <link rel="stylesheet" href="css/styles.css?v=14">
   <link rel="stylesheet" href="/css/switcher.css?v=3">
 
   <!-- Preload hero section logo for faster LCP (WebP with PNG fallback) -->
@@ -630,7 +635,7 @@
 
         .pricing-tier-tagline {
             font-size: 0.8125rem;
-            color: #059669;
+            color: #047857;
             font-weight: 400;
             font-style: italic;
         }
@@ -856,7 +861,7 @@
 
     .promo-banner .btn-white {
         background: white;
-        color: #059669;
+        color: #047857;
         font-weight: 600;
         padding: 8px 16px;
         border-radius: 12px;
@@ -1013,7 +1018,7 @@
     }
 
     .free-highlight {
-        color: #059669;
+        color: #047857;
         font-weight: 600;
     }
 
@@ -1021,6 +1026,7 @@
         background: rgba(16, 185, 129, 0.05);
     }
   </style>
+  <link rel="stylesheet" href="/css/corrections.css?v=1">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -1151,7 +1157,7 @@
                 gap: 10px;
                 padding: 14px 22px;
                 margin: 18px 0 22px;
-                background: linear-gradient(135deg,#25D366 0%,#128C7E 100%);
+                background: linear-gradient(135deg,#097A52 0%,#065F46 100%);
                 color: #fff;
                 font-weight: 700;
                 font-size: 1.05rem;
@@ -1197,7 +1203,7 @@
             <div class="hero-cta animate-fade-in-up delay-3">
               <a href="/demo" class="btn btn-cta-primary btn-lg cta-pulse" data-cta="hero-book-demo">
                 <svg class="btn-icon-left" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  <path d="M6 2a1 1 0 011 1v1h6V3a1 1 0 112 0v1h1a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2h1V3a1 1 0 011-1zM4 8v10h12V8H4z"/>
                 </svg>
                 Book a 15-min demo — on your invoices
                 <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
@@ -1255,15 +1261,13 @@
                     <span class="dash-card-trend positive">Verified</span>
                   </div>
                 </div>
-                <div class="dashboard-chart">
-                  <div class="chart-bars">
-                    <div class="bar" style="--height: 45%;"></div>
-                    <div class="bar" style="--height: 65%;"></div>
-                    <div class="bar" style="--height: 55%;"></div>
-                    <div class="bar" style="--height: 80%;"></div>
-                    <div class="bar" style="--height: 70%;"></div>
-                    <div class="bar active" style="--height: 95%;"></div>
+                <div class="invoice-proof">
+                  <div class="proof-meta">
+                    <span class="proof-label">IRN</span>
+                    <span class="proof-value">Invoice #4521</span>
+                    <span class="proof-status"><svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Invoice Validated by FBR</span>
                   </div>
+                  <div class="proof-qr"><svg class="proof-qr-svg" viewBox="0 0 11 11" role="img" aria-label="Verifiable FBR QR code" shape-rendering="crispEdges"><title>Verifiable FBR QR code</title><rect x="0" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="6" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="9" y="0" width="1" height="1"/><rect x="10" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="6" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="8" y="1" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="8" y="2" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="9" y="4" width="1" height="1"/><rect x="10" y="4" width="1" height="1"/><rect x="1" y="5" width="1" height="1"/><rect x="3" y="5" width="1" height="1"/><rect x="4" y="5" width="1" height="1"/><rect x="5" y="5" width="1" height="1"/><rect x="7" y="5" width="1" height="1"/><rect x="9" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="7" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/><rect x="3" y="7" width="1" height="1"/><rect x="4" y="7" width="1" height="1"/><rect x="6" y="7" width="1" height="1"/><rect x="8" y="7" width="1" height="1"/><rect x="9" y="7" width="1" height="1"/><rect x="0" y="8" width="1" height="1"/><rect x="1" y="8" width="1" height="1"/><rect x="2" y="8" width="1" height="1"/><rect x="4" y="8" width="1" height="1"/><rect x="6" y="8" width="1" height="1"/><rect x="7" y="8" width="1" height="1"/><rect x="9" y="8" width="1" height="1"/><rect x="0" y="9" width="1" height="1"/><rect x="2" y="9" width="1" height="1"/><rect x="3" y="9" width="1" height="1"/><rect x="5" y="9" width="1" height="1"/><rect x="6" y="9" width="1" height="1"/><rect x="8" y="9" width="1" height="1"/><rect x="10" y="9" width="1" height="1"/><rect x="0" y="10" width="1" height="1"/><rect x="1" y="10" width="1" height="1"/><rect x="2" y="10" width="1" height="1"/><rect x="4" y="10" width="1" height="1"/><rect x="7" y="10" width="1" height="1"/><rect x="9" y="10" width="1" height="1"/><rect x="10" y="10" width="1" height="1"/></svg></div>
                 </div>
               </div>
             </div>
@@ -1276,13 +1280,7 @@
               <span>FBR Submitted</span>
             </div>
 
-            <div class="float-card float-2">
-              <div class="float-avatar">IRN</div>
-              <div class="float-info">
-                <span class="float-name">Invoice #4521</span>
-                <span class="float-detail">Invoice Validated by FBR</span>
-              </div>
-            </div>
+
 
             <!-- Trust Banner -->
             <div class="hero-trust-banner">
@@ -2088,7 +2086,7 @@
 
             <!-- Shopify Integration Add-on -->
             <div class="addon-card" style="background:white;border:2px solid #10b981;border-radius:16px;padding:2rem;position:relative;">
-              <span style="position:absolute;top:-10px;right:20px;background:#10b981;color:white;padding:0.25rem 0.75rem;border-radius:12px;font-size:0.75rem;font-weight:600;">Usage-Based</span>
+              <span style="position:absolute;top:-10px;right:20px;background:#047857;color:white;padding:0.25rem 0.75rem;border-radius:12px;font-size:0.75rem;font-weight:600;">Usage-Based</span>
               <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
                 <div style="width:48px;height:48px;background:#d1fae5;border-radius:12px;display:flex;align-items:center;justify-content:center;">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="#10b981"><path d="M15.337 2.18c-.01-.07-.074-.109-.127-.114-.053-.005-1.09-.08-1.09-.08s-.723-.718-.803-.799c-.08-.08-.236-.055-.298-.037l-.408.126c-.244-.701-.673-1.344-1.437-1.344l-.064.002A1.844 1.844 0 0 0 9.774.034C8.322.034 7.627 1.85 7.409 2.773c-.563.174-.964.298-1.018.315-.315.098-.325.108-.366.406-.031.225-.853 6.582-.853 6.582L11.58 11.2l3.97-.858s-.203-6.092-.213-6.162z"/></svg>
@@ -2098,7 +2096,7 @@
                   <p style="margin:0;color:#6b7280;font-size:0.875rem;">Auto-invoice from Shopify orders</p>
                 </div>
               </div>
-              <div style="font-size:1.5rem;font-weight:700;color:#10b981;margin:1rem 0 0.25rem;">Rs 1,000 + 5% service tax / month</div>
+              <div style="font-size:1.5rem;font-weight:700;color:#047857;margin:1rem 0 0.25rem;">Rs 1,000 + 5% service tax / month</div>
               <div style="color:#374151;margin-bottom:0.75rem;font-size:0.9rem;">Base charge when you fall in any paid bracket. Basic bracket users pay the normal Shopify add-on charge. Charge increases by Rs 1,000 for every additional 3,000-invoice block.</div>
               <details style="background:#f9fafb;border-radius:8px;margin:0.75rem 0;font-size:0.8125rem;">
                 <summary style="padding:0.6rem 0.85rem;cursor:pointer;color:#0066cc;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;">
@@ -2113,7 +2111,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td style="padding:0.45rem 0.75rem;color:#4b5563;">0&ndash;5</td><td style="text-align:right;padding:0.45rem 0.75rem;color:#10b981;font-weight:600;">Rs 500</td></tr>
+                    <tr><td style="padding:0.45rem 0.75rem;color:#4b5563;">0&ndash;5</td><td style="text-align:right;padding:0.45rem 0.75rem;color:#047857;font-weight:600;">Rs 500</td></tr>
                     <tr><td style="padding:0.45rem 0.75rem;color:#4b5563;">6&ndash;20</td><td style="text-align:right;padding:0.45rem 0.75rem;">Rs 1,000 + Rs 1,000 = <strong>Rs 2,000</strong></td></tr>
                     <tr><td style="padding:0.45rem 0.75rem;color:#4b5563;">21&ndash;200</td><td style="text-align:right;padding:0.45rem 0.75rem;">Rs 2,000 + Rs 1,000 = <strong>Rs 3,000</strong></td></tr>
                     <tr><td style="padding:0.45rem 0.75rem;color:#4b5563;">201&ndash;3,000</td><td style="text-align:right;padding:0.45rem 0.75rem;">Rs 3,000 + Rs 1,000 = <strong>Rs 4,000</strong></td></tr>
@@ -2218,7 +2216,7 @@
           </article>
 
           <article class="testimonial-card capability-card" role="listitem">
-            <div class="testimonial-stat" style="font-size:2.5rem;font-weight:800;color:#10B981;margin-bottom:0.5rem;letter-spacing:-0.02em;">10 Years</div>
+            <div class="testimonial-stat" style="font-size:2.5rem;font-weight:800;color:#047857;margin-bottom:0.5rem;letter-spacing:-0.02em;">10 Years</div>
             <p class="testimonial-quote">
               <strong>Full audit ledger retention</strong> with user attribution, document attachments, and accountant verification. If FBR asks for records, you have them — clean and timestamped.
             </p>
@@ -2284,7 +2282,7 @@
                 "I came in with a list of customizations and gaps I had identified in the system. What impressed me was the speed and quality of their comprehension — they understood the issues immediately and fixed every one of them without any back-and-forth. I was so impressed with the service that I sent a small gift to their rep, Mr. Salman, as a thank-you. That's the kind of support this team gives."
               </blockquote>
               <figure style="margin:0 0 1.25rem;padding:0.75rem;background:#fafafa;border:1px solid #f1f5f9;border-radius:10px;">
-                <img src="/assets/testimonials/salman-gift.jpg" alt="Salman from MyDigitalInvoice holding the Zaiqa Gold tea gift sent by Abdul Wahab" loading="lazy" style="width:100%;max-height:320px;object-fit:contain;border-radius:8px;display:block;background:#f9fafb;">
+                <img src="/assets/testimonials/salman-gift.jpg" alt="Salman from MyDigitalInvoice holding the Zaiqa Gold tea gift sent by Abdul Wahab" loading="lazy" style="width:100%;max-height:320px;object-fit:contain;border-radius:8px;display:block;background:#f9fafb;" width="881" height="1166">
                 <figcaption style="margin-top:0.5rem;font-size:0.78rem;color:#64748b;text-align:center;line-height:1.4;">
                   Salman (MyDigitalInvoice support) with the gift Abdul Wahab sent him after the issues were resolved.
                 </figcaption>
