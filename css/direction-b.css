@@ -1,0 +1,292 @@
+/* =============================================================================
+   direction-b.css — "Instrument"
+
+   The approved redesign direction. The site should read like a tax instrument
+   rather than a SaaS landing page: paper stock instead of white, monospaced
+   identifiers, one action colour, ornament stripped back to hairlines and the
+   product's own artefacts.
+
+   Loaded after corrections.css. Works by re-pointing the neutral tokens the
+   existing components already consume, so the direction propagates without
+   every component being rewritten.
+   ========================================================================== */
+
+@font-face{
+  font-family:'IBM Plex Mono';
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url(../fonts/plexmono-500-latin.woff2) format('woff2');
+}
+@font-face{
+  font-family:'IBM Plex Mono';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url(../fonts/plexmono-600-latin.woff2) format('woff2');
+}
+
+/* -----------------------------------------------------------------------------
+   1. Warm the neutral ramp.
+   The greys were Tailwind-cool. Same lightness, warm hue — so contrast ratios
+   hold while the page stops reading as generic SaaS white.
+   -------------------------------------------------------------------------- */
+:root{
+  --gray-50:  #FBFAF7;
+  --gray-100: #F5F2EC;
+  --gray-200: #E4DFD4;
+  --gray-300: #D3CCBD;
+  --gray-400: #A29B8B;
+  --gray-500: #6E6759;
+  --gray-600: #55503F;
+  --gray-700: #443F33;
+  --gray-800: #2A251C;
+  --gray-900: #16130E;
+
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* one radius family */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
+
+  /* flatter shadows — paper sits on a surface, it does not float */
+  --shadow-sm: 0 1px 2px rgba(22,19,14,.05);
+  --shadow-md: 0 1px 2px rgba(22,19,14,.05), 0 4px 10px -6px rgba(22,19,14,.28);
+  --shadow-lg: 0 1px 2px rgba(22,19,14,.05), 0 10px 24px -14px rgba(22,19,14,.35);
+  --shadow-xl: 0 1px 2px rgba(22,19,14,.06), 0 18px 40px -26px rgba(22,19,14,.45);
+  --shadow-2xl: 0 1px 2px rgba(22,19,14,.06), 0 24px 50px -30px rgba(22,19,14,.5);
+  --shadow-glow: none;
+}
+
+/* the page itself is paper */
+body{ background: #FBFAF7; }
+
+/* -----------------------------------------------------------------------------
+   2. Strip the ornament both reviewers called out.
+   -------------------------------------------------------------------------- */
+.hero-bg,
+.cta-pattern,
+.hero::before,
+.hero::after{ background-image: none !important; }
+
+.hero{ background: #FBFAF7 !important; }
+
+/* no tilts, no perspective, no gradient rotation, no glare */
+.feature-card:hover,
+.pricing-card:hover,
+.dashboard-preview:hover,
+.pricing-card{
+  transform: none !important;
+  perspective: none !important;
+}
+.card-glare{ display: none !important; }
+.pricing-card.featured::before{ animation: none !important; }
+
+/* floating decoration around the product shot */
+.float-card.float-1{ box-shadow: var(--shadow-md) !important; }
+
+/* -----------------------------------------------------------------------------
+   3. Monospaced identifiers.
+   Anything that is a reference — an IRN, an NTN, an invoice number, a phone
+   number, a bracket count, a price — is data, and reads as data.
+   -------------------------------------------------------------------------- */
+.proof-label,
+.proof-value,
+.pricing-tier-amount,
+.pricing-tier-period,
+.stat-value,
+.stat-number,
+.dash-card-value,
+.comparison-table td,
+.price,
+.pricing-amount .price,
+.nav-phone,
+.footer-contact a[href^="tel:"]{
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.01em;
+}
+
+/* eyebrow labels become stamped captions */
+.section-badge,
+.hero-badge,
+.pricing-tier-badge,
+.blog-tag,
+.table-popular-badge{
+  font-family: var(--font-mono);
+  font-size: .6875rem !important;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border-radius: 3px !important;
+}
+
+/* -----------------------------------------------------------------------------
+   4. Paper surfaces and hairline rules instead of soft floating cards.
+   -------------------------------------------------------------------------- */
+.feature-card,
+.pricing-tier,
+.testimonial-card,
+.blog-card,
+.case-study-card,
+.dashboard-preview,
+.hero-trust-banner,
+.comparison-table-container{
+  background: #FFFFFF;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard-preview{ box-shadow: var(--shadow-lg); }
+
+/* section grounds alternate paper / white rather than tinted gradients */
+.features,
+.testimonials,
+.faq{ background: #FBFAF7 !important; background-image: none !important; }
+.how-it-works,
+.product-preview{ background: #FFFFFF !important; background-image: none !important; }
+
+/* -----------------------------------------------------------------------------
+   5. One action colour. Blue acts, emerald validates, amber warns — once each.
+   -------------------------------------------------------------------------- */
+.btn-cta-primary,
+.btn-primary,
+.pricing-cta .btn-primary{
+  background-image: none !important;
+  background-color: #0066CC !important;
+  /* the colour has to travel with the fill — some .btn-primary instances were
+     white buttons sitting on a blue band, and forcing only the background left
+     blue text on blue. */
+  color: #FFFFFF !important;
+  border-color: transparent !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: none !important;
+}
+.btn-cta-primary *,
+.btn-primary *{ color: #FFFFFF !important; }
+.btn-cta-primary:hover,
+.btn-primary:hover{ background-color: #0052A3 !important; }
+
+.btn-cta-secondary,
+.btn-white,
+.btn-outline{
+  background-image: none !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid var(--gray-300) !important;
+  color: var(--gray-900) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: none !important;
+}
+.btn-cta-secondary:hover,
+.btn-white:hover,
+.btn-outline:hover{ border-color: #0066CC !important; }
+
+/* the hero notice: a stamped notice strip, not a filled banner */
+.hero-alert-banner{
+  background-color: #FFFFFF !important;
+  border: 1px solid var(--gray-200) !important;
+  border-left: 3px solid #8A6011 !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: none !important;
+}
+
+/* -----------------------------------------------------------------------------
+   6. The product artefact — the invoice, stamped.
+   -------------------------------------------------------------------------- */
+.invoice-proof{
+  background: #FFFFFF;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+}
+.proof-value{ color: #0052A3; font-weight: 600; }
+
+.fbr-stamp{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  border: 2px solid #047857;
+  color: #047857;
+  border-radius: var(--radius-md);
+  padding: 6px 10px;
+  transform: rotate(-4deg);
+  font-family: var(--font-mono);
+  line-height: 1.1;
+  flex: 0 0 auto;
+}
+.fbr-stamp .fbr-stamp-main{ font-size: .625rem; font-weight: 600; letter-spacing: .14em; }
+.fbr-stamp .fbr-stamp-sub{ font-size: .5625rem; letter-spacing: .08em; }
+
+/* the meta rows above the IRN: NTN, scenario, tax */
+.proof-meta-rows{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 14px 16px;
+  border-top: 1px solid var(--gray-200);
+  font-size: .8125rem;
+}
+.proof-meta-rows > div{ display: flex; justify-content: space-between; gap: 12px; }
+.proof-meta-rows .k{ color: var(--gray-500); }
+.proof-meta-rows .v{ font-family: var(--font-mono); color: var(--gray-900); }
+
+/* -----------------------------------------------------------------------------
+   7. Urdu keeps the same clothes, its own metrics.
+   Nastaliq needs the room; Latin rhythm does not apply to it.
+   -------------------------------------------------------------------------- */
+[dir="rtl"] body{ background: #FBFAF7; }
+[dir="rtl"] p,
+[dir="rtl"] li{ line-height: 2.05; }
+[dir="rtl"] h1{ line-height: 1.9; }
+[dir="rtl"] h2,
+[dir="rtl"] h3{ line-height: 1.95; }
+[dir="rtl"] .section-badge,
+[dir="rtl"] .hero-badge{ letter-spacing: normal; text-transform: none; }
+[dir="rtl"] .en-inline{ font-family: var(--font-mono); direction: ltr; unicode-bidi: isolate; }
+
+@media (max-width: 768px){
+  .invoice-proof{ border-radius: var(--radius-lg); }
+  .fbr-stamp{ padding: 5px 8px; }
+}
+
+/* -----------------------------------------------------------------------------
+   8. Two surfaces that were still wearing the old palette.
+   -------------------------------------------------------------------------- */
+
+/* the proof strip under the hero artefact was teal-on-paper, which clashed.
+   Ink reads as the artefact's own footer rather than a third accent. */
+.trust-banner-header{
+  background-image: none !important;
+  background-color: #16130E !important;
+  color: #FFFFFF !important;
+}
+.trust-banner-header *{ color: #FFFFFF !important; }
+
+/* the language strip keeps its link, loses the flag gradient */
+.lang-strip-link,
+a[hreflang="ur"][style*="display:block"]{
+  font-weight: 500;
+}
+
+/* -----------------------------------------------------------------------------
+   9. RTL: identifiers stay monospaced.
+   html[dir="rtl"] sets a Nastaliq stack broadly; latin data must opt out of it
+   or invoice numbers and NTNs render in a calligraphic face.
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] .proof-value,
+html[dir="rtl"] .proof-label,
+html[dir="rtl"] .proof-meta-rows .v,
+html[dir="rtl"] .en-inline,
+html[dir="rtl"] .dash-card-value,
+html[dir="rtl"] .stat-value,
+html[dir="rtl"] .stat-number,
+html[dir="rtl"] .pricing-tier-amount,
+html[dir="rtl"] .fbr-stamp{
+  font-family: var(--font-mono) !important;
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+}
