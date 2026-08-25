@@ -439,11 +439,11 @@
         <div class="section-header">
           <span class="section-badge">Payment</span>
           <h1 class="section-title">
-            Complete Your
-            <span class="gradient-text">Subscription</span>
+            Fund Your
+            <span class="gradient-text">Wallet</span>
           </h1>
           <p class="section-description">
-            Transfer payment to our bank account and submit your details below. We'll activate your account within 24 hours.
+            Pay PKR 5,000 and receive PKR 7,000 wallet credits, or choose annual advance funding for 50% bonus credits. We verify each payment within 24 hours.
           </p>
         </div>
       </div>
@@ -454,7 +454,7 @@
         <!-- Bank Details -->
         <div class="bank-details-card">
           <h2>Bank Account Details</h2>
-          <p>Transfer your subscription amount to the following account</p>
+          <p>Transfer your wallet-funding amount to the following account</p>
 
           <div class="bank-info">
             <div class="bank-info-item">
@@ -476,7 +476,7 @@
           </div>
 
           <div class="pricing-reminder">
-            <h3>Subscription Plans</h3>
+            <h3>Monthly Usage Rates</h3>
             <div class="pricing-reminder-item">
               <span>Basic Plan</span>
               <span>Rs 500 + 5% service tax (0-5 invoices/mo)</span>
@@ -501,9 +501,13 @@
               <span>Shopify Integration Add-on</span>
               <span>+ Rs 1,000/mo + 5% service tax base (Basic bracket = Shopify add-on applies), +Rs 1,000 per extra 3k</span>
             </div>
-            <div class="pricing-reminder-item" style="background:#fef3c7;border-radius:6px;padding:0.5rem 0.75rem;margin-top:0.5rem;">
-              <span><strong>One-time Initial Setup Fee</strong></span>
-              <span><strong>PKR 4,500 + 5% service tax</strong> (payable before setup)</span>
+            <div class="pricing-reminder-item" style="background:#ecfdf5;border-radius:6px;padding:0.5rem 0.75rem;margin-top:0.5rem;">
+              <span style="color:#065f46;"><strong>Regular Wallet Top-Up</strong></span>
+              <span style="color:#065f46;"><strong>Pay PKR 5,000 → receive PKR 7,000 credits</strong> (40% bonus every time)</span>
+            </div>
+            <div class="pricing-reminder-item" style="background:#eff6ff;border-radius:6px;padding:0.5rem 0.75rem;margin-top:0.5rem;">
+              <span style="color:#1e3a8a;"><strong>Annual Advance Funding</strong></span>
+              <span style="color:#1e3a8a;"><strong>Receive 50% bonus credits</strong> when you fund one year in advance</span>
             </div>
           </div>
 
@@ -511,7 +515,7 @@
             <h3>How to Complete Payment</h3>
             <div class="step-item">
               <span class="step-number">1</span>
-              <span class="step-text">Transfer the subscription amount to the bank account above</span>
+              <span class="step-text">Transfer PKR 5,000 for a regular top-up, or your annual advance amount</span>
             </div>
             <div class="step-item">
               <span class="step-number">2</span>
@@ -523,14 +527,14 @@
             </div>
             <div class="step-item">
               <span class="step-number">4</span>
-              <span class="step-text">We'll verify and activate your account within 24 hours</span>
+              <span class="step-text">We'll verify the payment and add your wallet credits within 24 hours</span>
             </div>
           </div>
         </div>
 
         <!-- Payment Form -->
         <div class="payment-form-card">
-          <h3 class="form-title">Submit Payment Details</h3>
+          <h3 class="form-title">Submit Wallet Funding Details</h3>
           <p class="form-subtitle">Fill out the form after making your payment</p>
 
           <form id="payment-form" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
@@ -560,17 +564,18 @@
             </div>
 
             <div class="form-group">
-              <label for="plan">Select Plan <span style="color: #dc2626;">*</span></label>
-              <select id="plan" name="plan" required>
-                <option value="">Choose your plan</option>
-                <option value="Basic Bracket - Rs 500/mo + 5% service tax">Basic Bracket (0-5 invoices) - Rs 500/mo + 5% service tax</option>
-                <option value="Starter Bracket - Rs 1,000/mo + 5% service tax">Starter Bracket (6-20 invoices) - Rs 1,000/mo + 5% service tax</option>
-                <option value="Standard Bracket - Rs 2,000/mo + 5% service tax">Standard Bracket (21-200 invoices) - Rs 2,000/mo + 5% service tax (Most Popular)</option>
-                <option value="Unlimited Bracket - Rs 3,000/mo + 5% service tax">Unlimited Bracket (201+ invoices, no cap) - Rs 3,000/mo + 5% service tax</option>
-                <option value="Bulk Upload Add-on - Rs 2,000/mo + 5% service tax">+ Bulk Upload Add-on - Rs 2,000/mo + 5% service tax (stacks on top of bracket)</option>
-                <option value="Shopify Add-on">+ Shopify Integration Add-on - Rs 1,000 + 5% service tax base, +Rs 1,000 per extra 3k block</option>
-                <option value="Initial Setup Fee - PKR 4,500 + 5% service tax">One-time Initial Setup Fee - PKR 4,500 + 5% service tax (payable before setup)</option>
+              <label for="fundingOption">Funding Option <span style="color: #dc2626;">*</span></label>
+              <select id="fundingOption" name="fundingOption" required>
+                <option value="">Choose a funding option</option>
+                <option value="regular_wallet_topup_5000_7000">Regular wallet top-up — pay PKR 5,000, receive PKR 7,000 credits (40% bonus)</option>
+                <option value="annual_advance_50_percent_bonus">Annual advance funding — receive 50% bonus credits</option>
               </select>
+            </div>
+
+            <div class="form-group">
+              <label for="amountPaid">Amount Paid (PKR) <span style="color: #dc2626;">*</span></label>
+              <input type="number" id="amountPaid" name="amountPaid" min="1" step="1" inputmode="numeric" required placeholder="5000">
+              <small id="funding-help" style="display:block;margin-top:0.4rem;color:#6b7280;">Choose a funding option first.</small>
             </div>
 
             <div class="form-group">
@@ -593,13 +598,13 @@
               </div>
             </div>
 
-            <button type="submit" class="btn-submit">Submit Payment Details</button>
+            <button type="submit" class="btn-submit">Submit Wallet Funding Details</button>
 
             <div class="secure-note">
               <svg viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
               </svg>
-              Your information is secure and will only be used for account activation
+              Your information is secure and will only be used to verify payment and credit your wallet
             </div>
           </form>
         </div>
@@ -703,6 +708,38 @@
     const fileNameDisplay = document.getElementById('file-name');
     const fileNameText = document.getElementById('file-name-text');
     const uploadWrapper = document.getElementById('file-upload-wrapper');
+    const fundingOption = document.getElementById('fundingOption');
+    const amountPaid = document.getElementById('amountPaid');
+    const fundingHelp = document.getElementById('funding-help');
+
+    function syncFundingAmount() {
+      if (fundingOption.value === 'regular_wallet_topup_5000_7000') {
+        amountPaid.value = '5000';
+        amountPaid.readOnly = true;
+        fundingHelp.textContent = 'A PKR 5,000 regular top-up adds PKR 7,000 wallet credits.';
+      } else {
+        amountPaid.readOnly = false;
+        if (fundingOption.value === 'annual_advance_50_percent_bonus') {
+          amountPaid.value = '';
+          fundingHelp.textContent = 'Enter the amount you are funding for one year; 50% bonus credits will be added after verification.';
+        } else {
+          amountPaid.value = '';
+          fundingHelp.textContent = 'Choose a funding option first.';
+        }
+      }
+    }
+
+    function updateAnnualEstimate() {
+      if (fundingOption.value !== 'annual_advance_50_percent_bonus') return;
+      const paid = Number(amountPaid.value);
+      if (paid > 0) {
+        const formatPKR = new Intl.NumberFormat('en-PK', { maximumFractionDigits: 0 });
+        fundingHelp.textContent = `Annual advance: PKR ${formatPKR.format(paid)} payment → PKR ${formatPKR.format(paid * 1.5)} wallet credits (50% bonus).`;
+      }
+    }
+
+    fundingOption.addEventListener('change', syncFundingAmount);
+    amountPaid.addEventListener('input', updateAnnualEstimate);
 
     fileInput.addEventListener('change', function() {
       if (this.files && this.files[0]) {
@@ -751,11 +788,13 @@
         } else {
           alert('Something went wrong. Please try again.');
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Submit Payment Details';
+          submitBtn.textContent = 'Submit Wallet Funding Details';
         }
       })
       .catch(error => {
-        window.location.href = 'payment-success.html';
+        alert('We could not submit your payment details. Please check your connection and try again.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Wallet Funding Details';
       });
     });
   </script>
