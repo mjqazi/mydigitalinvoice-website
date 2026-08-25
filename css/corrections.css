@@ -521,3 +521,12 @@ summary:focus-visible{
     border: 0;
   }
 }
+
+/* F-10 (safety net) — any WhatsApp-green button added later.
+   Inline styles beat this file without !important, so the inline value on
+   pra-integration.html was corrected at source too; this catches the next one. */
+a.btn[href*="wa.me"]:not(.hero-cta .btn):not(.btn-whatsapp-outline){
+  background-color: #097A52 !important;
+  color: #fff !important;
+}
+a.btn[href*="wa.me"] svg{ color: currentColor; }
