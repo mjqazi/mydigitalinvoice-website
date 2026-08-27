@@ -374,3 +374,79 @@ html[dir="rtl"] .fbr-stamp{
     padding-block: 8px;
   }
 }
+
+/* -----------------------------------------------------------------------------
+   11. Corrections from an independent review of this branch.
+   -------------------------------------------------------------------------- */
+
+/* (a) --white was referenced 33 times across the site and never defined
+   anywhere. On a white body that was invisible; against paper every one of
+   those cards rendered transparent. A contrast audit cannot see this — it
+   resolves the parent background and finds a legal colour. Same for three
+   other tokens used but never declared. */
+:root{
+  --white: #FFFFFF;
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --warning-100: #FDF0D5;
+  --warning-700: #8A6011;
+}
+
+/* (b) the hero gradient was NOT removed. .hero-bg is only the wrapper; the
+   painted layers are .hero-gradient and .hero-pattern inside it. */
+.hero-gradient{
+  background-image: none !important;
+  background-color: transparent !important;
+}
+.hero-pattern{ display: none !important; }
+
+/* (c) monospacing every table cell put prose in mono — "FBR Invoices
+   Submitted" was rendering as data. Identifiers only. */
+.comparison-table td{ font-family: inherit; }
+.comparison-table td:not(:first-child){
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+.comparison-table td:not(:first-child) small,
+.comparison-table td:not(:first-child) .check-badge,
+.comparison-table td:not(:first-child) .x-badge,
+.comparison-table td:not(:first-child) .neutral-badge{ font-family: inherit; }
+
+/* (d) the 11px badge rule was beating the 12px mobile floor set in
+   corrections.css. Informational text keeps the floor; only the stamp is
+   allowed to be smaller, and it is not prose. */
+@media (max-width: 768px){
+  .section-badge,
+  .hero-badge,
+  .pricing-tier-badge,
+  .blog-tag,
+  .table-popular-badge{ font-size: .75rem !important; }
+}
+
+/* (e) paper does not float: the testimonial hover lift contradicted the
+   direction and was left behind. */
+.testimonial-card:hover,
+.feature-card:hover,
+.blog-card:hover,
+.case-study-card:hover{
+  transform: none !important;
+  box-shadow: var(--shadow-sm) !important;
+  border-color: var(--gray-300);
+}
+
+/* (f) gradient-filled words are a SaaS tell and clash with paper. */
+.gradient-text{
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: currentColor !important;
+  color: #0052A3 !important;
+}
+
+/* (g) an invoice number under an "IRN" label is factually wrong, and the whole
+   documentary premise rests on that distinction. The IRN is FBR's own
+   reference; the invoice number is ours. Show both, labelled correctly. */
+.proof-invoice{
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  color: var(--gray-500);
+}
