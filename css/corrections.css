@@ -1,6 +1,7 @@
 /* =============================================================================
    corrections.css — design-review fixes F-03, F-06, F-08
-   Loaded last in <head> so it wins over the page-level <style> blocks.
+   Loaded after styles.css. NOTE: direction-b.css now loads after THIS file,
+   so this is no longer the last layer — check there before debugging a cascade.
 
    !important appears only where it has to beat an existing !important or an
    inline style. Each of those is a marker for the F-02 refactor: once the

@@ -311,10 +311,9 @@ html[dir="rtl"] .fbr-stamp{
   }
 
   /* standalone arrow links that sit on their own line — not inline in prose */
-  .hero-firm-link a,
-  .hero-eligibility-link a,
-  .pra-callout a,
-  .section-cta-link,
+  /* .hero-firm-link, .hero-eligibility-link, .pra-callout and .section-cta-link
+     were invented selectors that match nothing in the markup — removed. The real
+     hero links carry only inline styles and are reached by href below. */
   .cta-note a{
     display: inline-flex;
     align-items: center;
@@ -449,4 +448,68 @@ html[dir="rtl"] .fbr-stamp{
   font-family: var(--font-mono);
   font-size: .75rem;
   color: var(--gray-500);
+}
+
+/* -----------------------------------------------------------------------------
+   12. Second review pass. Grok caught what Codex and my own harness missed.
+   -------------------------------------------------------------------------- */
+
+/* (a) my tap harness measured HEIGHT only, so 40x44 icon buttons passed. They
+   do not: WCAG target size is both dimensions. */
+.mobile-whatsapp-btn,
+.mobile-phone-btn,
+.nav-phone{
+  min-width: 44px !important;
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* (b) "gradient hero removed" was too broad a claim — three gradients were
+   still painting: the closing CTA slab, the social-proof wash and the step
+   numerals. */
+.cta-gradient,
+.cta{
+  background-image: none !important;
+  background-color: #16130E !important;
+}
+.social-proof-stats{
+  background-image: none !important;
+  background-color: var(--gray-100) !important;
+  border: 1px solid var(--gray-200);
+}
+.step-number{
+  background-image: none !important;
+  background-color: #0066CC !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+
+/* (c) the tinted 50-level tokens stayed cool, so tinted panels read blue-mint
+   against paper. */
+:root{
+  --primary-50: #EFF4FB;
+  --success-50: #F1F7F3;
+}
+
+/* (d) Plex Mono ships here at 500/600 only; .proof-invoice asked for 400 and
+   would synthesise. */
+.proof-invoice{ font-weight: 500; }
+
+/* (e) RTL: identifiers missed by the earlier opt-out. */
+html[dir="rtl"] .price,
+html[dir="rtl"] .nav-phone,
+html[dir="rtl"] .proof-invoice{
+  font-family: var(--font-mono) !important;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* (f) short footer nav words ("Blog", "FAQ") are narrower than 44px. They pass
+   WCAG 2.2 AA at 24x24 and are already 46px tall, so this is belt-and-braces
+   rather than a compliance fix. */
+@media (max-width: 768px){
+  .footer-nav a,
+  .footer-links a{ min-width: 44px; }
 }
