@@ -290,3 +290,87 @@ html[dir="rtl"] .fbr-stamp{
   unicode-bidi: isolate;
   font-variant-numeric: tabular-nums;
 }
+
+/* -----------------------------------------------------------------------------
+   10. Touch targets, measured rather than assumed.
+   An earlier note called these "mostly non-interactive labels". That was wrong:
+   filtering for WCAG 2.2's inline-in-a-sentence exemption still left 36 genuine
+   controls under 44px across four pages — the hero notice link at 22px, the
+   footer phone and email at 19px, blog share buttons at 26px.
+   Text links keep their look and gain padding; icon buttons get a real box.
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px){
+
+  /* the hero notice's own action */
+  .alert-btn{
+    display: inline-flex !important;
+    align-items: center;
+    min-height: 44px !important;
+    padding: 10px 16px !important;
+  }
+
+  /* standalone arrow links that sit on their own line — not inline in prose */
+  .hero-firm-link a,
+  .hero-eligibility-link a,
+  .pra-callout a,
+  .section-cta-link,
+  .cta-note a{
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-block: 10px;
+  }
+
+  /* contact details in the footer are dial/mail actions */
+  .footer-contact a,
+  .footer a[href^="tel:"],
+  .footer a[href^="mailto:"]{
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-block: 10px;
+  }
+
+  /* the disclosure that opens the full pricing breakdown */
+  summary{
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* blog: card titles and the share control */
+  .blog-card h3 a,
+  .blog-card-title a{
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .blog-card-share,
+  .blog-card-share a,
+  .blog-card-share button{
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-logo{
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* the last two: standalone arrow links carrying only inline styles, so they are
+   reached by href rather than by class */
+@media (max-width: 768px){
+  a[href*="wa.me"][style*="text-decoration:underline"],
+  a[href="/pra-integration"][style*="font-weight:800"]{
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-block: 8px;
+  }
+}
