@@ -269,6 +269,7 @@
   <link rel="stylesheet" href="/css/feature-bento.css?v=2">
   <link rel="stylesheet" href="/css/journey-comparison.css?v=1">
   <link rel="stylesheet" href="/css/tail-redesign.css?v=2">
+  <link rel="stylesheet" href="/css/private-label.css?v=1">
 
   <!-- Preload hero section logo for faster LCP (WebP with PNG fallback) -->
   <link rel="preload" href="assets/fbr-logo-1.webp" as="image" type="image/webp" fetchpriority="high">
@@ -2806,6 +2807,47 @@
       </div>
     </section>
 
+    <!-- Flagship Private Label program -->
+    <section class="private-label-v2" id="private-label" aria-labelledby="private-label-v2-title">
+      <div class="container pl-home-grid">
+        <div class="pl-home-copy">
+          <span class="pl-home-badge">Flagship partner service</span>
+          <h2 id="private-label-v2-title">Launch the platform under <span>your name.</span></h2>
+          <p>Give clients a digital invoicing system on your custom domain, in your branding, with packages shaped around your firm’s own commercial model.</p>
+          <div class="pl-home-tabs" role="tablist" aria-label="Explore Private Label capabilities">
+            <button type="button" class="is-active" role="tab" id="pl-home-tab-brand" aria-selected="true" aria-controls="pl-home-panel-brand" data-pl-home-tab="brand">Your brand</button>
+            <button type="button" role="tab" id="pl-home-tab-domain" aria-selected="false" aria-controls="pl-home-panel-domain" data-pl-home-tab="domain">Your domain</button>
+            <button type="button" role="tab" id="pl-home-tab-packages" aria-selected="false" aria-controls="pl-home-panel-packages" data-pl-home-tab="packages">Your packages</button>
+          </div>
+          <div class="pl-home-offer">
+            <strong>Rs. 70,000</strong>
+            <div><span><s>Rs. 140,000</s> one-time setup · <strong>30% off monthly packages</strong></span><code>CODE: WHITE LABLE</code></div>
+          </div>
+          <div class="pl-home-actions"><a class="tail-primary" href="/private-label">Explore Private Label <span aria-hidden="true">→</span></a><a href="https://wa.me/923336820820?text=Assalamualaikum%2C%20I%27m%20interested%20in%20the%20Private%20Label%20Program." target="_blank" rel="noopener">Discuss my branded portal →</a></div>
+        </div>
+
+        <div class="pl-home-stage">
+          <div class="pl-home-browser">
+            <div class="pl-home-browserbar"><span aria-hidden="true"><i></i><i></i><i></i></span><strong data-pl-home-domain>invoice.yourfirm.pk</strong><em>Partner portal</em></div>
+            <div class="pl-home-panels">
+              <div class="pl-home-panel" role="tabpanel" id="pl-home-panel-brand" aria-labelledby="pl-home-tab-brand" data-pl-home-panel="brand">
+                <span class="pl-panel-label">Brand studio</span><h3>Every client touchpoint feels like your firm.</h3><p>Replace the platform identity with your own name, colors and client-facing experience.</p>
+                <div class="pl-brand-canvas"><div class="pl-brand-kit"><div class="pl-brand-logo-demo">YF</div><strong>Your Firm Digital</strong><small>Private Label partner</small><div class="pl-brand-palette" aria-hidden="true"><i></i><i></i><i></i></div></div><div class="pl-brand-dashboard"><div class="pl-demo-nav"></div><div class="pl-demo-metrics"><span></span><span></span><span></span></div><div class="pl-demo-lines"><i></i><i></i><i></i></div></div></div>
+              </div>
+              <div class="pl-home-panel" role="tabpanel" id="pl-home-panel-domain" aria-labelledby="pl-home-tab-domain" data-pl-home-panel="domain" hidden>
+                <span class="pl-panel-label">Custom domain</span><h3>Your digital front door, not ours.</h3><p>Welcome clients through a professional address connected to your firm’s identity.</p>
+                <div class="pl-domain-layout"><div class="pl-domain-card"><small>LIVE DOMAIN</small><div class="pl-domain-address"><i></i><span>invoice.yourfirm.pk</span></div><ul><li><span>SSL security</span><b>Active</b></li><li><span>Brand connection</span><b>Verified</b></li><li><span>Client portal</span><b>Ready</b></li></ul></div><div class="pl-domain-card is-visual"><div class="pl-domain-orbit">YOUR .PK</div><strong>Owned client experience</strong></div></div>
+              </div>
+              <div class="pl-home-panel" role="tabpanel" id="pl-home-panel-packages" aria-labelledby="pl-home-tab-packages" data-pl-home-panel="packages" hidden>
+                <span class="pl-panel-label">Commercial control</span><h3>Package the service your way.</h3><p>Create client-facing offers and choose the positioning that fits your market.</p>
+                <div class="pl-package-layout"><article class="pl-package-card"><small>STARTER</small><strong>Rs. 2,500</strong><span>Client-facing rate</span><ul><li>✓ Branded portal</li><li>✓ Invoice workflow</li><li>✓ Firm support</li></ul></article><article class="pl-package-card is-highlight"><small>BUSINESS</small><strong>Rs. 5,000</strong><span>Client-facing rate</span><ul><li>✓ Priority support</li><li>✓ Client reports</li><li>✓ Bulk workflows</li></ul></article><article class="pl-package-card"><small>PREMIUM</small><strong>Custom</strong><span>Your own offer</span><ul><li>✓ Custom scope</li><li>✓ Advisory layer</li><li>✓ Your pricing</li></ul></article></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Wallet pricing -->
     <section class="pricing-v2" id="pricing" aria-labelledby="pricing-v2-title">
       <div class="container">
@@ -2904,6 +2946,7 @@
             <details><summary>When does the PKR 4,500 integration charge apply?<span></span></summary><p>The one-time PKR 4,500 integration charge applies when a client chooses monthly billing without making the PKR 5,000 wallet top-up. If the wallet is funded, integration is included and the PKR 5,000 top-up adds PKR 7,000 credits for monthly bills.</p></details>
             <details><summary>Do you support PRA eIMS Integration?<span></span></summary><p>Yes. PRA eIMS Integration is available as a separate service for Punjab service businesses. It uses the same invoice-volume brackets and rates as FBR Digital Invoicing, but each authority service is activated and billed separately.</p></details>
             <details><summary>Can an accountant manage multiple client companies?<span></span></summary><p>Yes. The accountant workflow is designed for multi-client access, client-specific status, bulk processing, reports, and audit history from one operating workspace.</p></details>
+            <details><summary>Can my firm launch MyDigitalInvoice under its own brand?<span></span></summary><p>Yes. The Private Label Program gives firms a client-facing platform on a custom domain with custom branding and the ability to create their own packages. The regular one-time setup is Rs. 140,000, reduced to Rs. 70,000 with code WHITE LABLE, plus 30% off standard monthly package rates.</p></details>
           </div>
         </div>
       </div>
@@ -2932,7 +2975,7 @@
         </div>
 
         <div class="footer-v2-links">
-          <nav aria-label="Solutions"><p>Solutions</p><ul><li><a href="/features">FBR Digital Invoicing</a></li><li><a href="/pra-integration">PRA eIMS Integration</a></li><li><a href="/bulk-upload">Bulk Invoice Upload</a></li><li><a href="/for-accountants">For Accountants</a></li><li><a href="/pricing">Pricing</a></li></ul></nav>
+          <nav aria-label="Solutions"><p>Solutions</p><ul><li><a href="/features">FBR Digital Invoicing</a></li><li><a href="/pra-integration">PRA eIMS Integration</a></li><li><a href="/private-label">Private Label Program</a></li><li><a href="/bulk-upload">Bulk Invoice Upload</a></li><li><a href="/for-accountants">For Accountants</a></li><li><a href="/pricing">Pricing</a></li></ul></nav>
           <nav aria-label="Industries"><p>Industries</p><ul><li><a href="/industries/manufacturing">Manufacturing</a></li><li><a href="/industries/retail">Retail</a></li><li><a href="/industries/wholesale">Wholesale</a></li><li><a href="/industries/services">Services</a></li><li><a href="/case-studies/">Case studies</a></li></ul></nav>
           <nav aria-label="Resources"><p>Resources</p><ul><li><a href="/how-it-works">How it works</a></li><li><a href="/tools/penalty-calculator">Penalty calculator</a></li><li><a href="/tools/fbr-eligibility">FBR eligibility tool</a></li><li><a href="/blog/">Guides and articles</a></li><li><a href="/faq">FAQ</a></li></ul></nav>
           <nav aria-label="Company and legal"><p>Company</p><ul><li><a href="/about">About us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy policy</a></li><li><a href="/terms">Terms of service</a></li><li><a href="/cookies">Cookie policy</a></li></ul></nav>
@@ -2960,6 +3003,7 @@
   <script src="js/main.js?v=5" defer></script>
   <script src="/js/hero-fbr-pra.js?v=3" defer></script>
   <script src="/js/tail-redesign.js?v=1" defer></script>
+  <script src="/js/private-label.js?v=1" defer></script>
   <script src="/js/consent.js?v=2" defer></script>
 </body>
 </html>
