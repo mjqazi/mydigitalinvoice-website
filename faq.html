@@ -39,6 +39,9 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MyDigitalInvoice">
+  <meta property="og:locale" content="en_PK">
+  <meta property="og:locale:alternate" content="ur_PK">
   <meta property="og:url" content="https://mydigitalinvoice.com/faq">
   <meta property="og:title" content="FBR Digital Invoicing FAQ">
   <meta property="og:description" content="Answers about FBR Digital Invoicing, separate PRA eIMS Integration, compliance, wallet pricing and support.">
@@ -101,7 +104,7 @@
         "name": "How much does My Digital Invoice cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "MyDigitalInvoice uses wallet-based, usage-based monthly billing. Basic: 0-5 invoices at Rs 500/month. Starter: 6-20 invoices at Rs 1,000/month. Standard: 21-200 invoices at Rs 2,000/month. Unlimited: 201+ invoices at Rs 3,000/month. A 5% service tax is added and the total is deducted from wallet credits. Every regular PKR 5,000 top-up adds PKR 7,000 credits (40% bonus); optional annual advance funding receives 50% bonus credits. There is no separate setup fee."
+          "text": "MyDigitalInvoice uses wallet-based, usage-based monthly billing. Basic: 0-5 invoices at Rs 500/month. Starter: 6-20 invoices at Rs 1,000/month. Standard: 21-200 invoices at Rs 2,000/month. Unlimited: 201+ invoices at Rs 3,000/month. A 5% service tax is added and the total is deducted from wallet credits. Every regular PKR 5,000 top-up adds PKR 7,000 credits (40% bonus); optional annual advance funding receives 50% bonus credits. Integration is included with wallet funding; monthly billing without the PKR 5,000 wallet top-up carries a one-time PKR 4,500 integration charge."
         }
       },
       {
@@ -144,8 +147,8 @@
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://connect.facebook.net">
   <link rel="preconnect" href="https://www.facebook.com"><!-- Stylesheet -->
-  <link rel="preload" href="css/styles.css?v=13" as="style">
-  <link rel="stylesheet" href="css/styles.css?v=13">
+  <link rel="preload" href="css/styles.css?v=16" as="style">
+  <link rel="stylesheet" href="css/styles.css?v=16">
   <link rel="stylesheet" href="/css/switcher.css?v=3">
   <style>
     .page-hero {
@@ -341,7 +344,7 @@
             </svg>
           </a>
           <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary mobile-login-btn">Login</a>
-          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
             <span class="hamburger"></span>
           </button>
         </div>
@@ -531,13 +534,13 @@
 
             <details class="faq-item">
               <summary class="faq-question">
-                Are there any setup or hidden fees?
+                When does the PKR 4,500 integration charge apply?
                 <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
               </summary>
               <div class="faq-answer">
-                <p>No. There is no separate setup fee. Your first PKR 5,000 payment is a regular wallet top-up, and PKR 7,000 credits are added for use toward monthly bills.</p>
+                <p>There are no hidden fees. The one-time PKR 4,500 integration charge applies only when a client chooses monthly billing without making the PKR 5,000 wallet top-up. If the wallet is funded, integration is included and PKR 7,000 credits are added for monthly bills.</p>
               </div>
             </details>
 
@@ -752,7 +755,7 @@
     </svg>
   </a>
 
-  <script src="js/main.js?v=4" defer></script>
+  <script src="js/main.js?v=5" defer></script>
   <script src="/js/consent.js?v=2" defer></script>
 </body>
 </html>
