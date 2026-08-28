@@ -33,6 +33,8 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MyDigitalInvoice">
+  <meta property="og:locale:alternate" content="en_PK">
   <meta property="og:locale" content="ur_PK">
   <meta property="og:url" content="https://mydigitalinvoice.com/ur/">
   <meta property="og:title" content="ڈیجیٹل انوائسنگ پاکستان — FBR کمپلائنٹ ای-انوائسنگ">
@@ -173,7 +175,7 @@
         "name": "قیمتیں کیا ہیں؟",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Wallet-based, usage-based billing. Basic: 0-5 invoices = Rs 500 + 5% service tax. Starter: 6-20 = Rs 1,000 + 5% service tax. Standard: 21-200 = Rs 2,000 + 5% service tax. Unlimited: 201+ = Rs 3,000 + 5% service tax. Every regular PKR 5,000 top-up adds PKR 7,000 wallet credits (40% bonus); optional annual advance funding receives 50% bonus credits. No separate setup fee."
+          "text": "Wallet-based, usage-based billing. Basic: 0-5 invoices = Rs 500 + 5% service tax. Starter: 6-20 = Rs 1,000 + 5% service tax. Standard: 21-200 = Rs 2,000 + 5% service tax. Unlimited: 201+ = Rs 3,000 + 5% service tax. Every regular PKR 5,000 top-up adds PKR 7,000 wallet credits (40% bonus); optional annual advance funding receives 50% bonus credits. Integration is included with wallet funding; monthly billing without the PKR 5,000 wallet top-up carries a one-time PKR 4,500 integration charge."
         }
       },
       {
@@ -197,7 +199,7 @@
         "name": "کیا کوئی الگ سیٹ اپ فیس ہے؟",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Basic plan is Rs 500/month + 5% service tax for 0-5 invoices/month, deducted from wallet credits. A regular PKR 5,000 top-up adds PKR 7,000 credits. No separate setup fee."
+          "text": "Basic plan is Rs 500/month + 5% service tax for 0-5 invoices/month, deducted from wallet credits. A regular PKR 5,000 top-up adds PKR 7,000 credits and includes integration. Monthly billing without the wallet top-up carries a one-time PKR 4,500 integration charge."
         }
       }
     ]
@@ -215,8 +217,8 @@
   <link rel="dns-prefetch" href="https://wa.me">
 
   <!-- Stylesheets -->
-  <link rel="preload" href="/css/styles.css?v=13" as="style">
-  <link rel="stylesheet" href="/css/styles.css?v=13">
+  <link rel="preload" href="/css/styles.css?v=16" as="style">
+  <link rel="stylesheet" href="/css/styles.css?v=16">
   <link rel="stylesheet" href="/css/rtl.css?v=5">
 
   <style>
@@ -285,7 +287,7 @@
             </svg>
           </a>
           <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary mobile-login-btn">لاگ ان</a>
-          <button class="nav-toggle" id="nav-toggle" aria-label="نیویگیشن کھولیں" aria-expanded="false">
+          <button class="nav-toggle" id="nav-toggle" aria-label="نیویگیشن کھولیں" aria-expanded="false" aria-controls="nav-menu">
             <span class="hamburger"></span>
           </button>
         </div>
@@ -836,7 +838,7 @@
               "میں سسٹم میں دیکھی گئی کسٹمائزیشنز اور کمیوں کی ایک فہرست لے کر آیا تھا۔ جس چیز نے مجھے سب سے زیادہ متاثر کیا وہ ان کی رفتار اور معاملہ سمجھنے کا معیار تھا — انہوں نے مسائل فوراً سمجھے اور ہر ایک کو بغیر تاخیر کے حل کر دیا۔ میں ان کی سروس سے اتنا خوش ہوا کہ میں نے ان کے نمائندے جناب سلمان کو شکریہ کے طور پر ایک چھوٹا سا تحفہ بھیجا۔ یہ ٹیم اِسی معیار کی سروس دیتی ہے۔"
             </blockquote>
             <figure style="margin:0 0 1.25rem;padding:0.75rem;background:#fafafa;border:1px solid #f1f5f9;border-radius:10px;">
-              <img src="/assets/testimonials/salman-gift.jpg" alt="سلمان (MyDigitalInvoice) عبدالوہاب کا بھیجا ہوا Zaiqa Gold چائے کا تحفہ تھامے ہوئے" loading="lazy" style="width:100%;max-height:320px;object-fit:contain;border-radius:8px;display:block;background:#f9fafb;">
+              <img src="/assets/testimonials/salman-gift.jpg" alt="سلمان (MyDigitalInvoice) عبدالوہاب کا بھیجا ہوا Zaiqa Gold چائے کا تحفہ تھامے ہوئے" loading="lazy" style="width:100%;max-height:320px;object-fit:contain;border-radius:8px;display:block;background:#f9fafb;" width="881" height="1166">
               <figcaption style="margin-top:0.5rem;font-size:0.82rem;color:#64748b;text-align:center;line-height:1.7;">
                 سلمان (<span class="en-inline">MyDigitalInvoice</span> سپورٹ) — مسائل حل ہونے کے بعد عبدالوہاب کا بھیجا ہوا تحفہ
               </figcaption>
@@ -1093,7 +1095,7 @@
     </svg>
   </a>
 
-  <script src="/js/main.js?v=4" defer></script>
+  <script src="/js/main.js?v=5" defer></script>
   <script src="/js/consent.js?v=2" defer></script>
 </body>
 </html>

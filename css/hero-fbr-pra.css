@@ -1329,13 +1329,13 @@ body.dual-invoice-open > .announcement-bar {
   .header .mobile-controls .mobile-whatsapp-btn,
   .header .mobile-controls .mobile-login-btn,
   .header .nav-toggle {
-    min-height: 36px;
+    min-height: 44px;
   }
 
   .header .mobile-controls .mobile-whatsapp-btn,
   .header .nav-toggle {
-    width: 36px !important;
-    height: 36px !important;
+    width: 44px !important;
+    height: 44px !important;
   }
 
   .header .mobile-controls .mobile-login-btn {

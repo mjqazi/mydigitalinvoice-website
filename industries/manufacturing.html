@@ -37,6 +37,9 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MyDigitalInvoice">
+  <meta property="og:locale" content="en_PK">
+  <meta property="og:locale:alternate" content="ur_PK">
   <meta property="og:url" content="https://mydigitalinvoice.com/industries/manufacturing">
   <meta property="og:title" content="FBR Digital Invoicing for Manufacturers">
   <meta property="og:description" content="FBR-compliant invoicing designed for manufacturers. HS code lookup, batch invoicing, and IRIS integration.">
@@ -84,8 +87,8 @@
   <link rel="preconnect" href="https://www.facebook.com">
 
   <!-- Stylesheet -->
-  <link rel="preload" href="../css/styles.css?v=13" as="style">
-  <link rel="stylesheet" href="../css/styles.css?v=13">
+  <link rel="preload" href="../css/styles.css?v=16" as="style">
+  <link rel="stylesheet" href="../css/styles.css?v=16">
   <link rel="stylesheet" href="/css/switcher.css?v=3">
   <style>
     .industry-hero {
@@ -372,7 +375,7 @@
             </svg>
           </a>
           <a href="https://fbr.mydigitalinvoice.com/login" class="btn btn-primary mobile-login-btn">Login</a>
-          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
             <span class="hamburger"></span>
           </button>
         </div>
@@ -593,7 +596,7 @@
     </svg>
   </a>
 
-  <script src="../js/main.js?v=4" defer></script>
+  <script src="../js/main.js?v=5" defer></script>
   <script src="/js/consent.js?v=2" defer></script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
