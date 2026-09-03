@@ -283,6 +283,13 @@
       align-items: center;
       padding: 10px 12px;
     }
+    .journey-cta a,
+    .product-v2-nav button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      padding: 8px 10px;
+    }
     .nav-link,
     .dual-compliance-actions a,
     .feature-bento-card,
@@ -1020,8 +1027,8 @@
       [".dual-compliance", "/css/dual-compliance.css?v=1"],
       [".feature-bento", "/css/feature-bento.css?v=2"],
       [".journey-section", "/css/journey-comparison.css?v=1"],
-      [".product-v2", "/css/tail-redesign.css?v=3"],
-      [".private-label-v2", "/css/private-label.css?v=1"]
+      [".product-v2", "/css/tail-redesign.css?v=3", "/js/tail-redesign.js?v=1"],
+      [".private-label-v2", "/css/private-label.css?v=1", "/js/private-label.js?v=1"]
     ];
     function loadStyle(entry) {
       if (entry.loaded) return;
@@ -1030,6 +1037,11 @@
       link.rel = "stylesheet";
       link.href = entry[1];
       document.head.appendChild(link);
+      if (entry[2]) {
+        var script = document.createElement("script");
+        script.src = entry[2];
+        document.body.appendChild(script);
+      }
     }
     if (!("IntersectionObserver" in window) || !window.matchMedia("(max-width: 768px)").matches) {
       styles.forEach(loadStyle);
@@ -1055,8 +1067,6 @@
   <!-- JavaScript -->
   <script src="js/main.js?v=5" defer></script>
   <script src="/js/hero-fbr-pra.js?v=4" defer></script>
-  <script src="/js/tail-redesign.js?v=1" defer></script>
-  <script src="/js/private-label.js?v=1" defer></script>
   <script src="/js/consent.js?v=2" defer></script>
 </body>
 </html>
