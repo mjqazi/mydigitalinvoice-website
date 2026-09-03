@@ -7,8 +7,8 @@
 
   <!-- Google Tag Manager -->
   <script>
-  /* GTM starts after an engaged-user grace period so ad pixels never compete with
-     initial rendering or the interaction that revealed intent.
+  /* GTM starts only after a visitor explores the page and the scroll settles, so
+     ad pixels never compete with initial rendering or the first interaction.
      consent.js queues events into window.dataLayer before GTM loads, so nothing is lost. */
   (function(){
     var loaded = false;
@@ -21,14 +21,14 @@
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-P8GTPRJZ');
     }
-    function scheduleGTM(){
+    function scheduleGTM(delay){
       if (loaded || scheduled) return;
       scheduled = true;
-      window.setTimeout(loadGTM, 15000);
+      window.setTimeout(loadGTM, delay);
     }
     window.dataLayer = window.dataLayer || [];
-    var evts = ['click','touchstart','keydown'];
-    evts.forEach(function(e){ window.addEventListener(e, scheduleGTM, {once:true, passive:true}); });
+    window.addEventListener('scroll', function(){ scheduleGTM(4000); }, {once:true, passive:true});
+    window.setTimeout(loadGTM, 60000);
   })();
 </script>
   <!-- End Google Tag Manager -->
