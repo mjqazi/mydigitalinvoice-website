@@ -7,10 +7,12 @@
 
   <!-- Google Tag Manager -->
   <script>
-  /* GTM deferred until a meaningful user interaction — prevents ad pixels from blocking initial rendering.
+  /* GTM starts after an engaged-user grace period so ad pixels never compete with
+     initial rendering or the interaction that revealed intent.
      consent.js queues events into window.dataLayer before GTM loads, so nothing is lost. */
   (function(){
     var loaded = false;
+    var scheduled = false;
     function loadGTM(){
       if (loaded) return; loaded = true;
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -19,9 +21,14 @@
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-P8GTPRJZ');
     }
+    function scheduleGTM(){
+      if (loaded || scheduled) return;
+      scheduled = true;
+      window.setTimeout(loadGTM, 15000);
+    }
     window.dataLayer = window.dataLayer || [];
     var evts = ['click','touchstart','keydown'];
-    evts.forEach(function(e){ window.addEventListener(e, loadGTM, {once:true, passive:true}); });
+    evts.forEach(function(e){ window.addEventListener(e, scheduleGTM, {once:true, passive:true}); });
   })();
 </script>
   <!-- End Google Tag Manager -->
