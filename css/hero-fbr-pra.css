@@ -241,7 +241,7 @@
   justify-content: space-between;
   padding: 0 13px;
   border-bottom: 1px solid #e6ece8;
-  color: #71827a;
+  color: #53675e;
   background: #fbfcfb;
   font-size: .61rem;
   font-weight: 700;
@@ -251,7 +251,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #71827a;
+  color: #53675e;
   font-weight: 650;
 }
 
@@ -377,15 +377,16 @@
 
 .dual-portal-heading span {
   margin-top: 2px;
-  color: #7a8c84;
+  color: #52645c;
   font-size: .56rem;
 }
 
-.dual-new-invoice {
+.dual-portal-heading .dual-new-invoice {
+  margin-top: 0;
   padding: 6px 9px;
   border-radius: 7px;
   color: #fff;
-  background: #07815d;
+  background: #067052;
   font-size: .57rem;
   font-weight: 800;
 }
@@ -411,7 +412,7 @@
 }
 
 .dual-portal-stat span {
-  color: #75877f;
+  color: #52655c;
   font-size: .52rem;
 }
 
@@ -422,7 +423,7 @@
 }
 
 .dual-portal-stat small {
-  color: #0a8a61;
+  color: #087253;
   font-size: .49rem;
   font-weight: 700;
 }
@@ -512,13 +513,29 @@
 }
 
 .dual-invoice-float:hover,
-.dual-invoice-float:focus-visible {
+.dual-invoice-float:focus-within {
   z-index: 9;
   filter: drop-shadow(0 24px 34px rgba(4, 48, 35, .25));
 }
 
 .dual-invoice-float:hover .dual-invoice-sheet,
-.dual-invoice-float:focus-visible .dual-invoice-sheet { animation-play-state: paused; }
+.dual-invoice-float:focus-within .dual-invoice-sheet { animation-play-state: paused; }
+
+.dual-invoice-open-button {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+}
+
+.dual-invoice-open-button:focus-visible {
+  outline: 3px solid #0066cc;
+  outline-offset: 3px;
+}
 
 .dual-invoice-fbr {
   right: -4px;
@@ -541,7 +558,7 @@
 .dual-hero-stage[data-active-authority="fbr"] .dual-invoice-pra,
 .dual-hero-stage[data-active-authority="pra"] .dual-invoice-fbr {
   z-index: 5;
-  opacity: .84;
+  opacity: 1;
   filter: saturate(.9) drop-shadow(0 12px 18px rgba(4, 48, 35, .11));
 }
 
@@ -762,7 +779,10 @@
 
 .dual-invoice-pra .dual-invoice-top { border-bottom-color: #d9a51f; }
 .dual-invoice-pra .dual-invoice-brand i,
-.dual-invoice-pra .dual-invoice-table > .dual-invoice-table-head { background: #b8860b; }
+.dual-invoice-pra .dual-invoice-table > .dual-invoice-table-head {
+  color: #17382c;
+  background: #efbd40;
+}
 .dual-invoice-pra .dual-invoice-verified { color: #996d00; }
 
 .dual-invoice-pra .dual-invoice-status::after {

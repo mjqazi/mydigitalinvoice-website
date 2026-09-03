@@ -147,16 +147,37 @@
   });
 
   if (!reduceMotion && window.matchMedia("(min-width: 1051px)").matches) {
-    stage.addEventListener("pointermove", function (event) {
-      var shell = stage.querySelector(".dual-portal-shell");
-      var bounds = stage.getBoundingClientRect();
-      var x = (event.clientX - bounds.left) / bounds.width - .5;
-      var y = (event.clientY - bounds.top) / bounds.height - .5;
+    var shell = stage.querySelector(".dual-portal-shell");
+    var bounds = null;
+    var tiltFrame = null;
+    var pointerX = 0;
+    var pointerY = 0;
+
+    function refreshBounds() {
+      bounds = stage.getBoundingClientRect();
+    }
+
+    function renderTilt() {
+      tiltFrame = null;
+      if (!bounds) refreshBounds();
+      var x = (pointerX - bounds.left) / bounds.width - .5;
+      var y = (pointerY - bounds.top) / bounds.height - .5;
       shell.style.transform = "perspective(1200px) rotateY(" + (x * 1.2) + "deg) rotateX(" + (-y * .8) + "deg)";
+    }
+
+    stage.addEventListener("pointerenter", refreshBounds);
+    stage.addEventListener("pointermove", function (event) {
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (!tiltFrame) tiltFrame = requestAnimationFrame(renderTilt);
     });
     stage.addEventListener("pointerleave", function () {
-      stage.querySelector(".dual-portal-shell").style.transform = "translateZ(0)";
+      if (tiltFrame) cancelAnimationFrame(tiltFrame);
+      tiltFrame = null;
+      bounds = null;
+      shell.style.transform = "translateZ(0)";
     });
+    window.addEventListener("resize", function () { bounds = null; }, { passive: true });
   }
 
   setAuthority("fbr", false);

@@ -248,6 +248,7 @@
 .product-v2-browserbar > span i:nth-child(3) { background: #32bb78; }
 
 .product-v2-browserbar strong {
+  color: #53675e;
   text-align: center;
 }
 
@@ -815,7 +816,7 @@
 .price-v2-top span,
 .price-v2-top small { display: block; }
 .price-v2-top span { color: #17382c; font-size: .92rem; font-weight: 900; }
-.price-v2-top small { margin-top: 2px; color: #87968f; font-size: .52rem; }
+.price-v2-top small { margin-top: 2px; color: #52655c; font-size: .52rem; }
 .price-v2-card.is-featured .price-v2-top span { color: #fff; }
 .price-v2-card.is-featured .price-v2-top small { color: #8eb0a3; }
 
@@ -835,7 +836,7 @@
 }
 
 .price-v2-amount span {
-  color: #829189;
+  color: #52655c;
   font-size: .5rem;
   font-weight: 750;
   line-height: 1.45;
@@ -1041,7 +1042,8 @@
 .proof-story footer small { display: block; }
 .proof-story footer strong { color: #fff; font-size: .61rem; }
 .proof-story.is-primary footer strong { color: #17382c; }
-.proof-story footer small { margin-top: 2px; color: #8fa99e; font-size: .49rem; }
+.proof-story footer small { margin-top: 2px; color: #b3c8bf; font-size: .49rem; }
+.proof-story.is-primary footer small { color: #52655c; }
 .proof-story footer a { color: #f3c451; font-size: .49rem; font-weight: 900; text-decoration: none; white-space: nowrap; }
 .proof-story.is-primary footer a { color: #087253; }
 
@@ -1093,7 +1095,7 @@
 .faq-v2-help span,
 .faq-v2-help strong,
 .faq-v2-help a { display: block; }
-.faq-v2-help span { color: #84948c; font-size: .52rem; font-weight: 850; text-transform: uppercase; letter-spacing: .06em; }
+.faq-v2-help span { color: #52655c; font-size: .52rem; font-weight: 850; text-transform: uppercase; letter-spacing: .06em; }
 .faq-v2-help strong { margin: 4px 0 10px; font-size: .72rem; }
 .faq-v2-help a { color: #087253; font-size: .6rem; font-weight: 900; text-decoration: none; }
 
@@ -1369,7 +1371,7 @@
 .footer-v2-contact > div:last-child { border-right: 0; }
 .footer-v2-contact span,
 .footer-v2-contact a { display: block; }
-.footer-v2-contact span { margin-bottom: 4px; color: #69847a; font-size: .48rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
+.footer-v2-contact span { margin-bottom: 4px; color: #9ab2a8; font-size: .48rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
 .footer-v2-contact a { color: #dbe7e2; font-size: .64rem; font-weight: 800; text-decoration: none; }
 
 .footer-v2-bottom {
@@ -1380,7 +1382,7 @@
   margin-top: 28px;
   padding: 20px 0;
   border-top: 1px solid rgba(255, 255, 255, .07);
-  color: #647f74;
+  color: #91a99f;
   font-size: .52rem;
 }
 
