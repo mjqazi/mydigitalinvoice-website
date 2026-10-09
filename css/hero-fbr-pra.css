@@ -1483,3 +1483,7 @@ body.dual-invoice-open > .announcement-bar {
     animation-duration: .01ms;
   }
 }
+
+/* Social proof line (Oct 2026) */
+.dual-hero-proof { margin: 0 0 10px; font-size: .9rem; color: #66766f; }
+.dual-hero-proof strong { color: #087253; }

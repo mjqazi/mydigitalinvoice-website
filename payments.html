@@ -441,7 +441,7 @@
             <span class="gradient-text">Wallet</span>
           </h1>
           <p class="section-description">
-            Pay PKR 5,000 and receive PKR 7,000 wallet credits, or choose annual advance funding for 50% bonus credits. We verify each payment within 24 hours.
+            Pay PKR 5,000 and receive PKR 7,000 wallet credits, or choose annual advance funding for 40% bonus credits. We verify each payment within 24 hours.
           </p>
         </div>
       </div>
@@ -505,7 +505,7 @@
             </div>
             <div class="pricing-reminder-item" style="background:#eff6ff;border-radius:6px;padding:0.5rem 0.75rem;margin-top:0.5rem;">
               <span style="color:#1e3a8a;"><strong>Annual Advance Funding</strong></span>
-              <span style="color:#1e3a8a;"><strong>Receive 50% bonus credits</strong> when you fund one year in advance</span>
+              <span style="color:#1e3a8a;"><strong>Receive 40% bonus credits</strong> when you fund one year in advance</span>
             </div>
           </div>
 
@@ -566,7 +566,7 @@
               <select id="fundingOption" name="fundingOption" required>
                 <option value="">Choose a funding option</option>
                 <option value="regular_wallet_topup_5000_7000">Regular wallet top-up — pay PKR 5,000, receive PKR 7,000 credits (40% bonus)</option>
-                <option value="annual_advance_50_percent_bonus">Annual advance funding — receive 50% bonus credits</option>
+                <option value="annual_advance_40_percent_bonus">Annual advance funding — receive 40% bonus credits</option>
               </select>
             </div>
 
@@ -717,9 +717,9 @@
         fundingHelp.textContent = 'A PKR 5,000 regular top-up adds PKR 7,000 wallet credits.';
       } else {
         amountPaid.readOnly = false;
-        if (fundingOption.value === 'annual_advance_50_percent_bonus') {
+        if (fundingOption.value === 'annual_advance_40_percent_bonus') {
           amountPaid.value = '';
-          fundingHelp.textContent = 'Enter the amount you are funding for one year; 50% bonus credits will be added after verification.';
+          fundingHelp.textContent = 'Enter the amount you are funding for one year; 40% bonus credits will be added after verification.';
         } else {
           amountPaid.value = '';
           fundingHelp.textContent = 'Choose a funding option first.';
@@ -728,11 +728,11 @@
     }
 
     function updateAnnualEstimate() {
-      if (fundingOption.value !== 'annual_advance_50_percent_bonus') return;
+      if (fundingOption.value !== 'annual_advance_40_percent_bonus') return;
       const paid = Number(amountPaid.value);
       if (paid > 0) {
         const formatPKR = new Intl.NumberFormat('en-PK', { maximumFractionDigits: 0 });
-        fundingHelp.textContent = `Annual advance: PKR ${formatPKR.format(paid)} payment → PKR ${formatPKR.format(paid * 1.5)} wallet credits (50% bonus).`;
+        fundingHelp.textContent = `Annual advance: PKR ${formatPKR.format(paid)} payment → PKR ${formatPKR.format(paid * 1.4)} wallet credits (40% bonus).`;
       }
     }
 

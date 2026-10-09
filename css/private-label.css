@@ -399,3 +399,7 @@
 @media (prefers-reduced-motion: reduce) {
   .pl-code, .pl-swatch { transition: none; }
 }
+
+/* Launch offer note (Oct 2026) */
+.pl-offer-note { display:block; margin-top:6px; font-size:.82rem; font-weight:700; color:#fbbf24; }
+.pl-setup-price .pl-offer-note { margin:8px 0 4px; }
