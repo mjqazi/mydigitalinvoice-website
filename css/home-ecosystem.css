@@ -1,0 +1,605 @@
+/* Homepage ecosystem row + Payroll showcase.
+   Built only from the existing MDI tokens (deep green #087253 / ink #10231c / gold #d89f17,
+   18px card radius, #dfe7e3 borders) and the existing feature-bento + portal-shell components. */
+
+/* ---------- Ecosystem section (extends .feature-bento) ---------- */
+.mdi-ecosystem { padding: 72px 0 34px; }
+
+.mdi-ecosystem .feature-bento-head { margin-bottom: 28px; }
+
+.mdi-eco-shell {
+  position: relative;
+  z-index: 2;
+  padding: 16px;
+  border: 1px solid #dfe7e3;
+  border-radius: 24px;
+  background: rgba(255,255,255,.6);
+  box-shadow: 0 12px 34px rgba(13,67,50,.045);
+}
+
+.mdi-eco-shell-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 2px 4px 14px;
+}
+
+.mdi-eco-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #10231c;
+  font-size: .82rem;
+  font-weight: 850;
+  letter-spacing: -.01em;
+}
+
+.mdi-eco-brand i {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 9px;
+  color: #fff;
+  background: linear-gradient(145deg, #073c2e, #042c22);
+  font-size: .56rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+
+.mdi-eco-flow {
+  color: #53675e;
+  font-size: .72rem;
+  font-weight: 750;
+}
+
+.mdi-eco-flow b { color: #d89f17; margin: 0 4px; }
+
+/* the row */
+.mdi-eco-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* thin gold connector running behind the cards' icons */
+.mdi-eco-row::before {
+  position: absolute;
+  z-index: 0;
+  top: 40px;
+  right: 8%;
+  left: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e7cf91 12%, #e7cf91 88%, transparent);
+  content: "";
+}
+
+.mdi-eco-row > li { display: flex; min-width: 0; }
+
+.mdi-eco-card.feature-bento-card {
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  min-height: 0;
+  flex-direction: column;
+  padding: 20px 18px 18px;
+}
+
+.mdi-eco-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mdi-eco-index {
+  color: #9aaba3;
+  font-size: .62rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+}
+
+.mdi-eco-card h3 { margin: 16px 0 6px; font-size: 1.06rem; }
+
+.mdi-eco-card p {
+  flex: 1;
+  font-size: .8rem;
+  line-height: 1.55;
+}
+
+.mdi-eco-card .feature-track { align-self: flex-start; margin-top: 14px; }
+
+.mdi-eco-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #edf2ef;
+  color: #087253;
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+.mdi-eco-link:hover { color: #054d38; }
+
+/* Payroll card — subtle highlight pointing to the section below */
+.mdi-eco-card-payroll.feature-bento-card {
+  border-color: #cfe4da;
+  background:
+    radial-gradient(circle at 86% 8%, rgba(8,129,93,.15), transparent 31%),
+    linear-gradient(145deg, #fafffd, #f2f9f6);
+}
+
+.mdi-eco-card .feature-bento-icon.is-gold { color: #8a6200; background: #fff0c5; }
+.mdi-eco-card .feature-bento-icon.is-blue { color: #1f62b3; background: #e7f1fc; }
+
+.mdi-eco-foot {
+  margin: 14px 4px 2px;
+  color: #65776f;
+  font-size: .78rem;
+  text-align: center;
+}
+
+.mdi-eco-foot a { color: #087253; font-weight: 800; text-underline-offset: 3px; }
+
+/* ---------- Payroll showcase ---------- */
+.mdi-payroll {
+  position: relative;
+  overflow: hidden;
+  padding: 38px 0 80px;
+  background:
+    radial-gradient(circle at 92% 70%, rgba(8,129,93,.08), transparent 30%),
+    #f7f9f8;
+}
+
+.mdi-payroll-shell {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(30px, 5vw, 64px);
+  padding: clamp(24px, 4vw, 44px);
+  border: 1px solid #dfe7e3;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 20px 48px rgba(13,67,50,.07);
+}
+
+.mdi-payroll h2 {
+  margin: 0 0 12px;
+  color: #10231c;
+  font-size: clamp(2.1rem, 3.6vw, 3.2rem);
+  font-weight: 850;
+  letter-spacing: -.05em;
+  line-height: 1.03;
+}
+
+.mdi-payroll h2 span { color: #087253; }
+
+.mdi-payroll-lead {
+  max-width: 540px;
+  margin: 0 0 20px;
+  color: #53675e;
+  font-size: .98rem;
+  line-height: 1.62;
+}
+
+.mdi-payroll-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px 16px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.mdi-payroll-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #33483f;
+  font-size: .86rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.mdi-payroll-points li > span:first-child {
+  display: grid;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  place-items: center;
+  margin-top: 1px;
+  border-radius: 50%;
+  color: #fff;
+  background: #079468;
+  font-size: .68rem;
+  font-weight: 900;
+}
+
+.mdi-payroll-statutory {
+  margin: -8px 0 24px;
+  color: #66766f;
+  font-size: .76rem;
+  line-height: 1.55;
+}
+
+.mdi-payroll-statutory strong { color: #33483f; }
+
+.mdi-payroll-actions { display: flex; flex-wrap: wrap; gap: 11px; }
+
+.mdi-payroll .dual-primary,
+.mdi-payroll .dual-secondary {
+  min-height: 49px;
+  padding: 13px 19px;
+  border-radius: 11px;
+  font-size: .92rem;
+  font-weight: 800;
+}
+
+.mdi-payroll .dual-primary {
+  color: #fff;
+  background: linear-gradient(135deg, #07815d, #056146);
+  box-shadow: 0 12px 28px rgba(5, 97, 70, .22);
+}
+
+.mdi-payroll .dual-secondary {
+  color: #17382c;
+  border: 1px solid #c6d3cd;
+  background: rgba(255, 255, 255, .82);
+}
+
+.mdi-payroll .dual-primary:hover,
+.mdi-payroll .dual-secondary:hover { transform: translateY(-2px); }
+
+/* Re-use the hero portal shell, but in normal flow */
+.mdi-payroll-stage { position: relative; min-width: 0; }
+
+.mdi-payroll-stage .dual-portal-shell {
+  position: relative;
+  top: auto;
+  right: auto;
+  left: auto;
+  min-height: 0;
+}
+
+.mdi-payroll-stage .dual-portal-body { min-height: 330px; }
+
+.mdi-payroll-stage .dual-mini-row { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) auto; }
+
+.mdi-slip-pill {
+  padding: 3px 7px;
+  border-radius: 999px;
+  color: #087253;
+  background: #e8f8f1;
+  font-size: .55rem;
+  font-weight: 900;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mdi-statutory-list { display: grid; gap: 7px; margin-top: 4px; }
+
+.mdi-statutory-list span {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: #53675e;
+  font-size: .62rem;
+  font-weight: 700;
+}
+
+.mdi-statutory-list b { color: #087253; font-weight: 900; }
+
+.mdi-payroll-alert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 9px 11px;
+  border: 1px solid #eadcb6;
+  border-radius: 10px;
+  color: #6b5210;
+  background: #fffaf0;
+  font-size: .64rem;
+  font-weight: 750;
+}
+
+.mdi-payroll-alert i {
+  display: grid;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #d89f17;
+  font-size: .62rem;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.mdi-payroll-caption {
+  margin: 10px 0 0;
+  color: #8a9a93;
+  font-size: .7rem;
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1199px) {
+  /* tablet: one swipeable row, cards keep a readable width */
+  .mdi-eco-row {
+    display: flex;
+    overflow-x: auto;
+    margin: 0 -16px;
+    padding: 4px 16px 14px;
+    gap: 12px;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 16px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mdi-eco-row::before { display: none; }
+  .mdi-eco-row > li { flex: 0 0 248px; scroll-snap-align: start; }
+  .mdi-eco-shell { padding: 14px 16px; overflow: hidden; }
+  .mdi-eco-card.feature-bento-card:hover { transform: none; }
+}
+
+/* Payroll copy and app preview stay side by side down to small tablets */
+@media (max-width: 1199px) {
+  .mdi-payroll-shell { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 28px; }
+  .mdi-payroll-points { grid-template-columns: 1fr; }
+}
+@media (max-width: 899px) {
+  .mdi-payroll-shell { grid-template-columns: 1fr; }
+  .mdi-payroll-points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 991px) {
+  .mdi-ecosystem .feature-bento-head { grid-template-columns: 1fr; gap: 14px; }
+}
+
+@media (max-width: 640px) {
+  .mdi-ecosystem { padding: 48px 0 24px; }
+  /* phone: stack the five cards */
+  .mdi-eco-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+  .mdi-eco-row > li { flex: none; }
+  .mdi-eco-shell { padding: 12px; border-radius: 20px; }
+  .mdi-eco-shell-head { flex-direction: column; align-items: flex-start; }
+
+  .mdi-payroll { padding: 24px 0 56px; }
+  .mdi-payroll-shell { padding: 22px 16px; border-radius: 20px; }
+  .mdi-payroll-points { grid-template-columns: 1fr; }
+  .mdi-payroll-actions a { width: 100%; }
+  .mdi-payroll-stage .dual-portal-body { grid-template-columns: 1fr; }
+  .mdi-payroll-stage .dual-portal-side { display: none; }
+}
+
+/* payroll mock: slightly larger type than the decorative hero mock, for legibility */
+.mdi-payroll-stage .dual-mini-row { font-size: .62rem; padding-bottom: 7px; }
+.mdi-payroll-stage .dual-mini-table { display: grid; gap: 7px; }
+.mdi-payroll-stage .dual-panel-title { font-size: .66rem; }
+.mdi-payroll-stage .dual-portal-panel { min-height: 0; }
+.mdi-payroll-stage .dual-portal-panel:last-child { display: block; }
+@media (max-width: 720px) {
+  .mdi-payroll-stage .dual-portal-grid { grid-template-columns: 1fr; }
+}
+
+/* site logo mark used inside the ecosystem badge and the Payroll app preview */
+.mdi-logo-mark { display: block; flex: 0 0 auto; }
+.mdi-payroll-logo { display: flex; align-items: center; gap: 8px; }
+.mdi-payroll-logo > span { color: #fff; font-weight: 800; }
+.mdi-payroll-logo > span:first-of-type { display: inline; width: auto; height: auto; border-radius: 0; color: #fff; background: none; font-size: .7rem; }
+.mdi-payroll-stage .dual-mini-row > span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 1199px) {
+  .mdi-payroll-stage .dual-portal-body { grid-template-columns: 96px 1fr; }
+  .mdi-payroll-stage .dual-portal-side { padding: 14px 8px; }
+}
+@media (max-width: 1199px) {
+  .mdi-payroll-stage .dual-portal-grid { grid-template-columns: 1fr; }
+  .mdi-statutory-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; }
+}
+
+/* Official "Get it on Google Play" badge (Payroll app) */
+.mdi-play-badge {
+  display: inline-block;
+  margin: 6px 0 0 -10px;   /* the official image has built-in padding */
+  border-radius: 12px;
+  line-height: 0;
+}
+.mdi-play-badge img { display: block; width: auto; height: 68px; }
+@media (max-width: 640px) { .mdi-play-badge { display: block; margin: 6px auto 0; width: max-content; } }
+
+/* Blinking Google Play button */
+@keyframes mdiPlayBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: .55; transform: scale(.97); }
+}
+.mdi-play-badge { animation: mdiPlayBlink 1.4s ease-in-out infinite; }
+.mdi-play-badge:hover, .mdi-play-badge:focus-visible { animation-play-state: paused; opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .mdi-play-badge { animation: none; } }
+
+/* ---------- Clickable ecosystem cards (second row + detail card) ---------- */
+button.mdi-eco-card {
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+button.mdi-eco-card:focus-visible { outline: 3px solid #087253; outline-offset: 3px; }
+.mdi-eco-card-top { display: flex; }
+.mdi-eco-card-title {
+  display: block;
+  margin: 16px 0 6px;
+  color: #17382c;
+  font-size: 1.06rem;
+  font-weight: 700;
+  letter-spacing: -.025em;
+}
+.mdi-eco-card-desc {
+  display: block;
+  flex: 1;
+  margin: 0;
+  color: #65776f;
+  font-size: .8rem;
+  line-height: 1.55;
+}
+.mdi-eco-link { width: 100%; }
+button.mdi-eco-card:hover .mdi-eco-link { color: #054d38; }
+
+.mdi-eco-row-label {
+  margin: 4px 4px 10px;
+  color: #087253;
+  font-size: .66rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.mdi-eco-row + .mdi-eco-row-label { margin-top: 18px; }
+
+/* detail card */
+.mdi-product-modal .dual-modal-brand { display: inline-flex; align-items: center; gap: 9px; }
+.mdi-product-modal .dual-hero-eyebrow { color: #efbd40; }
+.mdi-product-modal .dual-hero-eyebrow::before { background: #efbd40; }
+.mdi-pm-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.mdi-pm-primary,
+.mdi-pm-secondary {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 18px;
+  border-radius: 11px;
+  font-size: .88rem;
+  font-weight: 800;
+  transition: transform .15s ease;
+}
+.mdi-pm-primary { color: #073426; background: #efbd40; box-shadow: 0 12px 26px rgba(0,0,0,.18); }
+.mdi-pm-secondary { color: #fff; border: 1px solid rgba(255,255,255,.28); background: rgba(255,255,255,.06); }
+.mdi-pm-primary:hover, .mdi-pm-secondary:hover { transform: translateY(-2px); }
+
+.mdi-pm-card .dual-full-row.mdi-pm-row { grid-template-columns: 1.4fr 1fr; font-size: .7rem; padding: 10px 12px; }
+.mdi-pm-card .dual-full-row.mdi-pm-row b { color: #0d3d2e; text-align: right; }
+.mdi-pm-card .dual-full-row.mdi-pm-row:first-child span:last-child { text-align: right; }
+.mdi-pm-card .dual-full-parties strong { font-size: .78rem; }
+.mdi-pm-card .dual-full-parties span { font-size: .6rem; }
+.mdi-pm-icon { flex: 0 0 auto; width: 46px; height: 46px; }
+.mdi-pm-icon svg { width: 24px; height: 24px; }
+.mdi-pm-card .dual-full-invoice-head strong { font-size: 1.2rem; }
+.mdi-pm-card .dual-full-invoice-head span { font-size: .7rem; }
+
+@media (max-width: 760px) {
+  .mdi-product-modal .dual-modal-layout { grid-template-columns: 1fr; min-height: 0; }
+  .mdi-product-modal .dual-modal-portal { min-height: 0; padding: 40px 22px 28px; }
+  .mdi-product-modal .dual-modal-invoice-wrap { padding: 24px 16px 28px; }
+  .mdi-pm-actions a { width: 100%; justify-content: center; }
+}
+
+/* detail card: centre the product icon (the invoice header rule sets spans to block) */
+.mdi-pm-card .dual-full-invoice-head { align-items: center; }
+.mdi-pm-card .dual-full-invoice-head .mdi-pm-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  margin: 0;
+  place-items: center;
+  border-radius: 12px;
+  color: #087253;
+  background: #e6f6ef;
+}
+.mdi-pm-card .dual-full-invoice-head .mdi-pm-icon svg { display: block; width: 24px; height: 24px; }
+
+/* pulsing "Visit the website" button */
+@keyframes mdiPmPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(239, 189, 64, .75), 0 12px 26px rgba(0,0,0,.18); transform: scale(1); }
+  50%  { box-shadow: 0 0 0 10px rgba(239, 189, 64, 0), 0 12px 26px rgba(0,0,0,.18); transform: scale(1.04); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 189, 64, 0), 0 12px 26px rgba(0,0,0,.18); transform: scale(1); }
+}
+.mdi-product-modal.is-open .mdi-pm-primary { animation: mdiPmPulse 1.5s ease-in-out .9s infinite; }
+.mdi-pm-primary:hover, .mdi-pm-primary:focus-visible { animation-play-state: paused; }
+.mdi-pm-primary > span[aria-hidden] { display: inline-block; animation: mdiPmArrow 1.5s ease-in-out .9s infinite; }
+@keyframes mdiPmArrow { 0%,100% { transform: translateX(0); } 50% { transform: translateX(4px); } }
+@media (prefers-reduced-motion: reduce) {
+  .mdi-product-modal.is-open .mdi-pm-primary, .mdi-pm-primary > span[aria-hidden] { animation: none; }
+}
+
+/* gentle float on the "Ask on WhatsApp" button, offset from the pulsing primary */
+@keyframes mdiPmFloat {
+  0%, 100% { transform: translateY(0); border-color: rgba(255,255,255,.28); }
+  50%      { transform: translateY(-3px); border-color: rgba(239,189,64,.55); }
+}
+.mdi-product-modal.is-open .mdi-pm-secondary { animation: mdiPmFloat 2.4s ease-in-out 1.6s infinite; }
+.mdi-pm-secondary:hover, .mdi-pm-secondary:focus-visible { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .mdi-product-modal.is-open .mdi-pm-secondary { animation: none; } }
+
+/* ---------- MDI Pinwheel mark + "Turn" motion (brand guidelines v1.0) ---------- */
+.mdi-pw { --pw: 32px; display: block; flex: 0 0 auto; overflow: visible;
+  width: calc(var(--pw) * 1.415) !important; height: calc(var(--pw) * 1.415) !important;
+  margin: calc(var(--pw) * -0.2075) !important; max-width: none !important; }
+.mdi-pw--light { --pw-arm: #07372A; --pw-core: #E2AF2A; }
+.mdi-pw--rev   { --pw-arm: #FBFAF5; --pw-core: #F3C451; }
+.mdi-pw--gold  { --pw-arm: #07372A; --pw-core: #FBFAF5; }
+.mdi-pw .mdi-pw-arm  { fill: var(--pw-arm); }
+.mdi-pw .mdi-pw-core { fill: var(--pw-core); }
+/* Turn: quarter-turns of 90deg, 530 ms each + 70 ms rest — a mechanical tick, not a blur.
+   The mark is 4-fold symmetric, so each cycle ends exactly where it started. */
+@keyframes mdiPwTurn {
+  0%      { transform: rotate(0deg); }
+  88.333% { transform: rotate(90deg); }
+  100%    { transform: rotate(90deg); }
+}
+.mdi-pw--turn {
+  transform-origin: 50% 50%;
+  animation: mdiPwTurn 600ms cubic-bezier(.65, 0, .35, 1) infinite;
+}
+@media (prefers-reduced-motion: reduce) { .mdi-pw--turn { animation: none; } }
+
+/* slot sizes (visible mark size; the box grows to fit the turn) */
+.dual-invoice-brand .mdi-pw { --pw: 22px; }
+.dual-portal-logo .mdi-pw { --pw: 25px; }
+.dual-modal-brand .mdi-pw { --pw: 35px; }
+.dual-risk-route-core .mdi-pw { --pw: 30px; }
+.logo .mdi-pw.logo-icon { --pw: 40px; }
+@media (max-width: 1023px) { .logo .mdi-pw.logo-icon { --pw: 32px; } }
+
+/* on phones .container clips overflow; give the turning footer mark headroom without moving anything */
+@media (max-width: 768px) {
+  .site-footer-v2 > .container { padding-top: 14px; margin-top: -14px; }
+}
+
+/* ---------- Header mark: "Assemble" motion (brand guidelines v1.0) ----------
+   Core first, then the four arms slide in 16 units clockwise, 120 ms apart,
+   ease-out (0.2, 0.8, 0.2, 1). Replays on hover and every few seconds (js/home-ecosystem.js). */
+.mdi-pw--assemble .mdi-pw-arm,
+.mdi-pw--assemble .mdi-pw-core { transform-box: fill-box; transform-origin: 50% 50%; }
+.mdi-pw--assemble.is-assembling .mdi-pw-core { animation: mdiPwCoreIn 240ms cubic-bezier(.2,.8,.2,1) both; }
+.mdi-pw--assemble.is-assembling .mdi-pw-arm { animation: 240ms cubic-bezier(.2,.8,.2,1) both; }
+.mdi-pw--assemble.is-assembling .mdi-pw-arm:nth-of-type(1) { animation-name: mdiPwTopIn;    animation-delay: 120ms; }
+.mdi-pw--assemble.is-assembling .mdi-pw-arm:nth-of-type(2) { animation-name: mdiPwRightIn;  animation-delay: 240ms; }
+.mdi-pw--assemble.is-assembling .mdi-pw-arm:nth-of-type(3) { animation-name: mdiPwBottomIn; animation-delay: 360ms; }
+.mdi-pw--assemble.is-assembling .mdi-pw-arm:nth-of-type(4) { animation-name: mdiPwLeftIn;   animation-delay: 480ms; }
+@keyframes mdiPwCoreIn   { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
+@keyframes mdiPwTopIn    { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: none; } }
+@keyframes mdiPwRightIn  { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: none; } }
+@keyframes mdiPwBottomIn { from { opacity: 0; transform: translateX(16px); }  to { opacity: 1; transform: none; } }
+@keyframes mdiPwLeftIn   { from { opacity: 0; transform: translateY(16px); }  to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .mdi-pw--assemble.is-assembling .mdi-pw-arm,
+  .mdi-pw--assemble.is-assembling .mdi-pw-core { animation: none; }
+}
