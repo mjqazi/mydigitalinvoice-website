@@ -73,3 +73,8 @@
 .footer .footer-contact p { margin: 0 0 6px; }
 [dir="rtl"] .nav-link span[lang="en"], [dir="rtl"] .footer-nav span[lang="en"] { font-family: var(--font-sans, 'Inter', sans-serif); }
 [dir="rtl"] .header .nav-link[aria-current="page"] { line-height: 1.4; }
+
+/* Office address in footers */
+.footer .footer-address { color: #cfdcd6; }
+@media (min-width: 769px) { .footer-v2-contact { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.footer-v2-contact span.footer-v2-address { margin: 0; color: #dbe7e2; font-size: .64rem; font-weight: 800; letter-spacing: 0; text-transform: none; }
