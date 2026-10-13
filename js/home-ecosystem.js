@@ -4,7 +4,7 @@
 
   var products = {
  "white-label": {
-  "name": "White Label",
+  "name": "Your Domain",
   "title": "Your firm’s own invoicing platform.",
   "copy": "Give clients a digital invoicing system on your custom domain, in your branding, with packages built around your own commercial model.",
   "flow": [
@@ -33,8 +33,8 @@
    ]
   ],
   "status": "WHITE LABEL READY",
-  "cta": "Visit White Label page",
-  "href": "https://mydigitalinvoice.com/private-label",
+  "cta": "Visit Your Domain page",
+  "href": "https://mydigitalinvoice.com/your-domain",
   "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 8h18M7 12h5m-5 3h3\"/><circle cx=\"16.5\" cy=\"13.5\" r=\"2\"/></svg>",
   "index": 1,
   "wa": "https://wa.me/923336820820?text=Assalamualaikum%2C%20I%27m%20interested%20in%20MDI%20White%20Label."
@@ -105,8 +105,8 @@
    ]
   ],
   "status": "POS READY",
-  "cta": "Visit the website",
-  "href": "https://mydigitalinvoice.com/features",
+  "cta": "Visit POS page",
+  "href": "https://mydigitalinvoice.com/pos",
   "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"3\" width=\"16\" height=\"11\" rx=\"2\"/><path d=\"M8 7h8M8 10h4\"/><path d=\"M6 14l-1 7h14l-1-7\"/><path d=\"M9 18h6\"/></svg>",
   "index": 3,
   "wa": "https://wa.me/923336820820?text=Assalamualaikum%2C%20I%27m%20interested%20in%20MDI%20POS."
@@ -142,7 +142,7 @@
   ],
   "status": "DIGITAL INVOICING READY",
   "cta": "Visit Digital Invoicing page",
-  "href": "https://mydigitalinvoice.com/features",
+  "href": "https://mydigitalinvoice.com/digital-invoicing",
   "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 2h9l5 5v15H6z\"/><path d=\"M14 2v6h6\"/><path d=\"M9 13h6m-6 4h3\"/><rect x=\"14\" y=\"15\" width=\"3\" height=\"3\"/></svg>",
   "index": 4,
   "wa": "https://wa.me/923336820820?text=Assalamualaikum%2C%20I%27m%20interested%20in%20MDI%20Digital%20Invoicing."
@@ -177,8 +177,8 @@
    ]
   ],
   "status": "PAYROLL APP ON GOOGLE PLAY",
-  "cta": "Get the Payroll app",
-  "href": "https://play.google.com/store/apps/details?id=com.steprobotics.mypayrollapp",
+  "cta": "Visit Payroll page",
+  "href": "https://mydigitalinvoice.com/payroll",
   "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"9\" cy=\"7\" r=\"3.5\"/><path d=\"M3 20v-1a6 6 0 0 1 9.5-4.9\"/><rect x=\"14\" y=\"13\" width=\"8\" height=\"8\" rx=\"1.5\"/><path d=\"M16.5 17h3\"/></svg>",
   "index": 5,
   "wa": "https://wa.me/923336820820?text=Assalamualaikum%2C%20I%27m%20interested%20in%20MDI%20Payroll."
@@ -213,8 +213,8 @@
    ]
   ],
   "status": "LEDGER IN SYNC",
-  "cta": "Visit the website",
-  "href": "https://mydigitalinvoice.com/features",
+  "cta": "Open My Digital Invoice",
+  "href": "https://fbr.mydigitalinvoice.com/login",
   "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z\"/><path d=\"M4 21.5V4.5M8 7h8M8 11h8M8 15h5\"/></svg>",
   "index": 6,
   "wa": "https://wa.me/923336820820?text=Assalamualaikum%2C%20I%27m%20interested%20in%20MDI%20General%20Ledger."
@@ -249,8 +249,8 @@
    ]
   ],
   "status": "REPORTS LIVE",
-  "cta": "Visit the website",
-  "href": "https://mydigitalinvoice.com/features",
+  "cta": "Open My Digital Invoice",
+  "href": "https://fbr.mydigitalinvoice.com/login",
   "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 19V9m5 10V5m5 14v-7m5 7V3\"/><path d=\"M3 21h18\"/></svg>",
   "index": 7,
   "wa": "https://wa.me/923336820820?text=Assalamualaikum%2C%20I%27m%20interested%20in%20MDI%20Company%20Reports."
@@ -285,8 +285,8 @@
    ]
   ],
   "status": "PURCHASING READY",
-  "cta": "Visit the website",
-  "href": "https://mydigitalinvoice.com/features",
+  "cta": "Open My Digital Invoice",
+  "href": "https://fbr.mydigitalinvoice.com/login",
   "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"9\" cy=\"20\" r=\"1.5\"/><circle cx=\"18\" cy=\"20\" r=\"1.5\"/><path d=\"M2 3h3l2.6 11.5a2 2 0 0 0 2 1.5h7.8a2 2 0 0 0 2-1.6L21 7H6\"/></svg>",
   "index": 8,
   "wa": "https://wa.me/923336820820?text=Assalamualaikum%2C%20I%27m%20interested%20in%20MDI%20Purchasing."
@@ -321,8 +321,8 @@
    ]
   ],
   "status": "INVENTORY IN SYNC",
-  "cta": "Visit the website",
-  "href": "https://mydigitalinvoice.com/features",
+  "cta": "Open My Digital Invoice",
+  "href": "https://fbr.mydigitalinvoice.com/login",
   "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 21V8l9-5 9 5v13\"/><path d=\"M7 21v-8h10v8M7 17h10\"/></svg>",
   "index": 9,
   "wa": "https://wa.me/923336820820?text=Assalamualaikum%2C%20I%27m%20interested%20in%20MDI%20Warehouse."
@@ -357,8 +357,8 @@
    ]
   ],
   "status": "DISTRIBUTORS WELCOME",
-  "cta": "Visit the website",
-  "href": "https://mydigitalinvoice.com/contact",
+  "cta": "Visit Distribution page",
+  "href": "https://mydigitalinvoice.com/distribution",
   "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"5\" r=\"2.5\"/><circle cx=\"5\" cy=\"19\" r=\"2.5\"/><circle cx=\"19\" cy=\"19\" r=\"2.5\"/><path d=\"M12 7.5v4M12 11.5l-5.5 5.5M12 11.5l5.5 5.5\"/></svg>",
   "index": 10,
   "wa": "https://wa.me/923336820820?text=Assalamualaikum%2C%20I%27m%20interested%20in%20MDI%20Distribution."

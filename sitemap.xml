@@ -52,45 +52,36 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Features - High Priority -->
+  <!-- Product pages -->
   <url>
-    <loc>https://mydigitalinvoice.com/features</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://mydigitalinvoice.com/digital-invoicing</loc>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mydigitalinvoice.com/features" />
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mydigitalinvoice.com/ur/features" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydigitalinvoice.com/features" />
   </url>
   <url>
-    <loc>https://mydigitalinvoice.com/ur/features</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://mydigitalinvoice.com/pos</loc>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mydigitalinvoice.com/features" />
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mydigitalinvoice.com/ur/features" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydigitalinvoice.com/features" />
-  </url>
-
-  <!-- How It Works -->
-  <url>
-    <loc>https://mydigitalinvoice.com/how-it-works</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mydigitalinvoice.com/how-it-works" />
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mydigitalinvoice.com/ur/how-it-works" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydigitalinvoice.com/how-it-works" />
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mydigitalinvoice.com/ur/how-it-works</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://mydigitalinvoice.com/payroll</loc>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mydigitalinvoice.com/how-it-works" />
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mydigitalinvoice.com/ur/how-it-works" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydigitalinvoice.com/how-it-works" />
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mydigitalinvoice.com/distribution</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mydigitalinvoice.com/your-domain</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- FAQ -->
@@ -210,26 +201,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydigitalinvoice.com/for-accountants" />
   </url>
 
-  <!-- Bulk Upload - landing page for wholesalers/distributors (bilingual) -->
-  <url>
-    <loc>https://mydigitalinvoice.com/bulk-upload</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mydigitalinvoice.com/bulk-upload" />
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mydigitalinvoice.com/ur/bulk-upload" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydigitalinvoice.com/bulk-upload" />
-  </url>
-  <url>
-    <loc>https://mydigitalinvoice.com/ur/bulk-upload</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mydigitalinvoice.com/bulk-upload" />
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mydigitalinvoice.com/ur/bulk-upload" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydigitalinvoice.com/bulk-upload" />
-  </url>
-
   <!-- Compare Page -->
   <url>
     <loc>https://mydigitalinvoice.com/compare</loc>
@@ -323,13 +294,6 @@
     <priority>0.75</priority>
   </url>
 
-  <!-- Flagship partner service -->
-  <url>
-    <loc>https://mydigitalinvoice.com/private-label</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
 
   <!-- Legal Pages - Lower Priority (bilingual) -->
   <url>

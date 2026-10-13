@@ -1,0 +1,75 @@
+/*
+ * Site shell: the MDI pinwheel logo, the product navigation and the shared footer.
+ * Loaded last on every page so the header, logo and footer render the same everywhere.
+ */
+
+/* ---------- MDI Pinwheel mark (brand guidelines v1.0) ---------- */
+.mdi-pw { --pw: 32px; display: block; flex: 0 0 auto; overflow: visible;
+  width: calc(var(--pw) * 1.415) !important; height: calc(var(--pw) * 1.415) !important;
+  margin: calc(var(--pw) * -0.2075) !important; max-width: none !important; }
+.mdi-pw--light { --pw-arm: #07372A; --pw-core: #E2AF2A; }
+.mdi-pw--rev   { --pw-arm: #FBFAF5; --pw-core: #F3C451; }
+.mdi-pw--gold  { --pw-arm: #07372A; --pw-core: #FBFAF5; }
+.mdi-pw .mdi-pw-arm  { fill: var(--pw-arm); }
+.mdi-pw .mdi-pw-core { fill: var(--pw-core); }
+
+.mdi-pw--assemble .mdi-pw-arm,
+.mdi-pw--assemble .mdi-pw-core { transform-box: fill-box; transform-origin: 50% 50%; }
+.mdi-pw--assemble.is-assembling .mdi-pw-core { animation: mdiPwCoreIn 240ms cubic-bezier(.2,.8,.2,1) both; }
+.mdi-pw--assemble.is-assembling .mdi-pw-arm { animation: 240ms cubic-bezier(.2,.8,.2,1) both; }
+.mdi-pw--assemble.is-assembling .mdi-pw-arm:nth-of-type(1) { animation-name: mdiPwTopIn;    animation-delay: 120ms; }
+.mdi-pw--assemble.is-assembling .mdi-pw-arm:nth-of-type(2) { animation-name: mdiPwRightIn;  animation-delay: 240ms; }
+.mdi-pw--assemble.is-assembling .mdi-pw-arm:nth-of-type(3) { animation-name: mdiPwBottomIn; animation-delay: 360ms; }
+.mdi-pw--assemble.is-assembling .mdi-pw-arm:nth-of-type(4) { animation-name: mdiPwLeftIn;   animation-delay: 480ms; }
+@keyframes mdiPwCoreIn   { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
+@keyframes mdiPwTopIn    { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: none; } }
+@keyframes mdiPwRightIn  { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: none; } }
+@keyframes mdiPwBottomIn { from { opacity: 0; transform: translateX(16px); }  to { opacity: 1; transform: none; } }
+@keyframes mdiPwLeftIn   { from { opacity: 0; transform: translateY(16px); }  to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .mdi-pw--assemble.is-assembling .mdi-pw-arm,
+  .mdi-pw--assemble.is-assembling .mdi-pw-core { animation: none; }
+}
+
+/* Logo slots */
+.logo { display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; }
+.logo .mdi-pw.logo-icon { --pw: 36px; }
+.logo .logo-text { color: #07372A; white-space: nowrap; }
+.footer-logo { display: inline-flex; align-items: center; gap: 12px; }
+.footer-logo .mdi-pw { --pw: 36px; }
+@media (max-width: 1199px) { .logo .mdi-pw.logo-icon { --pw: 32px; } }
+
+/* ---------- Product navigation (8 items, Pricing last) ---------- */
+@media (min-width: 1200px) {
+  .header .nav { gap: 14px; }
+  .header .nav-menu { gap: 0; flex-wrap: nowrap; }
+  .header .nav-link { padding: 8px 9px; font-size: .875rem; }
+  .header .nav-link[aria-current="page"] { color: #07372A !important; background: rgba(7, 55, 42, .07); border-radius: 999px; }
+  .header .nav-actions { gap: 6px; flex: 0 0 auto; }
+  /* Phone number collapses to an icon so the eight product links keep one line. */
+  .header .nav-actions .nav-phone { width: 40px; padding: 0; justify-content: center; }
+  .header .nav-actions .nav-phone span { display: none; }
+}
+@media (min-width: 1200px) and (max-width: 1259px) {
+  .header .logo .logo-text { display: none; }
+}
+@media (min-width: 1200px) and (max-width: 1379px) {
+  .header .nav-link { padding: 8px 7px; font-size: .84rem; }
+  .header .nav-actions .nav-whatsapp .wa-label { display: none; }
+  .header .nav-actions .nav-whatsapp { width: 40px; height: 40px; padding: 0 !important; justify-content: center; margin-right: 0 !important; }
+}
+/* Mobile menu: current page is marked, and every product stays one tap away. */
+@media (max-width: 1199px) {
+  .header .nav-link[aria-current="page"] { color: #07372A !important; font-weight: 700; box-shadow: inset 3px 0 0 #E2AF2A; }
+}
+
+/* Footer brand line uses the pinwheel at the size of the old icon */
+.footer .footer-logo span { color: #fff; }
+
+/* Footer: brand column plus four link columns on wide screens */
+@media (min-width: 1100px) {
+  .footer .footer-grid { grid-template-columns: minmax(0, 1.5fr) repeat(4, minmax(0, 1fr)); gap: 40px !important; }
+}
+.footer .footer-contact p { margin: 0 0 6px; }
+[dir="rtl"] .nav-link span[lang="en"], [dir="rtl"] .footer-nav span[lang="en"] { font-family: var(--font-sans, 'Inter', sans-serif); }
+[dir="rtl"] .header .nav-link[aria-current="page"] { line-height: 1.4; }

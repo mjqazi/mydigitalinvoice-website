@@ -12,6 +12,13 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.mydigitalinvoice\.com [NC]
 RewriteRule ^(.*)$ https://mydigitalinvoice.com/$1 [L,R=301]
 
+# Retired pages (Oct 2026 product-page restructure)
+RewriteRule ^(ur/)?features(\.html)?/?$ /digital-invoicing [R=301,L]
+RewriteRule ^(ur/)?bulk-upload(\.html)?/?$ /digital-invoicing#bulk-upload [R=301,NE,L]
+RewriteRule ^how-it-works(\.html)?/?$ / [R=301,L]
+RewriteRule ^ur/how-it-works(\.html)?/?$ /ur/ [R=301,L]
+RewriteRule ^private-label(\.html)?/?$ /your-domain [R=301,L]
+
 # Redirect index.html to root
 RewriteCond %{THE_REQUEST} /index\.html [NC]
 RewriteRule ^index\.html$ / [R=301,L]
